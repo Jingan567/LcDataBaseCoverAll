@@ -9,7 +9,7 @@ namespace SqliteTemplate.SqlCommand
 {
     public class SampleTest
     {
-        private SampleTest sampleTest
+        private SampleTest sampleTest;
         public SampleTest Instance => sampleTest ?? new SampleTest();
         //数据库连接
         SQLiteConnection m_dbConnection;

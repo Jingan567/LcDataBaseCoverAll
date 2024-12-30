@@ -1,4 +1,4 @@
-﻿# Sqlite笔记
+﻿# Sqlite笔记（[SQLite 主页](https://www.sqlite.org/index.html)）
 
 参考网址1：[sqlite和sqlite3|极客教程](https://geek-docs.com/sql/sql-ask-answer/327_hk_1708787443.html)
 
@@ -141,3 +141,21 @@ runtimes目录下的文件
 **小技巧：Nuget包在没网的情况下，怎么引用自己电脑上已经有的**
 
 ![img](./Sqlite.assets/788842-20230613174424187-1460660027.png)
+
+**小技巧：怎么查看一个文件的依赖项**
+
+1. dumpbin.exe
+
+   vs2022路径：vs2022\VC\Tools\MSVC\14.40.33807\bin\Hostx64\x86
+
+   使用方式：dumpbin /dependents StrainToDisplacement.dll
+
+2. 第三方工具：[win10依赖查找工具 Dependencies Dependency Walker](https://www.cnblogs.com/youxin/p/15737032.html)（https://github.com/lucasg/Dependencies）
+
+## 刚开始不清楚Sqlite3.dll是干什么用的
+
+sqlite3.dll可能是C++的，包括Nuget安装包
+
+![image-20241231021701775](./Sqlite.assets/image-20241231021701775.png)
+
+![image-20241231022133057](./Sqlite.assets/image-20241231022133057.png)
