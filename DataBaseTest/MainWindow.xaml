@@ -12,8 +12,8 @@
             <ColumnDefinition MaxWidth="150"/>
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Column="0"></DataGrid>
-        <StackPanel>
-            <Button Click="Button_Click"/>
+        <StackPanel Grid.Column="1">
+            <Button Content="测试" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

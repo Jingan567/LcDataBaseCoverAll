@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using SqliteTemplate.SqlCommand;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,7 +24,8 @@ namespace DataBaseTest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Insert s = new Insert();
+            
         }
     }
 }
