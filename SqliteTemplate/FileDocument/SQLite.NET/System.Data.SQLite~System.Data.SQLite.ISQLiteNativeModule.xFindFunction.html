@@ -1,0 +1,90 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xFindFunction Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xFindFunction Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xFindFunction)(
+  sqlite3_vtab *pVtab,
+  int nArg,
+  const char *zName,
+  void (**pxFunc)(sqlite3_context*,int,sqlite3_value**),
+  void **ppArg
+);
+</pre>
+      </p>
+      <p> This method is called during sqlite3_prepare() to give the virtual table implementation an opportunity to overload functions. This method may be set to NULL in which case no overloading occurs. </p>
+      <p> When a function uses a column from a virtual table as its first argument, this method is called to see if the virtual table would like to overload the function. The first three parameters are inputs: the virtual table, the number of arguments to the function, and the name of the function. If no overloading is desired, this method returns 0. To overload the function, this method writes the new function implementation into *pxFunc and writes user data into *ppArg and returns either 1 or a number between SQLITE_INDEX_CONSTRAINT_FUNCTION and 255. </p>
+      <p> Historically, the return value from xFindFunction() was either zero or one. Zero means that the function is not overloaded and one means that it is overload. The ability to return values of SQLITE_INDEX_CONSTRAINT_FUNCTION or greater was added in version 3.25.0 (2018-09-15). If xFindFunction returns SQLITE_INDEX_CONSTRAINT_FUNCTION or greater, than means that the function takes two arguments and the function can be used as a boolean in the WHERE clause of a query and that the virtual table is able to exploit that function to speed up the query result. When xFindFunction returns SQLITE_INDEX_CONSTRAINT_FUNCTION or larger, the value returned becomes the sqlite3_index_info.aConstraint.op value for one of the constraints passed into xBestIndex(). The first argument to the function is the column identified by aConstraint[].iColumn field of the constraint and the second argument to the function is the value that will be passed into xFilter() (if the aConstraintUsage[].argvIndex value is set) or the value returned from sqlite3_vtab_rhs_value(). </p>
+      <p> The Geopoly module is an example of a virtual table that makes use of SQLITE_INDEX_CONSTRAINT_FUNCTION to improve performance. The xFindFunction() method for Geopoly returns SQLITE_INDEX_CONSTRAINT_FUNCTION for the geopoly_overlap() SQL function and it returns SQLITE_INDEX_CONSTRAINT_FUNCTION+1 for the geopoly_within() SQL function. This permits search optimizations for queries such as: </p>
+      <p>
+        <pre class="code">SELECT * FROM geopolytab WHERE geopoly_overlap(_shape, $query_polygon);
+SELECT * FROM geopolytab WHERE geopoly_within(_shape, $query_polygon);
+</pre>
+      </p>
+      <p> Note that infix functions (LIKE, GLOB, REGEXP, and MATCH) reverse the order of their arguments. So "like(A,B)" would normally work the same as "B like A". However, xFindFunction() always looks a the left-most argument, not the first logical argument. Hence, for the form "B like A", SQLite looks at the left operand "B" and if that operand is a virtual table column it invokes the xFindFunction() method on that virtual table. But if the form "like(A,B)" is used instead, then SQLite checks the A term to see if it is column of a virtual table and if so it invokes the xFindFunction() method for the virtual table of column A. </p>
+      <p> The function pointer returned by this routine must be valid for the lifetime of the sqlite3_vtab object given in the first parameter. </p>
+      <div class="syntax">
+        <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> xFindFunction(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>nArg</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>zName</i>,<br />   ref <a href="System.Data.SQLite~System.Data.SQLite.SQLiteCallback.html">SQLiteCallback</a> <i>callback</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pClientData</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pVtab</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dt>
+          <i>nArg</i>
+        </dt>
+        <dd> The number of arguments to the function being sought. </dd>
+        <dt>
+          <i>zName</i>
+        </dt>
+        <dd> The name of the function being sought. </dd>
+        <dt>
+          <i>callback</i>
+        </dt>
+        <dd> Upon success, this parameter must be modified to contain the delegate responsible for implementing the specified function. </dd>
+        <dt>
+          <i>pClientData</i>
+        </dt>
+        <dd> Upon success, this parameter must be modified to contain the native user-data pointer associated with <i>callback</i>. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> Non-zero if the specified function was found; zero otherwise. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xFindFunction Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

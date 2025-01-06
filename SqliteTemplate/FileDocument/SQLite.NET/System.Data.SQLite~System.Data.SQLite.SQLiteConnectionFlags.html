@@ -1,0 +1,135 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteConnectionFlags Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteConnectionFlags Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> The extra behavioral flags that can be applied to a connection. </p>
+      <p>
+              This enumeration has a <a href="http://msdn.microsoft.com/en-us/library/System.FlagsAttribute(VS.90).aspx">
+                FlagsAttribute
+              </a>
+              attribute that allows a bitwise combination of its member values.
+            </p>
+      <div class="syntax">
+        <div>public enum SQLiteConnectionFlags<b> : <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a></b></div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="40%">Member Name</th>
+            <th width="40%">Description</th>
+            <th width="20%">Value</th>
+          </tr>
+<tr valign="top"><td><b>None</b></td><td> No extra flags. </td><td>0</td></tr>
+<tr valign="top"><td><b>LogPrepare</b></td><td> Enable logging of all SQL statements to be prepared. </td><td>1</td></tr>
+<tr valign="top"><td><b>LogPreBind</b></td><td> Enable logging of all bound parameter types and raw values. </td><td>2</td></tr>
+<tr valign="top"><td><b>LogBind</b></td><td> Enable logging of all bound parameter strongly typed values. </td><td>4</td></tr>
+<tr valign="top"><td><b>LogCallbackException</b></td><td> Enable logging of all exceptions caught from user-provided managed code called from native code via delegates. </td><td>8</td></tr>
+<tr valign="top"><td><b>LogBackup</b></td><td> Enable logging of backup API errors. </td><td>16</td></tr>
+<tr valign="top"><td><b>NoExtensionFunctions</b></td><td> Skip adding the extension functions provided by the native interop assembly. </td><td>32</td></tr>
+<tr valign="top"><td><b>BindUInt32AsInt64</b></td><td> When binding parameter values with the <a href="http://msdn.microsoft.com/en-us/library/System.UInt32(VS.90).aspx">UInt32</a> type, use the interop method that accepts an <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">Int64</a> value. </td><td>64</td></tr>
+<tr valign="top"><td><b>BindAllAsText</b></td><td> When binding parameter values, always bind them as though they were plain text (i.e. no numeric, date/time, or other conversions should be attempted). </td><td>128</td></tr>
+<tr valign="top"><td><b>GetAllAsText</b></td><td> When returning column values, always return them as though they were plain text (i.e. no numeric, date/time, or other conversions should be attempted). </td><td>256</td></tr>
+<tr valign="top"><td><b>NoLoadExtension</b></td><td> Prevent this <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection</a> object instance from loading extensions. </td><td>512</td></tr>
+<tr valign="top"><td><b>NoCreateModule</b></td><td> Prevent this <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection</a> object instance from creating virtual table modules. </td><td>1024</td></tr>
+<tr valign="top"><td><b>NoBindFunctions</b></td><td> Skip binding any functions provided by other managed assemblies when opening the connection. </td><td>2048</td></tr>
+<tr valign="top"><td><b>NoLogModule</b></td><td> Skip setting the logging related properties of the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModule.html">SQLiteModule</a> object instance that was passed to the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.CreateModule.html">CreateModule</a> method. </td><td>4096</td></tr>
+<tr valign="top"><td><b>LogModuleError</b></td><td> Enable logging of all virtual table module errors seen by the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModule.SetTableError1.html">SetTableError</a> method. </td><td>8192</td></tr>
+<tr valign="top"><td><b>LogModuleException</b></td><td> Enable logging of certain virtual table module exceptions that cannot be easily discovered via other means. </td><td>16384</td></tr>
+<tr valign="top"><td><b>TraceWarning</b></td><td> Enable tracing of potentially important [non-fatal] error conditions that cannot be easily reported through other means. </td><td>32768</td></tr>
+<tr valign="top"><td><b>ConvertInvariantText</b></td><td> When binding parameter values, always use the invariant culture when converting their values from strings. </td><td>65536</td></tr>
+<tr valign="top"><td><b>BindInvariantText</b></td><td> When binding parameter values, always use the invariant culture when converting their values to strings. </td><td>131072</td></tr>
+<tr valign="top"><td><b>NoConnectionPool</b></td><td> Disable using the connection pool by default. If the "Pooling" connection string property is specified, its value will override this flag. The precise outcome of combining this flag with the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnectionFlags.html">UseConnectionPool</a> flag is unspecified; however, one of the flags will be in effect. </td><td>262144</td></tr>
+<tr valign="top"><td><b>UseConnectionPool</b></td><td> Enable using the connection pool by default. If the "Pooling" connection string property is specified, its value will override this flag. The precise outcome of combining this flag with the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnectionFlags.html">NoConnectionPool</a> flag is unspecified; however, one of the flags will be in effect. </td><td>524288</td></tr>
+<tr valign="top"><td><b>UseConnectionTypes</b></td><td> Enable using per-connection mappings between type names and <a href="http://msdn.microsoft.com/en-us/library/System.Data.DbType(VS.90).aspx">DbType</a> values. Also see the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.ClearTypeMappings.html">ClearTypeMappings</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.GetTypeMappings.html">GetTypeMappings</a>, and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.AddTypeMapping.html">AddTypeMapping</a> methods. These per-connection mappings, when present, override the corresponding global mappings. </td><td>1048576</td></tr>
+<tr valign="top"><td><b>NoGlobalTypes</b></td><td> Disable using global mappings between type names and <a href="http://msdn.microsoft.com/en-us/library/System.Data.DbType(VS.90).aspx">DbType</a> values. This may be useful in some very narrow cases; however, if there are no per-connection type mappings, the fallback defaults will be used for both type names and their associated <b>DbType</b> values. Therefore, use of this flag is not recommended. </td><td>2097152</td></tr>
+<tr valign="top"><td><b>StickyHasRows</b></td><td> When the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.HasRows.html">HasRows</a> property is used, it should return non-zero if there were ever any rows in the associated result sets. </td><td>4194304</td></tr>
+<tr valign="top"><td><b>StrictEnlistment</b></td><td> Enable "strict" transaction enlistment semantics. Setting this flag will cause an exception to be thrown if an attempt is made to enlist in a transaction with an unavailable or unsupported isolation level. In the future, more extensive checks may be enabled by this flag as well. </td><td>8388608</td></tr>
+<tr valign="top"><td><b>MapIsolationLevels</b></td><td> Enable mapping of unsupported transaction isolation levels to the closest supported transaction isolation level. </td><td>16777216</td></tr>
+<tr valign="top"><td><b>DetectTextAffinity</b></td><td> When returning column values, attempt to detect the affinity of textual values by checking if they fully conform to those of the <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">Null</a>, <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">Int64</a>, <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">Double</a>, or <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">DateTime</a> types. </td><td>33554432</td></tr>
+<tr valign="top"><td><b>DetectStringType</b></td><td> When returning column values, attempt to detect the type of string values by checking if they fully conform to those of the <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">Null</a>, <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">Int64</a>, <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">Double</a>, or <a href="System.Data.SQLite~System.Data.SQLite.TypeAffinity.html">DateTime</a> types. </td><td>67108864</td></tr>
+<tr valign="top"><td><b>NoConvertSettings</b></td><td> Skip querying runtime configuration settings for use by the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConvert.html">SQLiteConvert</a> class, including the default <a href="http://msdn.microsoft.com/en-us/library/System.Data.DbType(VS.90).aspx">DbType</a> value and default database type name. <b xmlns="urn:ndoc-schema">NOTE: If the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.DefaultDbType.html" xmlns="">DefaultDbType</a> and/or <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.DefaultTypeName.html" xmlns="">DefaultTypeName</a> properties are not set explicitly nor set via their connection string properties and repeated calls to determine these runtime configuration settings are seen to be a problem, this flag should be set.</b></td><td>134217728</td></tr>
+<tr valign="top"><td><b>BindDateTimeWithKind</b></td><td> When binding parameter values with the <a href="http://msdn.microsoft.com/en-us/library/System.DateTime(VS.90).aspx">DateTime</a> type, take their <a href="http://msdn.microsoft.com/en-us/library/System.DateTimeKind(VS.90).aspx">DateTimeKind</a> into account as well as that of the associated <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection</a>. </td><td>268435456</td></tr>
+<tr valign="top"><td><b>RollbackOnException</b></td><td> If an exception is caught when raising the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.Commit.html">Commit</a> event, the transaction should be rolled back. If this is not specified, the transaction will continue the commit process instead. </td><td>536870912</td></tr>
+<tr valign="top"><td><b>DenyOnException</b></td><td> If an exception is caught when raising the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.Authorize.html">Authorize</a> event, the action should should be denied. If this is not specified, the action will be allowed instead. </td><td>1073741824</td></tr>
+<tr valign="top"><td><b>InterruptOnException</b></td><td> If an exception is caught when raising the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.Progress.html">Progress</a> event, the operation should be interrupted. If this is not specified, the operation will simply continue. </td><td>2147483648</td></tr>
+<tr valign="top"><td><b>UnbindFunctionsOnClose</b></td><td> Attempt to unbind all functions provided by other managed assemblies when closing the connection. </td><td>4294967296</td></tr>
+<tr valign="top"><td><b>NoVerifyTextAffinity</b></td><td> When returning column values as a <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">String</a>, skip verifying their affinity. </td><td>8589934592</td></tr>
+<tr valign="top"><td><b>UseConnectionBindValueCallbacks</b></td><td> Enable using per-connection mappings between type names and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBindValueCallback.html">SQLiteBindValueCallback</a> values. Also see the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.ClearTypeCallbacks.html">ClearTypeCallbacks</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.TryGetTypeCallbacks.html">TryGetTypeCallbacks</a>, and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.SetTypeCallbacks.html">SetTypeCallbacks</a> methods. </td><td>17179869184</td></tr>
+<tr valign="top"><td><b>UseConnectionReadValueCallbacks</b></td><td> Enable using per-connection mappings between type names and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteReadValueCallback.html">SQLiteReadValueCallback</a> values. Also see the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.ClearTypeCallbacks.html">ClearTypeCallbacks</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.TryGetTypeCallbacks.html">TryGetTypeCallbacks</a>, and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.SetTypeCallbacks.html">SetTypeCallbacks</a> methods. </td><td>34359738368</td></tr>
+<tr valign="top"><td><b>UseParameterNameForTypeName</b></td><td> If the database type name has not been explicitly set for the parameter specified, fallback to using the parameter name. </td><td>68719476736</td></tr>
+<tr valign="top"><td><b>UseParameterDbTypeForTypeName</b></td><td> If the database type name has not been explicitly set for the parameter specified, fallback to using the database type name associated with the <a href="http://msdn.microsoft.com/en-us/library/System.Data.DbType(VS.90).aspx">DbType</a> value. </td><td>137438953472</td></tr>
+<tr valign="top"><td><b>NoVerifyTypeAffinity</b></td><td> When returning column values, skip verifying their affinity. </td><td>274877906944</td></tr>
+<tr valign="top"><td><b>AllowNestedTransactions</b></td><td> Allow transactions to be nested. The outermost transaction still controls whether or not any changes are ultimately committed or rolled back. All non-outermost transactions are implemented using the SAVEPOINT construct. </td><td>549755813888</td></tr>
+<tr valign="top"><td><b>BindDecimalAsText</b></td><td> When binding parameter values, always bind <a href="http://msdn.microsoft.com/en-us/library/System.Decimal(VS.90).aspx">Decimal</a> values as though they were plain text (i.e. not <b>Decimal</b>, which is the legacy behavior). </td><td>1099511627776</td></tr>
+<tr valign="top"><td><b>GetDecimalAsText</b></td><td> When returning column values, always return <a href="http://msdn.microsoft.com/en-us/library/System.Decimal(VS.90).aspx">Decimal</a> values as though they were plain text (i.e. not <a href="http://msdn.microsoft.com/en-us/library/System.Double(VS.90).aspx">Double</a>, which is the legacy behavior). </td><td>2199023255552</td></tr>
+<tr valign="top"><td><b>BindInvariantDecimal</b></td><td> When binding <a href="http://msdn.microsoft.com/en-us/library/System.Decimal(VS.90).aspx">Decimal</a> parameter values, always use the invariant culture when converting their values to strings. </td><td>4398046511104</td></tr>
+<tr valign="top"><td><b>GetInvariantDecimal</b></td><td> When returning <a href="http://msdn.microsoft.com/en-us/library/System.Decimal(VS.90).aspx">Decimal</a> column values, always use the invariant culture when converting their values from strings. </td><td>8796093022208</td></tr>
+<tr valign="top"><td><b>WaitForEnlistmentReset</b></td><td><b xmlns="urn:ndoc-schema">EXPERIMENTAL</b> -- Enable waiting for the enlistment to be reset prior to attempting to create a new enlistment. This may be necessary due to the semantics used by distributed transactions, which complete asynchronously. </td><td>17592186044416</td></tr>
+<tr valign="top"><td><b>GetInvariantInt64</b></td><td> When returning <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">Int64</a> column values, always use the invariant culture when converting their values from strings. </td><td>35184372088832</td></tr>
+<tr valign="top"><td><b>GetInvariantDouble</b></td><td> When returning <a href="http://msdn.microsoft.com/en-us/library/System.Double(VS.90).aspx">Double</a> column values, always use the invariant culture when converting their values from strings. </td><td>70368744177664</td></tr>
+<tr valign="top"><td><b>StrictConformance</b></td><td><b xmlns="urn:ndoc-schema">EXPERIMENTAL</b> -- Enable strict conformance to the ADO.NET standard, e.g. use of thrown exceptions to indicate common error conditions. </td><td>140737488355328</td></tr>
+<tr valign="top"><td><b>HidePassword</b></td><td><b xmlns="urn:ndoc-schema">EXPERIMENTAL</b> -- When opening a connection, attempt to hide the password from the connection string, etc. Given the memory architecture of the CLR, (and P/Invoke) this is not 100% reliable and should not be relied upon for security critical uses or applications. </td><td>281474976710656</td></tr>
+<tr valign="top"><td><b>NoCoreFunctions</b></td><td> Skip adding the extension functions provided by the native interop assembly if they would conflict with a function provided by the SQLite core library. </td><td>562949953421312</td></tr>
+<tr valign="top"><td><b>StopOnException</b></td><td> If an exception is caught when raising the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.Busy.html">Busy</a> event, the operation should be stopped. If this is not specified, the operation will be retried. </td><td>1125899906842624</td></tr>
+<tr valign="top"><td><b>LogRetry</b></td><td> Enable logging of internal retries during statment preparation and stepping. </td><td>2251799813685248</td></tr>
+<tr valign="top"><td><b>ConnectionPoolOnly</b></td><td> If a connection cannot be opened using the connection pool, throw an exception instead of default behavior of falling back to using a non-pooled connection. </td><td>4503599627370496</td></tr>
+<tr valign="top"><td><b>AggressiveDisposal</b></td><td> Be more aggressive about disposing of unused native resources, e.g. connections, transactions, commands, data readers, blobs, etc. WARNING: This flag is enabled by default and should not be disabled unless there is a very good reason, e.g. an application that relies on the legacy disposal behavior. </td><td>9007199254740992</td></tr>
+<tr valign="top"><td><b>BindAndGetAllAsText</b></td><td> When binding parameter values or returning column values, always treat them as though they were plain text (i.e. no numeric, date/time, or other conversions should be attempted). </td><td>384</td></tr>
+<tr valign="top"><td><b>ConvertAndBindInvariantText</b></td><td> When binding parameter values, always use the invariant culture when converting their values to strings or from strings. </td><td>196608</td></tr>
+<tr valign="top"><td><b>BindAndGetAllAsInvariantText</b></td><td> When binding parameter values or returning column values, always treat them as though they were plain text (i.e. no numeric, date/time, or other conversions should be attempted) and always use the invariant culture when converting their values to strings. </td><td>131456</td></tr>
+<tr valign="top"><td><b>ConvertAndBindAndGetAllAsInvariantText</b></td><td> When binding parameter values or returning column values, always treat them as though they were plain text (i.e. no numeric, date/time, or other conversions should be attempted) and always use the invariant culture when converting their values to strings or from strings. </td><td>196992</td></tr>
+<tr valign="top"><td><b>UseConnectionAllValueCallbacks</b></td><td> Enables use of all per-connection value handling callbacks. </td><td>51539607552</td></tr>
+<tr valign="top"><td><b>UseParameterAnythingForTypeName</b></td><td> Enables use of all applicable <a href="System.Data.SQLite~System.Data.SQLite.SQLiteParameter.html">SQLiteParameter</a> properties as fallbacks for the database type name. </td><td>206158430208</td></tr>
+<tr valign="top"><td><b>LogAll</b></td><td> Enable all logging. </td><td>2251799813709855</td></tr>
+<tr valign="top"><td><b>LogDefault</b></td><td> The default logging related flags for new connections. </td><td>16392</td></tr>
+<tr valign="top"><td><b>Default</b></td><td> The default extra flags for new connections. </td><td>9020393394290696</td></tr>
+<tr valign="top"><td><b>DefaultAndLogAll</b></td><td> The default extra flags for new connections with all logging enabled. </td><td>11272193207984159</td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnectionFlags%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

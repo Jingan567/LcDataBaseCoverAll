@@ -1,0 +1,135 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteManagedModule Interface</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteManagedModule Interface</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> This interface represents a virtual table implementation written in managed code. </p>
+      <p>
+                For a list of all members of this type, see <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteManagedModule~Members.html">ISQLiteManagedModule Members
+                </a>.
+              </p>
+      <p>
+      </p>
+      <div class="syntax">
+        <div>public interface ISQLiteManagedModule</div>
+      </div>
+      <h4 class="dtH4">
+        Types that implement ISQLiteManagedModule</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Type</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="System.Data.SQLite~System.Data.SQLite.Generic.SQLiteModuleEnumerable$1.html">SQLiteModuleEnumerable(T)</a>
+            </td>
+            <td width="50%"> This class implements a virtual table module that exposes an <a href="http://msdn.microsoft.com/en-us/library/9eekhta0(VS.90).aspx">IEnumerable`1</a> object instance as a read-only virtual table. It is not sealed and may be used as the base class for any user-defined virtual table class that wraps an <b>IEnumerable`1</b> object instance. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModule.html">SQLiteModule</a>
+            </td>
+            <td width="50%"> This class represents a managed virtual table module implementation. It is not sealed and must be used as the base class for any user-defined virtual table module classes implemented in managed code. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleCommon.html">SQLiteModuleCommon</a>
+            </td>
+            <td width="50%"> This class contains some virtual methods that may be useful for other virtual table classes. It specifically does NOT implement any of the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteManagedModule.html">ISQLiteManagedModule</a> interface methods. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleEnumerable.html">SQLiteModuleEnumerable</a>
+            </td>
+            <td width="50%"> This class implements a virtual table module that exposes an <a href="http://msdn.microsoft.com/en-us/library/System.Collections.IEnumerable(VS.90).aspx">IEnumerable</a> object instance as a read-only virtual table. It is not sealed and may be used as the base class for any user-defined virtual table class that wraps an <b>IEnumerable</b> object instance. The following short example shows it being used to treat an array of strings as a table data source: <pre class="code">   public static class Sample
+   {
+     public static void Main()
+     {
+       using (SQLiteConnection connection = new SQLiteConnection(
+           "Data Source=:memory:;"))
+       {
+         connection.Open();
+
+         connection.CreateModule(new SQLiteModuleEnumerable(
+           "sampleModule", new string[] { "one", "two", "three" }));
+
+         using (SQLiteCommand command = connection.CreateCommand())
+         {
+           command.CommandText =
+               "CREATE VIRTUAL TABLE t1 USING sampleModule;";
+
+           command.ExecuteNonQuery();
+         }
+
+         using (SQLiteCommand command = connection.CreateCommand())
+         {
+           command.CommandText = "SELECT * FROM t1;";
+
+           using (SQLiteDataReader dataReader = command.ExecuteReader())
+           {
+             while (dataReader.Read())
+               Console.WriteLine(dataReader[0].ToString());
+           }
+         }
+
+         connection.Close();
+       }
+     }
+   }
+ </pre></td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleNoop.html">SQLiteModuleNoop</a>
+            </td>
+            <td width="50%"> This class implements a virtual table module that does nothing by providing "empty" implementations for all of the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteManagedModule.html">ISQLiteManagedModule</a> interface methods. The result codes returned by these "empty" method implementations may be controlled on a per-method basis by using and/or overriding the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleNoop.GetDefaultResultCode.html">GetDefaultResultCode</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleNoop.ResultCodeToEofResult.html">ResultCodeToEofResult</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleNoop.ResultCodeToFindFunctionResult.html">ResultCodeToFindFunctionResult</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleNoop.GetMethodResultCode.html">GetMethodResultCode</a>, and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteModuleNoop.SetMethodResultCode.html">SetMethodResultCode</a> methods from within derived classes. </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteManagedModule~Members.html">ISQLiteManagedModule Members</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteManagedModule%20Interface">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

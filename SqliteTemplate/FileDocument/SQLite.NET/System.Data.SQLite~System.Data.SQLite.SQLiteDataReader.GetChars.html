@@ -1,0 +1,75 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteDataReader.GetChars Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteDataReader.GetChars Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Retrieves a column as an array of chars (blob) </p>
+      <div class="syntax">public override <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a> GetChars(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>i</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a> <i>fieldoffset</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Char(VS.90).aspx">char</a>[] <i>buffer</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>bufferoffset</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>length</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>i</i>
+        </dt>
+        <dd>The index of the column.</dd>
+        <dt>
+          <i>fieldoffset</i>
+        </dt>
+        <dd>The zero-based index of where to begin reading the data</dd>
+        <dt>
+          <i>buffer</i>
+        </dt>
+        <dd>The buffer to write the characters into</dd>
+        <dt>
+          <i>bufferoffset</i>
+        </dt>
+        <dd>The zero-based index of where to begin writing into the array</dd>
+        <dt>
+          <i>length</i>
+        </dt>
+        <dd>The number of bytes to retrieve</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>The actual number of characters written into the array</p>
+      <h4 class="dtH4">Implements</h4>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Data.IDataRecord.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)(VS.90).aspx">IDataRecord.GetChars</a>
+      </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> To determine the number of characters in the column, pass a null value for the buffer. The total length will be returned. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteDataReader.GetChars Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

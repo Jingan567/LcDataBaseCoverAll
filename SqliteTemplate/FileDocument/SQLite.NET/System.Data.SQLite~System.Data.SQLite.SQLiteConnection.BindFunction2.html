@@ -1,0 +1,59 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteConnection.BindFunction(SQLiteFunctionAttribute, Delegate, Delegate) Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteConnection.BindFunction(SQLiteFunctionAttribute, Delegate, Delegate) Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Attempts to bind the specified <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.html">SQLiteFunction</a> object instance to this connection. </p>
+      <div class="syntax">public <a href="http://msdn.microsoft.com/en-us/library/System.Void(VS.90).aspx">void</a> BindFunction(<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunctionAttribute.html">SQLiteFunctionAttribute</a> <i>functionAttribute</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> <i>callback1</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> <i>callback2</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>functionAttribute</i>
+        </dt>
+        <dd> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunctionAttribute.html">SQLiteFunctionAttribute</a> object instance containing the metadata for the function to be bound. </dd>
+        <dt>
+          <i>callback1</i>
+        </dt>
+        <dd> A <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> object instance that helps implement the function to be bound. For scalar functions, this corresponds to the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteInvokeDelegate.html">SQLiteInvokeDelegate</a> type. For aggregate functions, this corresponds to the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteStepDelegate.html">SQLiteStepDelegate</a> type. For collation functions, this corresponds to the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteCompareDelegate.html">SQLiteCompareDelegate</a> type. </dd>
+        <dt>
+          <i>callback2</i>
+        </dt>
+        <dd> A <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> object instance that helps implement the function to be bound. For aggregate functions, this corresponds to the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFinalDelegate.html">SQLiteFinalDelegate</a> type. For other callback types, it is not used and must be null. </dd>
+      </dl>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a> | <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BindFunction~Overloads.html">SQLiteConnection.BindFunction Overload List</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnection.BindFunction Method (SQLiteFunctionAttribute,%20Delegate,%20Delegate)">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

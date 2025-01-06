@@ -1,0 +1,60 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xNext Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xNext Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xNext)(sqlite3_vtab_cursor*);
+</pre>
+      </p>
+      <p> The xNext method advances a virtual table cursor to the next row of a result set initiated by xFilter. If the cursor is already pointing at the last row when this routine is called, then the cursor no longer points to valid data and a subsequent call to the xEof method must return true (non-zero). If the cursor is successfully advanced to another row of content, then subsequent calls to xEof must return false (zero). </p>
+      <p> This method must return SQLITE_OK if successful, or an sqlite error code if an error occurs. </p>
+      <p> The xNext method is required for every virtual table implementation. </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xNext(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pCursor</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pCursor</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_vtab_cursor derived structure. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xNext Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

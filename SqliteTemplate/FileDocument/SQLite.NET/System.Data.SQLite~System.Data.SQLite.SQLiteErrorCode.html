@@ -1,0 +1,173 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteErrorCode Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteErrorCode Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> SQLite error codes. Actually, this enumeration represents a return code, which may also indicate success in one of several ways (e.g. SQLITE_OK, SQLITE_ROW, and SQLITE_DONE). Therefore, the name of this enumeration is something of a misnomer. </p>
+      <div class="syntax">
+        <div>public enum SQLiteErrorCode</div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>Unknown</b></td><td> The error code is unknown. This error code is only used by the managed wrapper itself. </td></tr>
+<tr valign="top"><td><b>Ok</b></td><td> Successful result </td></tr>
+<tr valign="top"><td><b>Error</b></td><td> SQL error or missing database </td></tr>
+<tr valign="top"><td><b>Internal</b></td><td> Internal logic error in SQLite </td></tr>
+<tr valign="top"><td><b>Perm</b></td><td> Access permission denied </td></tr>
+<tr valign="top"><td><b>Abort</b></td><td> Callback routine requested an abort </td></tr>
+<tr valign="top"><td><b>Busy</b></td><td> The database file is locked </td></tr>
+<tr valign="top"><td><b>Locked</b></td><td> A table in the database is locked </td></tr>
+<tr valign="top"><td><b>NoMem</b></td><td> A malloc() failed </td></tr>
+<tr valign="top"><td><b>ReadOnly</b></td><td> Attempt to write a readonly database </td></tr>
+<tr valign="top"><td><b>Interrupt</b></td><td> Operation terminated by sqlite3_interrupt() </td></tr>
+<tr valign="top"><td><b>IoErr</b></td><td> Some kind of disk I/O error occurred </td></tr>
+<tr valign="top"><td><b>Corrupt</b></td><td> The database disk image is malformed </td></tr>
+<tr valign="top"><td><b>NotFound</b></td><td> Unknown opcode in sqlite3_file_control() </td></tr>
+<tr valign="top"><td><b>Full</b></td><td> Insertion failed because database is full </td></tr>
+<tr valign="top"><td><b>CantOpen</b></td><td> Unable to open the database file </td></tr>
+<tr valign="top"><td><b>Protocol</b></td><td> Database lock protocol error </td></tr>
+<tr valign="top"><td><b>Empty</b></td><td> Database is empty </td></tr>
+<tr valign="top"><td><b>Schema</b></td><td> The database schema changed </td></tr>
+<tr valign="top"><td><b>TooBig</b></td><td> String or BLOB exceeds size limit </td></tr>
+<tr valign="top"><td><b>Constraint</b></td><td> Abort due to constraint violation </td></tr>
+<tr valign="top"><td><b>Mismatch</b></td><td> Data type mismatch </td></tr>
+<tr valign="top"><td><b>Misuse</b></td><td> Library used incorrectly </td></tr>
+<tr valign="top"><td><b>NoLfs</b></td><td> Uses OS features not supported on host </td></tr>
+<tr valign="top"><td><b>Auth</b></td><td> Authorization denied </td></tr>
+<tr valign="top"><td><b>Format</b></td><td> Auxiliary database format error </td></tr>
+<tr valign="top"><td><b>Range</b></td><td> 2nd parameter to sqlite3_bind out of range </td></tr>
+<tr valign="top"><td><b>NotADb</b></td><td> File opened that is not a database file </td></tr>
+<tr valign="top"><td><b>Notice</b></td><td> Notifications from sqlite3_log() </td></tr>
+<tr valign="top"><td><b>Warning</b></td><td> Warnings from sqlite3_log() </td></tr>
+<tr valign="top"><td><b>Row</b></td><td> sqlite3_step() has another row ready </td></tr>
+<tr valign="top"><td><b>Done</b></td><td> sqlite3_step() has finished executing </td></tr>
+<tr valign="top"><td><b>NonExtendedMask</b></td><td> Used to mask off extended result codes </td></tr>
+<tr valign="top"><td><b>Error_Missing_CollSeq</b></td><td> A collation sequence was referenced by a schema and it cannot be found. </td></tr>
+<tr valign="top"><td><b>Error_Retry</b></td><td> An internal operation failed and it may succeed if retried. </td></tr>
+<tr valign="top"><td><b>Error_Snapshot</b></td><td> The specified snapshot has been overwritten by a checkpoint. </td></tr>
+<tr valign="top"><td><b>IoErr_Read</b></td><td> A file read operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Short_Read</b></td><td> A file read operation returned less data than requested. </td></tr>
+<tr valign="top"><td><b>IoErr_Write</b></td><td> A file write operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Fsync</b></td><td> A file synchronization operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Dir_Fsync</b></td><td> A directory synchronization operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Truncate</b></td><td> A file truncate operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Fstat</b></td><td> A file metadata operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Unlock</b></td><td> A file unlock operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_RdLock</b></td><td> A file lock operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Delete</b></td><td> A file delete operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Blocked</b></td><td> Not currently used. </td></tr>
+<tr valign="top"><td><b>IoErr_NoMem</b></td><td> Out-of-memory during a file operation. </td></tr>
+<tr valign="top"><td><b>IoErr_Access</b></td><td> A file existence/status operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_CheckReservedLock</b></td><td> A check for a reserved lock failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Lock</b></td><td> A file lock operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Close</b></td><td> A file close operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Dir_Close</b></td><td> A directory close operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_ShmOpen</b></td><td> A shared memory open operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_ShmSize</b></td><td> A shared memory size operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_ShmLock</b></td><td> A shared memory lock operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_ShmMap</b></td><td> A shared memory map operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Seek</b></td><td> A file seek operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Delete_NoEnt</b></td><td> A file delete operation failed because it does not exist. </td></tr>
+<tr valign="top"><td><b>IoErr_Mmap</b></td><td> A file memory mapping operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_GetTempPath</b></td><td> The temporary directory path could not be obtained. </td></tr>
+<tr valign="top"><td><b>IoErr_ConvPath</b></td><td> A path string conversion operation failed. </td></tr>
+<tr valign="top"><td><b>IoErr_VNode</b></td><td> Reserved. </td></tr>
+<tr valign="top"><td><b>IoErr_Auth</b></td><td> An attempt to authenticate failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Begin_Atomic</b></td><td> An attempt to begin a file system transaction failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Commit_Atomic</b></td><td> An attempt to commit a file system transaction failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Rollback_Atomic</b></td><td> An attempt to rollback a file system transaction failed. </td></tr>
+<tr valign="top"><td><b>IoErr_Data</b></td><td> Data read from the file system appears to be incorrect. </td></tr>
+<tr valign="top"><td><b>IoErr_CorruptFs</b></td><td> File system corruption was detected during a read or write. </td></tr>
+<tr valign="top"><td><b>IoErr_In_Page</b></td><td> An exception was caught during use of mapped memory. In general, this applies only to the WAL journal mode. </td></tr>
+<tr valign="top"><td><b>Locked_SharedCache</b></td><td> A database table is locked in shared-cache mode. </td></tr>
+<tr valign="top"><td><b>Locked_Vtab</b></td><td> A virtual table in the database is locked. </td></tr>
+<tr valign="top"><td><b>Busy_Recovery</b></td><td> A database file is locked due to a recovery operation. </td></tr>
+<tr valign="top"><td><b>Busy_Snapshot</b></td><td> A database file is locked due to snapshot semantics. </td></tr>
+<tr valign="top"><td><b>Busy_Timeout</b></td><td> An internal timeout was encountered while waiting for a database lock. </td></tr>
+<tr valign="top"><td><b>CantOpen_NoTempDir</b></td><td> A database file cannot be opened because no temporary directory is available. </td></tr>
+<tr valign="top"><td><b>CantOpen_IsDir</b></td><td> A database file cannot be opened because its path represents a directory. </td></tr>
+<tr valign="top"><td><b>CantOpen_FullPath</b></td><td> A database file cannot be opened because its full path could not be obtained. </td></tr>
+<tr valign="top"><td><b>CantOpen_ConvPath</b></td><td> A database file cannot be opened because a path string conversion operation failed. </td></tr>
+<tr valign="top"><td><b>CantOpen_DirtyWal</b></td><td> No longer used. </td></tr>
+<tr valign="top"><td><b>CantOpen_SymLink</b></td><td> A database file is a symbolic link and cannot be opened. </td></tr>
+<tr valign="top"><td><b>Corrupt_Vtab</b></td><td> A virtual table is malformed. </td></tr>
+<tr valign="top"><td><b>Corrupt_Sequence</b></td><td> A required sequence table is missing or corrupt. </td></tr>
+<tr valign="top"><td><b>Corrupt_Index</b></td><td> An index entry that should be present is missing. </td></tr>
+<tr valign="top"><td><b>ReadOnly_Recovery</b></td><td> A database file is read-only due to a recovery operation. </td></tr>
+<tr valign="top"><td><b>ReadOnly_CantLock</b></td><td> A database file is read-only because a lock could not be obtained. </td></tr>
+<tr valign="top"><td><b>ReadOnly_Rollback</b></td><td> A database file is read-only because it needs rollback processing. </td></tr>
+<tr valign="top"><td><b>ReadOnly_DbMoved</b></td><td> A database file is read-only because it was moved while open. </td></tr>
+<tr valign="top"><td><b>ReadOnly_CantInit</b></td><td> The shared-memory file is read-only and it should be read-write. </td></tr>
+<tr valign="top"><td><b>ReadOnly_Directory</b></td><td> Unable to create journal file because the directory is read-only. </td></tr>
+<tr valign="top"><td><b>Abort_Rollback</b></td><td> An operation is being aborted due to rollback processing. </td></tr>
+<tr valign="top"><td><b>Constraint_Check</b></td><td> A CHECK constraint failed. </td></tr>
+<tr valign="top"><td><b>Constraint_CommitHook</b></td><td> A commit hook produced a unsuccessful return code. </td></tr>
+<tr valign="top"><td><b>Constraint_ForeignKey</b></td><td> A FOREIGN KEY constraint failed. </td></tr>
+<tr valign="top"><td><b>Constraint_Function</b></td><td> Not currently used. </td></tr>
+<tr valign="top"><td><b>Constraint_NotNull</b></td><td> A NOT NULL constraint failed. </td></tr>
+<tr valign="top"><td><b>Constraint_PrimaryKey</b></td><td> A PRIMARY KEY constraint failed. </td></tr>
+<tr valign="top"><td><b>Constraint_Trigger</b></td><td> The RAISE function was used by a trigger-program. </td></tr>
+<tr valign="top"><td><b>Constraint_Unique</b></td><td> A UNIQUE constraint failed. </td></tr>
+<tr valign="top"><td><b>Constraint_Vtab</b></td><td> Not currently used. </td></tr>
+<tr valign="top"><td><b>Constraint_RowId</b></td><td> A ROWID constraint failed. </td></tr>
+<tr valign="top"><td><b>Constraint_Pinned</b></td><td> A database cursor is busy and cannot be moved. </td></tr>
+<tr valign="top"><td><b>Constraint_DataType</b></td><td> Value does not conform to specified data type. </td></tr>
+<tr valign="top"><td><b>Notice_Recover_Wal</b></td><td> Frames were recovered from the WAL log file. </td></tr>
+<tr valign="top"><td><b>Notice_Recover_Rollback</b></td><td> Pages were recovered from the journal file. </td></tr>
+<tr valign="top"><td><b>Notice_Rbu</b></td><td> May be returned for spurious errors that can occur when applying an RBU update. </td></tr>
+<tr valign="top"><td><b>Warning_AutoIndex</b></td><td> An automatic index was created to process a query. </td></tr>
+<tr valign="top"><td><b>Auth_User</b></td><td> User authentication failed. </td></tr>
+<tr valign="top"><td><b>Ok_Load_Permanently</b></td><td> Success. Prevents the extension from unloading until the process terminates. </td></tr>
+<tr valign="top"><td><b>Ok_SymLink</b></td><td> Success. The specified file name refers to a symbolic link. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteErrorCode%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteAuthorizerActionCode Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteAuthorizerActionCode Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> The action code responsible for the current call into the authorizer. </p>
+      <div class="syntax">
+        <div>public enum SQLiteAuthorizerActionCode</div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>None</b></td><td> No action is being performed. This value should not be used from external code. </td></tr>
+<tr valign="top"><td><b>Copy</b></td><td> No longer used. </td></tr>
+<tr valign="top"><td><b>CreateIndex</b></td><td> An index will be created. The action-specific arguments are the index name and the table name. </td></tr>
+<tr valign="top"><td><b>CreateTable</b></td><td> A table will be created. The action-specific arguments are the table name and a null value. </td></tr>
+<tr valign="top"><td><b>CreateTempIndex</b></td><td> A temporary index will be created. The action-specific arguments are the index name and the table name. </td></tr>
+<tr valign="top"><td><b>CreateTempTable</b></td><td> A temporary table will be created. The action-specific arguments are the table name and a null value. </td></tr>
+<tr valign="top"><td><b>CreateTempTrigger</b></td><td> A temporary trigger will be created. The action-specific arguments are the trigger name and the table name. </td></tr>
+<tr valign="top"><td><b>CreateTempView</b></td><td> A temporary view will be created. The action-specific arguments are the view name and a null value. </td></tr>
+<tr valign="top"><td><b>CreateTrigger</b></td><td> A trigger will be created. The action-specific arguments are the trigger name and the table name. </td></tr>
+<tr valign="top"><td><b>CreateView</b></td><td> A view will be created. The action-specific arguments are the view name and a null value. </td></tr>
+<tr valign="top"><td><b>Delete</b></td><td> A DELETE statement will be executed. The action-specific arguments are the table name and a null value. </td></tr>
+<tr valign="top"><td><b>DropIndex</b></td><td> An index will be dropped. The action-specific arguments are the index name and the table name. </td></tr>
+<tr valign="top"><td><b>DropTable</b></td><td> A table will be dropped. The action-specific arguments are the tables name and a null value. </td></tr>
+<tr valign="top"><td><b>DropTempIndex</b></td><td> A temporary index will be dropped. The action-specific arguments are the index name and the table name. </td></tr>
+<tr valign="top"><td><b>DropTempTable</b></td><td> A temporary table will be dropped. The action-specific arguments are the table name and a null value. </td></tr>
+<tr valign="top"><td><b>DropTempTrigger</b></td><td> A temporary trigger will be dropped. The action-specific arguments are the trigger name and the table name. </td></tr>
+<tr valign="top"><td><b>DropTempView</b></td><td> A temporary view will be dropped. The action-specific arguments are the view name and a null value. </td></tr>
+<tr valign="top"><td><b>DropTrigger</b></td><td> A trigger will be dropped. The action-specific arguments are the trigger name and the table name. </td></tr>
+<tr valign="top"><td><b>DropView</b></td><td> A view will be dropped. The action-specific arguments are the view name and a null value. </td></tr>
+<tr valign="top"><td><b>Insert</b></td><td> An INSERT statement will be executed. The action-specific arguments are the table name and a null value. </td></tr>
+<tr valign="top"><td><b>Pragma</b></td><td> A PRAGMA statement will be executed. The action-specific arguments are the name of the PRAGMA and the new value or a null value. </td></tr>
+<tr valign="top"><td><b>Read</b></td><td> A table column will be read. The action-specific arguments are the table name and the column name. </td></tr>
+<tr valign="top"><td><b>Select</b></td><td> A SELECT statement will be executed. The action-specific arguments are both null values. </td></tr>
+<tr valign="top"><td><b>Transaction</b></td><td> A transaction will be started, committed, or rolled back. The action-specific arguments are the name of the operation (BEGIN, COMMIT, or ROLLBACK) and a null value. </td></tr>
+<tr valign="top"><td><b>Update</b></td><td> An UPDATE statement will be executed. The action-specific arguments are the table name and the column name. </td></tr>
+<tr valign="top"><td><b>Attach</b></td><td> A database will be attached to the connection. The action-specific arguments are the database file name and a null value. </td></tr>
+<tr valign="top"><td><b>Detach</b></td><td> A database will be detached from the connection. The action-specific arguments are the database name and a null value. </td></tr>
+<tr valign="top"><td><b>AlterTable</b></td><td> The schema of a table will be altered. The action-specific arguments are the database name and the table name. </td></tr>
+<tr valign="top"><td><b>Reindex</b></td><td> An index will be deleted and then recreated. The action-specific arguments are the index name and a null value. </td></tr>
+<tr valign="top"><td><b>Analyze</b></td><td> A table will be analyzed to gathers statistics about it. The action-specific arguments are the table name and a null value. </td></tr>
+<tr valign="top"><td><b>CreateVtable</b></td><td> A virtual table will be created. The action-specific arguments are the table name and the module name. </td></tr>
+<tr valign="top"><td><b>DropVtable</b></td><td> A virtual table will be dropped. The action-specific arguments are the table name and the module name. </td></tr>
+<tr valign="top"><td><b>Function</b></td><td> A SQL function will be called. The action-specific arguments are a null value and the function name. </td></tr>
+<tr valign="top"><td><b>Savepoint</b></td><td> A savepoint will be created, released, or rolled back. The action-specific arguments are the name of the operation (BEGIN, RELEASE, or ROLLBACK) and the savepoint name. </td></tr>
+<tr valign="top"><td><b>Recursive</b></td><td> A recursive query will be executed. The action-specific arguments are two null values. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteAuthorizerActionCode%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

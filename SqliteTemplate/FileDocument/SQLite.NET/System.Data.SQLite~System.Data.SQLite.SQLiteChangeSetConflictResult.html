@@ -1,0 +1,66 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteChangeSetConflictResult Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteChangeSetConflictResult Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> This enumerated type represents the result of a user-defined conflict resolution callback. </p>
+      <div class="syntax">
+        <div>public enum SQLiteChangeSetConflictResult</div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>Omit</b></td><td> If a conflict callback returns this value no special action is taken. The change that caused the conflict is not applied. The application of changes continues with the next change. </td></tr>
+<tr valign="top"><td><b>Replace</b></td><td> This value may only be returned from a conflict callback if the type of conflict was <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">Data</a> or <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">Conflict</a>. If this is not the case, any changes applied so far are rolled back and the call to <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> will raise a <a href="System.Data.SQLite~System.Data.SQLite.SQLiteException.html">SQLiteException</a> with an error code of <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">Misuse</a>. If this value is returned for a <b>Data</b> conflict, then the conflicting row is either updated or deleted, depending on the type of change. If this value is returned for a <b>Conflict</b> conflict, then the conflicting row is removed from the database and a second attempt to apply the change is made. If this second attempt fails, the original row is restored to the database before continuing. </td></tr>
+<tr valign="top"><td><b>Abort</b></td><td> If this value is returned, any changes applied so far are rolled back and the call to <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> will raise a <a href="System.Data.SQLite~System.Data.SQLite.SQLiteException.html">SQLiteException</a> with an error code of <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">Abort</a>. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteChangeSetConflictResult%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

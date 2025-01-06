@@ -1,0 +1,68 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteChangeSetConflictType Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteChangeSetConflictType Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> This enumerated type represents a type of conflict seen when apply changes from a change set or patch set. </p>
+      <div class="syntax">
+        <div>public enum SQLiteChangeSetConflictType</div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>Data</b></td><td> This value is seen when processing a DELETE or UPDATE change if a row with the required PRIMARY KEY fields is present in the database, but one or more other (non primary-key) fields modified by the update do not contain the expected "before" values. </td></tr>
+<tr valign="top"><td><b>NotFound</b></td><td> This value is seen when processing a DELETE or UPDATE change if a row with the required PRIMARY KEY fields is not present in the database. There is no conflicting row in this case. The results of invoking the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.GetConflictValue.html">GetConflictValue</a> method are undefined. </td></tr>
+<tr valign="top"><td><b>Conflict</b></td><td> This value is seen when processing an INSERT change if the operation would result in duplicate primary key values. The conflicting row in this case is the database row with the matching primary key. </td></tr>
+<tr valign="top"><td><b>Constraint</b></td><td> If a non-foreign key constraint violation occurs while applying a change (i.e. a UNIQUE, CHECK or NOT NULL constraint), the conflict callback will see this value. There is no conflicting row in this case. The results of invoking the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.GetConflictValue.html">GetConflictValue</a> method are undefined. </td></tr>
+<tr valign="top"><td><b>ForeignKey</b></td><td> If foreign key handling is enabled, and applying a changes leaves the database in a state containing foreign key violations, this value will be seen exactly once before the changes are committed. If the conflict handler <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">Omit</a>, the changes, including those that caused the foreign key constraint violation, are committed. Or, if it returns <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">Abort</a>, the changes are rolled back. No current or conflicting row information is provided. The only method it is possible to call on the supplied <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html">ISQLiteChangeSetMetadataItem</a> object is <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.NumberOfForeignKeyConflicts.html">NumberOfForeignKeyConflicts</a>. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteChangeSetConflictType%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

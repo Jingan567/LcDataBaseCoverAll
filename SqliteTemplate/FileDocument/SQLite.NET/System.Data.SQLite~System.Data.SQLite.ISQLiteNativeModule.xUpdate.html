@@ -1,0 +1,110 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xUpdate Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xUpdate Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xUpdate)(
+  sqlite3_vtab *pVTab,
+  int argc,
+  sqlite3_value **argv,
+  sqlite_int64 *pRowid
+);
+</pre>
+      </p>
+      <p> All changes to a virtual table are made using the xUpdate method. This one method can be used to insert, delete, or update. </p>
+      <p> The argc parameter specifies the number of entries in the argv array. The value of argc will be 1 for a pure delete operation or N+2 for an insert or replace or update where N is the number of columns in the table. In the previous sentence, N includes any hidden columns. </p>
+      <p> Every argv entry will have a non-NULL value in C but may contain the SQL value NULL. In other words, it is always true that <tt>argv[i]!=0</tt> for <b>i</b> between 0 and <tt>argc-1</tt>. However, it might be the case that <tt>sqlite3_value_type(argv[i])==SQLITE_NULL</tt>. </p>
+      <p> The argv[0] parameter is the rowid of a row in the virtual table to be deleted. If argv[0] is an SQL NULL, then no deletion occurs. </p>
+      <p> The argv[1] parameter is the rowid of a new row to be inserted into the virtual table. If argv[1] is an SQL NULL, then the implementation must choose a rowid for the newly inserted row. Subsequent argv[] entries contain values of the columns of the virtual table, in the order that the columns were declared. The number of columns will match the table declaration that the xConnect or xCreate method made using the sqlite3_declare_vtab() call. All hidden columns are included. </p>
+      <p> When doing an insert without a rowid (argc&gt;1, argv[1] is an SQL NULL), on a virtual table that uses ROWID (but not on a WITHOUT ROWID virtual table), the implementation must set *pRowid to the rowid of the newly inserted row; this will become the value returned by the sqlite3_last_insert_rowid() function. Setting this value in all the other cases is a harmless no-op; the SQLite engine ignores the *pRowid return value if argc==1 or argv[1] is not an SQL NULL. </p>
+      <p> Each call to xUpdate will fall into one of cases shown below. Not that references to <b>argv[i]</b> mean the SQL value held within the argv[i] object, not the argv[i] object itself. </p>
+      <p>
+        <pre class="code"><dl><dt><b>argc = 1 <br> argv[0] ≠ NULL</b></dt><dd>
+            DELETE: The single row with rowid or PRIMARY KEY equal to argv[0] is deleted. 
+            No insert occurs.
+            </dd><dt><b>argc &gt; 1 <br> argv[0] = NULL</b></dt><dd>
+            INSERT: A new row is inserted with column values taken from
+            argv[2] and following.  In a rowid virtual table, if argv[1] is an SQL NULL,
+            then a new unique rowid is generated automatically.  The argv[1] will be NULL
+            for a WITHOUT ROWID virtual table, in which case the implementation should
+            take the PRIMARY KEY value from the appropriate column in argv[2] and following.
+            </dd><dt><b>argc &gt; 1 <br> argv[0] ≠ NULL <br> argv[0] = argv[1]</b></dt><dd>
+            UPDATE:
+            The row with rowid or PRIMARY KEY argv[0] is updated with new values 
+            in argv[2] and following parameters.
+            </dd><dt><b>argc &gt; 1 <br> argv[0] ≠ NULL <br> argv[0] ≠ argv[1]</b></dt><dd>
+            UPDATE with rowid or PRIMARY KEY change:
+            The row with rowid or PRIMARY KEY argv[0] is updated with 
+            the rowid or PRIMARY KEY in argv[1] 
+            and new values in argv[2] and following parameters. This will occur 
+            when an SQL statement updates a rowid, as in the statement:
+            <p><pre class="code">
+               UPDATE table SET rowid=rowid+1 WHERE ...; 
+            </pre></p></dd></dl></pre>
+      </p>
+      <p> The xUpdate method must return SQLITE_OK if and only if it is successful. If a failure occurs, the xUpdate must return an appropriate error code. On a failure, the pVTab-&gt;zErrMsg element may optionally be replaced with error message text stored in memory allocated from SQLite using functions such as sqlite3_mprintf() or sqlite3_malloc(). </p>
+      <p> If the xUpdate method violates some constraint of the virtual table (including, but not limited to, attempting to store a value of the wrong datatype, attempting to store a value that is too large or too small, or attempting to change a read-only value) then the xUpdate must fail with an appropriate error code. </p>
+      <p> If the xUpdate method is performing an UPDATE, then sqlite3_value_nochange(X) can be used to discover which columns of the virtual table were actually modified by the UPDATE statement. The sqlite3_value_nochange(X) interface returns true for columns that do not change. On every UPDATE, SQLite will first invoke xColumn separately for each unchanging column in the table to obtain the value for that column. The xColumn method can check to see if the column is unchanged at the SQL level by invoking sqlite3_vtab_nochange(). If xColumn sees that the column is not being modified, it should return without setting a result using one of the sqlite3_result_xxxxx() interfaces. Only in that case sqlite3_value_nochange() will be true within the xUpdate method. If xColumn does invoke one or more sqlite3_result_xxxxx() interfaces, then SQLite understands that as a change in the value of the column and the sqlite3_value_nochange() call for that column within xUpdate will return false. </p>
+      <p> There might be one or more sqlite3_vtab_cursor objects open and in use on the virtual table instance and perhaps even on the row of the virtual table when the xUpdate method is invoked. The implementation of xUpdate must be prepared for attempts to delete or modify rows of the table out from other existing cursors. If the virtual table cannot accommodate such changes, the xUpdate method must return an error code. </p>
+      <p> The xUpdate method is optional. If the xUpdate pointer in the sqlite3_module for a virtual table is a NULL pointer, then the virtual table is read-only. </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xUpdate(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a> <i>rowId</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pVtab</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dt>
+          <i>argc</i>
+        </dt>
+        <dd> The number of new or modified column values contained in <i>argv</i>. </dd>
+        <dt>
+          <i>argv</i>
+        </dt>
+        <dd> The array of native pointers to sqlite3_value structures containing the new or modified column values, if any. </dd>
+        <dt>
+          <i>rowId</i>
+        </dt>
+        <dd> Upon success, this parameter must be modified to contain the unique integer row identifier for the row that was inserted, if any. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xUpdate Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xBestIndex Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xBestIndex Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> SQLite uses the xBestIndex method of a virtual table module to determine the best way to access the virtual table. The xBestIndex method has a prototype like this: </p>
+      <p>
+        <pre class="code">int (*xBestIndex)(sqlite3_vtab *pVTab, sqlite3_index_info*);
+</pre>
+      </p>
+      <p> The SQLite core communicates with the xBestIndex method by filling in certain fields of the sqlite3_index_info structure and passing a pointer to that structure into xBestIndex as the second parameter. The xBestIndex method fills out other fields of this structure which forms the reply. The sqlite3_index_info structure looks like this: </p>
+      <p>
+        <pre class="code">struct sqlite3_index_info {
+  /* Inputs */
+  const int nConstraint;     /* Number of entries in aConstraint */
+  const struct sqlite3_index_constraint {
+     int iColumn;              /* Column constrained.  -1 for ROWID */
+     unsigned char op;         /* Constraint operator */
+     unsigned char usable;     /* True if this constraint is usable */
+     int iTermOffset;          /* Used internally - xBestIndex should ignore */
+  } *const aConstraint;      /* Table of WHERE clause constraints */
+  const int nOrderBy;        /* Number of terms in the ORDER BY clause */
+  const struct sqlite3_index_orderby {
+     int iColumn;              /* Column number */
+     unsigned char desc;       /* True for DESC.  False for ASC. */
+  } *const aOrderBy;         /* The ORDER BY clause */
+  /* Outputs */
+  struct sqlite3_index_constraint_usage {
+    int argvIndex;           /* if &gt;0, constraint is part of argv to xFilter */
+    unsigned char omit;      /* Do not code a test for this constraint */
+  } *const aConstraintUsage;
+  int idxNum;                /* Number used to identify the index */
+  char *idxStr;              /* String, possibly obtained from sqlite3_malloc */
+  int needToFreeIdxStr;      /* Free idxStr using sqlite3_free() if true */
+  int orderByConsumed;       /* True if output is already ordered */
+  double estimatedCost;      /* Estimated cost of using this index */
+  <b>/* Fields below are only available in SQLite 3.8.2 and later */</b>
+  sqlite3_int64 estimatedRows;    /* Estimated number of rows returned */
+  <b>/* Fields below are only available in SQLite 3.9.0 and later */</b>
+  int idxFlags;              /* Mask of SQLITE_INDEX_SCAN_* flags */
+  <b>/* Fields below are only available in SQLite 3.10.0 and later */</b>
+  sqlite3_uint64 colUsed;    /* Input: Mask of columns used by statement */
+};
+</pre>
+      </p>
+      <p> Note the warnings on the "estimatedRows", "idxFlags", and colUsed fields. These fields were added with SQLite versions 3.8.2, 3.9.0, and 3.10.0, respectively. Any extension that reads or writes these fields must first check that the version of the SQLite library in use is greater than or equal to appropriate version - perhaps comparing the value returned from sqlite3_libversion_number() against constants 3008002, 3009000, and/or 3010000. The result of attempting to access these fields in an sqlite3_index_info structure created by an older version of SQLite are undefined. </p>
+      <p> In addition, there are some defined constants: </p>
+      <p>
+        <pre class="code">#define SQLITE_INDEX_CONSTRAINT_EQ         2
+#define SQLITE_INDEX_CONSTRAINT_GT         4
+#define SQLITE_INDEX_CONSTRAINT_LE         8
+#define SQLITE_INDEX_CONSTRAINT_LT        16
+#define SQLITE_INDEX_CONSTRAINT_GE        32
+#define SQLITE_INDEX_CONSTRAINT_MATCH     64
+#define SQLITE_INDEX_CONSTRAINT_LIKE      65  /* 3.10.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_GLOB      66  /* 3.10.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_REGEXP    67  /* 3.10.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_NE        68  /* 3.21.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_ISNOT     69  /* 3.21.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_ISNOTNULL 70  /* 3.21.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_ISNULL    71  /* 3.21.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_IS        72  /* 3.21.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_LIMIT     73  /* 3.38.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_OFFSET    74  /* 3.38.0 and later */
+#define SQLITE_INDEX_CONSTRAINT_FUNCTION 150  /* 3.25.0 and later */
+#define SQLITE_INDEX_SCAN_UNIQUE           1  /* Scan visits at most 1 row */
+</pre>
+      </p>
+      <p> Use the sqlite3_vtab_collation() interface to find the name of the collating sequence that should be used when evaluating the i-th constraint: </p>
+      <p>
+        <pre class="code">const char *sqlite3_vtab_collation(sqlite3_index_info*, int i);
+</pre>
+      </p>
+      <p> The SQLite core calls the xBestIndex method when it is compiling a query that involves a virtual table. In other words, SQLite calls this method when it is running sqlite3_prepare() or the equivalent. By calling this method, the SQLite core is saying to the virtual table that it needs to access some subset of the rows in the virtual table and it wants to know the most efficient way to do that access. The xBestIndex method replies with information that the SQLite core can then use to conduct an efficient search of the virtual table. </p>
+      <p> While compiling a single SQL query, the SQLite core might call xBestIndex multiple times with different settings in sqlite3_index_info. The SQLite core will then select the combination that appears to give the best performance. </p>
+      <p> Before calling this method, the SQLite core initializes an instance of the sqlite3_index_info structure with information about the query that it is currently trying to process. This information derives mainly from the WHERE clause and ORDER BY or GROUP BY clauses of the query, but also from any ON or USING clauses if the query is a join. The information that the SQLite core provides to the xBestIndex method is held in the part of the structure that is marked as "Inputs". The "Outputs" section is initialized to zero. </p>
+      <p> The information in the sqlite3_index_info structure is ephemeral and may be overwritten or deallocated as soon as the xBestIndex method returns. If the xBestIndex method needs to remember any part of the sqlite3_index_info structure, it should make a copy. Care must be take to store the copy in a place where it will be deallocated, such as in the idxStr field with needToFreeIdxStr set to 1. </p>
+      <p> Note that xBestIndex will always be called before xFilter, since the idxNum and idxStr outputs from xBestIndex are required inputs to xFilter. However, there is no guarantee that xFilter will be called following a successful xBestIndex. </p>
+      <p> The xBestIndex method is required for every virtual table implementation. </p>
+      <p> The main thing that the SQLite core is trying to communicate to the virtual table is the constraints that are available to limit the number of rows that need to be searched. The aConstraint[] array contains one entry for each constraint. There will be exactly nConstraint entries in that array. </p>
+      <p> Each constraint will usually correspond to a term in the WHERE clause or in a USING or ON clause that is of the form </p>
+      <p>
+        <pre class="code">     column  OP  EXPR
+</pre>
+      </p>
+      <p> Where "column" is a column in the virtual table, OP is an operator like "=" or "&lt;", and EXPR is an arbitrary expression. So, for example, if the WHERE clause contained a term like this: </p>
+      <p>
+        <pre class="code">a = 5
+</pre>
+      </p>
+      <p> Then one of the constraints would be on the "a" column with operator "=" and an expression of "5". Constraints need not have a literal representation of the WHERE clause. The query optimizer might make transformations to the WHERE clause in order to extract as many constraints as it can. So, for example, if the WHERE clause contained something like this: </p>
+      <p>
+        <pre class="code">x BETWEEN 10 AND 100 AND 999&gt;y
+</pre>
+      </p>
+      <p> The query optimizer might translate this into three separate constraints: </p>
+      <p>
+        <pre class="code">x &gt;= 10
+x &lt;= 100
+y &lt; 999
+</pre>
+      </p>
+      <p> For each such constraint, the aConstraint[].iColumn field indicates which column appears on the left-hand side of the constraint. The first column of the virtual table is column 0. The rowid of the virtual table is column -1. The aConstraint[].op field indicates which operator is used. The SQLITE_INDEX_CONSTRAINT_* constants map integer constants into operator values. Columns occur in the order they were defined by the call to sqlite3_declare_vtab() in the xCreate or xConnect method. Hidden columns are counted when determining the column index. </p>
+      <p> If the xFindFunction() method for the virtual table is defined, and if xFindFunction() sometimes returns SQLITE_INDEX_CONSTRAINT_FUNCTION or larger, then the constraints might also be of the form: </p>
+      <p>
+        <pre class="code">     FUNCTION( column, EXPR)
+</pre>
+      </p>
+      <p> In this case the aConstraint[].op value is the same as the value returned by xFindFunction() for FUNCTION. </p>
+      <p> The aConstraint[] array contains information about all constraints that apply to the virtual table. But some of the constraints might not be usable because of the way tables are ordered in a join. The xBestIndex method must therefore only consider constraints that have an aConstraint[].usable flag which is true. </p>
+      <p> In addition to WHERE clause constraints, the SQLite core also tells the xBestIndex method about the ORDER BY clause. (In an aggregate query, the SQLite core might put in GROUP BY clause information in place of the ORDER BY clause information, but this fact should not make any difference to the xBestIndex method.) If all terms of the ORDER BY clause are columns in the virtual table, then nOrderBy will be the number of terms in the ORDER BY clause and the aOrderBy[] array will identify the column for each term in the order by clause and whether or not that column is ASC or DESC. </p>
+      <p> In SQLite version 3.10.0 (2016-01-06) and later, the colUsed field is available to indicate which fields of the virtual table are actually used by the statement being prepared. If the lowest bit of colUsed is set, that means that the first column is used. The second lowest bit corresponds to the second column. And so forth. If the most significant bit of colUsed is set, that means that one or more columns other than the first 63 columns are used. If column usage information is needed by the xFilter method, then the required bits must be encoded into either the output idxNum field or idxStr content. </p>
+      <p> For the LIKE, GLOB, REGEXP, and MATCH operators, the aConstraint[].iColumn value is the virtual table column that is the left operand of the operator. However, if these operators are expressed as function calls instead of operators, then the aConstraint[].iColumn value references the virtual table column that is the second argument to that function: </p>
+      <p>
+        <pre class="code">LIKE(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
+GLOB(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
+REGEXP(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
+MATCH(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br></pre>
+      </p>
+      <p> Hence, as far as the xBestIndex() method is concerned, the following two forms are equivalent: </p>
+      <p>
+        <pre class="code">
+          <i xmlns="urn:ndoc-schema">column</i> LIKE <i xmlns="urn:ndoc-schema">EXPR</i><br>
+      LIKE(<i xmlns="urn:ndoc-schema">EXPR</i>,<i xmlns="urn:ndoc-schema">column</i>)
+      </pre>
+      </p>
+      <p> This special behavior of looking at the second argument of a function only occurs for the LIKE, GLOB, REGEXP, and MATCH functions. For all other functions, the aConstraint[].iColumn value references the first argument of the function. </p>
+      <p> This special feature of LIKE, GLOB, REGEXP, and MATCH does not apply to the xFindFunction() method, however. The xFindFunction() method always keys off of the left operand of an LIKE, GLOB, REGEXP, or MATCH operator but off of the first argument to function-call equivalents of those operators. </p>
+      <p> When aConstraint[].op is one of SQLITE_INDEX_CONSTRAINT_LIMIT or SQLITE_INDEX_CONSTRAINT_OFFSET, that indicates that there is a LIMIT or OFFSET clause on the SQL query statement that is using the virtual table. The LIMIT and OFFSET operators have no left operand, and so when aConstraint[].op is one of SQLITE_INDEX_CONSTRAINT_LIMIT or SQLITE_INDEX_CONSTRAINT_OFFSET then the aConstraint[].iColumn value is meaningless and should not be used. </p>
+      <p> The sqlite3_vtab_rhs_value() interface can be used to try to access the right-hand operand of a constraint. However, the value of a right-hand operator might not be known at the time that the xBestIndex method is run, so the sqlite3_vtab_rhs_value() call might not be successful. Usually the right operand of a constraint is only available to xBestIndex if it is coded as a literal value in the input SQL. If the right operand is coded as an expression or a host parameter, it probably will not be accessible to xBestIndex. Some operators, such as SQLITE_INDEX_CONSTRAINT_ISNULL and SQLITE_INDEX_CONSTRAINT_ISNOTNULL have no right-hand operand. The sqlite3_vtab_rhs_value() interface always returns SQLITE_NOTFOUND for such operators. </p>
+      <p> Given all of the information above, the job of the xBestIndex method it to figure out the best way to search the virtual table. </p>
+      <p> The xBestIndex method conveys an indexing strategy to the xFilter method through the idxNum and idxStr fields. The idxNum value and idxStr string content are arbitrary as far as the SQLite core is concerned and can have any meaning as long as xBestIndex and xFilter agree on what that meaning is. The SQLite core just copies the information from xBestIndex through to the xFilter method, assuming only that the char sequence referenced via idxStr is NUL terminated. </p>
+      <p> The idxStr value may be a string obtained from an SQLite memory allocation function such as sqlite3_mprintf(). If this is the case, then the needToFreeIdxStr flag must be set to true so that the SQLite core will know to call sqlite3_free() on that string when it has finished with it, and thus avoid a memory leak. The idxStr value may also be a static constant string, in which case the needToFreeIdxStr boolean should remain false. </p>
+      <p> The estimatedCost field should be set to the estimated number of disk access operations required to execute this query against the virtual table. The SQLite core will often call xBestIndex multiple times with different constraints, obtain multiple cost estimates, then choose the query plan that gives the lowest estimate. The SQLite core initializes estimatedCost to a very large value prior to invoking xBestIndex, so if xBestIndex determines that the current combination of parameters is undesirable, it can leave the estimatedCost field unchanged to discourage its use. </p>
+      <p> If the current version of SQLite is 3.8.2 or greater, the estimatedRows field may be set to an estimate of the number of rows returned by the proposed query plan. If this value is not explicitly set, the default estimate of 25 rows is used. </p>
+      <p> If the current version of SQLite is 3.9.0 or greater, the idxFlags field may be set to SQLITE_INDEX_SCAN_UNIQUE to indicate that the virtual table will return only zero or one rows given the input constraints. Additional bits of the idxFlags field might be understood in later versions of SQLite. </p>
+      <p> The aConstraintUsage[] array contains one element for each of the nConstraint constraints in the inputs section of the sqlite3_index_info structure. The aConstraintUsage[] array is used by xBestIndex to tell the core how it is using the constraints. </p>
+      <p> The xBestIndex method may set aConstraintUsage[].argvIndex entries to values greater than zero. Exactly one entry should be set to 1, another to 2, another to 3, and so forth up to as many or as few as the xBestIndex method wants. The EXPR of the corresponding constraints will then be passed in as the argv[] parameters to xFilter. </p>
+      <p> For example, if the aConstraint[3].argvIndex is set to 1, then when xFilter is called, the argv[0] passed to xFilter will have the EXPR value of the aConstraint[3] constraint. </p>
+      <p> By default, the SQLite generates bytecode that will double checks all constraints on each row of the virtual table to verify that they are satisfied. If the virtual table can guarantee that a constraint will always be satisfied, it can try to suppress that double-check by setting aConstraintUsage[].omit. However, with some exceptions, this is only a hint and there is no guarantee that the redundant check of the constraint will be suppressed. Key points: </p><ul><li> The omit flag is only honored if the argvIndex value for the constraint is greater than 0 and less than or equal to 16. Constraint checking is never suppressed for constraints that do not pass their right operand into the xFilter method. The current implementation is only able to suppress redundant constraint checking for the first 16 values passed to xFilter, though that limitation might be increased in future releases. </li><li> The omit flag is always honored for SQLITE_INDEX_CONSTRAINT_OFFSET constraints as long as argvIndex is greater than 0. Setting the omit flag on an SQLITE_INDEX_CONSTRAINT_OFFSET constraint indicates to SQLite that the virtual table will itself suppress the first N rows of output, where N is the right operand of the OFFSET operator. If the virtual table implementation sets omit on an SQLITE_INDEX_CONSTRAINT_OFFSET constraint but then fails to suppress the first N rows of output, an incorrect answer will result from the overall query. </li></ul><p> If the virtual table will output rows in the order specified by the ORDER BY clause, then the orderByConsumed flag may be set to true. If the output is not automatically in the correct order then orderByConsumed must be left in its default false setting. This will indicate to the SQLite core that it will need to do a separate sorting pass over the data after it comes out of the virtual table. Setting orderByConsumed is an optimization. A query will always get the correct answer if orderByConsumed is left at its default value (0). Unnecessary sort operations might be avoided resulting in a faster query if orderByConsumed is set, but setting orderByConsumed incorrectly can result in an incorrect answer. It is suggested that new virtual table implementations leave the orderByConsumed value unset initially, and then after everything else is known to be working correctly, go back and attempt to optimize by setting orderByConsumed where appropriate. </p><p> Sometimes the orderByConsumed flag can be safely set even if the outputs from the virtual table are not strictly in the order specified by nOrderBy and aOrderBy. If the sqlite3_vtab_distinct() interface returns 1 or 2, that indicates that the ordering can be relaxed. See the documentation on sqlite3_vtab_distinct() for further information. </p><p> The xBestIndex method should return SQLITE_OK on success. If any kind of fatal error occurs, an appropriate error code (ex: SQLITE_NOMEM) should be returned instead. </p><p> If xBestIndex returns SQLITE_CONSTRAINT, that does not indicate an error. Rather, SQLITE_CONSTRAINT indicates that the particular combination of input parameters specified is insufficient for the virtual table to do its job. This is logically the same as setting the estimatedCost to infinity. If every call to xBestIndex for a particular query plan returns SQLITE_CONSTRAINT, that means there is no way for the virtual table to be safely used, and the sqlite3_prepare() call will fail with a "no query solution" error. </p><p> The SQLITE_CONSTRAINT return from xBestIndex is useful for table-valued functions that have required parameters. If the aConstraint[].usable field is false for one of the required parameter, then the xBestIndex method should return SQLITE_CONSTRAINT. If a required field does not appear in the aConstraint[] array at all, that means that the corresponding parameter is omitted from the input SQL. In that case, xBestIndex should set an error message in pVTab-&gt;zErrMsg and return SQLITE_ERROR. To summarize: </p><ol><li> The aConstraint[].usable value for a required parameter is false <big xmlns="urn:ndoc-schema">→</big> return SQLITE_CONSTRAINT. </li><li> A required parameter does not appears anywhere in the aConstraint[] array <big xmlns="urn:ndoc-schema">→</big> Set an error message in pVTab-&gt;zErrMsg and return SQLITE_ERROR </li></ol><p> The following example will better illustrate the use of SQLITE_CONSTRAINT as a return value from xBestIndex: </p><p><pre class="code">SELECT * FROM realtab, tablevaluedfunc(realtab.x);
+</pre></p><p> Assuming that the first hidden column of "tablevaluedfunc" is "param1", the query above is semantically equivalent to this: </p><p><pre class="code">SELECT * FROM realtab, tablevaluedfunc
+ WHERE tablevaluedfunc.param1 = realtab.x;
+</pre></p><p> The query planner must decide between many possible implementations of this query, but two plans in particular are of note: </p><ol><li>Scan all rows of realtab and for each row, find rows in tablevaluedfunc where param1 is equal to realtab.x </li><li>Scan all rows of tablevalued func and for each row find rows in realtab where x is equal to tablevaluedfunc.param1. </li></ol><p> The xBestIndex method will be invoked once for each of the potential plans above. For plan 1, the aConstraint[].usable flag for the SQLITE_CONSTRAINT_EQ constraint on the param1 column will be true because the right-hand side value for the "param1 = ?" constraint will be known, since it is determined by the outer realtab loop. But for plan 2, the aConstraint[].usable flag for "param1 = ?" will be false because the right-hand side value is determined by an inner loop and is thus an unknown quantity. Because param1 is a required input to the table-valued functions, the xBestIndex method should return SQLITE_CONSTRAINT when presented with plan 2, indicating that a required input is missing. This forces the query planner to select plan 1. </p><div class="syntax"><a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xBestIndex(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pIndex</i><br />);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>pVtab</i></dt><dd> The native pointer to the sqlite3_vtab derived structure. </dd><dt><i>pIndex</i></dt><dd> The native pointer to the sqlite3_index_info structure. </dd></dl><h4 class="dtH4">Return Value</h4><p> A standard SQLite return code. </p><h4 class="dtH4">See Also</h4><p><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p><hr /><div id="footer"><p><a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xBestIndex Method ">Send comments on this topic.</a></p><p></p><p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p></div></div>
+  </body>
+</html>

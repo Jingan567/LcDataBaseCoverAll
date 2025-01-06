@@ -1,0 +1,68 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SessionTableFilterCallback Delegate</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SessionTableFilterCallback Delegate</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> This callback is invoked when a determination must be made about whether changes to a specific table should be tracked -OR- applied. It will not be called for tables that are already attached to a <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.html">ISQLiteSession</a>. </p>
+      <div class="syntax">
+        <div>public delegate <a href="http://msdn.microsoft.com/en-us/library/System.Boolean(VS.90).aspx">bool</a> SessionTableFilterCallback(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a> <i>clientData</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>name</i><br />);</div>
+      </div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>clientData</i>
+        </dt>
+        <dd> The optional application-defined context data that was originally passed to the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetTableFilter.html">SetTableFilter</a> or <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> methods. This value may be null. </dd>
+        <dt>
+          <i>name</i>
+        </dt>
+        <dd> The name of the table. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> Non-zero if changes to the table should be considered; otherwise, zero. Throwing an exception from this callback will result in undefined behavior. </p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SessionTableFilterCallback%20Delegate">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

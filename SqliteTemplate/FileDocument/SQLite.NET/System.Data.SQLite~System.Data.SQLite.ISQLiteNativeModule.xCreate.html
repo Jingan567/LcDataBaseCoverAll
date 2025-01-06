@@ -1,0 +1,134 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xCreate Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xCreate Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xCreate)(sqlite3 *db, void *pAux,
+             int argc, char *const*argv,
+             sqlite3_vtab **ppVTab,
+             char **pzErr);
+</pre>
+      </p>
+      <p> The xCreate method is called to create a new instance of a virtual table in response to a CREATE VIRTUAL TABLE statement. If the xCreate method is the same pointer as the xConnect method, then the virtual table is an eponymous virtual table. If the xCreate method is omitted (if it is a NULL pointer) then the virtual table is an eponymous-only virtual table. </p>
+      <p> The db parameter is a pointer to the SQLite database connection that is executing the CREATE VIRTUAL TABLE statement. The pAux argument is the copy of the client data pointer that was the fourth argument to the sqlite3_create_module() or sqlite3_create_module_v2() call that registered the virtual table module. The argv parameter is an array of argc pointers to null terminated strings. The first string, argv[0], is the name of the module being invoked. The module name is the name provided as the second argument to sqlite3_create_module() and as the argument to the USING clause of the CREATE VIRTUAL TABLE statement that is running. The second, argv[1], is the name of the database in which the new virtual table is being created. The database name is "main" for the primary database, or "temp" for TEMP database, or the name given at the end of the ATTACH statement for attached databases. The third element of the array, argv[2], is the name of the new virtual table, as specified following the TABLE keyword in the CREATE VIRTUAL TABLE statement. If present, the fourth and subsequent strings in the argv[] array report the arguments to the module name in the CREATE VIRTUAL TABLE statement. </p>
+      <p> The job of this method is to construct the new virtual table object (an sqlite3_vtab object) and return a pointer to it in *ppVTab. </p>
+      <p> As part of the task of creating a new sqlite3_vtab structure, this method <u xmlns="urn:ndoc-schema">must</u> invoke sqlite3_declare_vtab() to tell the SQLite core about the columns and datatypes in the virtual table. The sqlite3_declare_vtab() API has the following prototype: </p>
+      <p>
+        <pre class="code">int sqlite3_declare_vtab(sqlite3 *db, const char *zCreateTable)
+</pre>
+      </p>
+      <p> The first argument to sqlite3_declare_vtab() must be the same database connection pointer as the first parameter to this method. The second argument to sqlite3_declare_vtab() must a zero-terminated UTF-8 string that contains a well-formed CREATE TABLE statement that defines the columns in the virtual table and their data types. The name of the table in this CREATE TABLE statement is ignored, as are all constraints. Only the column names and datatypes matter. The CREATE TABLE statement string need not to be held in persistent memory. The string can be deallocated and/or reused as soon as the sqlite3_declare_vtab() routine returns. </p>
+      <p> The xConnect method can also optionally request special features for the virtual table by making one or more calls to the sqlite3_vtab_config() interface: </p>
+      <p>
+        <pre class="code">int sqlite3_vtab_config(sqlite3 *db, int op, ...);
+</pre>
+      </p>
+      <p> Calls to sqlite3_vtab_config() are optional. But for maximum security, it is recommended that virtual table implementations invoke "sqlite3_vtab_config(db, SQLITE_VTAB_DIRECTONLY)" if the virtual table will not be used from inside of triggers or views. </p>
+      <p> The xCreate method need not initialize the pModule, nRef, and zErrMsg fields of the sqlite3_vtab object. The SQLite core will take care of that chore. </p>
+      <p> The xCreate should return SQLITE_OK if it is successful in creating the new virtual table, or SQLITE_ERROR if it is not successful. If not successful, the sqlite3_vtab structure must not be allocated. An error message may optionally be returned in *pzErr if unsuccessful. Space to hold the error message string must be allocated using an SQLite memory allocation function like sqlite3_malloc() or sqlite3_mprintf() as the SQLite core will attempt to free the space using sqlite3_free() after the error has been reported up to the application. </p>
+      <p> If the xCreate method is omitted (left as a NULL pointer) then the virtual table is an eponymous-only virtual table. New instances of the virtual table cannot be created using CREATE VIRTUAL TABLE and the virtual table can only be used via its module name. Note that SQLite versions prior to 3.9.0 (2015-10-14) do not understand eponymous-only virtual tables and will segfault if an attempt is made to CREATE VIRTUAL TABLE on an eponymous-only virtual table because the xCreate method was not checked for null. </p>
+      <p> If the xCreate method is the exact same pointer as the xConnect method, that indicates that the virtual table does not need to initialize backing store. Such a virtual table can be used as an eponymous virtual table or as a named virtual table using CREATE VIRTUAL TABLE or both. </p>
+      <p> If a column datatype contains the special keyword "HIDDEN" (in any combination of upper and lower case letters) then that keyword it is omitted from the column datatype name and the column is marked as a hidden column internally. A hidden column differs from a normal column in three respects: </p>
+      <p><ul><li> Hidden columns are not listed in the dataset returned by "PRAGMA table_info", </li><li> Hidden columns are not included in the expansion of a "*" expression in the result set of a SELECT, and </li><li> Hidden columns are not included in the implicit column-list used by an INSERT statement that lacks an explicit column-list. </li></ul></p>
+      <p> For example, if the following SQL is passed to sqlite3_declare_vtab(): </p>
+      <p>
+        <pre class="code">CREATE TABLE x(a HIDDEN VARCHAR(12), b INTEGER, c INTEGER Hidden);
+</pre>
+      </p>
+      <p> Then the virtual table would be created with two hidden columns, and with datatypes of "VARCHAR(12)" and "INTEGER". </p>
+      <p> An example use of hidden columns can be seen in the FTS3 virtual table implementation, where every FTS virtual table contains an FTS hidden column that is used to pass information from the virtual table into FTS auxiliary functions and to the FTS MATCH operator. </p>
+      <p> A virtual table that contains hidden columns can be used like a table-valued function in the FROM clause of a SELECT statement. The arguments to the table-valued function become constraints on the HIDDEN columns of the virtual table. </p>
+      <p> For example, the "generate_series" extension (located in the ext/misc/series.c file in the source tree) implements an eponymous virtual table with the following schema: </p>
+      <p>
+        <pre class="code">CREATE TABLE generate_series(
+  value,
+  start HIDDEN,
+  stop HIDDEN,
+  step HIDDEN
+);
+</pre>
+      </p>
+      <p> The sqlite3_module.xBestIndex method in the implementation of this table checks for equality constraints against the HIDDEN columns, and uses those as input parameters to determine the range of integer "value" outputs to generate. Reasonable defaults are used for any unconstrained columns. For example, to list all integers between 5 and 50: </p>
+      <p>
+        <pre class="code">SELECT value FROM generate_series(5,50);
+</pre>
+      </p>
+      <p> The previous query is equivalent to the following: </p>
+      <p>
+        <pre class="code">SELECT value FROM generate_series WHERE start=5 AND stop=50;
+</pre>
+      </p>
+      <p> Arguments on the virtual table name are matched to hidden columns in order. The number of arguments can be less than the number of hidden columns, in which case the latter hidden columns are unconstrained. However, an error results if there are more arguments than there are hidden columns in the virtual table. </p>
+      <p> Beginning with SQLite version 3.14.0 (2016-08-08), the CREATE TABLE statement that is passed into sqlite3_declare_vtab() may contain a WITHOUT ROWID clause. This is useful for cases where the virtual table rows cannot easily be mapped into unique integers. A CREATE TABLE statement that includes WITHOUT ROWID must define one or more columns as the PRIMARY KEY. Every column of the PRIMARY KEY must individually be NOT NULL and all columns for each row must be collectively unique. </p>
+      <p> Note that SQLite does not enforce the PRIMARY KEY for a WITHOUT ROWID virtual table. Enforcement is the responsibility of the underlying virtual table implementation. But SQLite does assume that the PRIMARY KEY constraint is valid - that the identified columns really are UNIQUE and NOT NULL - and it uses that assumption to optimize queries against the virtual table. </p>
+      <p> The rowid column is not accessible on a WITHOUT ROWID virtual table (of course). </p>
+      <p> The xUpdate method was originally designed around having a ROWID as a single value. The xUpdate method has been expanded to accommodate an arbitrary PRIMARY KEY in place of the ROWID, but the PRIMARY KEY must still be only one column. For this reason, SQLite will reject any WITHOUT ROWID virtual table that has more than one PRIMARY KEY column and a non-NULL xUpdate method. </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xCreate(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pDb</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pAux</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pError</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pDb</i>
+        </dt>
+        <dd> The native database connection handle. </dd>
+        <dt>
+          <i>pAux</i>
+        </dt>
+        <dd> The original native pointer value that was provided to the sqlite3_create_module(), sqlite3_create_module_v2() or sqlite3_create_disposable_module() functions. </dd>
+        <dt>
+          <i>argc</i>
+        </dt>
+        <dd> The number of arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dt>
+          <i>argv</i>
+        </dt>
+        <dd> The array of string arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dt>
+          <i>pVtab</i>
+        </dt>
+        <dd> Upon success, this parameter must be modified to point to the newly created native sqlite3_vtab derived structure. </dd>
+        <dt>
+          <i>pError</i>
+        </dt>
+        <dd> Upon failure, this parameter must be modified to point to the error message, with the underlying memory having been obtained from the sqlite3_malloc() function. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xCreate Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

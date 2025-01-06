@@ -1,0 +1,55 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteFunction.Final Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteFunction.Final Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Aggregate functions override this method to finish their aggregate processing. </p>
+      <div class="syntax">public virtual <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a> Final(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a> <i>contextData</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>contextData</i>
+        </dt>
+        <dd>Your own assigned contextData, provided for you so you can return your final results.</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>You may return most simple types as a return value, null or DBNull.Value to return null, DateTime, or you may return an Exception-derived class if you wish to return an error to SQLite. Do not actually throw the error, just return it! </p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> If you implemented your aggregate function properly, you've been recording and keeping track of your data in the contextData object provided, and now at this stage you should have all the information you need in there to figure out what to return. NOTE: It is possible to arrive here without receiving a previous call to Step(), in which case the contextData will be null. This can happen when no rows were returned. You can either return null, or 0 or some other custom return value if that is the case. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.html">SQLiteFunction Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteFunction.Final Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

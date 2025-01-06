@@ -1,0 +1,79 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xFilter Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xFilter Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xFilter)(sqlite3_vtab_cursor*, int idxNum, const char *idxStr,
+              int argc, sqlite3_value **argv);
+</pre>
+      </p>
+      <p> This method begins a search of a virtual table. The first argument is a cursor opened by xOpen. The next two arguments define a particular search index previously chosen by xBestIndex. The specific meanings of idxNum and idxStr are unimportant as long as xFilter and xBestIndex agree on what that meaning is. </p>
+      <p> The xBestIndex function may have requested the values of certain expressions using the aConstraintUsage[].argvIndex values of the sqlite3_index_info structure. Those values are passed to xFilter using the argc and argv parameters. </p>
+      <p> If the virtual table contains one or more rows that match the search criteria, then the cursor must be left point at the first row. Subsequent calls to xEof must return false (zero). If there are no rows match, then the cursor must be left in a state that will cause the xEof to return true (non-zero). The SQLite engine will use the xColumn and xRowid methods to access that row content. The xNext method will be used to advance to the next row. </p>
+      <p> This method must return SQLITE_OK if successful, or an sqlite error code if an error occurs. </p>
+      <p> The xFilter method is required for every virtual table implementation. </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xFilter(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pCursor</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>idxNum</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>idxStr</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pCursor</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_vtab_cursor derived structure. </dd>
+        <dt>
+          <i>idxNum</i>
+        </dt>
+        <dd> Number used to help identify the selected index. </dd>
+        <dt>
+          <i>idxStr</i>
+        </dt>
+        <dd> The native pointer to the UTF-8 encoded string containing the string used to help identify the selected index. </dd>
+        <dt>
+          <i>argc</i>
+        </dt>
+        <dd> The number of native pointers to sqlite3_value structures specified in <i>argv</i>. </dd>
+        <dt>
+          <i>argv</i>
+        </dt>
+        <dd> An array of native pointers to sqlite3_value structures containing filtering criteria for the selected index. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xFilter Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

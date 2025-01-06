@@ -1,0 +1,90 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteReadValueCallback Delegate</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteReadValueCallback Delegate</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> This represents a method that will be called in response to a request to read a value from a data reader. If an exception is thrown, it will cause the data reader operation to fail -AND- it will continue to unwind the call stack. </p>
+      <div class="syntax">
+        <div>public delegate <a href="http://msdn.microsoft.com/en-us/library/System.Void(VS.90).aspx">void</a> SQLiteReadValueCallback(<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConvert.html">SQLiteConvert</a> <i>convert</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a> <i>dataReader</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnectionFlags.html">SQLiteConnectionFlags</a> <i>flags</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteReadEventArgs.html">SQLiteReadEventArgs</a> <i>eventArgs</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>typeName</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>index</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a> <i>userData</i>,<br />   out <a href="http://msdn.microsoft.com/en-us/library/System.Boolean(VS.90).aspx">bool</a> <i>complete</i><br />);</div>
+      </div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>convert</i>
+        </dt>
+        <dd> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConvert.html">SQLiteConvert</a> instance in use. </dd>
+        <dt>
+          <i>dataReader</i>
+        </dt>
+        <dd> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a> instance in use. </dd>
+        <dt>
+          <i>flags</i>
+        </dt>
+        <dd> The flags associated with the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection</a> instance in use. </dd>
+        <dt>
+          <i>eventArgs</i>
+        </dt>
+        <dd> The parameter and return type data for the column being read from the data reader. </dd>
+        <dt>
+          <i>typeName</i>
+        </dt>
+        <dd> The database type name associated with this callback. </dd>
+        <dt>
+          <i>index</i>
+        </dt>
+        <dd> The zero based index of the column being read from the data reader. </dd>
+        <dt>
+          <i>userData</i>
+        </dt>
+        <dd> The data originally used when registering this callback. </dd>
+        <dt>
+          <i>complete</i>
+        </dt>
+        <dd> Non-zero if the default handling for the data reader call should be skipped. If this is set to non-zero and the necessary return value is unavailable or unsuitable, an exception will be thrown. </dd>
+      </dl>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteReadValueCallback%20Delegate">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

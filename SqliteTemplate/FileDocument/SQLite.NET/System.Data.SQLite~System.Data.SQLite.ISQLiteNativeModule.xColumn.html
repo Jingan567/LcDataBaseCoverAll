@@ -1,0 +1,70 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xColumn Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xColumn Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xColumn)(sqlite3_vtab_cursor*, sqlite3_context*, int N);
+</pre>
+      </p>
+      <p> The SQLite core invokes this method in order to find the value for the N-th column of the current row. N is zero-based so the first column is numbered 0. The xColumn method may return its result back to SQLite using one of the following interface: </p>
+      <p><ul><li> sqlite3_result_blob() </li><li> sqlite3_result_double() </li><li> sqlite3_result_int() </li><li> sqlite3_result_int64() </li><li> sqlite3_result_null() </li><li> sqlite3_result_text() </li><li> sqlite3_result_text16() </li><li> sqlite3_result_text16le() </li><li> sqlite3_result_text16be() </li><li> sqlite3_result_zeroblob() </li></ul></p>
+      <p> If the xColumn method implementation calls none of the functions above, then the value of the column defaults to an SQL NULL. </p>
+      <p> To raise an error, the xColumn method should use one of the result_text() methods to set the error message text, then return an appropriate error code. The xColumn method must return SQLITE_OK on success. </p>
+      <p> The xColumn method is required for every virtual table implementation. </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xColumn(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pCursor</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pContext</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>index</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pCursor</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_vtab_cursor derived structure. </dd>
+        <dt>
+          <i>pContext</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_context structure to be used for returning the specified column value to the SQLite core library. </dd>
+        <dt>
+          <i>index</i>
+        </dt>
+        <dd> The zero-based index corresponding to the column containing the value to be returned. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xColumn Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

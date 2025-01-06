@@ -1,0 +1,84 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteConfigDbOpsEnum Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteConfigDbOpsEnum Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> These are the supported configuration verbs for use with the native SQLite library. They are used with the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.SetConfigurationOption.html">SetConfigurationOption</a> method. </p>
+      <div class="syntax">
+        <div>public enum SQLiteConfigDbOpsEnum</div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_NONE</b></td><td> This value represents an unknown (or invalid) option, do not use it. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_MAINDBNAME</b></td><td> This option is used to change the name of the "main" database schema. The sole argument is a pointer to a constant UTF8 string which will become the new schema name in place of "main". </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_LOOKASIDE</b></td><td> This option is used to configure the lookaside memory allocator. The value must be an array with three elements. The second element must be an <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">Int32</a> containing the size of each buffer slot. The third element must be an <b>Int32</b> containing the number of slots. The first element must be an <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> that points to a native memory buffer of bytes equal to or greater than the product of the second and third element values. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_FKEY</b></td><td> This option is used to enable or disable the enforcement of foreign key constraints. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_TRIGGER</b></td><td> This option is used to enable or disable triggers. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER</b></td><td> This option is used to enable or disable the two-argument version of the fts3_tokenizer() function which is part of the FTS3 full-text search engine extension. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION</b></td><td> This option is used to enable or disable the loading of extensions. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE</b></td><td> This option is used to enable or disable the automatic checkpointing when a WAL database is closed. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_QPSG</b></td><td> This option is used to enable or disable the query planner stability guarantee (QPSG). </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_TRIGGER_EQP</b></td><td> This option is used to enable or disable the extra EXPLAIN QUERY PLAN output for trigger programs. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_RESET_DATABASE</b></td><td> This option is used as part of the process to reset a database back to an empty state. Because resetting a database is destructive and irreversible, the process requires the use of this obscure flag and multiple steps to help ensure that it does not happen by accident. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_DEFENSIVE</b></td><td> This option activates or deactivates the "defensive" flag for a database connection. When the defensive flag is enabled, language features that allow ordinary SQL to deliberately corrupt the database file are disabled. The disabled features include but are not limited to the following: &lt;ul&gt;&lt;li&gt; The PRAGMA writable_schema=ON statement. &lt;/li&gt;&lt;li&gt; The PRAGMA journal_mode=OFF statement. &lt;/li&gt;&lt;li&gt; Writes to the sqlite_dbpage virtual table. &lt;/li&gt;&lt;li&gt; Direct writes to shadow tables. &lt;/li&gt;&lt;/ul&gt;</td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_WRITABLE_SCHEMA</b></td><td> This option activates or deactivates the "writable_schema" flag. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_LEGACY_ALTER_TABLE</b></td><td> This option activates or deactivates the legacy behavior of the ALTER TABLE RENAME command such it behaves as it did prior to version 3.24.0 (2018-06-04). </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_DQS_DML</b></td><td> This option activates or deactivates the legacy double-quoted string literal misfeature for DML statement only, that is DELETE, INSERT, SELECT, and UPDATE statements. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_DQS_DDL</b></td><td> This option activates or deactivates the legacy double-quoted string literal misfeature for DDL statements, such as CREATE TABLE and CREATE INDEX. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_VIEW</b></td><td> This option is used to enable or disable CREATE VIEW. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_LEGACY_FILE_FORMAT</b></td><td> This option activates or deactivates the legacy file format flag. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_TRUSTED_SCHEMA</b></td><td> This option tells SQLite to assume that database schemas (i.e. the contents of the sqlite_master tables) are untainted by malicious content. When the trusted schema option is disabled, SQLite takes additional defensive steps to protect the application from harm including: &lt;ul&gt;&lt;li&gt; Prohibit the use of SQL functions inside triggers, views, CHECK constraints, DEFAULT clauses, expression indexes, partial indexes, or generated columns unless those functions are tagged with SQLITE_INNOCUOUS. &lt;/li&gt;&lt;li&gt; Prohibit the use of virtual tables inside of triggers or views unless those virtual tables are tagged with SQLITE_VTAB_INNOCUOUS. &lt;/ul&gt; This setting defaults to "on" for legacy compatibility, however all applications are advised to turn it off if possible. This setting can also be controlled using the PRAGMA trusted_schema statement. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_STMT_SCANSTATUS</b></td><td> This option is only useful in SQLITE_ENABLE_STMT_SCANSTATUS builds. In this case, it sets or clears a flag that enables collection of the sqlite3_stmt_scanstatus_v2() statistics. For statistics to be collected, the flag must be set on the database handle both when the SQL statement is prepared and when it is stepped. The flag is set (collection of statistics is enabled) by default. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_REVERSE_SCANORDER</b></td><td> The SQLITE_DBCONFIG_REVERSE_SCANORDER option change the default order in which tables and indexes are scanned so that the scans start at the end and work toward the beginning rather than starting at the beginning and working toward the end. Setting SQLITE_DBCONFIG_REVERSE_SCANORDER is the same as setting [PRAGMA reverse_unordered_selects]. This configuration option is useful for application testing. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConfigDbOpsEnum%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

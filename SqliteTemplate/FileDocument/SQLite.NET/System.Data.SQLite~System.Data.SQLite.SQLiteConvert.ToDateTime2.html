@@ -1,0 +1,67 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteConvert.ToDateTime(String, SQLiteDateFormats, DateTimeKind, String) Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteConvert.ToDateTime(String, SQLiteDateFormats, DateTimeKind, String) Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Converts a string into a DateTime, using the specified DateTimeFormat, DateTimeKind and DateTimeFormatString. </p>
+      <div class="syntax">public static <a href="http://msdn.microsoft.com/en-us/library/System.DateTime(VS.90).aspx">DateTime</a> ToDateTime(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>dateText</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDateFormats.html">SQLiteDateFormats</a> <i>format</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.DateTimeKind(VS.90).aspx">DateTimeKind</a> <i>kind</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>formatString</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>dateText</i>
+        </dt>
+        <dd>The string containing either a long integer number of 100-nanosecond units since System.DateTime.MinValue, a Julian day double, an integer number of seconds since the Unix epoch, a culture-independent formatted date and time string, a formatted date and time string in the current culture, or an ISO8601-format string.</dd>
+        <dt>
+          <i>format</i>
+        </dt>
+        <dd>The SQLiteDateFormats to use.</dd>
+        <dt>
+          <i>kind</i>
+        </dt>
+        <dd>The DateTimeKind to use.</dd>
+        <dt>
+          <i>formatString</i>
+        </dt>
+        <dd>The DateTime format string to use.</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>A DateTime value</p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Acceptable ISO8601 DateTime formats are: <ul type="disc"><li>THHmmssK</li><li>THHmmK</li><li>HH:mm:ss.FFFFFFFK</li><li>HH:mm:ssK</li><li>HH:mmK</li><li>yyyy-MM-dd HH:mm:ss.FFFFFFFK</li><li>yyyy-MM-dd HH:mm:ssK</li><li>yyyy-MM-dd HH:mmK</li><li>yyyy-MM-ddTHH:mm:ss.FFFFFFFK</li><li>yyyy-MM-ddTHH:mmK</li><li>yyyy-MM-ddTHH:mm:ssK</li><li>yyyyMMddHHmmssK</li><li>yyyyMMddHHmmK</li><li>yyyyMMddTHHmmssFFFFFFFK</li><li>THHmmss</li><li>THHmm</li><li>HH:mm:ss.FFFFFFF</li><li>HH:mm:ss</li><li>HH:mm</li><li>yyyy-MM-dd HH:mm:ss.FFFFFFF</li><li>yyyy-MM-dd HH:mm:ss</li><li>yyyy-MM-dd HH:mm</li><li>yyyy-MM-ddTHH:mm:ss.FFFFFFF</li><li>yyyy-MM-ddTHH:mm</li><li>yyyy-MM-ddTHH:mm:ss</li><li>yyyyMMddHHmmss</li><li>yyyyMMddHHmm</li><li>yyyyMMddTHHmmssFFFFFFF</li><li>yyyy-MM-dd</li><li>yyyyMMdd</li><li>yy-MM-dd</li></ul> If the string cannot be matched to one of the above formats -OR- the DateTimeFormatString if one was provided, an exception will be thrown. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConvert.html">SQLiteConvert Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a> | <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConvert.ToDateTime~Overloads.html">SQLiteConvert.ToDateTime Overload List</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConvert.ToDateTime Method (String,%20SQLiteDateFormats,%20DateTimeKind,%20String)">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

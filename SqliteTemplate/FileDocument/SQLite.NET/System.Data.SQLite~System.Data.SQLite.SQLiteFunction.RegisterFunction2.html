@@ -1,0 +1,71 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteFunction.RegisterFunction(String, Int32, FunctionType, Type, Delegate, Delegate) Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteFunction.RegisterFunction(String, Int32, FunctionType, Type, Delegate, Delegate) Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Alternative method of registering a function. This method does not require the specified type to be annotated with <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunctionAttribute.html">SQLiteFunctionAttribute</a>. </p>
+      <div class="syntax">public static <a href="http://msdn.microsoft.com/en-us/library/System.Void(VS.90).aspx">void</a> RegisterFunction(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>name</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argumentCount</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.FunctionType.html">FunctionType</a> <i>functionType</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Type(VS.90).aspx">Type</a> <i>instanceType</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> <i>callback1</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> <i>callback2</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>name</i>
+        </dt>
+        <dd> The name of the function to register. </dd>
+        <dt>
+          <i>argumentCount</i>
+        </dt>
+        <dd> The number of arguments accepted by the function. </dd>
+        <dt>
+          <i>functionType</i>
+        </dt>
+        <dd> The type of SQLite function being registered (e.g. scalar, aggregate, or collating sequence). </dd>
+        <dt>
+          <i>instanceType</i>
+        </dt>
+        <dd> The <a href="http://msdn.microsoft.com/en-us/library/System.Type(VS.90).aspx">Type</a> that actually implements the function. This will only be used if the <i>callback1</i> and <i>callback2</i> parameters are null. </dd>
+        <dt>
+          <i>callback1</i>
+        </dt>
+        <dd> The <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> to be used for all calls into the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.Invoke.html">Invoke</a>, <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.Step.html">Step</a>, and <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.Compare.html">Compare</a> virtual methods. </dd>
+        <dt>
+          <i>callback2</i>
+        </dt>
+        <dd> The <a href="http://msdn.microsoft.com/en-us/library/System.Delegate(VS.90).aspx">Delegate</a> to be used for all calls into the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.Final.html">Final</a> virtual method. This parameter is only necessary for aggregate functions. </dd>
+      </dl>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.html">SQLiteFunction Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a> | <a href="System.Data.SQLite~System.Data.SQLite.SQLiteFunction.RegisterFunction~Overloads.html">SQLiteFunction.RegisterFunction Overload List</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteFunction.RegisterFunction Method (String,%20Int32,%20FunctionType,%20Type,%20Delegate,%20Delegate)">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

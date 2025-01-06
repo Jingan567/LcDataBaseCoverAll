@@ -1,0 +1,66 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xRollbackTo Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xRollbackTo Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xSavepoint)(sqlite3_vtab *pVtab, int);
+int (*xRelease)(sqlite3_vtab *pVtab, int);
+int (*xRollbackTo)(sqlite3_vtab *pVtab, int);
+</pre>
+      </p>
+      <p> These methods provide the virtual table implementation an opportunity to implement nested transactions. They are always optional and will only be called in SQLite version 3.7.7 (2011-06-23) and later. </p>
+      <p> When xSavepoint(X,N) is invoked, that is a signal to the virtual table X that it should save its current state as savepoint N. A subsequent call to xRollbackTo(X,R) means that the state of the virtual table should return to what it was when xSavepoint(X,R) was last called. The call to xRollbackTo(X,R) will invalidate all savepoints with N&gt;R; none of the invalided savepoints will be rolled back or released without first being reinitialized by a call to xSavepoint(). A call to xRelease(X,M) invalidates all savepoints where N&gt;=M. </p>
+      <p> None of the xSavepoint(), xRelease(), or xRollbackTo() methods will ever be called except in between calls to xBegin() and either xCommit() or xRollback(). </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xRollbackTo(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>iSavepoint</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pVtab</i>
+        </dt>
+        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dt>
+          <i>iSavepoint</i>
+        </dt>
+        <dd> This is an integer identifier used to specify a specific saved state for the virtual table for it to restore itself back to, which should also have the effect of deleting all saved states with an integer identifier greater than this one. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xRollbackTo Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

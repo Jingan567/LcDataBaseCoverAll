@@ -1,0 +1,87 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISQLiteNativeModule.xConnect Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISQLiteNativeModule.xConnect Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <pre class="code">int (*xConnect)(sqlite3*, void *pAux,
+             int argc, char *const*argv,
+             sqlite3_vtab **ppVTab,
+             char **pzErr);
+</pre>
+      </p>
+      <p> The xConnect method is very similar to xCreate. It has the same parameters and constructs a new sqlite3_vtab structure just like xCreate. And it must also call sqlite3_declare_vtab() like xCreate. It should also make all of the same sqlite3_vtab_config() calls as xCreate. </p>
+      <p> The difference is that xConnect is called to establish a new connection to an existing virtual table whereas xCreate is called to create a new virtual table from scratch. </p>
+      <p> The xCreate and xConnect methods are only different when the virtual table has some kind of backing store that must be initialized the first time the virtual table is created. The xCreate method creates and initializes the backing store. The xConnect method just connects to an existing backing store. When xCreate and xConnect are the same, the table is an eponymous virtual table. </p>
+      <p> As an example, consider a virtual table implementation that provides read-only access to existing comma-separated-value (CSV) files on disk. There is no backing store that needs to be created or initialized for such a virtual table (since the CSV files already exist on disk) so the xCreate and xConnect methods will be identical for that module. </p>
+      <p> Another example is a virtual table that implements a full-text index. The xCreate method must create and initialize data structures to hold the dictionary and posting lists for that index. The xConnect method, on the other hand, only has to locate and use an existing dictionary and posting lists that were created by a prior xCreate call. </p>
+      <p> The xConnect method must return SQLITE_OK if it is successful in creating the new virtual table, or SQLITE_ERROR if it is not successful. If not successful, the sqlite3_vtab structure must not be allocated. An error message may optionally be returned in *pzErr if unsuccessful. Space to hold the error message string must be allocated using an SQLite memory allocation function like sqlite3_malloc() or sqlite3_mprintf() as the SQLite core will attempt to free the space using sqlite3_free() after the error has been reported up to the application. </p>
+      <p> The xConnect method is required for every virtual table implementation, though the xCreate and xConnect pointers of the sqlite3_module object may point to the same function if the virtual table does not need to initialize backing store. </p>
+      <div class="syntax">
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xConnect(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pDb</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pAux</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pError</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>pDb</i>
+        </dt>
+        <dd> The native database connection handle. </dd>
+        <dt>
+          <i>pAux</i>
+        </dt>
+        <dd> The original native pointer value that was provided to the sqlite3_create_module(), sqlite3_create_module_v2() or sqlite3_create_disposable_module() functions. </dd>
+        <dt>
+          <i>argc</i>
+        </dt>
+        <dd> The number of arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dt>
+          <i>argv</i>
+        </dt>
+        <dd> The array of string arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dt>
+          <i>pVtab</i>
+        </dt>
+        <dd> Upon success, this parameter must be modified to point to the newly created native sqlite3_vtab derived structure. </dd>
+        <dt>
+          <i>pError</i>
+        </dt>
+        <dd> Upon failure, this parameter must be modified to point to the error message, with the underlying memory having been obtained from the sqlite3_malloc() function. </dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p> A standard SQLite return code. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xConnect Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

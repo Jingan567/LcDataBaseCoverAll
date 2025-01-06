@@ -1,0 +1,72 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteJournalModeEnum Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteJournalModeEnum Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> This enum determines how SQLite treats its journal file. </p>
+      <div class="syntax">
+        <div>public enum SQLiteJournalModeEnum</div>
+      </div>
+      <h4 class="dtH4">Remarks</h4>
+      <p> By default SQLite will create and delete the journal file when needed during a transaction. However, for some computers running certain filesystem monitoring tools, the rapid creation and deletion of the journal file can cause those programs to fail, or to interfere with SQLite. If a program or virus scanner is interfering with SQLite's journal file, you may receive errors like "unable to open database file" when starting a transaction. If this is happening, you may want to change the default journal mode to Persist. </p>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>Default</b></td><td> The default mode, this causes SQLite to use the existing journaling mode for the database. </td></tr>
+<tr valign="top"><td><b>Delete</b></td><td> SQLite will create and destroy the journal file as-needed. </td></tr>
+<tr valign="top"><td><b>Persist</b></td><td> When this is set, SQLite will keep the journal file even after a transaction has completed. It's contents will be erased, and the journal re-used as often as needed. If it is deleted, it will be recreated the next time it is needed. </td></tr>
+<tr valign="top"><td><b>Off</b></td><td> This option disables the rollback journal entirely. Interrupted transactions or a program crash can cause database corruption in this mode! </td></tr>
+<tr valign="top"><td><b>Truncate</b></td><td> SQLite will truncate the journal file to zero-length instead of deleting it. </td></tr>
+<tr valign="top"><td><b>Memory</b></td><td> SQLite will store the journal in volatile RAM. This saves disk I/O but at the expense of database safety and integrity. If the application using SQLite crashes in the middle of a transaction when the MEMORY journaling mode is set, then the database file will very likely go corrupt. </td></tr>
+<tr valign="top"><td><b>Wal</b></td><td> SQLite uses a write-ahead log instead of a rollback journal to implement transactions. The WAL journaling mode is persistent; after being set it stays in effect across multiple database connections and after closing and reopening the database. A database in WAL journaling mode can only be accessed by SQLite version 3.7.0 or later. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteJournalModeEnum%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

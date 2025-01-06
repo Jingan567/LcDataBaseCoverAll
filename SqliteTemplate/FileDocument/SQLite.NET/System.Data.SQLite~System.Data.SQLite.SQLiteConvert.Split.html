@@ -1,0 +1,59 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteConvert.Split Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteConvert.Split Method</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Smart method of splitting a string. Skips quoted elements, removes the quotes. </p>
+      <div class="syntax">public static <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a>[] Split(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>source</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Char(VS.90).aspx">char</a> <i>separator</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>source</i>
+        </dt>
+        <dd>Source string to split apart</dd>
+        <dt>
+          <i>separator</i>
+        </dt>
+        <dd>Separator character</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>A string array of the split up elements</p>
+      <h4 class="dtH4">Remarks</h4>
+      <p> This split function works somewhat like the String.Split() function in that it breaks apart a string into pieces and returns the pieces as an array. The primary differences are: <ul type="disc"><li>Only one character can be provided as a separator character</li><li>Quoted text inside the string is skipped over when searching for the separator, and the quotes are removed.</li></ul> Thus, if splitting the following string looking for a comma:<br /> One,Two, "Three, Four", Five<br /><br /> The resulting array would contain<br /> [0] One<br /> [1] Two<br /> [2] Three, Four<br /> [3] Five<br /><br /> Note that the leading and trailing spaces were removed from each item during the split. </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConvert.html">SQLiteConvert Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConvert.Split Method ">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="history" name="save" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>SQLiteConnectionEventType Enumeration</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">SQLite ADO.NET Provider</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">SQLiteConnectionEventType Enumeration</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> These are the event types associated with the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnectionEventHandler.html">SQLiteConnectionEventHandler</a> delegate (and its corresponding event) and the <a href="System.Data.SQLite~System.Data.SQLite.ConnectionEventArgs.html">ConnectionEventArgs</a> class. </p>
+      <div class="syntax">
+        <div>public enum SQLiteConnectionEventType</div>
+      </div>
+      <h4 class="dtH4">Members</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Member Name</th>
+            <th width="50%">Description</th>
+          </tr>
+<tr valign="top"><td><b>Invalid</b></td><td> Not used. </td></tr>
+<tr valign="top"><td><b>Unknown</b></td><td> Not used. </td></tr>
+<tr valign="top"><td><b>Opening</b></td><td> The connection is being opened. </td></tr>
+<tr valign="top"><td><b>ConnectionString</b></td><td> The connection string has been parsed. </td></tr>
+<tr valign="top"><td><b>Opened</b></td><td> The connection was opened. </td></tr>
+<tr valign="top"><td><b>ChangeDatabase</b></td><td> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnectionEventType.html">ChangeDatabase</a> method was called on the connection. </td></tr>
+<tr valign="top"><td><b>NewTransaction</b></td><td> A transaction was created using the connection. </td></tr>
+<tr valign="top"><td><b>EnlistTransaction</b></td><td> The connection was enlisted into a transaction. </td></tr>
+<tr valign="top"><td><b>NewCommand</b></td><td> A command was created using the connection. </td></tr>
+<tr valign="top"><td><b>NewDataReader</b></td><td> A data reader was created using the connection. </td></tr>
+<tr valign="top"><td><b>NewCriticalHandle</b></td><td> An instance of a <a href="http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.CriticalHandle(VS.90).aspx">CriticalHandle</a> derived class has been created to wrap a native resource. </td></tr>
+<tr valign="top"><td><b>Closing</b></td><td> The connection is being closed. </td></tr>
+<tr valign="top"><td><b>Closed</b></td><td> The connection was closed. </td></tr>
+<tr valign="top"><td><b>DisposingCommand</b></td><td> A command is being disposed. </td></tr>
+<tr valign="top"><td><b>DisposingDataReader</b></td><td> A data reader is being disposed. </td></tr>
+<tr valign="top"><td><b>ClosingDataReader</b></td><td> A data reader is being closed. </td></tr>
+<tr valign="top"><td><b>OpenedFromPool</b></td><td> A native resource was opened (i.e. obtained) from the pool. </td></tr>
+<tr valign="top"><td><b>ClosedToPool</b></td><td> A native resource was closed (i.e. released) to the pool. </td></tr>
+<tr valign="top"><td><b>DisposingConnection</b></td><td> The connection is being disposed. </td></tr>
+<tr valign="top"><td><b>DisposedConnection</b></td><td> The connection was disposed. </td></tr>
+<tr valign="top"><td><b>FinalizingConnection</b></td><td> The connection is being finalized. </td></tr>
+<tr valign="top"><td><b>FinalizedConnection</b></td><td> The connection was finalized. </td></tr>
+<tr valign="top"><td><b>NothingToDo</b></td><td> The closing of the object had no effect, e.g. because the underlying resource was not actually allocated or opened. </td></tr>
+<tr valign="top"><td><b>ConnectionStringPreview</b></td><td> The connection string may be changed. </td></tr>
+<tr valign="top"><td><b>SqlStringPreview</b></td><td> The SQL string may be changed. </td></tr>
+<tr valign="top"><td><b>Canceled</b></td><td> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.Cancel.html">Cancel</a> method was invoked. </td></tr>
+<tr valign="top"><td><b>DataReaderPreview</b></td><td> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a> is preparing to return a row of data. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+      </p>
+      <p>
+        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
+          </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+      </p>
+      
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnectionEventType%20Enumeration">Send comments on this topic.</a>
+        </p>
+        <p>
+        </p>
+        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+      </div>
+    </div>
+  </body>
+</html>

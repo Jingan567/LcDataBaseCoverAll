@@ -9,6 +9,7 @@ namespace DataBaseTest
     /// </summary>
     public partial class App : Application
     {
+        
     }
 
 }
