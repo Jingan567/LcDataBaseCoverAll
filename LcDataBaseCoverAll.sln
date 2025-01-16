@@ -7,6 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseTest", "DataBaseTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqliteTemplate", "SqliteTemplate\SqliteTemplate.csproj", "{E1A0A59B-7275-4E30-8E16-A35845793E88}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mysql", "Mysql", "{03A71DA1-4B5C-47C7-846E-C7BA986CBD7D}"
+	ProjectSection(SolutionItems) = preProject
+		Mysql连接.md = Mysql连接.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysqlTemplate1_Mysql_data_dll", "MysqlTemplate1_Mysql_data_dll\MysqlTemplate1_Mysql_data_dll.csproj", "{BEADABB4-D0E8-450A-A3A3-9D8604E357BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysqlTemplate2_Mysql_data_dll", "MysqlTemplate2_Mysql_data_dll\MysqlTemplate2_Mysql_data_dll.csproj", "{3A003B16-299D-4D8D-837E-953F440FF7FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +30,21 @@ Global
 		{E1A0A59B-7275-4E30-8E16-A35845793E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1A0A59B-7275-4E30-8E16-A35845793E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A0A59B-7275-4E30-8E16-A35845793E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEADABB4-D0E8-450A-A3A3-9D8604E357BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEADABB4-D0E8-450A-A3A3-9D8604E357BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEADABB4-D0E8-450A-A3A3-9D8604E357BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEADABB4-D0E8-450A-A3A3-9D8604E357BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEADABB4-D0E8-450A-A3A3-9D8604E357BB} = {03A71DA1-4B5C-47C7-846E-C7BA986CBD7D}
+		{3A003B16-299D-4D8D-837E-953F440FF7FE} = {03A71DA1-4B5C-47C7-846E-C7BA986CBD7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB828219-AFA1-434B-99E5-361903A58E4F}

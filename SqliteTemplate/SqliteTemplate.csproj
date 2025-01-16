@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FileDocument\**" />
+    <EmbeddedResource Remove="FileDocument\**" />
+    <None Remove="FileDocument\**" />
+    <Page Remove="FileDocument\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
   </ItemGroup>
 

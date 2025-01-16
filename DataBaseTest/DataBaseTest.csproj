@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MysqlTemplate1_Mysql_data_dll\MysqlTemplate1_Mysql_data_dll.csproj" />
+    <ProjectReference Include="..\MysqlTemplate2_Mysql_data_dll\MysqlTemplate2_Mysql_data_dll.csproj" />
     <ProjectReference Include="..\SqliteTemplate\SqliteTemplate.csproj" />
   </ItemGroup>
 
