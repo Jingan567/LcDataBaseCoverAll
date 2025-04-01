@@ -1,4 +1,6 @@
-﻿# Sqlite笔记（[SQLite 主页](https://www.sqlite.org/index.html)）
+﻿
+
+# 作废笔记
 
 参考网址1：[sqlite和sqlite3|极客教程](https://geek-docs.com/sql/sql-ask-answer/327_hk_1708787443.html)
 
@@ -159,3 +161,38 @@ sqlite3.dll可能是C++的，包括Nuget安装包
 ![image-20241231021701775](./Sqlite.assets/image-20241231021701775.png)
 
 ![image-20241231022133057](./Sqlite.assets/image-20241231022133057.png)
+
+# Sqlite笔记（[SQLite 主页](https://www.sqlite.org/index.html)）
+
+官网链接：[SQLite Home Page](https://www.sqlite.org/index.html)
+
+## 类库区别
+
+|        **特性**        |     **System.Data.SQLite**     | **Microsoft.Data.Sqlite** | **Mono.Data.Sqlite** |
+| :--------------------: | :----------------------------: | :-----------------------: | :------------------: |
+|      **支持框架**      | .NET Framework 2.0+、.NET Core |  .NET Core 2.0+、.NET 5+  |      Mono 2.0+       |
+|   **ADO.NET 完整性**   |     完整支持（含 DataSet）     |  部分支持（无 DataSet）   |      仅基础功能      |
+| **Visual Studio 工具** |         集成图形化工具         |            无             |          无          |
+|      **加密功能**      |              支持              |      需第三方库扩展       |        不支持        |
+|      **性能优化**      |     事务批量写入、索引优化     | 轻量级设计，默认性能更优  |      无特殊优化      |
+|    **代码示例对比**    |          复杂参数绑定          |   简洁的 Lambda 表达式    |   类似旧版 ADO.NET   |
+
+------
+
+**NuGet页面支持C++和C#的包下载——这个是错误的，VS应该会根据编程语言区分**
+
+- `System.Data.SQLite`旧版 SQLite 的 NuGet 包，包含完整的托管代码和原生二进制文件（`x86/x64`）。已被拆分为 `System.Data.SQLite.Core` 和其他扩展包，​**不再推荐使用**。仅用于维护遗留项目。
+
+- SQLite应该就是给C语言用的，但是C#能调用C的dll,所有NuGet才能下，C语言是跨平台的，可以使用这个类库去实现跨平台。
+
+  ![image-20250401085905141](./Sqlite.assets/image-20250401085905141.png)
+
+|                **包名**                | **维护方**  |           **目标框架**           |           **主要用途**            |                **推荐场景**                 |
+| :------------------------------------: | :---------: | :------------------------------: | :-------------------------------: | :-----------------------------------------: |
+|       `System.Data.SQLite.Core`        | SQLite 团队 | .NET Framework 4.6+ .NET Core/5+ | 直接操作 SQLite 数据库（ADO.NET） |        旧版 .NET Framework 桌面应用         |
+|        `System.Data.SQLite.EF6`        | SQLite 团队 |       .NET Framework 4.6+        |       在 EF6 中使用 SQLite        |           旧版 WPF/WinForms + EF6           |
+|        `Microsoft.Data.Sqlite`         |    微软     |        .NET Standard 2.0+        |   跨平台 SQLite 操作（ADO.NET）   |      ASP.NET Core、Xamarin、MAUI 应用       |
+| `Microsoft.EntityFrameworkCore.Sqlite` |    微软     |      .NET Core 3.1+ .NET 5+      |     在 EF Core 中使用 SQLite      | 现代跨平台应用（如 ASP.NET Core + EF Core） |
+
+------
+
