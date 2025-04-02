@@ -8,18 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DbTestFiles\**" />
     <Compile Remove="FileDocument\**" />
+    <EmbeddedResource Remove="DbTestFiles\**" />
     <EmbeddedResource Remove="FileDocument\**" />
+    <None Remove="DbTestFiles\**" />
     <None Remove="FileDocument\**" />
+    <Page Remove="DbTestFiles\**" />
     <Page Remove="FileDocument\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DbTestFiles\" />
   </ItemGroup>
 
 </Project>

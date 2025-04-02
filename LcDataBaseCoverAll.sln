@@ -16,6 +16,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysqlTemplate1_Mysql_data_d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysqlTemplate2_Mysql_data_dll", "MysqlTemplate2_Mysql_data_dll\MysqlTemplate2_Mysql_data_dll.csproj", "{3A003B16-299D-4D8D-837E-953F440FF7FE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLite", "SQLite", "{FEA6B44E-C0FC-48DD-B375-CECDB3820725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseLibTest", "DataBaseLibTest\DataBaseLibTest.csproj", "{586ECD71-8312-409E-911B-836F1374157F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +42,16 @@ Global
 		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A003B16-299D-4D8D-837E-953F440FF7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586ECD71-8312-409E-911B-836F1374157F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586ECD71-8312-409E-911B-836F1374157F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586ECD71-8312-409E-911B-836F1374157F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586ECD71-8312-409E-911B-836F1374157F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{E1A0A59B-7275-4E30-8E16-A35845793E88} = {FEA6B44E-C0FC-48DD-B375-CECDB3820725}
 		{BEADABB4-D0E8-450A-A3A3-9D8604E357BB} = {03A71DA1-4B5C-47C7-846E-C7BA986CBD7D}
 		{3A003B16-299D-4D8D-837E-953F440FF7FE} = {03A71DA1-4B5C-47C7-846E-C7BA986CBD7D}
 	EndGlobalSection

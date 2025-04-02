@@ -196,3 +196,18 @@ sqlite3.dll可能是C++的，包括Nuget安装包
 
 ------
 
+ADO.NET([ADO.NET - 张果 - 博客园](https://www.cnblogs.com/best/p/7714500.html))
+
+```类库结构
+①System.Data  → DataTable，DataSet，DataRow，DataColumn，DataRelation，Constraint，DataColumnMapping，DataTableMapping
+②System.Data.Coummon     → 各种数据访问类的基类和接口
+③System.Data.SqlClient   → 对Sql Server进行操作的数据访问类
+  主要有：   a) SqlConnection            → 数据库连接器
+            b) SqlCommand               → 数据库命名对象
+            c) SqlCommandBuilder        → 生存SQL命令
+            d) SqlDataReader            → 数据读取器
+            e) SqlDataAdapter           → 数据适配器，填充DataSet
+            f) SqlParameter             → 为存储过程定义参数
+            g) SqlTransaction           → 数据库事物
+```
+
