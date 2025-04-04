@@ -1,79 +1,73 @@
-<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
-    <title>SQLite Query Syntax</title>
-    <link rel="stylesheet" type="text/css" href="../Include/ndoc.css" />
+
+<!-- saved from url=(0113)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/syntax.html -->
+<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title _msttexthash="23863359" _msthash="0">SQLite &#26597;&#35810;&#35821;&#27861;</title>
+    <link rel="stylesheet" type="text/css" href="./syntax_files/ndoc.css">
   </head>
   <body>
     <div id="header">
       <table width="100%" id="topTable">
-        <tr id="headerTableRow1">
+        <tbody><tr id="headerTableRow1">
           <td align="left">
-            <span id="runningHeaderText">SQLite Query Syntax</span>&nbsp;</td>
+            <span id="runningHeaderText" _msttexthash="23863359" _msthash="1">SQLite &#26597;&#35810;&#35821;&#27861;</span>&nbsp;</td>
         </tr>
         <tr id="headerTableRow2">
           <td align="left">
-            <span id="nsrTitle">SQLite Language Reference Documentation</span>
+            <span id="nsrTitle" _msttexthash="35549059" _msthash="2">SQLite &#35821;&#35328;&#21442;&#32771;&#25991;&#26723;</span>
           </td>
         </tr>
-        <tr id="headerTableRow3" style="display:none">
-          <td>
-            <a id="seeAlsoSectionLink" href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
-            <a id="exampleSectionLink" href="#codeExampleToggle" onclick="OpenSection(codeExampleToggle)">Example</a>
+        <tr id="headerTableRow3" style="display:none" _msthidden="1">
+          <td _msthidden="1">
+            <font _mstmutation="1" _msttexthash="249834" _msthidden="1" _msthash="3"><a id="seeAlsoSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/syntax.html#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)" _mstmutation="1">See Also</a>
+            <a id="exampleSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/syntax.html#codeExampleToggle" onclick="OpenSection(codeExampleToggle)" _mstmutation="1">Example</a></font>
           </td>
         </tr>
-     </table>
-      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none">
-        <tr>
-          <td>
-            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0">
-              <img ID="toggleAllImage" class="toggleAll" src="collall.gif" />
-              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">
+     </tbody></table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none" _msthidden="2">
+        <tbody _msthidden="2"><tr _msthidden="2">
+          <td _msthidden="2">
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" _msthidden="2">
+              <img id="toggleAllImage" class="toggleAll" src="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/collall.gif">
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="172484" _msthidden="1" _msthash="4">
 							Collapse All
 						</label>
-              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="127504" _msthidden="1" _msthash="5">
 							Expand All
 						</label>
             </span>
           </td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
     <div id="mainSection">
     <div id="mainBody">
-      <h1 class="heading">
-        SQL As Understood By System.Data.SQLite</h1>
-      <p>
-        The SQLite library understands most of the standard SQL language. But it does omit
-        some features while at the same time adding a few features of its own. This document
-        attempts to describe precisely what parts of the SQL language SQLite does and does
-        not support. A list of keywords is also provided. In all of the syntax diagrams
-        that follow, literal text is shown in bold blue. Non-terminal symbols are shown
-        in italic red. Operators that are part of the syntactic markup itself are shown
-        in black roman. This document is just an overview of the SQL syntax implemented
-        by SQLite.
-      </p>
-      <h4>
-        The SQLite core library implements the follow syntax:</h4>
+      <h1 class="heading" _msttexthash="32657989" _msthash="6">System.Data.SQLite &#29702;&#35299;&#30340; SQL</h1>
+      <p _msttexthash="4916243397" _msthash="7">SQLite &#24211;&#29702;&#35299;&#22823;&#22810;&#25968;&#26631;&#20934; SQL &#35821;&#35328;&#12290;&#20294;&#23427;&#30830;&#23454;&#30465;&#30053;&#20102;
+ &#19968;&#20123;&#21151;&#33021;&#65292;&#21516;&#26102;&#28155;&#21152;&#19968;&#20123;&#33258;&#24049;&#30340;&#21151;&#33021;&#12290;&#26412;&#25991;&#26723;
+ &#23581;&#35797;&#31934;&#30830;&#25551;&#36848; SQLite &#30340;&#21738;&#20123;&#37096;&#20998;&#26159;&#20570;&#20160;&#20040;&#30340;
+ &#19981;&#25903;&#25345;&#12290;&#27492;&#22806;&#65292;&#36824;&#25552;&#20379;&#20102;&#20851;&#38190;&#23383;&#21015;&#34920;&#12290;&#22312;&#25152;&#26377;&#35821;&#27861;&#22270;&#20013;
+ &#25509;&#19979;&#26469;&#65292;&#25991;&#26412;&#25991;&#26412;&#20197;&#34013;&#33394;&#31895;&#20307;&#26174;&#31034;&#12290;&#26174;&#31034;&#38750;&#32456;&#31471;&#31526;&#21495;
+ &#26012;&#20307;&#32418;&#33394;&#12290;&#23558;&#26174;&#31034;&#20316;&#20026;&#35821;&#27861;&#26631;&#35760;&#26412;&#36523;&#19968;&#37096;&#20998;&#30340;&#36816;&#31639;&#31526;
+ &#40657;&#33394;&#32599;&#39532;&#12290;&#26412;&#25991;&#26723;&#21482;&#26159;&#23545;&#23454;&#29616;&#30340; SQL &#35821;&#27861;&#30340;&#27010;&#36848;
+ &#30001; SQLite &#25552;&#20379;&#12290;</p>
+      <h4 _msttexthash="70444166" _msthash="8">SQLite &#26680;&#24515;&#24211;&#23454;&#29616;&#20197;&#19979;&#35821;&#27861;&#65306;</h4>
       <p>
         <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse">
-          <tr>
+          <tbody><tr>
             <td>
-              <a href="../Core/lang.html">
-              SQL As Understood By SQLite</a></td>
+              <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang.html" _msttexthash="17484168" _msthash="9">SQLite &#29702;&#35299;&#30340; SQL</a></td>
           </tr>
-        </table>
+        </tbody></table>
       </p>
-      <h4>
-        The System.Data.SQLite provider implements the follow additional syntax:</h4>
+      <h4 _msttexthash="158748889" _msthash="10">System.Data.SQLite &#25552;&#20379;&#31243;&#24207;&#23454;&#29616;&#20197;&#19979;&#38468;&#21152;&#35821;&#27861;&#65306;</h4>
       <p>
         <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse">
-          <tr>
+          <tbody><tr>
             <td>
-              <a href="lang_types.html">
-              TYPES</a></td>
+              <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/lang_types.html" _msttexthash="5230641" _msthash="11">&#31867;&#22411;</a></td>
           </tr>
-        </table>
+        </tbody></table>
       </p>
       <hr>
       <div id="footer">
@@ -84,5 +78,6 @@
       </div>
     </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

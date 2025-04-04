@@ -1,84 +1,79 @@
-<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
-    <title>DbProviderFactory Support</title>
-    <link rel="stylesheet" type="text/css" href="../Include/ndoc.css" />
+
+<!-- saved from url=(0123)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/dbfactorysupport.html -->
+<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title _msttexthash="16664921" _msthash="0">DbProviderFactory &#25903;&#25345;</title>
+    <link rel="stylesheet" type="text/css" href="./dbfactorysupport_files/ndoc.css">
   </head>
   <body>
     <div id="header">
       <table width="100%" id="topTable">
-        <tr id="headerTableRow1">
+        <tbody><tr id="headerTableRow1">
           <td align="left">
-            <span id="runningHeaderText">DbProviderFactory Support</span>
+            <span id="runningHeaderText" _msttexthash="16664921" _msthash="1">DbProviderFactory &#25903;&#25345;</span>
           </td>
         </tr>
         <tr id="headerTableRow2">
           <td align="left">
-            <span id="nsrTitle">SQLite.NET Class Library Documentation</span>
+            <span id="nsrTitle" _msttexthash="26199498" _msthash="2">SQLite.NET &#31867;&#24211;&#25991;&#26723;</span>
           </td>
         </tr>
-        <tr id="headerTableRow3" style="display:none">
-          <td>
-            <a id="seeAlsoSectionLink" href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
-            <a id="exampleSectionLink" href="#codeExampleToggle" onclick="OpenSection(codeExampleToggle)">Example</a>
+        <tr id="headerTableRow3" style="display:none" _msthidden="1">
+          <td _msthidden="1">
+            <font _mstmutation="1" _msttexthash="249834" _msthidden="1" _msthash="3"><a id="seeAlsoSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/dbfactorysupport.html#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)" _mstmutation="1">See Also</a>
+            <a id="exampleSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/dbfactorysupport.html#codeExampleToggle" onclick="OpenSection(codeExampleToggle)" _mstmutation="1">Example</a></font>
           </td>
         </tr>
-     </table>
-      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none">
-        <tr>
-          <td>
-            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0">
-              <img ID="toggleAllImage" class="toggleAll" src="collall.gif" />
-              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">
+     </tbody></table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none" _msthidden="2">
+        <tbody _msthidden="2"><tr _msthidden="2">
+          <td _msthidden="2">
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" _msthidden="2">
+              <img id="toggleAllImage" class="toggleAll" src="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/collall.gif">
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="172484" _msthidden="1" _msthash="4">
 							Collapse All
 						</label>
-              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="127504" _msthidden="1" _msthash="5">
 							Expand All
 						</label>
             </span>
           </td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
     <div id="mainSection">
     <div id="mainBody">
-      <h1 class="heading">DbProviderFactories and You</h1>
-      <p>One of the great new features of ADO.NET 2.0 is the use of reflection as a
-        means of instantiating database providers programmatically. The information
-        .NET uses to enumerate the available data providers in the system is relatively
-        simple. It merely looks in the machine.config and in your own app.config file for some XML data to tell it what providers are
-        installed and what assemblies those providers are in.
-      </p>
-      <h4>
-        Scenario 1:&nbsp; Version Independent (does not use the Global Assembly Cache)</h4>
-      <p>
-        This method allows you to drop any new version of the System.Data.SQLite.DLL into
-        your application's folder and use it without any code modifications or recompiling.&nbsp;
-        Add the following code to your app.config file:</p>
+      <h1 class="heading" _msttexthash="14858155" _msthash="6">DbProviderFactories &#21644;&#20320;</h1>
+      <p _msttexthash="3086822648" _msthash="7">ADO.NET 2.0 &#30340;&#19968;&#22823;&#26032;&#29305;&#24615;&#26159;&#23558;&#21453;&#23556;&#29992;&#20316;
+ &#20197;&#32534;&#31243;&#26041;&#24335;&#23454;&#20363;&#21270;&#25968;&#25454;&#24211;&#25552;&#20379;&#31243;&#24207;&#30340;&#26041;&#27861;&#12290;&#20449;&#24687;
+ .NET &#29992;&#20110;&#26522;&#20030;&#31995;&#32479;&#20013;&#21487;&#29992;&#30340;&#25968;&#25454;&#25552;&#20379;&#31243;&#24207;&#26159;&#30456;&#23545;&#30340;
+ &#31616;&#21333;&#12290;&#23427;&#21482;&#26159;&#22312; machine.config &#21644;&#24744;&#33258;&#24049;&#30340; app.config &#25991;&#20214;&#20013;&#26597;&#25214;&#19968;&#20123; XML &#25968;&#25454;&#65292;&#20197;&#21578;&#35785;&#23427;&#20160;&#20040;&#26159;&#25552;&#20379;&#31243;&#24207;
+ &#24050;&#23433;&#35013;&#30340;&#31243;&#24207;&#38598;&#20197;&#21450;&#36825;&#20123;&#25552;&#20379;&#31243;&#24207;&#25152;&#22312;&#30340;&#31243;&#24207;&#38598;&#12290;</p>
+      <h4 _msttexthash="136648954" _msthash="8">&#26041;&#26696; 1&#65306;&#29256;&#26412;&#26080;&#20851;&#65288;&#19981;&#20351;&#29992;&#20840;&#23616;&#31243;&#24207;&#38598;&#32531;&#23384;&#65289;</h4>
+      <p _msttexthash="1078147551" _msthash="9">&#27492;&#26041;&#27861;&#20801;&#35768;&#24744;&#23558;&#20219;&#20309;&#26032;&#29256;&#26412;&#30340; System.Data.SQLite.DLL &#25918;&#20837;
+ &#24744;&#30340;&#24212;&#29992;&#31243;&#24207;&#25991;&#20214;&#22841;&#65292;&#26080;&#38656;&#20462;&#25913;&#20219;&#20309;&#20195;&#30721;&#25110;&#37325;&#26032;&#32534;&#35793;&#21363;&#21487;&#20351;&#29992;&#23427;&#12290;
+ &#23558;&#20197;&#19979;&#20195;&#30721;&#28155;&#21152;&#21040;&#24744;&#30340; app.config &#25991;&#20214;&#20013;&#65306;</p>
       <div class="syntax">
-        <PRE>&lt;configuration&gt;
+        <pre>&lt;configuration&gt;
   &lt;system.data&gt;
     &lt;DbProviderFactories&gt;
       &lt;remove invariant="System.Data.SQLite"/&gt;
       &lt;add name="SQLite Data Provider" invariant="System.Data.SQLite"
-           description=".NET Framework Data Provider for SQLite"<br />           type="System.Data.SQLite.SQLiteFactory, System.Data.SQLite" /&gt;
+           description=".NET Framework Data Provider for SQLite"<br>           type="System.Data.SQLite.SQLiteFactory, System.Data.SQLite" /&gt;
     &lt;/DbProviderFactories&gt;
   &lt;/system.data&gt;
 &lt;/configuration&gt;
-</PRE>
+</pre>
       </div>
-      <h4>
-        Scenario 2:&nbsp; Version Dependent, using either the DLL located in the same folder
-        as the application or the Global Assembly Cache</h4>
-      <p>
-        This method expands on the above XML to provide the version number and key token
-        of the SQLite DLL so it can be found either in the same folder as the application
-        or looked up in the GAC.&nbsp; The downside to this method is that DbProviderFactories
-        will use this version information to only load the version specified.&nbsp; This
-        means if you update the DLL, you must also update this XML.</p>
+      <h4 _msttexthash="289718962" _msthash="10">&#26041;&#26696; 2&#65306;&#29256;&#26412;&#30456;&#20851;&#65292;&#20351;&#29992;&#20301;&#20110;&#21516;&#19968;&#25991;&#20214;&#22841;&#20013;&#30340; DLL
+ &#20316;&#20026;&#24212;&#29992;&#31243;&#24207;&#25110;&#20840;&#23616;&#31243;&#24207;&#38598;&#32531;&#23384;</h4>
+      <p _msttexthash="2094209598" _msthash="11">&#27492;&#26041;&#27861;&#25193;&#23637;&#20102;&#19978;&#36848; XML &#20197;&#25552;&#20379;&#29256;&#26412;&#21495;&#21644;&#23494;&#38053;&#20196;&#29260;
+ &#30340; SQLite DLL&#65292;&#20197;&#20415;&#21487;&#20197;&#22312;&#19982;&#24212;&#29992;&#31243;&#24207;&#30456;&#21516;&#30340;&#25991;&#20214;&#22841;&#20013;&#25214;&#21040;&#23427;
+ &#25110;&#22312; GAC &#20013;&#26597;&#25214;&#12290;&#27492;&#26041;&#27861;&#30340;&#32570;&#28857;&#26159; DbProviderFactories
+ &#23558;&#20351;&#29992;&#27492;&#29256;&#26412;&#20449;&#24687;&#20165;&#21152;&#36733;&#25351;&#23450;&#30340;&#29256;&#26412;&#12290;&#36825;
+ &#34920;&#31034;&#22914;&#26524;&#26356;&#26032; DLL&#65292;&#21017;&#36824;&#24517;&#39035;&#26356;&#26032;&#27492; XML&#12290;</p>
       <div class="syntax">
-        <PRE>
-&lt;configuration&gt;
+        <pre>&lt;configuration&gt;
   &lt;system.data&gt;
     &lt;DbProviderFactories&gt;
       &lt;remove invariant="System.Data.SQLite"/&gt;
@@ -92,9 +87,8 @@
 &lt;/configuration&gt;
 </pre>
       </div>
-      <p>
-        The following C# code demonstrates
-        instantiating SQLite through DbProviderFactories:</p>
+      <p _msttexthash="107360864" _msthash="12">&#20197;&#19979; C# &#20195;&#30721;&#28436;&#31034;
+ &#36890;&#36807; DbProviderFactories &#23454;&#20363;&#21270; SQLite&#65306;</p>
       <div class="syntax"><pre>      DbProviderFactory fact = DbProviderFactories.GetFactory("System.Data.SQLite");
       using (DbConnection cnn = fact.CreateConnection())
       {
@@ -105,13 +99,13 @@
       <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Factory%20Support">
-            Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Factory%20Support" _msttexthash="36201139" _msthash="13">&#23601;&#27492;&#20027;&#39064;&#21457;&#36865;&#35780;&#35770;&#12290;</a>
         </p>
         <p>
         </p>
       </div>
     </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

@@ -1,110 +1,104 @@
-<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
-    <title>Provider Limitations</title>
-    <link rel="stylesheet" type="text/css" href="../Include/ndoc.css" />
+
+<!-- saved from url=(0118)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/limitations.html -->
+<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title _msttexthash="20032805" _msthash="0">&#25552;&#20379;&#31243;&#24207;&#38480;&#21046;</title>
+    <link rel="stylesheet" type="text/css" href="./limitations_files/ndoc.css">
   </head>
   <body>
     <div id="header">
       <table width="100%" id="topTable">
-        <tr id="headerTableRow1">
+        <tbody><tr id="headerTableRow1">
           <td align="left">
-            <span id="runningHeaderText">Provider Limitations</span>
+            <span id="runningHeaderText" _msttexthash="20032805" _msthash="1">&#25552;&#20379;&#31243;&#24207;&#38480;&#21046;</span>
           </td>
         </tr>
         <tr id="headerTableRow2">
           <td align="left">
-            <span id="nsrTitle">SQLite.NET Class Library Documentation</span>
+            <span id="nsrTitle" _msttexthash="26199498" _msthash="2">SQLite.NET &#31867;&#24211;&#25991;&#26723;</span>
           </td>
         </tr>
-        <tr id="headerTableRow3" style="display:none">
-          <td>
-            <a id="seeAlsoSectionLink" href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
-            <a id="exampleSectionLink" href="#codeExampleToggle" onclick="OpenSection(codeExampleToggle)">Example</a>
+        <tr id="headerTableRow3" style="display:none" _msthidden="1">
+          <td _msthidden="1">
+            <font _mstmutation="1" _msttexthash="249834" _msthidden="1" _msthash="3"><a id="seeAlsoSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/limitations.html#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)" _mstmutation="1">See Also</a>
+            <a id="exampleSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/limitations.html#codeExampleToggle" onclick="OpenSection(codeExampleToggle)" _mstmutation="1">Example</a></font>
           </td>
         </tr>
-     </table>
-      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none">
-        <tr>
-          <td>
-            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0">
-              <img ID="toggleAllImage" class="toggleAll" src="collall.gif" />
-              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">
+     </tbody></table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none" _msthidden="2">
+        <tbody _msthidden="2"><tr _msthidden="2">
+          <td _msthidden="2">
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" _msthidden="2">
+              <img id="toggleAllImage" class="toggleAll" src="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/collall.gif">
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="172484" _msthidden="1" _msthash="4">
 							Collapse All
 						</label>
-              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="127504" _msthidden="1" _msthash="5">
 							Expand All
 						</label>
             </span>
           </td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
     <div id="mainSection">
     <div id="mainBody">
-      <h1 class="heading">Limitations of this ADO.NET SQLite Data Provider</h1>
-      <p>As providers go, this one doesn't have many restrictions. SQLite has no
-        support for row-level or table-level locks. When a connection locks the database for writing, no other connection or process may read or write to the database until the write operation is complete.  The SQLite.NET provider attempts to retry
-        internally if a database is locked, up to the CommandTimeout property of the
-        command in question.</p>
-      <p>SQLite is inherently type-less, and only understands a few basic datatypes
-        natively. They are (in .NET-speak) Int64, Double, String and Blob. The
-        SQLite.NET provider will use the database schema information it can glean to
-        enforce type-ness, but it is an inexact science.</p>
-      <p>
-        Hierarchical DataReaders are not supported. In the
-        case of transactions, any SQLiteCommand created on a connection will (when
-        executed) automatically join a transaction in progress, regardless of whether
-        that transaction was created before or after the command.</p>
-      <p>A SQLiteCommand object <b>can</b> be re-assigned a new SQLiteConnection object
-        as long as no DataReaders are active on the command.</p>
-      <p>Opening a transaction is considered a write operation, so only use them when
-        you want to write to the database! If you hold open an &quot;immediate&quot;
-        transaction, all readers on other connections will be blocked until the
-        transaction is closed!</p>
+      <h1 class="heading" _msttexthash="81995511" _msthash="6">&#27492; ADO.NET SQLite &#25968;&#25454;&#25552;&#20379;&#31243;&#24207;&#30340;&#38480;&#21046;</h1>
+      <p _msttexthash="2718911364" _msthash="7">&#38543;&#30528;&#25552;&#20379;&#21830;&#30340;&#21457;&#23637;&#65292;&#36825;&#20010;&#27809;&#26377;&#22826;&#22810;&#38480;&#21046;&#12290;SQLite &#27809;&#26377;
+ &#25903;&#25345;&#34892;&#32423;&#25110;&#34920;&#32423;&#38145;&#12290;&#24403;&#36830;&#25509;&#38145;&#23450;&#25968;&#25454;&#24211;&#20197;&#36827;&#34892;&#20889;&#20837;&#26102;&#65292;&#22312;&#20889;&#20837;&#20316;&#23436;&#25104;&#20043;&#21069;&#65292;&#20854;&#20182;&#36830;&#25509;&#25110;&#36827;&#31243;&#37117;&#19981;&#33021;&#23545;&#25968;&#25454;&#24211;&#36827;&#34892;&#35835;&#21462;&#25110;&#20889;&#20837;&#20316;&#12290;SQLite.NET &#25552;&#20379;&#31243;&#24207;&#23581;&#35797;&#37325;&#35797;
+ &#22312;&#20869;&#37096;&#65292;&#22914;&#26524;&#25968;&#25454;&#24211;&#34987;&#38145;&#23450;&#65292;&#21017;&#26368;&#39640;&#20026;
+ &#21629;&#20196;&#26377;&#38382;&#39064;&#12290;</p>
+      <p _msttexthash="1913133417" _msthash="8">SQLite &#26412;&#36136;&#19978;&#26159;&#26080;&#31867;&#22411;&#30340;&#65292;&#24182;&#19988;&#21482;&#29702;&#35299;&#20960;&#31181;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;
+ &#26412;&#22320;&#12290;&#20182;&#20204;&#26159; &#65288;&#22312; .NET-speak&#65289; Int64&#12289;Double&#12289;String &#21644; Blob&#12290;&#36825;
+ SQLite.NET &#25552;&#20379;&#31243;&#24207;&#23558;&#20351;&#29992;&#23427;&#21487;&#20197;&#25910;&#38598;&#21040;&#30340;&#25968;&#25454;&#24211;&#26550;&#26500;&#20449;&#24687;
+ &#24378;&#21046;&#31867;&#22411;&#21270;&#65292;&#20294;&#36825;&#26159;&#19968;&#38376;&#19981;&#31934;&#30830;&#30340;&#31185;&#23398;&#12290;</p>
+      <p _msttexthash="1118069303" _msthash="9">&#19981;&#25903;&#25345;&#20998;&#23618; DataReader&#12290;&#22312;
+ &#30340;&#24773;&#20917;&#19979;&#65292;&#22312;&#36830;&#25509;&#19978;&#21019;&#24314;&#30340;&#20219;&#20309; SQLiteCommand &#37117;&#23558;&#65288;&#24403;
+ executed&#65289; &#33258;&#21160;&#21152;&#20837;&#27491;&#22312;&#36827;&#34892;&#30340;&#20107;&#21153;&#65292;&#26080;&#35770;
+ &#35813;&#20107;&#21153;&#26159;&#22312;&#21629;&#20196;&#20043;&#21069;&#25110;&#20043;&#21518;&#21019;&#24314;&#30340;&#12290;</p>
+      <p _msttexthash="374097113" _msthash="10"><b _istranslated="1">&#21487;&#20197;</b>&#37325;&#26032;&#20026; SQLiteCommand &#23545;&#35937;&#20998;&#37197;&#26032;&#30340; SQLiteConnection &#23545;&#35937;
+ &#21482;&#35201;&#21629;&#20196;&#19978;&#27809;&#26377; DataReader &#22788;&#20110;&#27963;&#21160;&#29366;&#24577;&#12290;</p>
+      <p _msttexthash="1126029424" _msthash="11">&#25171;&#24320;&#20107;&#21153;&#34987;&#35270;&#20026;&#20889;&#20837;&#20316;&#65292;&#22240;&#27492;&#35831;&#20165;&#22312;
+ &#24744;&#24819;&#35201;&#20889;&#20837;&#25968;&#25454;&#24211;&#65281;&#22914;&#26524;&#24744;&#25353;&#20303; open &#19968;&#20010; “immediate”
+ transaction &#26102;&#65292;&#20854;&#20182;&#36830;&#25509;&#19978;&#30340;&#25152;&#26377;&#35835;&#21462;&#22120;&#37117;&#23558;&#34987;&#38459;&#22622;&#65292;&#30452;&#21040;
+ &#20132;&#26131;&#24050;&#20851;&#38381;&#65281;</p>
       <p></p>
-      <h4 class="subHeading">Thread Safety</h4>
-      <p>Multi-threading in SQLite must be done carefully. Here are the restrictions:</p>
+      <h4 class="subHeading" _msttexthash="11652810" _msthash="12">&#32447;&#31243;&#23433;&#20840;</h4>
+      <p _msttexthash="143227617" _msthash="13">SQLite &#20013;&#30340;&#22810;&#32447;&#31243;&#24517;&#39035;&#23567;&#24515;&#23436;&#25104;&#12290;&#20197;&#19979;&#26159;&#38480;&#21046;&#65306;</p>
       <ul>
         <li>
-          <b>You May</b>
-        Clone() a SQLiteConnection object in one thread and pass the cloned object to
-        another thread. Once passed, the other thread becomes the new owner of the
-        cloned connection, and the original thread must not keep a reference to the
-        clone or call any methods on the clone.
-        <LI>
-          <STRONG>You May</STRONG>
-        create multiple threads, and those threads can create their own
-        SQLiteConnection and subsequent objects for accessing a database.&nbsp;
-        Multiple connections on multiple threads to the same database file are
-        perfectly&nbsp;acceptable&nbsp;and will behave predictably.&nbsp;
-        <li>
-          <b>You May NOT</b>
-        call methods or properties or otherwise reference any SQLite provider classes
-        that belong to another thread.
-        <li>
-          <b>You May NOT</b> pass a SQLiteCommand, SQLiteDataReader, SQLiteDataAdapter or
-          any other SQLite provider class except a cloned SQLiteConnection to another
-          thread.</li>
+          <font _mstmutation="1" _msttexthash="1299837617" _msthash="14"><b _mstmutation="1" _istranslated="1">&#24744;&#21487;&#20197;</b>Clone&#65288;&#65289; &#19968;&#20010; SQLiteConnection &#23545;&#35937;&#65292;&#24182;&#23558;&#20811;&#38534;&#30340;&#23545;&#35937;&#20256;&#36882;&#32473;
+ &#21478;&#19968;&#20010;&#32447;&#31243;&#12290;&#20256;&#36882;&#21518;&#65292;&#21478;&#19968;&#20010;&#32447;&#31243;&#23558;&#25104;&#20026;
+ cloned &#36830;&#25509;&#65292;&#24182;&#19988;&#21407;&#22987;&#32447;&#31243;&#19981;&#24471;&#20445;&#30041;&#23545;
+ clone &#25110;&#23545; clone &#35843;&#29992;&#20219;&#20309;&#26041;&#27861;&#12290;</font></li><li>
+          <font _mstmutation="1" _msttexthash="1248766493" _msthash="15"><strong _mstmutation="1" _istranslated="1">&#24744;&#21487;&#20197;</strong>&#21019;&#24314;&#22810;&#20010;&#32447;&#31243;&#65292;&#36825;&#20123;&#32447;&#31243;&#21487;&#20197;&#21019;&#24314;&#33258;&#24049;&#30340;&#32447;&#31243;
+ SQLiteConnection &#21644;&#21518;&#32493;&#23545;&#35937;&#26469;&#35775;&#38382;&#25968;&#25454;&#24211;&#12290;
+ &#22810;&#20010;&#32447;&#31243;&#19978;&#25351;&#21521;&#21516;&#19968;&#25968;&#25454;&#24211;&#25991;&#20214;&#30340;&#22810;&#20010;&#36830;&#25509;&#26159;
+ &#23436;&#20840;&#21487;&#20197;&#25509;&#21463;&#65292;&#24182;&#19988;&#34892;&#20026;&#21487;&#39044;&#27979;&#12290;</font></li><li>
+          <font _mstmutation="1" _msttexthash="262897999" _msthash="16"><b _mstmutation="1" _istranslated="1">&#24744;&#19981;&#24471;</b>&#35843;&#29992;&#26041;&#27861;&#25110;&#23646;&#24615;&#25110;&#20197;&#20854;&#20182;&#26041;&#24335;&#24341;&#29992;&#20219;&#20309; SQLite &#25552;&#20379;&#31243;&#24207;&#31867;
+ &#23646;&#20110;&#21478;&#19968;&#20010;&#32447;&#31243;&#12290;</font></li><li>
+          <font _mstmutation="1" _msttexthash="710481239" _msthash="17"><b _mstmutation="1" _istranslated="1">&#24744;&#19981;&#33021;</b>&#20256;&#36882; SQLiteCommand&#12289;SQLiteDataReader&#12289;SQLiteDataAdapter &#25110;
+ &#20219;&#20309;&#20854;&#20182; SQLite &#25552;&#20379;&#31243;&#24207;&#31867;&#65292;&#20294;&#20811;&#38534;&#30340; SQLiteConnection &#21040;&#21478;&#19968;&#20010;&#31867;&#38500;&#22806;
+ &#32447;&#12290;</font></li>
       </ul>
-      <p>Understand again that SQLite has no fine-grained locking mechanisms. It is
-        therefore your own responsibility in a multi-threaded environment to handle
-        potential timeouts that may occur if a long-running query in one thread
-        prevents a query in another thread from executing. These timeouts will only
-        occur if one thread is attempting to read while another thread is attempting to
-        write. Whichever thread got its lock first will be the one to execute, and the
-        other thread will block until the CommandTimeout value elapses or the other
-        thread finishes.</p>
-      <hr/>
+      <p _msttexthash="5332730026" _msthash="18">&#20877;&#27425;&#20102;&#35299; SQLite &#27809;&#26377;&#32454;&#31890;&#24230;&#30340;&#38145;&#23450;&#26426;&#21046;&#12290;&#26159;&#30340;
+ &#22240;&#27492;&#24744;&#33258;&#24049;&#36127;&#36131;&#22312;&#22810;&#32447;&#31243;&#29615;&#22659;&#20013;&#22788;&#29702;
+ &#22914;&#26524;&#19968;&#20010;&#32447;&#31243;&#20013;&#23384;&#22312;&#38271;&#26102;&#38388;&#36816;&#34892;&#30340;&#26597;&#35810;&#65292;&#21017;&#21487;&#33021;&#21457;&#29983;&#30340;&#36229;&#26102;
+ &#38459;&#27490;&#25191;&#34892;&#21478;&#19968;&#20010;&#32447;&#31243;&#20013;&#30340;&#26597;&#35810;&#12290;&#36825;&#20123;&#36229;&#26102;&#21482;&#20250;
+ &#22914;&#26524;&#19968;&#20010;&#32447;&#31243;&#27491;&#22312;&#23581;&#35797;&#35835;&#21462;&#65292;&#32780;&#21478;&#19968;&#20010;&#32447;&#31243;&#27491;&#22312;&#23581;&#35797;&#35835;&#21462;&#65292;&#21017;&#20250;&#20986;&#29616;&#27492;&#20107;&#20214;
+ &#20889;&#12290;&#39318;&#20808;&#33719;&#24471;&#38145;&#30340;&#32447;&#31243;&#23558;&#26159;&#35201;&#25191;&#34892;&#30340;&#32447;&#31243;&#65292;&#32780;
+ &#20854;&#20182;&#32447;&#31243;&#23558;&#38459;&#22622;&#65292;&#30452;&#21040; CommandTimeout &#20540;&#36807;&#21435;&#65292;&#25110;&#32773;&#20854;&#20182;
+ &#34746;&#32441;&#23436;&#25104;&#12290;</p>
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Limitations">
-            Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Limitations" _msttexthash="36201139" _msthash="19">&#23601;&#27492;&#20027;&#39064;&#21457;&#36865;&#35780;&#35770;&#12290;</a>
         </p>
         <p>
         </p>
       </div>
     </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

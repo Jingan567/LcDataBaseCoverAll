@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- saved from url=(0116)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link href="sqlite.css" rel="stylesheet">
+
+<link href="./lang_mathfunc_files/sqlite.css" rel="stylesheet">
 <title>Built-In Mathematical SQL Functions</title>
 <!-- path= -->
 </head>
 <body>
-<div class=nosearch>
+<div class="nosearch">
 <a href="https://www.sqlite.org/index.html">
-<img class="logo" src="images/sqlite370_banner.gif" alt="SQLite" border="0">
+<img class="logo" src="./lang_mathfunc_files/sqlite370_banner.gif" alt="SQLite" border="0">
 </a>
 <div><!-- IE hack to prevent disappearing logo --></div>
 <div class="tagline desktoponly">
@@ -18,28 +19,28 @@ Small. Fast. Reliable.<br>Choose any three.
 <div class="menu mainmenu">
 <ul>
 <li><a href="https://www.sqlite.org/index.html">Home</a>
-<li class='mobileonly'><a href="https://www.sqlite.org/javascript:void(0)" onclick='toggle_div("submenu")'>Menu</a>
-<li class='wideonly'><a href="https://www.sqlite.org/about.html">About</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/docs.html">Documentation</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/download.html">Download</a>
-<li class='wideonly'><a href="https://www.sqlite.org/copyright.html">License</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/support.html">Support</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
-<li class='search' id='search_menubutton'>
-<a href="https://www.sqlite.org/javascript:void(0)" onclick='toggle_search()'>Search</a>
-</ul>
+</li><li class="mobileonly"><a href="https://www.sqlite.org/javascript:void(0)" onclick="toggle_div(&quot;submenu&quot;)">Menu</a>
+</li><li class="wideonly"><a href="https://www.sqlite.org/about.html">About</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/docs.html">Documentation</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/download.html">Download</a>
+</li><li class="wideonly"><a href="https://www.sqlite.org/copyright.html">License</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/support.html">Support</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
+</li><li class="search" id="search_menubutton" style="display: none;">
+<a href="https://www.sqlite.org/javascript:void(0)" onclick="toggle_search()">Search</a>
+</li></ul>
 </div>
 <div class="menu submenu" id="submenu">
 <ul>
 <li><a href="https://www.sqlite.org/about.html">About</a>
-<li><a href="https://www.sqlite.org/docs.html">Documentation</a>
-<li><a href="https://www.sqlite.org/download.html">Download</a>
-<li><a href="https://www.sqlite.org/support.html">Support</a>
-<li><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
-</ul>
+</li><li><a href="https://www.sqlite.org/docs.html">Documentation</a>
+</li><li><a href="https://www.sqlite.org/download.html">Download</a>
+</li><li><a href="https://www.sqlite.org/support.html">Support</a>
+</li><li><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
+</li></ul>
 </div>
 <div class="searchmenu" id="searchmenu">
-<form method="GET" action="search">
+<form method="GET" action="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/search">
 <select name="s" id="searchtype">
 <option value="d">Search Documentation</option>
 <option value="c">Search Changelog</option>
@@ -91,10 +92,10 @@ return false;
 }
 
 </script>
-<div class=fancy>
-<div class=nosearch>
+<div class="fancy">
+<div class="nosearch">
 <div class="fancy_title">
-Built-In Mathematical SQL Functions
+<font _mstmutation="1" _msttexthash="20292870" _msthash="92">内置数学 SQL 函数</font>
 </div>
 </div>
 
@@ -102,194 +103,186 @@ Built-In Mathematical SQL Functions
 
 
 
-<h1 id="overview"><span>1. </span>Overview</h1>
+<h1 id="overview"><span _msttexthash="9243" _msthash="59">1.</span><font _mstmutation="1" _msttexthash="6290102" _msthash="60">概述</font></h1>
 
-<p>The math functions shown below are a subgroup of
-<a href="lang_corefunc.html">scalar functions</a> that are built into the
-<a href="https://www.sqlite.org/amalgamation.html">SQLite amalgamation source file</a> but are only active
-if the amalgamation is compiled using the
-<a href="https://www.sqlite.org/compile.html#enable_math_functions">-DSQLITE_ENABLE_MATH_FUNCTIONS</a> compile-time option.
+<p _msttexthash="745873492" _msthash="61">下面显示的数学函数是标<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_corefunc.html" _istranslated="1">量函数</a>的子组，这些函数内置于 <a href="https://www.sqlite.org/amalgamation.html" _istranslated="1">SQLite 合并源文件中</a>，但仅处于活动状态
+如果使用 <a href="https://www.sqlite.org/compile.html#enable_math_functions" _istranslated="1">-DSQLITE_ENABLE_MATH_FUNCTIONS</a> compile-time 选项编译合并。</p><p _msttexthash="2481081460" _msthash="62">数学函数的参数可以是整数、浮点数、
+或者看起来像整数或实数的字符串或 blob。如果有任何参数
+为 NULL 或不容易转换为数字的字符串或 blob，则
+则函数将返回 NULL。
+这些函数还会为域错误返回 NULL，例如尝试
+取负数的平方根，或计算 a 的反余弦
+值大于 1.0 或小于 -1.0。</p><p><font _mstmutation="1" _msttexthash="968272721" _msthash="63">这些函数返回的值通常是近似值。
+例如，<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#pi" _mstmutation="1" _istranslated="1">pi（）</a> 函数返回
+3.141592653589793115997963468544185161590576171875 其中
+大约是 1.22465E-16 太小了，但它是最接近的近似值
+IEEE754双打。</font>
 
-</p><p>The arguments to math functions can be integers, floating-point numbers,
-or strings or blobs that look like integers or real numbers.  If any argument
-is NULL or is a string or blob that is not readily converted into a number,
-then the function will return NULL.
-These functions also return NULL for domain errors, such as trying to
-take the square root of a negative number, or compute the arccosine of a
-value greater than 1.0 or less than -1.0.
-
-</p><p>The values returned by these functions are often approximations.
-For example, the <a href="lang_mathfunc.html#pi">pi()</a> function returns 
-3.141592653589793115997963468544185161590576171875 which 
-is about 1.22465e-16 too small, but it is the closest approximation available
-for IEEE754 doubles.
-
-<p>
-<div class='columns' style='columns: 15em auto;'>
-<ul style='padding-top:0;'>
-<li><a href='lang_mathfunc.html#acos'>acos(X)</a></li>
-<li><a href='lang_mathfunc.html#acosh'>acosh(X)</a></li>
-<li><a href='lang_mathfunc.html#asin'>asin(X)</a></li>
-<li><a href='lang_mathfunc.html#asinh'>asinh(X)</a></li>
-<li><a href='lang_mathfunc.html#atan'>atan(X)</a></li>
-<li><a href='lang_mathfunc.html#atan2'>atan2(Y,X)</a></li>
-<li><a href='lang_mathfunc.html#atanh'>atanh(X)</a></li>
-<li><a href='lang_mathfunc.html#ceil'>ceil(X)</a></li>
-<li><a href='lang_mathfunc.html#ceil'>ceiling(X)</a></li>
-<li><a href='lang_mathfunc.html#cos'>cos(X)</a></li>
-<li><a href='lang_mathfunc.html#cosh'>cosh(X)</a></li>
-<li><a href='lang_mathfunc.html#degrees'>degrees(X)</a></li>
-<li><a href='lang_mathfunc.html#exp'>exp(X)</a></li>
-<li><a href='lang_mathfunc.html#floor'>floor(X)</a></li>
-<li><a href='lang_mathfunc.html#ln'>ln(X)</a></li>
-<li><a href='lang_mathfunc.html#log'>log(B,X)</a></li>
-<li><a href='lang_mathfunc.html#log'>log(X)</a></li>
-<li><a href='lang_mathfunc.html#log'>log10(X)</a></li>
-<li><a href='lang_mathfunc.html#log2'>log2(X)</a></li>
-<li><a href='lang_mathfunc.html#mod'>mod(X,Y)</a></li>
-<li><a href='lang_mathfunc.html#pi'>pi()</a></li>
-<li><a href='lang_mathfunc.html#pow'>pow(X,Y)</a></li>
-<li><a href='lang_mathfunc.html#pow'>power(X,Y)</a></li>
-<li><a href='lang_mathfunc.html#radians'>radians(X)</a></li>
-<li><a href='lang_mathfunc.html#sin'>sin(X)</a></li>
-<li><a href='lang_mathfunc.html#sinh'>sinh(X)</a></li>
-<li><a href='lang_mathfunc.html#sqrt'>sqrt(X)</a></li>
-<li><a href='lang_mathfunc.html#tan'>tan(X)</a></li>
-<li><a href='lang_mathfunc.html#tanh'>tanh(X)</a></li>
-<li><a href='lang_mathfunc.html#trunc'>trunc(X)</a></li>
+</p><p>
+</p><div class="columns" style="columns: 15em auto;">
+<ul style="padding-top:0;">
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#acos">acos(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#acosh">acosh(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#asin">asin(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#asinh">asinh(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#atan">atan(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#atan2">atan2(Y,X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#atanh">atanh(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#ceil">ceil(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#ceil">ceiling(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#cos">cos(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#cosh">cosh(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#degrees">degrees(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#exp">exp(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#floor">floor(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#ln">ln(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#log">log(B,X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#log">log(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#log">log10(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#log2">log2(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#mod">mod(X,Y)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#pi">pi()</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#pow">pow(X,Y)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#pow">power(X,Y)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#radians">radians(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#sin">sin(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#sinh">sinh(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#sqrt">sqrt(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#tan">tan(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#tanh">tanh(X)</a></li>
+<li><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#trunc">trunc(X)</a></li>
 </ul>
 </div>
 
 
-</p><h1 id="descriptions_of_built_in_scalar_sql_math_functions"><span>2. </span>Descriptions of built-in scalar SQL math functions</h1>
+<p></p><h1 id="descriptions_of_built_in_scalar_sql_math_functions"><span>2. </span><font _mstmutation="1" _msttexthash="55682016" _msthash="65">内置标量 SQL 数学函数的描述</font></h1>
 <dl>
 
 <a name="acos"></a>
-<dt><p><b>acos(<i>X</i>)</b></dt><dd><p>
-  Return the arccosine of X.  The result is in radians.
-</dd>
+<dt><p><b>acos(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="70715632" _msthash="64">返回 X 的反余弦。结果以弧度为单位。</font>
+</p></dd>
 <a name="acosh"></a>
-<dt><p><b>acosh(<i>X</i>)</b></dt><dd><p>
-  Return the hyperbolic arccosine of X.
-</dd>
+<dt><p><b>acosh(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="31425381" _msthash="66">返回 X 的双曲反余弦。</font>
+</p></dd>
 <a name="asin"></a>
-<dt><p><b>asin(<i>X</i>)</b></dt><dd><p>
-  Return the arcsine of X.  The result is in radians.
-</dd>
+<dt><p><b>asin(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="78355901" _msthash="67">返回 X 的反正弦值。结果以弧度为单位。</font>
+</p></dd>
 <a name="asinh"></a>
-<dt><p><b>asinh(<i>X</i>)</b></dt><dd><p>
-  Return the hyperbolic arcsine of X.
-</dd>
+<dt><p><b>asinh(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="32731777" _msthash="68">返回 X 的双曲反正弦。</font>
+</p></dd>
 <a name="atan"></a>
-<dt><p><b>atan(<i>X</i>)</b></dt><dd><p>
-  Return the arctangent of X.  The result is in radians.
-</dd>
+<dt><p><b>atan(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="77788230" _msthash="69">返回 X 的反正切值。结果以弧度为单位。</font>
+</p></dd>
 <a name="atan2"></a>
-<dt><p><b>atan2(<i>Y</i>,<i>X</i>)</b></dt><dd><p>
-  Return the arctangent of Y/X.  The result is in radians.  The
-  result is placed into correct quadrant depending on the signs
-  of X and Y.
-</dd>
+<dt><p><b>atan2(<i>Y</i>,<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="393248167" _msthash="70">返回 Y/X 的反正切值。结果以弧度为单位。这
+ 根据符号将结果放入正确的象限
+ X 和 Y 的 X 和 Y 的 X 和 Y 的 X 和</font>
+</p></dd>
 <a name="atanh"></a>
-<dt><p><b>atanh(<i>X</i>)</b></dt><dd><p>
-  Return the hyperbolic arctangent of X.
-</dd>
+<dt><p><b>atanh(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="36508862" _msthash="71">返回 X 的双曲反正切值。</font>
+</p></dd>
 <a name="ceil"></a>
-<dt><p><b>ceil(<i>X</i>)<br />ceiling(<i>X</i>)</b></dt><dd><p>
-  Return the first representable integer value greater than or equal to X.
-  For positive values of X, this routine rounds away from zero.
-  For negative values of X, this routine rounds toward zero.
-</dd>
+<dt><p><b>ceil(<i>X</i>)<br>ceiling(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="598622804" _msthash="72">返回第一个大于或等于 X 的可表示整数值。
+ 对于 X 的正值，此例程从零开始舍入。
+ 对于 X 的负值，此例程将四舍五入为零。</font>
+</p></dd>
 <a name="cos"></a>
-<dt><p><b>cos(<i>X</i>)</b></dt><dd><p>
-  Return the cosine of X.  X is in radians.
-</dd>
+<dt><p><b>cos(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="56851925" _msthash="73">返回 X 的余弦值。X 以弧度为单位。</font>
+</p></dd>
 <a name="cosh"></a>
-<dt><p><b>cosh(<i>X</i>)</b></dt><dd><p>
-  Return the hyperbolic cosine of X.
-</dd>
+<dt><p><b>cosh(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="31224401" _msthash="74">返回 X 的双曲余弦值。</font>
+</p></dd>
 <a name="degrees"></a>
-<dt><p><b>degrees(<i>X</i>)</b></dt><dd><p>
-  Convert value X from radians into degrees.
-</dd>
+<dt><p><b>degrees(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="42571217" _msthash="75">将值 X 从弧度转换为度数。</font>
+</p></dd>
 <a name="exp"></a>
-<dt><p><b>exp(<i>X</i>)</b></dt><dd><p>
-  Compute <i>e</i> (Euler's number, approximately 2.71828182845905) raised
-  to the power X.
-</dd>
+<dt><p><b>exp(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="126195095" _msthash="76">计算 <i _mstmutation="1" _istranslated="1">e</i>（欧拉数，约为 2.71828182845905）引发
+ 到幂 X。</font>
+</p></dd>
 <a name="floor"></a>
-<dt><p><b>floor(<i>X</i>)</b></dt><dd><p>
-  Return the first representable integer value less than or equal to X.
-  For positive numbers, this function rounds toward zero.
-  For negative numbers, this function rounds away from zero.
-</dd>
+<dt><p><b>floor(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="571685634" _msthash="77">返回第一个小于或等于 X 的可表示整数值。
+ 对于正数，此函数将四舍五入为零。
+ 对于负数，此函数从零开始四舍五入。</font>
+</p></dd>
 <a name="ln"></a>
-<dt><p><b>ln(<i>X</i>)</b></dt><dd><p>
-  Return the natural logarithm of X.
-</dd>
+<dt><p><b>ln(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="29996785" _msthash="78">返回 X 的自然对数。</font>
+</p></dd>
 <a name="log"></a>
-<dt><p><b>log(<i>X</i>)<br />log10(<i>X</i>)<br />log(<i>B</i>,<i>X</i>)</b></dt><dd><p>
-  Return the base-10 logarithm for X.  Or, for the two-argument version,
-  return the base-B logarithm of X.
-  <p>
-  Compatibility note:  SQLite works like PostgreSQL in that the log() function
-  computes a base-10 logarithm.  Most other SQL database engines compute a
-  natural logarithm for log().  In the two-argument version of log(B,X), the
-  first argument is the base and the second argument is the operand.  This is
-  the same as in PostgreSQL and MySQL, but is reversed from SQL Server which
-  uses the second argument as the base and the first argument as the operand.
-</dd>
+<dt><p><b>log(<i>X</i>)<br>log10(<i>X</i>)<br>log(<i>B</i>,<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="274911052" _msthash="79">返回 X 的以 10 为底的对数。或者，对于双参数版本，
+ 返回 X 的以 B 为底的对数。</font></p><p><font _mstmutation="1" _msttexthash="4360547477" _msthash="80">兼容性说明：SQLite 的工作方式与 PostgreSQL 类似，因为 log（） 函数
+ 计算以 10 为基数的对数。大多数其他 SQL 数据库引擎计算
+ log（） 的自然对数。在 log（B，X） 的双参数版本中，
+ 第一个参数是基数，第二个参数是作数。这是
+ 与 PostgreSQL 和 MySQL 中的相同，但与 SQL Server 相反，后者
+ 使用第二个参数作为基，使用第一个参数作为作数。</font>
+</p></dd>
 <a name="log2"></a>
-<dt><p><b>log2(<i>X</i>)</b></dt><dd><p>
-  Return the logarithm base-2 for the number X.
-</dd>
+<dt><p><b>log2(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="28659943" _msthash="81">返回数字 X 的对数 base-2。</font>
+</p></dd>
 <a name="mod"></a>
-<dt><p><b>mod(<i>X</i>,<i>Y</i>)</b></dt><dd><p>
-  Return the remainder after dividing X by Y.  This is similar to the '%'
-  operator, except that it works for non-integer arguments.
-</dd>
+<dt><p><b>mod(<i>X</i>,<i>Y</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="242814000" _msthash="82">返回 X 除以 Y 后的余数。这类似于 '%'
+ 运算符，但它适用于非整数参数。</font>
+</p></dd>
 <a name="pi"></a>
-<dt><p><b>pi()</b></dt><dd><p>
-  Return an approximation for &pi;.
-</dd>
+<dt><p><b>pi()</b></p></dt><dd><p>
+  Return an approximation for π.
+</p></dd>
 <a name="pow"></a>
-<dt><p><b>pow(<i>X</i>,<i>Y</i>)<br />power(<i>X</i>,<i>Y</i>)</b></dt><dd><p>
-  Compute X raised to the power Y.
-</dd>
+<dt><p><b>pow(<i>X</i>,<i>Y</i>)<br>power(<i>X</i>,<i>Y</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="21103524" _msthash="86">计算 X 的 Y 次幂。</font>
+</p></dd>
 <a name="radians"></a>
-<dt><p><b>radians(<i>X</i>)</b></dt><dd><p>
-  Convert X from degrees into radians.
-</dd>
+<dt><p><b>radians(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="37554673" _msthash="87">将 X 从度数转换为弧度。</font>
+</p></dd>
 <a name="sin"></a>
-<dt><p><b>sin(<i>X</i>)</b></dt><dd><p>
-  Return the sine of X.  X is in radians.
-</dd>
+<dt><p><b>sin(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="57878379" _msthash="88">返回 X 的正弦值。X 以弧度为单位。</font>
+</p></dd>
 <a name="sinh"></a>
-<dt><p><b>sinh(<i>X</i>)</b></dt><dd><p>
-  Return the hyperbolic sine of X.
-</dd>
+<dt><p><b>sinh(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="32437483" _msthash="89">返回 X 的双曲正弦值。</font>
+</p></dd>
 <a name="sqrt"></a>
-<dt><p><b>sqrt(<i>X</i>)</b></dt><dd><p>
-  Return the square root of X.  NULL is returned if X is negative.
-</dd>
+<dt><p><b>sqrt(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="110420661" _msthash="90">返回 X 的平方根，如果 X 为负数，则返回 NULL。</font>
+</p></dd>
 <a name="tan"></a>
-<dt><p><b>tan(<i>X</i>)</b></dt><dd><p>
-  Return the tangent of X.  X is in radians.
-</dd>
+<dt><p><b>tan(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="57354375" _msthash="91">返回 X 的正切值。X 以弧度为单位。</font>
+</p></dd>
 <a name="tanh"></a>
-<dt><p><b>tanh(<i>X</i>)</b></dt><dd><p>
-  Return the hyperbolic tangent of X.
-</dd>
+<dt><p><b>tanh(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="31826145" _msthash="85">返回 X 的双曲正切值。</font>
+</p></dd>
 <a name="trunc"></a>
-<dt><p><b>trunc(<i>X</i>)</b></dt><dd><p>
-  Return the representable integer in between X and 0 (inclusive)
-  that is furthest away from zero.  Or, in other words, return the
-  integer part of X, rounding toward zero.
-  The trunc() function is similar to <a href="lang_mathfunc.html#ceil">ceiling(X)</a> and <a href="lang_mathfunc.html#floor">floor(X)</a> except
-  that it always rounds toward zero whereas ceiling(X) and floor(X) round
-  up and down, respectively.
-</dd>
+<dt><p><b>trunc(<i>X</i>)</b></p></dt><dd><p>
+  <font _mstmutation="1" _msttexthash="2473292510" _msthash="83">返回介于 X 和 0 之间（包括 X 和 0）的可表示整数
+ 那离零最远。或者，换句话说，返回
+ X 的整数部分，四舍五入为零。
+ trunc（） 函数类似于 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#ceil" _mstmutation="1" _istranslated="1">ceiling（X）</a> 和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_mathfunc.html#floor" _mstmutation="1" _istranslated="1">floor（X），</a>不同之处在于
+ 它总是向零舍入，而 ceiling（X） 和 floor（X） 舍入
+ 分别是 up 和 down。</font>
+</p></dd>
 
 </dl>
-<p align="center"><small><i>This page last modified on  <a href="https://sqlite.org/docsrc/honeypot" id="mtimelink"  data-href="https://sqlite.org/docsrc/finfo/pages/lang_mathfunc.in?m=5307cdcb91">2023-12-05 14:43:20</a> UTC </small></i></p>
+<p align="center"><small><i _msttexthash="77562888" _msthash="84">此页面最后修改于 <a href="https://sqlite.org/docsrc/honeypot" id="mtimelink" data-href="https://sqlite.org/docsrc/finfo/pages/lang_mathfunc.in?m=5307cdcb91" _istranslated="1">2023-12-05 14：43：20</a> UTC</i></small></p>
 
+</div></body></html>

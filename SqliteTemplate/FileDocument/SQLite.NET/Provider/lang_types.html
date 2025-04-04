@@ -1,125 +1,103 @@
-<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
-    <title>TYPES</title>
-    <link rel="stylesheet" type="text/css" href="../Include/ndoc.css" />
+
+<!-- saved from url=(0117)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/lang_types.html -->
+<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title _msttexthash="5230641" _msthash="0">&#31867;&#22411;</title>
+    <link rel="stylesheet" type="text/css" href="./lang_types_files/ndoc.css">
   </head>
   <body>
     <div id="header">
       <table width="100%" id="topTable">
-        <tr id="headerTableRow1">
+        <tbody><tr id="headerTableRow1">
           <td align="left">
-            <span id="runningHeaderText">TYPES</span>&nbsp;</td>
+            <span id="runningHeaderText" _msttexthash="5230641" _msthash="1">&#31867;&#22411;</span>&nbsp;</td>
         </tr>
         <tr id="headerTableRow2">
           <td align="left">
-            <span id="nsrTitle">SQLite Language Reference Documentation</span>
+            <span id="nsrTitle" _msttexthash="35549059" _msthash="2">SQLite &#35821;&#35328;&#21442;&#32771;&#25991;&#26723;</span>
           </td>
         </tr>
-        <tr id="headerTableRow3" style="display:none">
-          <td>
-            <a id="seeAlsoSectionLink" href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
-            <a id="exampleSectionLink" href="#codeExampleToggle" onclick="OpenSection(codeExampleToggle)">Example</a>
+        <tr id="headerTableRow3" style="display:none" _msthidden="1">
+          <td _msthidden="1">
+            <font _mstmutation="1" _msttexthash="249834" _msthidden="1" _msthash="3"><a id="seeAlsoSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/lang_types.html#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)" _mstmutation="1">See Also</a>
+            <a id="exampleSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/lang_types.html#codeExampleToggle" onclick="OpenSection(codeExampleToggle)" _mstmutation="1">Example</a></font>
           </td>
         </tr>
-     </table>
-      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none">
-        <tr>
-          <td>
-            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0">
-              <img ID="toggleAllImage" class="toggleAll" src="collall.gif" />
-              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">
+     </tbody></table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none" _msthidden="2">
+        <tbody _msthidden="2"><tr _msthidden="2">
+          <td _msthidden="2">
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" _msthidden="2">
+              <img id="toggleAllImage" class="toggleAll" src="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/collall.gif">
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="172484" _msthidden="1" _msthash="4">
 							Collapse All
 						</label>
-              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="127504" _msthidden="1" _msthash="5">
 							Expand All
 						</label>
             </span>
           </td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
     <div id="mainSection">
     <div id="mainBody">
-      <h1 class="heading">
-        SQL As Understood By SQLite (sortof)</h1>
-      <h4>
-        TYPES</h4>
+      <h1 class="heading" _msttexthash="67705131" _msthash="6">SQLite &#29702;&#35299;&#30340; SQL&#65288;&#26576;&#31181;&#65289;</h1>
+      <h4 _msttexthash="5230641" _msthash="7">&#31867;&#22411;</h4>
       <p>
         <table cellpadding="10">
-          <tr>
-            <td align="right" width="1%" nowrap>
-              <i><font color="#ff3434">sql-statement</font></i> ::=</td>
+          <tbody><tr>
+            <td align="right" width="1%" nowrap="">
+              <font _mstmutation="1" _msttexthash="28998346" _msthash="8"><i _mstmutation="1" _istranslated="1"><font color="#ff3434" _istranslated="1">sql &#35821;&#21477;</font></i> &#65306;&#65306;=</font></td>
             <td>
-              <b><font color="#2c2cf0">TYPES </font></b>[<b><font color="#2c2cf0"></font></b><i><font
-                color="#ff3434">datatype name</font></i><b><font color="#2c2cf0"></font></b>][,<b><font color="#2c2cf0"></font></b><i><font
-                color="#ff3434">datatype name</font></i><b><font color="#2c2cf0"></font></b>][,<b><font color="#2c2cf0"></font></b><i><font
-                color="#ff3434">datatype
-                      name</font></i><b><font color="#2c2cf0"></font></b>][,<b><font color="#2c2cf0"></font></b><i><font
-                color="#ff3434">...</font></i>] ; <em><span style="color: #ff3434">select-stmt</span></em></td>            
+              <font _mstmutation="1" _msttexthash="225171869" _msthash="9"><b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1">TYPES </font></b>[<b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b><i _mstmutation="1" _istranslated="1"><font color="#ff3434" _istranslated="1">&#25968;&#25454;&#31867;&#22411;&#21517;&#31216;</font></i><b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b>][&#65292;<b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b><i _mstmutation="1" _istranslated="1"><font color="#ff3434" _istranslated="1">&#25968;&#25454;&#31867;&#22411;&#21517;&#31216;</font></i><b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b>][&#65292;<b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b><i _mstmutation="1" _istranslated="1"><font color="#ff3434" _istranslated="1">&#25968;&#25454;&#31867;&#22411;
+ &#22995;&#21517;</font></i><b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b>][&#65292;<b _mstmutation="1" _istranslated="1"><font color="#2c2cf0" _istranslated="1"></font></b><i _mstmutation="1" _istranslated="1"><font color="#ff3434" _istranslated="1">...</font></i>] ;<em _mstmutation="1" _istranslated="1"><span style="color: #ff3434" _istranslated="1">select-stmt</span></em></font></td>            
           </tr>
           <tr>
-          <td align="right" width="1%" nowrap>
-          <i><font color="#ff3434">select-stmt</font></i> ::=</td>
-          <td>
-            see <a href="lang_select.html">SELECT</a></td>
+          <td align="right" width="1%" nowrap="">
+          <font _mstmutation="1" _msttexthash="31606497" _msthash="10"><i _mstmutation="1" _istranslated="1"><font color="#ff3434" _istranslated="1">select-stmt</font></i> &#65306;&#65306;=</font></td>
+          <td _msttexthash="10056722" _msthash="11">&#35831;&#21442;&#38405; <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/lang_select.html" _istranslated="1">SELECT</a></td>
           </tr>
-        </table>
+        </tbody></table>
       </p>
+      <p _msttexthash="474025656" _msthash="12">&#22312; SELECT &#35821;&#21477;&#20043;&#21069;&#20351;&#29992; TYPES &#20851;&#38190;&#23383;&#20197;&#25552;&#20379; SQLite ADO.NET &#25552;&#20379;&#31243;&#24207;
+ &#21518;&#32493; SELECT &#35821;&#21477;&#20013;&#39044;&#26399;&#30340; return &#25968;&#25454;&#31867;&#22411;&#21015;&#34920;&#12290;</p>
+      <p _msttexthash="711268389" _msthash="13">&#36825;&#26159;&#19987;&#38376;&#29992;&#20110; ADO.NET &#25968;&#25454;&#30340; SQLite &#30340;&#35821;&#35328;&#25193;&#23637;&#65288;&#21448;&#21517; <strong _istranslated="1">hack</strong>&#65289;
+ &#20379;&#24212;&#21830;&#12290;&#23427;&#26159;&#19968;&#20010;&#20266;&#35821;&#21477;&#65292;&#36825;&#24847;&#21619;&#30528;&#21482;&#26377; ADO.NET &#25552;&#20379;&#21830;&#25165;&#33021;&#29702;&#35299;
+ &#23427;&#12290;</p>
+      <h3 _msttexthash="5727644" _msthash="14">&#32972;&#26223;</h3>
+      <p _msttexthash="4100125250" _msthash="15">&#30001;&#20110; SQLite &#30340;&#26080;&#31867;&#22411;&#24615;&#36136;&#65292;&#23545;&#20110;&#26576;&#20123;&#31867;&#22411;&#30340;&#26597;&#35810;&#65292;
+ ADO.NET &#25552;&#20379;&#31243;&#24207;&#26080;&#27861;&#30830;&#23450;&#27491;&#30830;&#30340; return &#25968;&#25454;&#31867;&#22411;&#12290;Scalar &#21644;
+ &#32858;&#21512;&#20989;&#25968;&#20250;&#24102;&#26469;&#19968;&#20010;&#29305;&#23450;&#38382;&#39064;&#65292;&#22240;&#20026;
+ &#32473;&#23450;&#30340;&#26631;&#37327;&#25110;&#32858;&#21512;&#20989;&#25968;&#19981;&#38656;&#35201;&#36820;&#22238;&#20219;&#20309;&#29305;&#23450;&#30340;
+ &#25968;&#25454;&#31867;&#22411;&#12290;&#20107;&#23454;&#19978;&#65292;&#26631;&#37327;&#20989;&#25968;&#29702;&#35770;&#19978;&#21487;&#20197;&#36820;&#22238;
+ &#26597;&#35810;&#20013;&#30340;&#27599;&#19968;&#34892;&#25110;&#27599;&#21015;&#37117;&#26377;&#19981;&#21516;&#30340;&#25968;&#25454;&#31867;&#22411;&#65292;&#36825;&#26159;&#23436;&#20840;&#21512;&#27861;&#30340;
+ &#20174; SQLite &#30340;&#35282;&#24230;&#26469;&#30475;&#12290;</p>
+      <p _msttexthash="765920363" _msthash="16">&#30001;&#20110; ADO.NET &#26159;&#22260;&#32469;&#31867;&#22411;&#21270;&#31995;&#32479;&#35774;&#35745;&#30340;&#65292;&#22240;&#27492;&#25105;&#20204;&#23558; SQLite &#30828;&#22622;&#36827;
+ it&#65292;&#21017;&#27492;&#20851;&#38190;&#23383;&#22312;&#26080;&#27861;&#36731;&#26494;&#30830;&#23450;&#36820;&#22238;&#31867;&#22411;&#30340;&#24773;&#20917;&#19979;&#24110;&#21161;&#25552;&#20379;&#31243;&#24207;&#12290;</p>
+      <p _msttexthash="570400662" _msthash="17">&#27492;&#21629;&#20196;&#24517;&#39035;&#19982; SELECT &#35821;&#21477;&#32467;&#21512;&#20351;&#29992;&#12290;&#23427;&#21482;&#26159;
+ &#24403; TYPES &#20851;&#38190;&#23383;&#21450;&#20854;&#20540;&#19982; SELECT &#19968;&#36215;&#20256;&#36882;&#26102;&#26377;&#25928;
+ &#35821;&#21477;&#20316;&#20026;&#21333;&#20010;&#20998;&#21495;&#20998;&#38548;&#30340;&#21333;&#20803;&#12290;</p>
+      <h3 _msttexthash="4284137" _msthash="18">&#20363;&#23376;</h3>
       <p>
-        Use the TYPES keyword before a SELECT statement to provide the SQLite ADO.NET provider
-        a list of return datatypes to expect from the subsequent SELECT statement.&nbsp;
-      </p>
+        <strong _msttexthash="186221854" _msthash="19"><span style="color: #2c2cf0" _istranslated="1">&#31867;&#22411;</span> [bigint]&#65292; [int]&#65292; [mediumint]&#65292; [smallint]&#65292; [tinyint];<br _istranslated="1"> <span style="color: #2c2cf0" _istranslated="1">&#36873;&#25321;</span> 1&#12289;2&#12289;3&#12289;4;</strong></p>
+      <p _msttexthash="188254703" _msthash="20">&#19978;&#36848;&#26597;&#35810;&#23558;&#36820;&#22238;&#31867;&#22411; System.Int64&#12289;System.Int32&#12289;System.Int32 &#21644; System.Int16 &#30340;&#21015;
+ &#21644; System.Byte &#20998;&#21035;&#12290;</p>
       <p>
-        This is a language extension (aka <strong>hack</strong>) to SQLite specifically for the ADO.NET data
-        provider.&nbsp; It is a pseudo-statement, meaning only the ADO.NET provider understands
-        it.</p>
-      <h3>
-        Background</h3>
+        <strong _msttexthash="108149886" _msthash="21"><span style="color: #2c2cf0" _istranslated="1">&#31867;&#22411;</span> [bigint]&#65292; [int]&#65292; &#65292; [tinyint];<br _istranslated="1"> <span style="color: #2c2cf0" _istranslated="1">&#36873;&#25321;</span> 1&#12289;2&#12289;3&#12289;4;</strong></p>
+      <p _msttexthash="365142037" _msthash="22">&#22312;&#27492;&#31034;&#20363;&#20013;&#65292;&#21482;&#26377;&#31532; 1&#12289;2 &#21644; 4 &#21015;&#20855;&#26377;&#26174;&#24335;&#31867;&#22411;&#21270;&#12290;&#21015;
+ 3 &#30340;&#25968;&#25454;&#31867;&#22411;&#23558;&#36890;&#36807;&#31995;&#32479;&#24182;&#34987;&#27491;&#24120;&#21457;&#29616;&#12290;</p>
       <p>
-        Due to SQLite's typeless nature, there are certain kinds of queries for which the
-        ADO.NET provider cannot determine the proper return data type.&nbsp; Scalar and
-        aggregate functions pose a particular problem because
-        there is no requirement for a given scalar or aggregate function to return any particular
-        datatype.&nbsp; As a matter of fact, scalar functions could theoretically return
-        a different datatype for every row or column in a query and this is perfectly legal
-        from SQLite's point of view.</p>
-      <p>
-        Since ADO.NET is designed around a typed system and we're shoe-horning SQLite into
-        it, this keyword helps the provider out in cases where the return type cannot be easily determined.</p>
-      <p>
-        This command must be used in conjunction with a SELECT statement.&nbsp; It only
-        works when both the TYPES keyword and its value(s) are passed along with a SELECT
-        statement as a single semi-colon separated unit.</p>
-      <h3>
-        Examples</h3>
-      <p>
-        <strong><span style="color: #2c2cf0">TYPES</span> [bigint], [int], [mediumint], [smallint], [tinyint];<br />
-          <span style="color: #2c2cf0">SELECT</span> 1, 2, 3, 4;</strong></p>
-      <p>
-        The above query would return the columns as types System.Int64, System.Int32, System.Int32, System.Int16
-        and System.Byte respectively.</p>
-      <p>
-        <strong><span style="color: #2c2cf0">TYPES</span> [bigint], [int], , [tinyint];<br />
-          <span style="color: #2c2cf0">SELECT</span> 1, 2, 3, 4;</strong></p>
-      <p>
-        In this sample, only columns 1, 2 and 4 would have explicit typing.&nbsp; Column
-        3's datatype would pass though the system and be discovered normally.</p>
-      <p>
-        <strong><span style="color: #2c2cf0">TYPES</span> real;<br />
-          <span style="color: #2c2cf0">SELECT</span> SUM(Cost) FROM [Products];</strong></p>
-      <p>
-        The above query explicitly tells the provider that the SUM aggregate function returns
-        a System.Double.</p>
-      <h3>
-        Usage Notes</h3>
+        <strong _msttexthash="69921111" _msthash="23"><span style="color: #2c2cf0" _istranslated="1">&#31867;&#22411;</span> &#30495;&#23454;;<br _istranslated="1"> <span style="color: #2c2cf0" _istranslated="1">SELECT</span> SUM&#65288;Cost&#65289; FROM [&#20135;&#21697;];</strong></p>
+      <p _msttexthash="125399131" _msthash="24">&#19978;&#36848;&#26597;&#35810;&#26174;&#24335;&#21578;&#30693;&#25552;&#20379;&#31243;&#24207; SUM &#32858;&#21512;&#20989;&#25968;&#36820;&#22238;
+ &#19968;&#20010; System.Double&#12290;</p>
+      <h3 _msttexthash="12559365" _msthash="25">&#20351;&#29992;&#35828;&#26126;</h3>
       <ul>
-        <li>You cannot use parameters in the TYPES statement.</li>
-        <li>The TYPES statement must be immediately followed by a SELECT statement.</li>
-        <li>It is legal to pass multiple TYPES and SELECT statements in a multi-statement
-          command.</li>
-        <li>You may enclose datatypes in quotes <strong>""</strong> or brackets <strong>[]</strong>
-          or those <strong>``</strong> thingies if you want.<br />
+        <li _msttexthash="52150319" _msthash="26">&#19981;&#33021;&#22312; TYPES &#35821;&#21477;&#20013;&#20351;&#29992;&#21442;&#25968;&#12290;</li>
+        <li _msttexthash="75182757" _msthash="27">TYPES &#35821;&#21477;&#21518;&#38754;&#24517;&#39035;&#32039;&#36319; SELECT &#35821;&#21477;&#12290;</li>
+        <li _msttexthash="126953827" _msthash="28">&#22312;&#22810;&#35821;&#21477;&#20013;&#20256;&#36882;&#22810;&#20010; TYPES &#21644; SELECT &#35821;&#21477;&#26159;&#21512;&#27861;&#30340;
+ &#21629;&#20196;&#12290;</li>
+        <li><font _mstmutation="1" _msttexthash="215812220" _msthash="29">&#22914;&#26524;&#20320;&#24895;&#24847;&#65292;&#20320;&#21487;&#20197;&#23558;&#25968;&#25454;&#31867;&#22411;&#25324;&#22312;&#24341;&#21495; <strong _mstmutation="1" _istranslated="1">“”</strong> &#25110;&#26041;&#25324;&#21495; <strong _mstmutation="1" _istranslated="1">[]</strong> &#25110;&#37027;&#20123; <strong _mstmutation="1" _istranslated="1">''</strong> &#19996;&#35199;&#20013;&#12290;</font><br>
         </li>
       </ul>
       <hr>
@@ -131,5 +109,6 @@
       </div>
     </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

@@ -1,359 +1,346 @@
-<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
-    <title>Environment Variables</title>
-    <link rel="stylesheet" type="text/css" href="../Include/ndoc.css" />
+
+<!-- saved from url=(0118)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/environment.html -->
+<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title _msttexthash="12415299" _msthash="0">&#29615;&#22659;&#21464;&#37327;</title>
+    <link rel="stylesheet" type="text/css" href="./environment_files/ndoc.css">
   </head>
   <body>
     <div id="header">
       <table width="100%" id="topTable">
-        <tr id="headerTableRow1">
+        <tbody><tr id="headerTableRow1">
           <td align="left">
-            <span id="runningHeaderText">Environment Variables</span>
+            <span id="runningHeaderText" _msttexthash="12415299" _msthash="1">&#29615;&#22659;&#21464;&#37327;</span>
           </td>
         </tr>
         <tr id="headerTableRow2">
           <td align="left">
-            <span id="nsrTitle">SQLite.NET Class Library Documentation</span>
+            <span id="nsrTitle" _msttexthash="26199498" _msthash="2">SQLite.NET &#31867;&#24211;&#25991;&#26723;</span>
           </td>
         </tr>
-        <tr id="headerTableRow3" style="display:none">
-          <td>
-            <a id="seeAlsoSectionLink" href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
-            <a id="exampleSectionLink" href="#codeExampleToggle" onclick="OpenSection(codeExampleToggle)">Example</a>
+        <tr id="headerTableRow3" style="display:none" _msthidden="1">
+          <td _msthidden="1">
+            <font _mstmutation="1" _msttexthash="249834" _msthidden="1" _msthash="3"><a id="seeAlsoSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/environment.html#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)" _mstmutation="1">See Also</a>
+            <a id="exampleSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/environment.html#codeExampleToggle" onclick="OpenSection(codeExampleToggle)" _mstmutation="1">Example</a></font>
           </td>
         </tr>
-     </table>
-      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none">
-        <tr>
-          <td>
-            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0">
-              <img ID="toggleAllImage" class="toggleAll" src="collall.gif" />
-              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">
+     </tbody></table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none" _msthidden="2">
+        <tbody _msthidden="2"><tr _msthidden="2">
+          <td _msthidden="2">
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" _msthidden="2">
+              <img id="toggleAllImage" class="toggleAll" src="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/collall.gif">
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="172484" _msthidden="1" _msthash="4">
 							Collapse All
 						</label>
-              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="127504" _msthidden="1" _msthash="5">
 							Expand All
 						</label>
             </span>
           </td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
     <div id="mainSection">
     <div id="mainBody">
-      <p>
-        The following <b>special replacement tokens</b> may be recognized and
-        replaced with their associated runtime value, depending on context,
-        when setting values are being read by the native library pre-loading
-        subsystem.  Unless otherwise stated explicitly, all of these tokens
-        are <b>case-sensitive</b> and the percent characters <b>must be
-        included</b> in order for them to be recognized.
-      </p>
-      <p>
-        All references to <b>special replacement tokens</b> will be expanded to
-        their corresponding values within the returned settings values unless
-        either the &quot;No_Tokens&quot; or &quot;No_Tokens_&lt;name&gt;&quot;
-        environment variable is set [to anything].
-      </p>
+      <p _msttexthash="1835438813" _msthash="6">&#21487;&#20197;&#35782;&#21035;&#20197;&#19979;<b _istranslated="1">&#29305;&#27530;&#26367;&#25442;&#20196;&#29260;</b>&#65292;&#24182;&#19988;
+ &#26367;&#25442;&#20026;&#20854;&#20851;&#32852;&#30340;&#36816;&#34892;&#26102;&#20540;&#65292;&#20855;&#20307;&#21462;&#20915;&#20110;&#19978;&#19979;&#25991;&#65292;
+ &#24403;&#26412;&#26426;&#24211;&#39044;&#21152;&#36733;&#35835;&#21462;&#35774;&#32622;&#20540;&#26102;
+ &#23376;&#31995;&#32479;&#12290;&#38500;&#38750;&#21478;&#26377;&#26126;&#30830;&#35828;&#26126;&#65292;&#21542;&#21017;&#25152;&#26377;&#36825;&#20123;&#20196;&#29260;
+ <b _istranslated="1">&#21306;&#20998;&#22823;&#23567;&#20889;</b>&#65292;&#24182;&#19988;&#30334;&#20998;&#27604;&#23383;&#31526;<b _istranslated="1">&#24517;&#39035;&#20026;
+ included</b> &#20197;&#20415;&#20182;&#20204;&#24471;&#21040;&#35748;&#21487;&#12290;</p>
+      <p _msttexthash="614984708" _msthash="7">&#25152;&#26377;&#23545;<b _istranslated="1">&#29305;&#27530;&#26367;&#25442;&#20196;&#29260;</b>&#30340;&#24341;&#29992;&#37117;&#23558;&#25193;&#23637;&#20026;
+ &#23427;&#20204;&#22312;&#36820;&#22238;&#30340; Settings &#20540;&#20013;&#30340;&#30456;&#24212;&#20540;&#65292;&#38500;&#38750;
+ “No_Tokens”&#25110;“No_Tokens_&lt;&#21517;&#31216;&gt;”
+ &#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#12290;</p>
       <table width="80%" cellpadding="0" cellspacing="0">
-        <tr valign="top">
-          <th>Name</th>
-          <th>Description</th>
+        <tbody><tr valign="top">
+          <th _msttexthash="4389879" _msthash="8">&#21517;&#23383;</th>
+          <th _msttexthash="6157333" _msthash="9">&#25551;&#36848;</th>
         </tr>
         <tr valign="top">
-          <td>%PreLoadSQLite_AssemblyDirectory%</td>
-          <td>If this token (which is <b>case-sensitive</b> and <b>must include
-          the percent characters</b>) is present within a setting value being
-          returned, it will be replaced with the qualified name of the
-          directory containing the System.Data.SQLite assembly.  If the name of
-          the directory is not available, the token will not be replaced.</td>
+          <td _msttexthash="975468" _msthash="10">%PreLoadSQLite_AssemblyDirectory%</td>
+          <td _msttexthash="1013118327" _msthash="11">&#22914;&#26524;&#27492;&#20196;&#29260;&#65288;<b _istranslated="1">&#21306;&#20998;&#22823;&#23567;&#20889;</b>&#65292;<b _istranslated="1">&#24182;&#19988;&#24517;&#39035;&#21253;&#21547;
+ &#30334;&#20998;&#27604;&#23383;&#31526;</b>&#65289;&#23384;&#22312;&#20110;
+ returned &#26102;&#65292;&#23427;&#23558;&#34987;&#26367;&#25442;&#20026;
+ &#21253;&#21547; System.Data.SQLite &#31243;&#24207;&#38598;&#30340;&#30446;&#24405;&#12290;&#22914;&#26524;
+ &#30446;&#24405;&#19981;&#21487;&#29992;&#65292;&#21017;&#19981;&#20250;&#26367;&#25442;&#20196;&#29260;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>%PreLoadSQLite_TargetFramework%</td>
-          <td>If this token (which is <b>case-sensitive</b> and <b>must include
-          the percent characters</b>) is present within a setting value being
-          returned, it will be replaced with an abbreviation of the target
-          framework attribute value for the System.Data.SQLite assembly.  If
-          the target framework attribute value is not available, the token will
-          not be replaced.</td>
+          <td _msttexthash="865189" _msthash="12">%PreLoadSQLite_TargetFramework%</td>
+          <td _msttexthash="1086443709" _msthash="13">&#22914;&#26524;&#27492;&#20196;&#29260;&#65288;<b _istranslated="1">&#21306;&#20998;&#22823;&#23567;&#20889;</b>&#65292;<b _istranslated="1">&#24182;&#19988;&#24517;&#39035;&#21253;&#21547;
+ &#30334;&#20998;&#27604;&#23383;&#31526;</b>&#65289;&#23384;&#22312;&#20110;
+ &#36820;&#22238;&#65292;&#21017;&#23427;&#23558;&#34987;&#26367;&#25442;&#20026; target &#30340;&#32553;&#20889;
+ framework &#23646;&#24615;&#20540;&#12290;&#22914;&#26524;
+ Target Framework &#23646;&#24615;&#20540;&#19981;&#21487;&#29992;&#65292;&#21017;&#20196;&#29260;&#23558;
+ &#32780;&#19981;&#26159;&#34987;&#26367;&#25442;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>%PreLoadSQLite_XmlConfigDirectory%</td>
-          <td>If this token (which is <b>case-sensitive</b> and <b>must include
-          the percent characters</b>) is present within a setting value
-          being returned, it will be replaced with the qualified name of the
-          directory containing the XML configuration file.  If the name of the
-          directory is not available, the token will not be replaced.
-          Generally, this token may only be used within the XML configuration
-          file itself.</td>
+          <td _msttexthash="1016678" _msthash="14">%PreLoadSQLite_XmlConfigDirectory%</td>
+          <td _msttexthash="1254917183" _msthash="15">&#22914;&#26524;&#27492;&#20196;&#29260;&#65288;<b _istranslated="1">&#21306;&#20998;&#22823;&#23567;&#20889;</b>&#65292;<b _istranslated="1">&#24182;&#19988;&#24517;&#39035;&#21253;&#21547;
+ &#30334;&#20998;&#27604;&#23383;&#31526;</b>&#65289;&#23384;&#22312;&#20110;&#35774;&#32622;&#20540;&#20013;
+ &#26102;&#65292;&#23427;&#23558;&#34987;&#26367;&#25442;&#20026;
+ &#30446;&#24405;&#12290;&#22914;&#26524;
+ &#30446;&#24405;&#19981;&#21487;&#29992;&#65292;&#21017;&#19981;&#20250;&#26367;&#25442;&#20196;&#29260;&#12290;
+ &#36890;&#24120;&#65292;&#27492;&#20196;&#29260;&#21482;&#33021;&#22312; XML &#37197;&#32622;&#20013;&#20351;&#29992;
+ &#25991;&#20214;&#26412;&#36523;&#12290;</td>
         </tr>
-      </table>
-      <p>
-        These environment variables are used to control several features of
-        the System.Data.SQLite library.  All of these environment variables
-        are optional.  If a particular environment variable is not present,
-        the XML configuration file &quot;System.Data.SQLite.dll.config&quot;
-        in the directory containing the currently executing assembly (i.e.
-        the one containing all the managed components for System.Data.SQLite)
-        will also be consulted.  If present, the XML configuration file should
-        be structured as follows:
-        <pre>
-        &lt;?xml version=&quot;1.0&quot;?&gt;
+      </tbody></table>
+      <p _msttexthash="3321257342" _msthash="16">&#36825;&#20123;&#29615;&#22659;&#21464;&#37327;&#29992;&#20110;&#25511;&#21046;
+ System.Data.SQLite &#24211;&#12290;&#25152;&#26377;&#36825;&#20123;&#29615;&#22659;&#21464;&#37327;
+ &#26159;&#21487;&#36873;&#30340;&#12290;&#22914;&#26524;&#19981;&#23384;&#22312;&#29305;&#23450;&#30340;&#29615;&#22659;&#21464;&#37327;&#65292;
+ XML &#37197;&#32622;&#25991;&#20214; “System.Data.SQLite.dll.config”
+ &#22312;&#21253;&#21547;&#24403;&#21069;&#27491;&#22312;&#25191;&#34892;&#30340;&#31243;&#24207;&#38598;&#30340;&#30446;&#24405;&#20013;&#65288;&#21363;
+ &#21253;&#21547; System.Data.SQLite &#30340;&#25152;&#26377;&#25176;&#31649;&#32452;&#20214;&#30340; URL&#65289;
+ &#20063;&#23558;&#21672;&#35810;&#12290;&#22914;&#26524;&#23384;&#22312;&#65292;&#21017; XML &#37197;&#32622;&#25991;&#20214;&#24212;
+ &#32467;&#26500;&#22914;&#19979;&#65306;</p><pre>        &lt;?xml version="1.0"?&gt;
         &lt;configuration&gt;
           &lt;appSettings&gt;
-            &lt;add key=&quot;A_Setting&quot; value=&quot;String Value&quot; /&gt;
-            &lt;add key=&quot;Another_Setting&quot; value=&quot;%ENV_VALUE%&quot; /&gt;
+            &lt;add key="A_Setting" value="String Value" /&gt;
+            &lt;add key="Another_Setting" value="%ENV_VALUE%" /&gt;
           &lt;/appSettings&gt;
         &lt;/configuration&gt;
         </pre>
-      </p>
+      <p></p>
+      <p _msttexthash="616283551" _msthash="17">&#23545;&#29616;&#26377;&#29615;&#22659;&#21464;&#37327;&#30340;&#25152;&#26377;&#24341;&#29992;&#37117;&#23558;&#25193;&#23637;&#20026;
+ &#23427;&#20204;&#22312;&#36820;&#22238;&#30340; Settings &#20540;&#20013;&#30340;&#30456;&#24212;&#20540;&#65292;&#38500;&#38750;
+ “No_Expand”&#25110;“No_Expand_&lt;&#21517;&#31216;&gt;”
+ &#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#12290;</p>
       <p>
-        All references to existing environment variables will be expanded to
-        their corresponding values within the returned settings values unless
-        either the &quot;No_Expand&quot; or &quot;No_Expand_&lt;name&gt;&quot;
-        environment variable is set [to anything].
-      </p>
-      <p>
-        <font color="red">
-          None of these environment variables are supported by the Compact
-          Framework builds of System.Data.SQLite, due to limitations imposed
-          by the platform itself; however, the XML configuration file mentioned
-          above may be used instead.
-        </font>
+        <font color="red" _msttexthash="745577781" _msthash="18">Compact &#19981;&#25903;&#25345;&#36825;&#20123;&#29615;&#22659;&#21464;&#37327;
+ &#30001;&#20110;&#26045;&#21152;&#30340;&#38480;&#21046;&#65292;System.Data.SQLite &#30340;&#26694;&#26550;&#29256;&#26412;
+ &#36890;&#36807;&#24179;&#21488;&#26412;&#36523;;&#20294;&#26159;&#65292;&#25552;&#21040;&#30340; XML &#37197;&#32622;&#25991;&#20214;
+ &#21487;&#20197;&#25913;&#29992; above&#12290;</font>
       </p>
       <table width="80%" cellpadding="0" cellspacing="0">
-        <tr valign="top">
-          <th>Name</th>
-          <th>Description</th>
+        <tbody><tr valign="top">
+          <th _msttexthash="4389879" _msthash="19">&#21517;&#23383;</th>
+          <th _msttexthash="6157333" _msthash="20">&#25551;&#36848;</th>
         </tr>
         <tr valign="top">
-          <td>AppendManifestToken_SQLiteProviderManifest</td>
-          <td>If this environment variable is set [to anything], it will be
-          used by the System.Data.SQLite.Linq.SQLiteProviderManifest class
-          (and the System.Data.SQLite.EF6.SQLiteProviderManifest class) to
-          modify future provider manifest tokens by appending the value of
-          the environment variable to the existing provider manifest token,
-          if any.  Typically, in order for the constructed provider manifest
-          token to be syntactically correct, the environment variable value
-          [to be appended] must begin with a semicolon.</td>
+          <td _msttexthash="1535950" _msthash="21">AppendManifestToken_SQLiteProviderManifest</td>
+          <td _msttexthash="5183128587" _msthash="22">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#30001; System.Data.SQLite.Linq.SQLiteProviderManifest &#31867;&#20351;&#29992;
+ &#65288;&#20197;&#21450; System.Data.SQLite.EF6.SQLiteProviderManifest &#31867;&#65289;&#28155;&#21152;&#21040;
+ &#20462;&#25913;&#23558;&#26469;&#30340;&#25552;&#20379;&#31243;&#24207;&#28165;&#21333;&#20196;&#29260;&#65292;&#26041;&#27861;&#26159;&#23558;
+ &#29616;&#26377;&#25552;&#20379;&#31243;&#24207;&#28165;&#21333;&#20196;&#29260;&#30340;&#29615;&#22659;&#21464;&#37327;&#65292;
+ &#22914;&#26524;&#26377;&#30340;&#35805;&#12290;&#36890;&#24120;&#65292;&#20026;&#20102;&#23558;&#26500;&#24314;&#30340;&#25552;&#20379;&#31243;&#24207;&#28165;&#21333;
+ token &#30340;&#35821;&#27861;&#27491;&#30830;&#65292;&#29615;&#22659;&#21464;&#37327;&#20540;
+ [to be appended] &#24517;&#39035;&#20197;&#20998;&#21495;&#24320;&#22836;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>DefaultFlags_SQLiteConnection</td>
-          <td>If this environment variable is set [to anything], it will be
-          used by the System.Data.SQLite.SQLiteConnection class as the default
-          flags for all opened connections (i.e. when they are not present in
-          the connection string).</td>
+          <td _msttexthash="802191" _msthash="23">DefaultFlags_SQLiteConnection</td>
+          <td _msttexthash="1029021422" _msthash="24">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#30001; System.Data.SQLite.SQLiteConnection &#31867;&#29992;&#20316;&#40664;&#35748;&#20540;
+ &#25152;&#26377;&#25171;&#24320;&#36830;&#25509;&#30340;&#26631;&#24535;&#65288;&#21363;&#24403;&#23427;&#20204;&#19981;&#23384;&#22312;&#20110;
+ &#36830;&#25509;&#23383;&#31526;&#20018;&#65289;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>Disable_SQLiteLog</td>
-          <td>If this configuration variable is set [to anything], the SQLite
-          logging subsystem will be initially disabled when initialized.</td>
+          <td _msttexthash="320996" _msthash="25">Disable_SQLiteLog</td>
+          <td _msttexthash="333587488" _msthash="26">&#22914;&#26524;&#27492;&#37197;&#32622;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20219;&#24847;&#20540;]&#65292;&#21017; SQLite
+ &#26085;&#24535;&#35760;&#24405;&#23376;&#31995;&#32479;&#22312;&#21021;&#22987;&#21270;&#26102;&#26368;&#21021;&#23558;&#34987;&#31105;&#29992;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>Force_SQLiteLog</td>
-          <td>If this environment variable is set [to anything], the SQLite
-          logging subsystem may be initialized in a non-default application
-          domain.  By default, this is not allowed due to the potential for
-          application domain unloading issues.</td>
+          <td _msttexthash="263835" _msthash="27">Force_SQLiteLog</td>
+          <td _msttexthash="1143763452" _msthash="28">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20219;&#24847;&#20540;]&#65292;&#21017; SQLite
+ &#21487;&#20197;&#22312;&#38750;&#40664;&#35748;&#24212;&#29992;&#31243;&#24207;&#20013;&#21021;&#22987;&#21270;&#26085;&#24535;&#35760;&#24405;&#23376;&#31995;&#32479;
+ &#22495;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#19981;&#20801;&#35768;&#36825;&#26679;&#20570;&#65292;&#22240;&#20026;&#21487;&#33021;&#23384;&#22312;
+ &#24212;&#29992;&#31243;&#24207;&#22495;&#21368;&#36733;&#38382;&#39064;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>Initialize_SQLiteLog</td>
-          <td>If this environment variable is set [to anything], the SQLite
-          logging subsystem will attempt to perform initialization even when
-          an attempt was previously made.</td>
+          <td _msttexthash="424580" _msthash="29">Initialize_SQLiteLog</td>
+          <td _msttexthash="435856928" _msthash="30">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20219;&#24847;&#20540;]&#65292;&#21017; SQLite
+ logging &#23376;&#31995;&#32479;&#23558;&#23581;&#35797;&#25191;&#34892;&#21021;&#22987;&#21270;&#65292;&#21363;&#20351;
+ &#20043;&#21069;&#26366;&#23581;&#35797;&#36807;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>No_PreLoadSQLite</td>
-          <td>If this environment variable is set [to anything], the native
-          library pre-loading code will be disabled.  By default, the native
-          library pre-loading code will attempt to load the native SQLite
-          library from architecture-specific (e.g. &quot;x86&quot;,
-          &quot;amd64&quot;, &quot;x64&quot;) or platform-specific (e.g.
-          &quot;Win32&quot;) directories that reside underneath the application
-          base directory.</td>
+          <td _msttexthash="288899" _msthash="31">No_PreLoadSQLite</td>
+          <td _msttexthash="1987648299" _msthash="32">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#26412;&#26426;
+ &#24211;&#39044;&#21152;&#36733;&#20195;&#30721;&#23558;&#34987;&#31105;&#29992;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#26412;&#26426;
+ &#24211;&#39044;&#21152;&#36733;&#20195;&#30721;&#23558;&#23581;&#35797;&#21152;&#36733;&#21407;&#29983; SQLite
+ &#26469;&#33258;&#29305;&#23450;&#20110;&#26550;&#26500;&#30340;&#24211;&#65288;&#20363;&#22914; “x86”&#65292;
+ “amd64”&#12289;“x64”&#65289;&#25110;&#29305;&#23450;&#20110;&#24179;&#21488;&#30340;&#65288;&#20363;&#22914;
+ “Win32”&#65289; &#30446;&#24405;
+ base &#30446;&#24405;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>No_SQLiteConnectionNewParser</td>
-          <td>If this environment variable is set [to anything], the new
-          connection string parsing algorithm will not be used.  This
-          environment variable is intended for use with legacy code only.</td>
+          <td _msttexthash="762775" _msthash="33">No_SQLiteConnectionNewParser</td>
+          <td _msttexthash="491945363" _msthash="34">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#26032;&#30340;
+ &#19981;&#20250;&#20351;&#29992;&#36830;&#25509;&#23383;&#31526;&#20018;&#35299;&#26512;&#31639;&#27861;&#12290;&#36825;
+ &#29615;&#22659;&#21464;&#37327;&#20165;&#29992;&#20110;&#26087;&#20195;&#30721;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>No_SQLiteFunctions</td>
-          <td>If this environment variable is set [to anything], the initial
-          search for types in all loaded assemblies that are tagged with the
-          SQLiteFunction attribute will be skipped.  Normally, this search is
-          conducted only once per application domain by the static constructor
-          of the SQLiteFunction class; however, these implementation details
-          are subject to change.</td>
+          <td _msttexthash="372489" _msthash="35">No_SQLiteFunctions</td>
+          <td _msttexthash="1559197640" _msthash="36">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#21017;&#21021;&#22987;
+ &#22312;&#25152;&#26377;&#26631;&#26377;
+ &#23558;&#36339;&#36807; SQLiteFunction &#23646;&#24615;&#12290;&#36890;&#24120;&#65292;&#27492;&#25628;&#32034;&#26159;
+ &#27599;&#20010;&#24212;&#29992;&#31243;&#24207;&#22495;&#20165;&#30001; Static &#26500;&#36896;&#20989;&#25968;&#25191;&#34892;&#19968;&#27425;
+ &#30340; SQLiteFunction &#31867;;&#20294;&#26159;&#65292;&#36825;&#20123;&#23454;&#29616;&#32454;&#33410;
+ &#21487;&#33021;&#20250;&#21457;&#29983;&#21464;&#21270;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>No_SQLiteGetSettingValue</td>
-          <td>If this environment variable is set [to anything], all calls to
-          the GetSettingValue method will return the default value.  This will
-          effectively prevent all other setting values from having any effect,
-          including those specified via other supported environment variables
-          or in the associated XML configuration file.</td>
+          <td _msttexthash="583492" _msthash="37">No_SQLiteGetSettingValue</td>
+          <td _msttexthash="1633869315" _msthash="38">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#23545;
+ GetSettingValue &#26041;&#27861;&#23558;&#36820;&#22238;&#40664;&#35748;&#20540;&#12290;&#36825;&#23558;
+ &#26377;&#25928;&#38450;&#27490;&#25152;&#26377;&#20854;&#20182;&#35774;&#32622;&#20540;&#20135;&#29983;&#20219;&#20309;&#24433;&#21709;&#65292;
+ &#21253;&#25324;&#36890;&#36807;&#20854;&#20182;&#25903;&#25345;&#30340;&#29615;&#22659;&#21464;&#37327;&#25351;&#23450;&#30340;&#21464;&#37327;
+ &#25110;&#22312;&#20851;&#32852;&#30340; XML &#37197;&#32622;&#25991;&#20214;&#20013;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>No_SQLiteLog</td>
-          <td>If this environment variable is set [to anything], the SQLite
-          logging subsystem will not be initialized by the SQLiteLog class;
-          however, it may still be initialized by external components (i.e.
-          something other than System.Data.SQLite).</td>
+          <td _msttexthash="186979" _msthash="39">No_SQLiteLog</td>
+          <td _msttexthash="904224412" _msthash="40">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20219;&#24847;&#20540;]&#65292;&#21017; SQLite
+ logging &#23376;&#31995;&#32479;&#19981;&#20250;&#30001; SQLiteLog &#31867;&#21021;&#22987;&#21270;;
+ &#20294;&#26159;&#65292;&#23427;&#20173;&#28982;&#21487;&#20197;&#30001;&#22806;&#37096;&#32452;&#20214;&#65288;&#21363;
+ System.Data.SQLite &#20197;&#22806;&#30340;&#20854;&#20182;&#20869;&#23481;&#65289;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>No_SQLiteXmlConfigFile</td>
-          <td>If this environment variable is set [to anything], calls to the
-          GetSettingValue method will never result in the XML configuration
-          file being read; instead, the default value will be returned.  This
-          will effectively prevent any setting values specified via the XML
-          configuration file from having any effect.</td>
+          <td _msttexthash="491257" _msthash="41">No_SQLiteXmlConfigFile</td>
+          <td _msttexthash="1715148513" _msthash="42">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#35843;&#29992;
+ GetSettingValue &#26041;&#27861;&#27704;&#36828;&#19981;&#20250;&#23548;&#33268; XML &#37197;&#32622;
+ &#27491;&#22312;&#35835;&#21462;&#30340;&#25991;&#20214;;&#30456;&#21453;&#65292;&#23558;&#36820;&#22238;&#40664;&#35748;&#20540;&#12290;&#36825;
+ &#23558;&#26377;&#25928;&#22320;&#38459;&#27490;&#36890;&#36807; XML &#25351;&#23450;&#30340;&#20219;&#20309;&#35774;&#32622;&#20540;
+ &#37197;&#32622;&#25991;&#20214;&#19981;&#20250;&#20135;&#29983;&#20219;&#20309;&#24433;&#21709;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_AllowBaseDirectoryOnly</td>
-          <td>If this environment variable is set [to anything], the base
-          directory itself is considered valid for pre-loading the native
-          SQLite library.</td>
+          <td _msttexthash="1169532" _msthash="43">PreLoadSQLite_AllowBaseDirectoryOnly</td>
+          <td _msttexthash="297153415" _msthash="44">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#22522;
+ &#30446;&#24405;&#26412;&#36523;&#34987;&#35748;&#20026;&#23545;&#39044;&#21152;&#36733;&#26412;&#26426;
+ SQLite &#24211;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_BaseDirectory</td>
-          <td>If this environment variable is set [to anything], it will be
-          used instead of the application base directory by the native
-          library pre-loader.  This environment variable can be especially
-          useful in ASP.NET and other hosted environments where direct control
-          of the location of the managed assemblies is not under the control
-          of the application.</td>
+          <td _msttexthash="708097" _msthash="45">PreLoadSQLite_BaseDirectory</td>
+          <td _msttexthash="1642275765" _msthash="46">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ used &#32780;&#19981;&#26159;&#26412;&#26426;&#30340; application &#22522;&#30446;&#24405;
+ &#24211;&#39044;&#21152;&#36733;&#22120;&#12290;&#27492;&#29615;&#22659;&#21464;&#37327;&#21487;&#20197;&#29305;&#21035;
+ &#22312; ASP.NET &#21644;&#20854;&#20182;&#30452;&#25509;&#25511;&#21046;&#30340;&#25176;&#31649;&#29615;&#22659;&#20013;&#24456;&#26377;&#29992;
+ &#30340;&#25176;&#31649;&#31243;&#24207;&#38598;&#30340;&#20301;&#32622;&#19981;&#21463;&#25511;&#21046;
+ &#30340;&#24212;&#29992;&#31243;&#24207;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_BreakIntoDebugger</td>
-          <td>If this environment variable is set [to anything], the native
-          library pre-loader subsystem will attempt to give the interactive
-          user an opportunity to attach a debugger to the current process.</td>
+          <td _msttexthash="881335" _msthash="47">PreLoadSQLite_BreakIntoDebugger</td>
+          <td _msttexthash="645835723" _msthash="48">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#26412;&#26426;
+ &#24211; pre-loader &#23376;&#31995;&#32479;&#23558;&#23581;&#35797;&#25552;&#20379;&#20132;&#20114;&#24335;
+ &#29992;&#25143;&#65306;&#26377;&#26426;&#20250;&#23558; Debugger &#38468;&#21152;&#21040;&#24403;&#21069;&#36827;&#31243;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_LibraryFileNameOnly</td>
-          <td>If this environment variable is set [to anything], it will be
-          used as the base file name (without directory information) for the
-          native SQLite library to be pre-loaded (e.g. "sqlite3.dll" or
-          "libsqlite3.so.0").</td>
+          <td _msttexthash="984282" _msthash="49">PreLoadSQLite_LibraryFileNameOnly</td>
+          <td _msttexthash="445946384" _msthash="50">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#29992;&#20316;
+ &#35201;&#39044;&#21152;&#36733;&#30340;&#21407;&#29983; SQLite &#24211;&#65288;&#20363;&#22914; “sqlite3.dll” &#25110;
+ “libsqlite3.so.0”&#65289;&#30340;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_NoSearchForDirectory</td>
-          <td>If this environment variable is set [to anything], the native
-          library pre-loading code will skip conducting a search for the native
-          library to pre-load.  By default, the search starts in the location
-          of the currently executing assembly (i.e. the assembly containing all
-          the managed components for System.Data.SQLite) and then falls back to
-          the application domain base directory.</td>
+          <td _msttexthash="1050452" _msthash="51">PreLoadSQLite_NoSearchForDirectory</td>
+          <td _msttexthash="2160374008" _msthash="52">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#26412;&#26426;
+ &#24211;&#39044;&#21152;&#36733;&#20195;&#30721;&#23558;&#36339;&#36807;&#23545;&#26412;&#26426;&#30340;&#25628;&#32034;
+ &#24211;&#36827;&#34892;&#39044;&#21152;&#36733;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#25628;&#32034;&#20174;&#35813;&#20301;&#32622;&#24320;&#22987;
+ &#24403;&#21069;&#27491;&#22312;&#25191;&#34892;&#30340;&#31243;&#24207;&#38598;&#65288;&#21363;&#21253;&#21547;&#25152;&#26377;
+ System.Data.SQLite &#30340;&#25176;&#31649;&#32452;&#20214;&#65289;&#65292;&#28982;&#21518;&#22238;&#36864;&#21040;
+ &#24212;&#29992;&#31243;&#24207;&#22495;&#22522;&#30446;&#24405;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_ProcessorArchitecture</td>
-          <td>If this environment variable is set [to anything], it will be
-          used instead of the processor architecture value contained in the
-          PROCESSOR_ARCHITECTURE environment variable to help build the path
-          of the native library to pre-load.</td>
+          <td _msttexthash="1130311" _msthash="53">PreLoadSQLite_ProcessorArchitecture</td>
+          <td _msttexthash="551713708" _msthash="54">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ used &#32780;&#19981;&#26159;
+ PROCESSOR_ARCHITECTURE&#29615;&#22659;&#21464;&#37327;&#26469;&#24110;&#21161;&#26500;&#24314;&#36335;&#24452;
+ &#36827;&#34892;&#39044;&#21152;&#36733;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PreLoadSQLite_UseAssemblyDirectory</td>
-          <td>If this environment variable is set [to anything], the location
-          of the currently executing assembly (i.e. the one containing all the
-          managed components for System.Data.SQLite) will be used as the basis
-          for locating the the native library to pre-load (i.e. instead of
-          using the application domain base directory).</td>
+          <td _msttexthash="1068574" _msthash="55">PreLoadSQLite_UseAssemblyDirectory</td>
+          <td _msttexthash="1745379857" _msthash="56">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#20301;&#32622;
+ &#24403;&#21069;&#27491;&#22312;&#25191;&#34892;&#30340;&#31243;&#24207;&#38598;&#65288;&#21363;&#21253;&#21547;&#25152;&#26377;
+ System.Data.SQLite &#30340;&#25176;&#31649;&#32452;&#20214;&#65289;&#23558;&#29992;&#20316;&#22522;&#30784;
+ &#29992;&#20110;&#26597;&#25214;&#35201;&#39044;&#21152;&#36733;&#30340;&#26412;&#26426;&#24211;&#65288;&#21363;&#65292;&#32780;&#19981;&#26159;
+ &#20351;&#29992;&#24212;&#29992;&#31243;&#24207;&#22495;&#22522;&#30446;&#24405;&#65289;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>PROCESSOR_ARCHITECTURE</td>
-          <td>This environment variable is normally set by the operating
-          system itself and should reflect the native processor architecture
-          of the current process (e.g. a 32-bit x86 application running on a
-          64-bit x64 operating system should have the value &quot;x86&quot;).
-          </td>
+          <td _msttexthash="384969" _msthash="57">PROCESSOR_ARCHITECTURE</td>
+          <td _msttexthash="580742591" _msthash="58">&#36825;&#20010;&#29615;&#22659;&#21464;&#37327;&#36890;&#24120;&#30001;&#20316;
+ &#31995;&#32479;&#26412;&#36523;&#65292;&#24182;&#19988;&#24212;&#35813;&#21453;&#26144;&#26412;&#26426;&#22788;&#29702;&#22120;&#26550;&#26500;
+ &#24403;&#21069;&#36827;&#31243;&#65288;&#20363;&#22914;&#65292;&#22312;
+ 64 &#20301; x64&#20316;&#31995;&#32479;&#30340;&#20540;&#24212;&#20026;“x86”&#65289;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_ForceLogLifecycle</td>
-          <td>If this environment variable is set [to anything], calls into
-          key members pertaining to the lifecycle of connections and their
-          associated classes (e.g. LINQ, EF6, etc) will be logged.</td>
+          <td _msttexthash="576134" _msthash="59">SQLite_ForceLogLifecycle</td>
+          <td _msttexthash="556688899" _msthash="60">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#35843;&#29992;
+ &#19982; Connections &#30340;&#29983;&#21629;&#21608;&#26399;&#21450;&#20854;
+ &#23558;&#35760;&#24405;&#20851;&#32852;&#30340;&#31867;&#65288;&#20363;&#22914; LINQ&#12289;EF6 &#31561;&#65289;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_ForceLogPrepare</td>
-          <td>If this environment variable is set [to anything], all calls to
-          prepare a SQL query will be logged, regardless of the flags for the
-          associated connection.</td>
+          <td _msttexthash="500721" _msthash="61">SQLite_ForceLogPrepare</td>
+          <td _msttexthash="332727317" _msthash="62">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#23545;
+ &#20934;&#22791;&#19968;&#20010; SQL &#26597;&#35810;&#65292;&#32780;&#19981;&#31649;
+ &#20851;&#32852;&#30340;&#36830;&#25509;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_ForceLogRetry</td>
-          <td>If this environment variable is set [to anything], all internal
-          retries during statment preparation and stepping will be logged,
-          regardless of the flags for the associated connection.</td>
+          <td _msttexthash="434070" _msthash="63">SQLite_ForceLogRetry</td>
+          <td _msttexthash="676167609" _msthash="64">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#25152;&#26377;&#20869;&#37096;
+ &#23558;&#35760;&#24405;&#35821;&#21477;&#20934;&#22791;&#21644;&#21333;&#27493;&#25191;&#34892;&#26399;&#38388;&#30340;&#37325;&#35797;&#65292;
+ &#26080;&#35770;&#20851;&#32852;&#36830;&#25509;&#30340;&#26631;&#24535;&#22914;&#20309;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_GlobalCommandBehaviors</td>
-          <td>If this environment variable is set [to anything], it will be
-          processed as a list of CommandBehavior flags, if possible.  It will
-          be ignored if it cannot be processed correctly.  For more details
-          please refer to the CombineBehaviors method.</td>
+          <td _msttexthash="804856" _msthash="65">SQLite_GlobalCommandBehaviors</td>
+          <td _msttexthash="1090804260" _msthash="66">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#22914;&#26524;&#21487;&#33021;&#65292;&#21017;&#20316;&#20026; CommandBehavior &#26631;&#24535;&#30340;&#21015;&#34920;&#36827;&#34892;&#22788;&#29702;&#12290;&#23427;&#20250;
+ &#22914;&#26524;&#26080;&#27861;&#27491;&#30830;&#22788;&#29702;&#65292;&#21017;&#24573;&#30053;&#23427;&#12290;&#26356;&#22810;&#35814;&#24773;
+ &#35831;&#21442;&#32771; CombineBehaviors &#26041;&#27861;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_LegacyEncryptPage1</td>
-          <td>If this environment variable is set [to anything], page #1 of
-          database files encrypted using the (unsupported) legacy
-          CryptoAPI-based (RC4) codec will be encrypted.  This was the default
-          behavior prior to release 1.0.112.3; however, it is now disabled (by
-          default) as it can cause corruption and/or other malfunctions in some
-          circumstances.  Please do not use this environment variable unless it
-          is absolutely necessary for your specific use case.</td>
+          <td _msttexthash="601445" _msthash="67">SQLite_LegacyEncryptPage1</td>
+          <td _msttexthash="4020580837" _msthash="68">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;
+ &#20351;&#29992;&#65288;&#19981;&#25903;&#25345;&#30340;&#65289;&#26087;&#29256;&#21152;&#23494;&#30340;&#25968;&#25454;&#24211;&#25991;&#20214;
+ &#22522;&#20110; CryptoAPI &#30340; &#65288;RC4&#65289; &#32534;&#35299;&#30721;&#22120;&#23558;&#34987;&#21152;&#23494;&#12290;&#36825;&#26159;&#40664;&#35748;&#35774;&#32622;
+ &#29256;&#26412; 1.0.112.3 &#20043;&#21069;&#30340;&#34892;&#20026;;&#20294;&#26159;&#65292;&#23427;&#29616;&#22312;&#34987;&#31105;&#29992;&#65288;&#36890;&#36807;
+ default&#65289;&#65292;&#22240;&#20026;&#23427;&#21487;&#33021;&#20250;&#23548;&#33268;&#26576;&#20123;
+ &#24773;&#20917; &#19979;&#12290;&#35831;&#19981;&#35201;&#20351;&#29992;&#27492;&#29615;&#22659;&#21464;&#37327;&#65292;&#38500;&#38750;&#23427;
+ &#23545;&#20110;&#24744;&#30340;&#29305;&#23450;&#29992;&#20363;&#26159;&#32477;&#23545;&#24517;&#35201;&#30340;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_StrongConnectionPool</td>
-          <td>If this environment variable is set [to anything], the default
-          connection pool will use normal objects instead of weak references.
-          This should prevent any pooled connection objects from ever being
-          automatically cleaned up by the garbage collector.
-          </td>
+          <td _msttexthash="726206" _msthash="69">SQLite_StrongConnectionPool</td>
+          <td _msttexthash="1110205005" _msthash="70">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [to anything]&#65292;&#21017;&#40664;&#35748;&#30340;
+ Connection Pool &#23558;&#20351;&#29992;&#26222;&#36890;&#23545;&#35937;&#32780;&#19981;&#26159;&#24369;&#24341;&#29992;&#12290;
+ &#36825;&#24212;&#35813;&#21487;&#20197;&#38450;&#27490;&#20219;&#20309;&#27744;&#21270;&#36830;&#25509;&#23545;&#35937;&#27704;&#36828;
+ &#30001;&#22403;&#22334;&#22238;&#25910;&#22120;&#33258;&#21160;&#28165;&#29702;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>SQLite_TraceCategories</td>
-          <td>If this environment variable is set [to anything], it will be
-          processed as a list of trace categories to enable, if possible.  It
-          will be ignored if it cannot be processed correctly.  For more
-          details, please refer to the ParseTraceCategories method.
-          </td>
+          <td _msttexthash="507728" _msthash="71">SQLite_TraceCategories</td>
+          <td _msttexthash="1113550971" _msthash="72">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#22914;&#26524;&#21487;&#33021;&#65292;&#21017;&#20316;&#20026;&#35201;&#21551;&#29992;&#30340;&#36319;&#36394;&#31867;&#21035;&#21015;&#34920;&#36827;&#34892;&#22788;&#29702;&#12290;&#23427;
+ &#22914;&#26524;&#26080;&#27861;&#27491;&#30830;&#22788;&#29702;&#65292;&#21017;&#23558;&#34987;&#24573;&#30053;&#12290;&#20102;&#35299;&#26356;&#22810;
+ &#35814;&#24773;&#35831;&#21442;&#32771; ParseTraceCategories &#26041;&#27861;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>TypeName_SQLiteProviderServices</td>
-          <td>If this environment variable is set [to anything], it will be
-          used by the System.Data.SQLite.SQLiteFactory class as the type name
-          containing the System.Data.Common.DbProviderServices implementation
-          that should be used.</td>
+          <td _msttexthash="910130" _msthash="73">TypeName_SQLiteProviderServices</td>
+          <td _msttexthash="683166978" _msthash="74">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#30001; System.Data.SQLite.SQLiteFactory &#31867;&#29992;&#20316;&#31867;&#22411;&#21517;&#31216;
+ &#21253;&#21547; System.Data.Common.DbProviderServices &#23454;&#29616;
+ &#37027;&#24212;&#35813;&#34987;&#20351;&#29992;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>Use_SQLiteConvert_DefaultDbType</td>
-          <td>If this environment variable is set [to anything], it will be
-          used by the System.Data.SQLite.SQLiteConvert class as the default
-          DbType value that should be used when a per-connection value is not
-          available.</td>
+          <td _msttexthash="890916" _msthash="75">Use_SQLiteConvert_DefaultDbType</td>
+          <td _msttexthash="665340832" _msthash="76">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#30001; System.Data.SQLite.SQLiteConvert &#31867;&#29992;&#20316;&#40664;&#35748;&#20540;
+ DbType &#20540;&#65292;&#24403;&#27599;&#20010;&#36830;&#25509;&#30340;&#20540;&#19981;&#26159;
+ &#21487;&#29992;&#12290;</td>
         </tr>
         <tr valign="top">
-          <td>Use_SQLiteConvert_DefaultTypeName</td>
-          <td>If this environment variable is set [to anything], it will be
-          used by the System.Data.SQLite.SQLiteConvert class as the default
-          type name that should be used when a per-connection value is not
-          available.</td>
+          <td _msttexthash="997932" _msthash="77">Use_SQLiteConvert_DefaultTypeName</td>
+          <td _msttexthash="692695211" _msthash="78">&#22914;&#26524;&#27492;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;&#20026; [&#20026;&#20219;&#20309;&#20869;&#23481;]&#65292;&#23427;&#23558;&#26159;
+ &#30001; System.Data.SQLite.SQLiteConvert &#31867;&#29992;&#20316;&#40664;&#35748;&#20540;
+ &#38190;&#20837; name &#65288;&#24403;&#27599;&#20010;&#36830;&#25509;&#30340;&#20540;&#19981;&#26159;
+ &#21487;&#29992;&#12290;</td>
         </tr>
-      </table>
-      <hr/>
+      </tbody></table>
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Environment%20Variables">
-            Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Environment%20Variables" _msttexthash="36201139" _msthash="79">&#23601;&#27492;&#20027;&#39064;&#21457;&#36865;&#35780;&#35770;&#12290;</a>
         </p>
         <p>
         </p>
       </div>
     </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

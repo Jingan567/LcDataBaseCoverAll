@@ -1,95 +1,89 @@
-<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
-    <title>Optimizing Your Queries</title>
-    <link rel="stylesheet" type="text/css" href="../Include/ndoc.css" />
+
+<!-- saved from url=(0117)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/optimizing.html -->
+<html dir="LTR" xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:ndoc="urn:ndoc-preprocess"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title _msttexthash="11821797" _msthash="0">&#20248;&#21270;&#26597;&#35810;</title>
+    <link rel="stylesheet" type="text/css" href="./optimizing_files/ndoc.css">
   </head>
   <body>
     <div id="header">
       <table width="100%" id="topTable">
-        <tr id="headerTableRow1">
+        <tbody><tr id="headerTableRow1">
           <td align="left">
-            <span id="runningHeaderText">Optimizing for SQLite</span>
+            <span id="runningHeaderText" _msttexthash="29885128" _msthash="1">&#38024;&#23545; SQLite &#36827;&#34892;&#20248;&#21270;</span>
           </td>
         </tr>
         <tr id="headerTableRow2">
           <td align="left">
-            <span id="nsrTitle">SQLite.NET Class Library Documentation</span>
+            <span id="nsrTitle" _msttexthash="26199498" _msthash="2">SQLite.NET &#31867;&#24211;&#25991;&#26723;</span>
           </td>
         </tr>
-        <tr id="headerTableRow3" style="display:none">
-          <td>
-            <a id="seeAlsoSectionLink" href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
-            <a id="exampleSectionLink" href="#codeExampleToggle" onclick="OpenSection(codeExampleToggle)">Example</a>
+        <tr id="headerTableRow3" style="display:none" _msthidden="1">
+          <td _msthidden="1">
+            <font _mstmutation="1" _msttexthash="249834" _msthidden="1" _msthash="3"><a id="seeAlsoSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/optimizing.html#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)" _mstmutation="1">See Also</a>
+            <a id="exampleSectionLink" href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/optimizing.html#codeExampleToggle" onclick="OpenSection(codeExampleToggle)" _mstmutation="1">Example</a></font>
           </td>
         </tr>
-     </table>
-      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none">
-        <tr>
-          <td>
-            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0">
-              <img ID="toggleAllImage" class="toggleAll" src="collall.gif" />
-              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">
+     </tbody></table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0" style="display:none" _msthidden="2">
+        <tbody _msthidden="2"><tr _msthidden="2">
+          <td _msthidden="2">
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" _msthidden="2">
+              <img id="toggleAllImage" class="toggleAll" src="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Provider/collall.gif">
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="172484" _msthidden="1" _msthash="4">
 							Collapse All
 						</label>
-              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;" _msttexthash="127504" _msthidden="1" _msthash="5">
 							Expand All
 						</label>
             </span>
           </td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
     <div id="mainSection">
     <div id="mainBody">
-      <h1 class="heading">Tips on Optimizing Your Queries</h1>
-      <p>The next few paragraphs will attempt to give you a few rudimentary rules for 
-        speeding up your queries in general, and especially how SQLite is adversely 
-        affected by the kinds of SQL behaviors you may have taken for granted in other 
-        providers. It is by no means a complete optimization guide. For even more 
-        details on optimizing your queries, visit <a href="https://www.sqlite.org">sqlite.org</a>.</p>
-      <h4 class="subHeading">The Importance of Transactions</h4>
-      <p>If you are inserting data in SQLite without first starting a transaction: <b>DO 
-          NOT PASS GO! Call BeginTransaction() right now, and finish with Commit()!</b> 
-        If you think I'm kidding, think again. SQLite's A.C.I.D. design means that 
-        every single time you insert any data outside a transaction, an implicit 
-        transaction is constructed, the insert made, and the transaction destructed. <b>EVERY 
-          TIME.</b> If you're wondering why in the world your inserts are taking 100x 
-        longer than you think they should, look no further.</p>
-      <h4 class="subHeading">Prepared Statements</h4>
-      <p>Lets have a quick look at the following code and evaluate its performance:</p>
+      <h1 class="heading" _msttexthash="34922212" _msthash="6">&#26377;&#20851;&#20248;&#21270;&#26597;&#35810;&#30340;&#25552;&#31034;</h1>
+      <p _msttexthash="1887246387" _msthash="7">&#25509;&#19979;&#26469;&#30340;&#20960;&#27573;&#23558;&#23581;&#35797;&#20026;&#24744;&#25552;&#20379;&#19968;&#20123;&#22522;&#26412;&#30340;&#35268;&#21017;
+ &#36890;&#24120;&#21152;&#24555;&#24744;&#30340;&#26597;&#35810;&#36895;&#24230;&#65292;&#23588;&#20854;&#26159; SQLite &#30340;&#19981;&#21033;&#31243;&#24230;
+ &#21463;&#24744;&#22312;&#20854;&#20182; SQL &#20013;&#21487;&#33021;&#35748;&#20026;&#29702;&#25152;&#24403;&#28982;&#30340; SQL &#34892;&#20026;&#31867;&#22411;
+ &#20379;&#24212;&#21830;&#12290;&#23427;&#32477;&#19981;&#26159;&#23436;&#25972;&#30340;&#20248;&#21270;&#25351;&#21335;&#12290;&#26356;&#22810;
+ &#26377;&#20851;&#20248;&#21270;&#26597;&#35810;&#30340;&#35814;&#32454;&#20449;&#24687;&#65292;&#35831;&#35775;&#38382; <a href="https://www.sqlite.org/" _istranslated="1">sqlite.org</a>&#12290;</p>
+      <h4 class="subHeading" _msttexthash="21825349" _msthash="8">&#20132;&#26131;&#30340;&#37325;&#35201;&#24615;</h4>
+      <p _msttexthash="5669603719" _msthash="9">&#22914;&#26524;&#24744;&#22312; SQLite &#20013;&#25554;&#20837;&#25968;&#25454;&#32780;&#19981;&#20808;&#21551;&#21160;&#20107;&#21153;&#65306;<b _istranslated="1">DO
+ NOT PASS GO&#65281;&#31435;&#21363;&#35843;&#29992; BeginTransaction&#65288;&#65289;&#65292;&#24182;&#20197; Commit&#65288;&#65289; &#32467;&#26463;&#65281;</b>&#22914;&#26524;&#20320;&#35273;&#24471;&#25105;&#22312;&#24320;&#29609;&#31505;&#65292;&#35831;&#20877;&#24819;&#19968;&#24819;&#12290;SQLite &#30340; A.C.I.D. &#35774;&#35745;&#24847;&#21619;&#30528;
+ &#27599;&#27425;&#22312;&#20107;&#21153;&#22806;&#37096;&#25554;&#20837;&#20219;&#20309;&#25968;&#25454;&#26102;&#65292;&#37117;&#20250;&#26174;&#31034;&#19968;&#20010;&#38544;&#24335;&#30340;
+ &#26500;&#36896; transaction&#65292;&#36827;&#34892; INSERT&#65292;&#24182;&#38144;&#27585; transaction&#12290;<b _istranslated="1">&#27599;
+ &#26102;&#38388;&#12290;</b>&#22914;&#26524;&#24744;&#24819;&#30693;&#36947;&#20026;&#20160;&#20040;&#24744;&#30340;&#25554;&#20214;&#38656;&#35201; 100 &#20493;
+ &#27604;&#20320;&#24819;&#35937;&#30340;&#35201;&#38271;&#65292;&#19981;&#35201;&#20877;&#30475;&#20102;&#12290;</p>
+      <h4 class="subHeading" _msttexthash="19372626" _msthash="10">&#20934;&#22791;&#22909;&#30340;&#35821;&#21477;</h4>
+      <p _msttexthash="124056426" _msthash="11">&#35753;&#25105;&#20204;&#24555;&#36895;&#27983;&#35272;&#19968;&#19979;&#20197;&#19979;&#20195;&#30721;&#24182;&#35780;&#20272;&#20854;&#24615;&#33021;&#65306;</p>
       <div class="syntax">
-        <pre>
-      using (SQLiteCommand mycommand = new SQLiteCommand(myconnection))
+        <pre>      using (SQLiteCommand mycommand = new SQLiteCommand(myconnection))
       {
         int n;
         
-        for (n = 0; n < 100000; n ++)
+        for (n = 0; n &lt; 100000; n ++)
         {
           mycommand.CommandText = String.Format("INSERT INTO [MyTable] ([MyId]) VALUES({0})", n + 1);
           mycommand.ExecuteNonQuery();
         }
       }</pre>
       </div>
-      <p>This code seems pretty tight, but if you think it performs well, you're dead 
-        wrong. Here's what's wrong with it:</p>
+      <p _msttexthash="425577672" _msthash="12">&#36825;&#27573;&#20195;&#30721;&#30475;&#36215;&#26469;&#24456;&#32039;&#20945;&#65292;&#20294;&#22914;&#26524;&#20320;&#35748;&#20026;&#23427;&#34920;&#29616;&#33391;&#22909;&#65292;&#37027;&#20320;&#23601;&#27515;&#23450;&#20102;
+ &#38169;&#12290;&#36825;&#26159;&#23427;&#30340;&#38382;&#39064;&#25152;&#22312;&#65306;</p>
       <ul>
-        <li>
-          I didn't start a transaction first! This insert is dog slow!</li>
-        <li>
-          The CLR is calling "new" implicitly 100,000 times because I am formatting a 
-          string in the loop for every insert</li>
-        <li>
-          Since SQLite precompiles SQL statements, the engine is constructing and 
-          deconstructing 100,000 SQL statements and allocating/deallocating their memory</li>
-        <li>
-          All this construction and destruction is involving about 300,000 more native to 
-          managed interop calls than an optimized insert</li>
+        <li _msttexthash="98455942" _msthash="13">&#25105;&#27809;&#26377;&#20808;&#24320;&#22987;&#20132;&#26131;&#65281;&#36825;&#20010;&#25554;&#39029;&#24456;&#24930;&#65281;</li>
+        <li _msttexthash="187474274" _msthash="14">CLR &#38544;&#24335;&#35843;&#29992; “new” 100,000 &#27425;&#65292;&#22240;&#20026;&#25105;&#27491;&#22312;&#26684;&#24335;&#21270;
+ string &#22312;&#24490;&#29615;&#20013;</li>
+        <li _msttexthash="377367016" _msthash="15">&#30001;&#20110; SQLite &#39044;&#32534;&#35793;&#20102; SQL &#35821;&#21477;&#65292;&#22240;&#27492;&#24341;&#25806;&#27491;&#22312;&#26500;&#36896;&#21644;
+ &#35299;&#26500; 100,000 &#20010; SQL &#35821;&#21477;&#24182;&#20998;&#37197;/&#37322;&#25918;&#20854;&#20869;&#23384;</li>
+        <li _msttexthash="252475041" _msthash="16">&#25152;&#26377;&#36825;&#20123;&#24314;&#35774;&#21644;&#30772;&#22351;&#37117;&#28041;&#21450;&#22823;&#32422; 300,000 &#21517;&#26412;&#22320;&#20154;
+ &#25176;&#31649;&#20114;&#20316;&#35843;&#29992;&#27604;&#20248;&#21270;&#30340;&#25554;&#20837;</li>
       </ul>
-      <p>So lets rewrite that code slightly:</p>
+      <p _msttexthash="95522375" _msthash="17">&#22240;&#27492;&#65292;&#35753;&#25105;&#20204;&#31245;&#24494;&#37325;&#20889;&#19968;&#19979;&#35813;&#20195;&#30721;&#65306;</p>
       <div class="syntax">
-        <pre>
-      using (SQLiteTransaction mytransaction = myconnection.BeginTransaction())
+        <pre>      using (SQLiteTransaction mytransaction = myconnection.BeginTransaction())
       {
         using (SQLiteCommand mycommand = new SQLiteCommand(myconnection))
         {
@@ -99,7 +93,7 @@
           mycommand.CommandText = "INSERT INTO [MyTable] ([MyId]) VALUES(?)";
           mycommand.Parameters.Add(myparam);
           
-          for (n = 0; n < 100000; n ++)
+          for (n = 0; n &lt; 100000; n ++)
           {
             myparam.Value = n + 1;
             mycommand.ExecuteNonQuery();
@@ -108,27 +102,26 @@
         mytransaction.Commit();
       } </pre>
       </div>
-      <p>Now this is a blazing fast insert for <b><i>any</i></b> database engine, not 
-        just SQLite. The SQL statement is prepared one time -- on the first call to 
-        ExecuteNonQuery(). Once prepared, it never needs re-evaluating. Furthermore, 
-        we're allocating no memory in the loop and doing a very minimal number of 
-        interop transitions. Surround the entire thing with a transaction, and the 
-        performance of this insert is so far and away faster than the original that it 
-        merits a hands-on-the-hips pirate-like laugh.</p>
-      <p>Every database engine worth its salt utilizes prepared statements. If you're 
-        not coding for this, you're not writing optimized SQL, and that's the bottom 
-        line.
-      </p>
-      <hr />
+      <p _msttexthash="5096759772" _msthash="18">&#29616;&#22312;&#65292;&#36825;&#26159;<b _istranslated="1"><i _istranslated="1">&#20219;&#20309;</i></b>&#25968;&#25454;&#24211;&#24341;&#25806;&#30340;&#26497;&#24555;&#25554;&#20837;&#65292;&#32780;&#19981;&#26159;
+ &#21482;&#26159; SQLite&#12290;SQL &#35821;&#21477;&#20934;&#22791;&#19968;&#27425; —— &#22312;&#31532;&#19968;&#27425;&#35843;&#29992;
+ ExecuteNonQuery&#65288;&#65289; &#30340; ExecuteNonQuery&#65288;&#65289; &#20013;&#12290;&#19968;&#26086;&#20934;&#22791;&#22909;&#65292;&#23601;&#27704;&#36828;&#19981;&#38656;&#35201;&#37325;&#26032;&#35780;&#20272;&#12290;&#27492;&#22806;
+ &#25105;&#20204;&#22312;&#24490;&#29615;&#20013;&#19981;&#20998;&#37197;&#20869;&#23384;&#65292;&#24182;&#19988;&#21482;&#25191;&#34892;&#38750;&#24120;&#23569;&#37327;&#30340;
+ &#20114;&#20316;&#36716;&#25442;&#12290;&#29992;&#20107;&#21153;&#23558;&#25972;&#20010; Thing &#25324;&#36215;&#26469;&#65292;&#28982;&#21518;
+ &#36825;&#20010;&#25554;&#20214;&#30340;&#24615;&#33021;&#27604;&#21407;&#26469;&#30340;&#35201;&#24555;&#24471;&#22810;&#65292;&#20197;&#33267;&#20110;&#23427;
+ &#20540;&#24471;&#19968;&#38453;&#28023;&#30423;&#33324;&#30340;&#31505;&#22768;&#12290;</p>
+      <p _msttexthash="562975842" _msthash="19">&#27599;&#20010;&#20540;&#24471;&#19968;&#25552;&#30340;&#25968;&#25454;&#24211;&#24341;&#25806;&#37117;&#20351;&#29992;&#20934;&#22791;&#22909;&#30340;&#35821;&#21477;&#12290;&#22914;&#26524;&#20320;&#26159;
+ &#19981;&#20026;&#27492;&#32534;&#30721;&#65292;&#24744;&#23601;&#27809;&#26377;&#32534;&#20889;&#20248;&#21270;&#30340; SQL&#65292;&#36825;&#23601;&#26159;&#24213;&#37096;
+ &#32447;&#12290;</p>
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Optimizing">
-            Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite.NET%20Class%20Library%20Documentation%20Feedback:%20Optimizing" _msttexthash="36201139" _msthash="20">&#23601;&#27492;&#20027;&#39064;&#21457;&#36865;&#35780;&#35770;&#12290;</a>
         </p>
         <p>
         </p>
       </div>
     </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

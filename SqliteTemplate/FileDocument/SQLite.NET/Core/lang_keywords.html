@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- saved from url=(0116)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_keywords.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link href="sqlite.css" rel="stylesheet">
+
+<link href="./lang_keywords_files/sqlite.css" rel="stylesheet">
 <title>SQLite Keywords</title>
 <!-- path= -->
 </head>
 <body>
-<div class=nosearch>
+<div class="nosearch">
 <a href="https://www.sqlite.org/index.html">
-<img class="logo" src="images/sqlite370_banner.gif" alt="SQLite" border="0">
+<img class="logo" src="./lang_keywords_files/sqlite370_banner.gif" alt="SQLite" border="0" _mstalt="70863">
 </a>
 <div><!-- IE hack to prevent disappearing logo --></div>
 <div class="tagline desktoponly">
@@ -18,34 +19,34 @@ Small. Fast. Reliable.<br>Choose any three.
 <div class="menu mainmenu">
 <ul>
 <li><a href="https://www.sqlite.org/index.html">Home</a>
-<li class='mobileonly'><a href="https://www.sqlite.org/javascript:void(0)" onclick='toggle_div("submenu")'>Menu</a>
-<li class='wideonly'><a href="https://www.sqlite.org/about.html">About</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/docs.html">Documentation</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/download.html">Download</a>
-<li class='wideonly'><a href="https://www.sqlite.org/copyright.html">License</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/support.html">Support</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
-<li class='search' id='search_menubutton'>
-<a href="https://www.sqlite.org/javascript:void(0)" onclick='toggle_search()'>Search</a>
-</ul>
+</li><li class="mobileonly"><a href="https://www.sqlite.org/javascript:void(0)" onclick="toggle_div(&quot;submenu&quot;)">Menu</a>
+</li><li class="wideonly"><a href="https://www.sqlite.org/about.html">About</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/docs.html">Documentation</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/download.html">Download</a>
+</li><li class="wideonly"><a href="https://www.sqlite.org/copyright.html">License</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/support.html">Support</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
+</li><li class="search" id="search_menubutton" style="display: none;">
+<a href="https://www.sqlite.org/javascript:void(0)" onclick="toggle_search()">Search</a>
+</li></ul>
 </div>
 <div class="menu submenu" id="submenu">
 <ul>
 <li><a href="https://www.sqlite.org/about.html">About</a>
-<li><a href="https://www.sqlite.org/docs.html">Documentation</a>
-<li><a href="https://www.sqlite.org/download.html">Download</a>
-<li><a href="https://www.sqlite.org/support.html">Support</a>
-<li><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
-</ul>
+</li><li><a href="https://www.sqlite.org/docs.html">Documentation</a>
+</li><li><a href="https://www.sqlite.org/download.html">Download</a>
+</li><li><a href="https://www.sqlite.org/support.html">Support</a>
+</li><li><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
+</li></ul>
 </div>
 <div class="searchmenu" id="searchmenu">
-<form method="GET" action="search">
+<form method="GET" action="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/search">
 <select name="s" id="searchtype">
 <option value="d">Search Documentation</option>
 <option value="c">Search Changelog</option>
 </select>
 <input type="text" name="q" id="searchbox" value="">
-<input type="submit" value="Go">
+<input type="submit" value="Go" _mstvalue="18005">
 </form>
 </div>
 </div>
@@ -91,8 +92,8 @@ return false;
 }
 
 </script>
-<div class=fancy>
-<div class=nosearch>
+<div class="fancy">
+<div class="nosearch">
 <div class="fancy_title">
 SQLite Keywords
 </div>
@@ -102,84 +103,78 @@ SQLite Keywords
 
 
 
-<p>The SQL standard specifies a large number of keywords which may not
-be used as the names of tables, indices, columns, databases, user-defined
-functions, collations, virtual table modules, or any other named object.
-The list of keywords is so long that few people can remember them all.
-For most SQL code, your safest bet is to never use any English language
-word as the name of a user-defined object.</p>
+<p _msttexthash="2784030457" _msthash="185">SQL 标准指定了大量关键字，这些关键字可能不是
+用作表、索引、列、数据库、用户定义的名称
+函数、排序规则、虚拟表模块或任何其他命名对象。
+关键字列表很长，很少有人能记住它们。
+对于大多数 SQL 代码，最安全的做法是永远不要使用任何英语
+word 作为用户定义对象的名称。</p>
 
-<p>If you want to use a keyword as a name, you need to quote it.  There
-are four ways of quoting keywords in SQLite:</p>
+<p _msttexthash="395205733" _msthash="186">如果你想用一个关键词作为名字，你需要引用它。那里
+是在 SQLite 中引用关键字的四种方式：</p>
 
 <p>
 </p><blockquote>
 <table>
-<tr>	<td valign="top"><b>'keyword'</b></td><td width="20"></td>
-	<td>A keyword in single quotes is a string literal.</td></tr>
+<tbody><tr>	<td valign="top"><b _msttexthash="9685650" _msthash="187">'关键字'</b></td><td width="20"></td>
+	<td _msttexthash="66148758" _msthash="188">单引号中的关键字是字符串文本。</td></tr>
 
-<tr>	<td valign="top"><b>"keyword"</b></td><td></td>
-	<td>A keyword in double-quotes is an identifier.</td></tr>
+<tr>	<td valign="top"><b _msttexthash="11600147" _msthash="189">“关键字”</b></td><td></td>
+	<td _msttexthash="56862182" _msthash="190">双引号中的关键字是标识符。</td></tr>
 
-<tr>	<td valign="top"><b>&#91;keyword&#93;</b></td><td></td>
-	<td>A keyword enclosed in square brackets is 
-        an identifier.  This is not standard SQL.  This quoting mechanism
-        is used by MS Access and SQL Server and is included in SQLite for
-        compatibility.</td></tr>
+<tr>	<td valign="top"><b _msttexthash="11310884" _msthash="191">[关键词]</b></td><td></td>
+	<td _msttexthash="463431579" _msthash="192">括在方括号中的关键字是
+ 标识符。这不是标准 SQL。这个引用机制
+ 由 MS Access 和 SQL Server 使用，并包含在 SQLite 中
+ 兼容性。</td></tr>
 
-<tr>	<td valign="top"><b>&#96;keyword&#96;</b></td><td></td>
-	<td>A keyword enclosed in grave accents (ASCII code 96) is 
-        an identifier.  This is not standard SQL.  This quoting mechanism
-        is used by MySQL and is included in SQLite for
-        compatibility.</td></tr>
-</table>
+<tr>	<td valign="top"><b _msttexthash="9685650" _msthash="193">'关键字'</b></td><td></td>
+	<td _msttexthash="586978171" _msthash="194">用重音符括起来的关键字（ASCII 代码 96）是
+ 标识符。这不是标准 SQL。这个引用机制
+ 由 MySQL 使用，并包含在 SQLite 中
+ 兼容性。</td></tr>
+</tbody></table>
 </blockquote>
 
 
-<p>For resilience when confronted with historical SQL statements, SQLite
-will sometimes bend the quoting rules above:</p>
+<p _msttexthash="261666444" _msthash="195">为了在面对历史 SQL 语句时具有弹性，SQLite
+有时会扭曲上述引用规则：</p>
 
 <ul>
-<li><p>If a keyword in single
-quotes (ex: <b>'key'</b> or <b>'glob'</b>) is used in a context where
-an identifier is allowed but where a string literal is not allowed, then
-the token is understood to be an identifier instead of a string literal.
-</p></li>
+<li><p _msttexthash="873479958" _msthash="196">如果单个
+引号（例如： <b _istranslated="1">'key'</b> 或 <b _istranslated="1">'glob'</b>）用于
+允许使用标识符，但如果不允许使用字符串文字，则
+令牌被理解为标识符而不是字符串文本。</p></li>
 
-<li><p>If a keyword in double
-quotes (ex: <b>"key"</b> or <b>"glob"</b>) is used in a context where
-it cannot be resolved to an identifier but where a string literal
-is allowed, then the token is understood to be a string literal instead
-of an identifier.</p></li>
+<li><p _msttexthash="1005552288" _msthash="197">如果 double 中的关键字
+引号（例如：“<b _istranslated="1">key”</b>或<b _istranslated="1">“glob”）</b>用于
+它不能解析为标识符，但其中字符串文本
+允许，则令牌将理解为字符串文本
+的标识符。</p></li>
 </ul>
 
-<p>Programmers are cautioned not to use the two exceptions described in
-the previous bullets.  We emphasize that they exist only so that old
-and ill-formed SQL statements will run correctly.  Future versions of
-SQLite might raise errors instead of accepting the malformed
-statements covered by the exceptions above.</p>
+<p _msttexthash="1418863563" _msthash="198">提醒程序员不要使用
+前面的项目符号。我们强调，它们的存在只是为了让
+格式不正确的 SQL 语句将正确运行。的未来版本
+SQLite 可能会引发错误，而不是接受格式错误的
+上述例外情况涵盖的 statements。</p>
 
-<p>
-SQLite adds new keywords from time to time when it takes on new features.
-So to prevent your code from being broken by future enhancements, you should
-normally quote any identifier that is an English language word, even if
-you do not have to.
-</p>
+<p _msttexthash="1102556026" _msthash="199">SQLite 在具有新功能时会不时添加新关键字。
+因此，为了防止您的代码被未来的增强功能破坏，您应该
+通常引用任何英语单词的标识符，即使
+你不必这样做。</p>
 
-<p>
-The list below shows all possible keywords used by any build of
-SQLite regardless of <a href="https://www.sqlite.org/compile.html">compile-time options</a>.  
-Most reasonable configurations use most or all of these keywords,
-but some keywords may be omitted when SQL language features are
-disabled.
-Applications can use the
-<a href="https://www.sqlite.org/c3ref/keyword_check.html">sqlite3_keyword_count()</a>, <a href="https://www.sqlite.org/c3ref/keyword_check.html">sqlite3_keyword_name()</a>, and
-<a href="https://www.sqlite.org/c3ref/keyword_check.html">sqlite3_keyword_check()</a> interfaces to determine the keywords
-recognized by SQLite at run-time.
-Regardless of the compile-time configuration, any identifier that is not on
-the following 147-element
+<p><font _mstmutation="1" _msttexthash="5703879753" _msthash="200">下面的列表显示了任何 build 使用的所有可能的关键字
+SQLite 而不考虑<a href="https://www.sqlite.org/compile.html" _mstmutation="1" _istranslated="1">编译时选项</a>。
+大多数合理的配置使用大部分或全部这些关键字，
+但是当 SQL 语言功能
+禁用。
+应用程序可以使用 <a href="https://www.sqlite.org/c3ref/keyword_check.html" _mstmutation="1" _istranslated="1">sqlite3_keyword_count（）、</a><a href="https://www.sqlite.org/c3ref/keyword_check.html" _mstmutation="1" _istranslated="1">sqlite3_keyword_name（）</a> 和 <a href="https://www.sqlite.org/c3ref/keyword_check.html" _mstmutation="1" _istranslated="1">sqlite3_keyword_check（）</a> 接口来确定关键字
+在运行时被 SQLite 识别。
+无论编译时配置如何，任何未开启的标识符
+以下 147 元素
 
-list is not a keyword to the SQL parser in SQLite:
+list 不是 SQLite 中 SQL 解析器的关键字：</font>
 </p>
 
 <div class="columns" style="columns:11em auto;">
@@ -333,5 +328,6 @@ list is not a keyword to the SQL parser in SQLite:
 <li>WITHOUT</li>
 </ul></div>
 
-</ul></div><p align="center"><small><i>This page last modified on  <a href="https://sqlite.org/docsrc/honeypot" id="mtimelink"  data-href="https://sqlite.org/docsrc/finfo/pages/lang_keywords.in?m=0e6afea91e">2022-11-26 14:56:19</a> UTC </small></i></p>
+</div><p align="center"><small><i>This page last modified on  <a href="https://sqlite.org/docsrc/honeypot" id="mtimelink" data-href="https://sqlite.org/docsrc/finfo/pages/lang_keywords.in?m=0e6afea91e">2022-11-26 14:56:19</a> UTC </i></small></p>
 
+</body></html>

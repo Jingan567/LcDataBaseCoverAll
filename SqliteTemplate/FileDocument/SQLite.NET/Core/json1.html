@@ -1,51 +1,50 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- saved from url=(0108)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link href="sqlite.css" rel="stylesheet">
-<title>JSON Functions And Operators</title>
+
+<link href="./json1_files/sqlite.css" rel="stylesheet">
+<title _msttexthash="30172545" _msthash="0">JSON 函数和运算符</title>
 <!-- path= -->
 </head>
 <body>
-<div class=nosearch>
+<div class="nosearch">
 <a href="https://www.sqlite.org/index.html">
-<img class="logo" src="images/sqlite370_banner.gif" alt="SQLite" border="0">
+<img class="logo" src="./json1_files/sqlite370_banner.gif" alt="SQLite" border="0" _mstalt="70863" _msthash="1">
 </a>
 <div><!-- IE hack to prevent disappearing logo --></div>
-<div class="tagline desktoponly">
-Small. Fast. Reliable.<br>Choose any three.
-</div>
+<div class="tagline desktoponly" _msttexthash="53246063" _msthash="2">小。快。可靠。<br _istranslated="1">选择任意三个。</div>
 <div class="menu mainmenu">
 <ul>
-<li><a href="https://www.sqlite.org/index.html">Home</a>
-<li class='mobileonly'><a href="https://www.sqlite.org/javascript:void(0)" onclick='toggle_div("submenu")'>Menu</a>
-<li class='wideonly'><a href="https://www.sqlite.org/about.html">About</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/docs.html">Documentation</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/download.html">Download</a>
-<li class='wideonly'><a href="https://www.sqlite.org/copyright.html">License</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/support.html">Support</a>
-<li class='desktoponly'><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
-<li class='search' id='search_menubutton'>
-<a href="https://www.sqlite.org/javascript:void(0)" onclick='toggle_search()'>Search</a>
-</ul>
+<li><a href="https://www.sqlite.org/index.html" _msttexthash="2136498" _msthash="3">家</a>
+</li><li class="mobileonly" _msthidden="1"><a href="https://www.sqlite.org/javascript:void(0)" onclick="toggle_div(&quot;submenu&quot;)" _msttexthash="45591" _msthidden="1" _msthash="4">Menu</a>
+</li><li class="wideonly"><a href="https://www.sqlite.org/about.html" _msttexthash="5448781" _msthash="5">大约</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/docs.html" _msttexthash="5144373" _msthash="6">文档</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/download.html" _msttexthash="5638321" _msthash="7">下载</a>
+</li><li class="wideonly"><a href="https://www.sqlite.org/copyright.html" _msttexthash="9675445" _msthash="8">许可证</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/support.html" _msttexthash="4993053" _msthash="9">支持</a>
+</li><li class="desktoponly"><a href="https://www.sqlite.org/prosupport.html" _msttexthash="5377151" _msthash="10">购买</a>
+</li><li class="search" id="search_menubutton" _msthidden="1" style="display: none;">
+<a href="https://www.sqlite.org/javascript:void(0)" onclick="toggle_search()" _msttexthash="74607" _msthidden="1" _msthash="11">Search</a>
+</li></ul>
 </div>
-<div class="menu submenu" id="submenu">
-<ul>
-<li><a href="https://www.sqlite.org/about.html">About</a>
-<li><a href="https://www.sqlite.org/docs.html">Documentation</a>
-<li><a href="https://www.sqlite.org/download.html">Download</a>
-<li><a href="https://www.sqlite.org/support.html">Support</a>
-<li><a href="https://www.sqlite.org/prosupport.html">Purchase</a>
-</ul>
+<div class="menu submenu" id="submenu" _msthidden="5">
+<ul _msthidden="5">
+<li _msthidden="1"><a href="https://www.sqlite.org/about.html" _msttexthash="60892" _msthidden="1" _msthash="12">About</a>
+</li><li _msthidden="1"><a href="https://www.sqlite.org/docs.html" _msttexthash="234962" _msthidden="1" _msthash="13">Documentation</a>
+</li><li _msthidden="1"><a href="https://www.sqlite.org/download.html" _msttexthash="113308" _msthidden="1" _msthash="14">Download</a>
+</li><li _msthidden="1"><a href="https://www.sqlite.org/support.html" _msttexthash="100646" _msthidden="1" _msthash="15">Support</a>
+</li><li _msthidden="1"><a href="https://www.sqlite.org/prosupport.html" _msttexthash="113477" _msthidden="1" _msthash="16">Purchase</a>
+</li></ul>
 </div>
-<div class="searchmenu" id="searchmenu">
-<form method="GET" action="search">
-<select name="s" id="searchtype">
-<option value="d">Search Documentation</option>
-<option value="c">Search Changelog</option>
+<div class="searchmenu" id="searchmenu" _msthidden="3">
+<form method="GET" action="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/search" _msthidden="3">
+<select name="s" id="searchtype" _msthidden="2">
+<option value="d" _msttexthash="416429" _msthidden="1" _msthash="17">Search Documentation</option>
+<option value="c" _msttexthash="276705" _msthidden="1" _msthash="18">Search Changelog</option>
 </select>
 <input type="text" name="q" id="searchbox" value="">
-<input type="submit" value="Go">
+<input type="submit" value="Go" _msthidden="A" _mstvalue="18005" _msthash="19">
 </form>
 </div>
 </div>
@@ -91,54 +90,49 @@ return false;
 }
 
 </script>
-<div class=fancy>
-<div class=nosearch>
-<div class="fancy_title">
-JSON Functions And Operators
-</div>
+<div class="fancy">
+<div class="nosearch">
+<div class="fancy_title" _msttexthash="30172545" _msthash="20">JSON 函数和运算符</div>
 <div class="fancy_toc">
-<a onclick="toggle_toc()">
-<span class="fancy_toc_mark" id="toc_mk">&#x25ba;</span>
-Table Of Contents
-</a>
-<div id="toc_sub"><div class="fancy-toc1"><a href="#overview">1. Overview</a></div>
-<div class="fancy-toc1"><a href="#compiling_in_json_support">2. Compiling in JSON Support</a></div>
-<div class="fancy-toc1"><a href="#interface_overview">3. Interface Overview</a></div>
-<div class="fancy-toc2"><a href="#json_arguments">3.1. JSON arguments</a></div>
-<div class="fancy-toc2"><a href="#jsonb">3.2. JSONB</a></div>
-<div class="fancy-toc3"><a href="#the_jsonb_format">3.2.1. The JSONB format</a></div>
-<div class="fancy-toc3"><a href="#handling_of_malformed_jsonb">3.2.2. Handling of malformed JSONB</a></div>
-<div class="fancy-toc2"><a href="#path_arguments">3.3. PATH arguments</a></div>
-<div class="fancy-toc2"><a href="#value_arguments">3.4. VALUE arguments</a></div>
-<div class="fancy-toc2"><a href="#compatibility">3.5. Compatibility</a></div>
-<div class="fancy-toc2"><a href="#json5_extensions">3.6. JSON5 Extensions</a></div>
-<div class="fancy-toc2"><a href="#performance_considerations">3.7. Performance Considerations</a></div>
-<div class="fancy-toc2"><a href="#the_json_blob_input_bug">3.8. The JSON BLOB Input Bug</a></div>
-<div class="fancy-toc1"><a href="#function_details">4. Function Details</a></div>
-<div class="fancy-toc2"><a href="#the_json_function">4.1. The json() function</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_function">4.2. The jsonb() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_array_function">4.3. The json_array() function</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_array_function">4.4. The jsonb_array() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_array_length_function">4.5. The json_array_length() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_error_position_function">4.6. The json_error_position() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_extract_function">4.7. The json_extract() function</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_extract_function">4.8. The jsonb_extract() function</a></div>
-<div class="fancy-toc2"><a href="#the_and_operators">4.9. The -> and ->> operators</a></div>
-<div class="fancy-toc2"><a href="#the_json_insert_json_replace_and_json_set_functions">4.10. The json_insert(), json_replace, and json_set() functions</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_insert_jsonb_replace_and_jsonb_set_functions">4.11. The jsonb_insert(), jsonb_replace, and jsonb_set() functions</a></div>
-<div class="fancy-toc2"><a href="#the_json_object_function">4.12. The json_object() function</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_object_function">4.13. The jsonb_object() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_patch_function">4.14. The json_patch() function</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_patch_function">4.15. The jsonb_patch() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_pretty_function">4.16. The json_pretty() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_remove_function">4.17. The json_remove() function</a></div>
-<div class="fancy-toc2"><a href="#the_jsonb_remove_function">4.18. The jsonb_remove() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_type_function">4.19. The json_type() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_valid_function">4.20. The json_valid() function</a></div>
-<div class="fancy-toc2"><a href="#the_json_quote_function">4.21. The json_quote() function</a></div>
-<div class="fancy-toc2"><a href="#array_and_object_aggregate_functions">4.22. Array and object aggregate functions</a></div>
-<div class="fancy-toc2"><a href="#the_json_each_and_json_tree_table_valued_functions">4.23. The json_each() and json_tree() table-valued functions</a></div>
-<div class="fancy-toc3"><a href="#examples_using_json_each_and_json_tree_">4.23.1. Examples using json_each() and json_tree()</a></div>
+<a onclick="toggle_toc()" _msttexthash="6900647" _msthash="21"><span class="fancy_toc_mark" id="toc_mk" _istranslated="1">►</span> 目录</a>
+<div id="toc_sub" _msthidden="38"><div class="fancy-toc1" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#overview" _msttexthash="149552" _msthidden="1" _msthash="22">1. Overview</a></div>
+<div class="fancy-toc1" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#compiling_in_json_support" _msttexthash="577447" _msthidden="1" _msthash="23">2. Compiling in JSON Support</a></div>
+<div class="fancy-toc1" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#interface_overview" _msttexthash="404612" _msthidden="1" _msthash="24">3. Interface Overview</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#json_arguments" _msttexthash="315757" _msthidden="1" _msthash="25">3.1. JSON arguments</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonb" _msttexthash="85202" _msthidden="1" _msthash="26">3.2. JSONB</a></div>
+<div class="fancy-toc3" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_format" _msttexthash="375323" _msthidden="1" _msthash="27">3.2.1. The JSONB format</a></div>
+<div class="fancy-toc3" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#handling_of_malformed_jsonb" _msttexthash="770874" _msthidden="1" _msthash="28">3.2.2. Handling of malformed JSONB</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#path_arguments" _msttexthash="313794" _msthidden="1" _msthash="29">3.3. PATH arguments</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#value_arguments" _msttexthash="342004" _msthidden="1" _msthash="30">3.4. VALUE arguments</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#compatibility" _msttexthash="328523" _msthidden="1" _msthash="31">3.5. Compatibility</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#json5_extensions" _msttexthash="371007" _msthidden="1" _msthash="32">3.6. JSON5 Extensions</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#performance_considerations" _msttexthash="810693" _msthidden="1" _msthash="33">3.7. Performance Considerations</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_blob_input_bug" _msttexthash="473889" _msthidden="1" _msthash="34">3.8. The JSON BLOB Input Bug</a></div>
+<div class="fancy-toc1" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#function_details" _msttexthash="333801" _msthidden="1" _msthash="35">4. Function Details</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_function" _msttexthash="441103" _msthidden="1" _msthash="36">4.1. The json() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_function" _msttexthash="476515" _msthidden="1" _msthash="37">4.2. The jsonb() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_array_function" _msttexthash="686387" _msthidden="1" _msthash="38">4.3. The json_array() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_array_function" _msttexthash="730093" _msthidden="1" _msthash="39">4.4. The jsonb_array() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_array_length_function" _msttexthash="1032434" _msthidden="1" _msthash="40">4.5. The json_array_length() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_error_position_function" _msttexthash="1158222" _msthidden="1" _msthash="41">4.6. The json_error_position() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_extract_function" _msttexthash="780949" _msthidden="1" _msthash="42">4.7. The json_extract() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_extract_function" _msttexthash="827515" _msthidden="1" _msthash="43">4.8. The jsonb_extract() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_and_operators" _msttexthash="535327" _msthidden="1" _msthash="44">4.9. The -&gt; and -&gt;&gt; operators</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_insert_json_replace_and_json_set_functions" _msttexthash="2555800" _msthidden="1" _msthash="45">4.10. The json_insert(), json_replace, and json_set() functions</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_insert_jsonb_replace_and_jsonb_set_functions" _msttexthash="2805972" _msthidden="1" _msthash="46">4.11. The jsonb_insert(), jsonb_replace, and jsonb_set() functions</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_object_function" _msttexthash="764790" _msthidden="1" _msthash="47">4.12. The json_object() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_object_function" _msttexthash="810927" _msthidden="1" _msthash="48">4.13. The jsonb_object() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_patch_function" _msttexthash="718796" _msthidden="1" _msthash="49">4.14. The json_patch() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_patch_function" _msttexthash="763594" _msthidden="1" _msthash="50">4.15. The jsonb_patch() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_pretty_function" _msttexthash="779922" _msthidden="1" _msthash="51">4.16. The json_pretty() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_remove_function" _msttexthash="771940" _msthidden="1" _msthash="52">4.17. The json_remove() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_jsonb_remove_function" _msttexthash="818376" _msthidden="1" _msthash="53">4.18. The jsonb_remove() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_type_function" _msttexthash="681681" _msthidden="1" _msthash="54">4.19. The json_type() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_valid_function" _msttexthash="718211" _msthidden="1" _msthash="55">4.20. The json_valid() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_quote_function" _msttexthash="726960" _msthidden="1" _msthash="56">4.21. The json_quote() function</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#array_and_object_aggregate_functions" _msttexthash="1244243" _msthidden="1" _msthash="57">4.22. Array and object aggregate functions</a></div>
+<div class="fancy-toc2" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#the_json_each_and_json_tree_table_valued_functions" _msttexthash="2328599" _msthidden="1" _msthash="58">4.23. The json_each() and json_tree() table-valued functions</a></div>
+<div class="fancy-toc3" _msthidden="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#examples_using_json_each_and_json_tree_" _msttexthash="1596257" _msthidden="1" _msthash="59">4.23.1. Examples using json_each() and json_tree()</a></div>
 </div>
 </div>
 <script>
@@ -160,154 +154,126 @@ mk.innerHTML = "&#x25ba;";
 
 
 
-<h1 id="overview"><span>1. </span>Overview</h1>
-<p>
-By default, SQLite supports thirty functions and two operators for
-dealing with JSON values.  There are also two <a href="https://www.sqlite.org/vtab.html#tabfunc2">table-valued functions</a>
-that can be used to decompose a JSON string.
-
-</p><p>
-There are twenty-six scalar functions and operators:
-
-</p><ol>
-<li value='1'>
-<a href='#jmini'>json</a>(<i>json</i>)
+<h1 id="overview" _msttexthash="7959653" _msthash="60"><span _istranslated="1">1. </span>概述</h1>
+<p _msttexthash="417816295" _msthash="61">默认情况下，SQLite 支持 30 个函数和 2 个运算符
+处理 JSON 值。还有两个<a href="https://www.sqlite.org/vtab.html#tabfunc2" _istranslated="1">表值函数</a>可用于分解 JSON 字符串。</p><p _msttexthash="65295880" _msthash="62">有 26 个标量函数和运算符：</p><ol>
+<li value="1">
+<font _mstmutation="1" _msttexthash="9462700" _msthash="63"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _mstmutation="1" _istranslated="1">json</a>（<i _mstmutation="1" _istranslated="1">json</i></font>)
 </li>
 
-<li value='2'>
-<a href='#jminib'>jsonb</a>(<i>json</i>)
+<li value="2">
+<font _mstmutation="1" _msttexthash="10331204" _msthash="64"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jminib" _mstmutation="1" _istranslated="1">jsonb</a>（<i _mstmutation="1" _istranslated="1">json</i></font>)
 </li>
 
-<li value='3'>
-<a href='#jarray'>json_array</a>(<i>value1</i>,<i>value2</i>,...)
+<li value="3">
+<font _mstmutation="1" _msttexthash="64980903" _msthash="65"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarray" _mstmutation="1" _istranslated="1">json_array</a>（<i _mstmutation="1" _istranslated="1">值 1</i>，<i _mstmutation="1" _istranslated="1">值 2</i>,...）</font></li>
+
+<li value="4">
+<font _mstmutation="1" _msttexthash="68087201" _msthash="66"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarrayb" _mstmutation="1" _istranslated="1">jsonb_array</a>（<i _mstmutation="1" _istranslated="1">值 1</i>，<i _mstmutation="1" _istranslated="1">值 2</i>,...）</font></li>
+
+<li value="5">
+<font _mstmutation="1" _msttexthash="219581830" _msthash="67"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarraylen" _mstmutation="1" _istranslated="1">json_array_length</a>（<i _mstmutation="1" _istranslated="1">json</i>）<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarraylen" _mstmutation="1" _istranslated="1">json_array_length</a>（<i _mstmutation="1" _istranslated="1">json</i>，<i _mstmutation="1" _istranslated="1">路径）</i><br _mstmutation="1" _istranslated="1"></font>)
 </li>
 
-<li value='4'>
-<a href='#jarrayb'>jsonb_array</a>(<i>value1</i>,<i>value2</i>,...)
+<li value="6">
+<font _mstmutation="1" _msttexthash="48974367" _msthash="68"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jerr" _mstmutation="1" _istranslated="1">json_error_position</a>（<i _mstmutation="1" _istranslated="1">json）</i></font>)
 </li>
 
-<li value='5'>
-<a href='#jarraylen'>json_array_length</a>(<i>json</i>)<br><a href='#jarraylen'>json_array_length</a>(<i>json</i>,<i>path</i>)
+<li value="7">
+<font _mstmutation="1" _msttexthash="65060827" _msthash="69"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jex" _mstmutation="1" _istranslated="1">json_extract</a>（<i _mstmutation="1" _istranslated="1">json，path</i>,...）<i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="8">
+<font _mstmutation="1" _msttexthash="67645981" _msthash="70"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jexb" _mstmutation="1" _istranslated="1">jsonb_extract</a>（<i _mstmutation="1" _istranslated="1">json，path</i>,...）<i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="9">
+<font _mstmutation="1" _msttexthash="10655879" _msthash="71"><i _mstmutation="1" _istranslated="1">json</i> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _mstmutation="1" _istranslated="1">-&gt;</a> <i _mstmutation="1" _istranslated="1">路径</i></font>
 </li>
 
-<li value='6'>
-<a href='#jerr'>json_error_position</a>(<i>json</i>)
+<li value="10">
+<font _mstmutation="1" _msttexthash="11456588" _msthash="72"><i _mstmutation="1" _istranslated="1">json</i> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _mstmutation="1" _istranslated="1">-&gt;&gt;</a> <i _mstmutation="1" _istranslated="1">路径</i></font>
 </li>
 
-<li value='7'>
-<a href='#jex'>json_extract</a>(<i>json</i>,<i>path</i>,...)
+<li value="11">
+<font _mstmutation="1" _msttexthash="91568074" _msthash="73"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jins" _mstmutation="1" _istranslated="1">json_insert</a>（<i _mstmutation="1" _istranslated="1">json，path，value</i>,...）<i _mstmutation="1" _istranslated="1"></i><i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="12">
+<font _mstmutation="1" _msttexthash="95007731" _msthash="74"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jinsb" _mstmutation="1" _istranslated="1">jsonb_insert</a>（<i _mstmutation="1" _istranslated="1">json，path，value</i>,...）<i _mstmutation="1" _istranslated="1"></i><i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="13">
+<font _mstmutation="1" _msttexthash="79776788" _msthash="75"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jobj" _mstmutation="1" _istranslated="1">json_object</a>（<i _mstmutation="1" _istranslated="1">标签 1</i>，<i _mstmutation="1" _istranslated="1">值 1</i>,...）</font></li>
+
+<li value="14">
+<font _mstmutation="1" _msttexthash="83374382" _msthash="76"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jobjb" _mstmutation="1" _istranslated="1">jsonb_object</a>（<i _mstmutation="1" _istranslated="1">标签 1</i>，<i _mstmutation="1" _istranslated="1">值 1</i>,...）</font></li>
+
+<li value="15">
+<font _mstmutation="1" _msttexthash="59014189" _msthash="77"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jpatch" _mstmutation="1" _istranslated="1">json_patch</a>（<i _mstmutation="1" _istranslated="1">json</i>1，json2）</font></li>
+
+<li value="16">
+<font _mstmutation="1" _msttexthash="61595378" _msthash="78"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jpatchb" _mstmutation="1" _istranslated="1">jsonb_patch</a>（<i _mstmutation="1" _istranslated="1">json</i>1，json2）</font></li>
+
+<li value="17">
+<font _mstmutation="1" _msttexthash="15586324" _msthash="79"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jpretty" _mstmutation="1" _istranslated="1">json_pretty</a> （<i _mstmutation="1" _istranslated="1">json</i></font>)
 </li>
 
-<li value='8'>
-<a href='#jexb'>jsonb_extract</a>(<i>json</i>,<i>path</i>,...)
+<li value="18">
+<font _mstmutation="1" _msttexthash="62475465" _msthash="80"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jrm" _mstmutation="1" _istranslated="1">json_remove</a>（<i _mstmutation="1" _istranslated="1">json，path</i>,...）<i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="19">
+<font _mstmutation="1" _msttexthash="65059202" _msthash="81"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jrmb" _mstmutation="1" _istranslated="1">jsonb_remove</a>（<i _mstmutation="1" _istranslated="1">json，path</i>,...）<i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="20">
+<font _mstmutation="1" _msttexthash="95000932" _msthash="82"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jrepl" _mstmutation="1" _istranslated="1">json_replace</a>（<i _mstmutation="1" _istranslated="1">json，path，value</i>,...）<i _mstmutation="1" _istranslated="1"></i><i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="21">
+<font _mstmutation="1" _msttexthash="98441512" _msthash="83"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jreplb" _mstmutation="1" _istranslated="1">jsonb_replace</a>（<i _mstmutation="1" _istranslated="1">json，path，value</i>,...）<i _mstmutation="1" _istranslated="1"></i><i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="22">
+<font _mstmutation="1" _msttexthash="81251807" _msthash="84"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jset" _mstmutation="1" _istranslated="1">json_set</a>（<i _mstmutation="1" _istranslated="1">json，path，value</i>,...）<i _mstmutation="1" _istranslated="1"></i><i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="23">
+<font _mstmutation="1" _msttexthash="84687187" _msthash="85"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsetb" _mstmutation="1" _istranslated="1">jsonb_set</a>（<i _mstmutation="1" _istranslated="1">json，path，value</i>,...）<i _mstmutation="1" _istranslated="1"></i><i _mstmutation="1" _istranslated="1"></i></font></li>
+
+<li value="24">
+<font _mstmutation="1" _msttexthash="151703032" _msthash="86"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jtype" _mstmutation="1" _istranslated="1">json_type</a>（<i _mstmutation="1" _istranslated="1">json</i>）<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jtype" _mstmutation="1" _istranslated="1">json_type</a>（<i _mstmutation="1" _istranslated="1">json</i>，<i _mstmutation="1" _istranslated="1">路径）</i><br _mstmutation="1" _istranslated="1"></font>)
 </li>
 
-<li value='9'>
-<i>json</i> <a href='#jptr'>-></a> <i>path</i>
-</li>
+<li value="25">
+<font _mstmutation="1" _msttexthash="131843582" _msthash="87"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jvalid" _mstmutation="1" _istranslated="1">json_valid</a>（<i _mstmutation="1" _istranslated="1">json</i>）<br _mstmutation="1" _istranslated="1"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jvalid" _mstmutation="1" _istranslated="1">json_valid</a>（<i _mstmutation="1" _istranslated="1">json，flags</i>）</font></li>
 
-<li value='10'>
-<i>json</i> <a href='#jptr'>->></a> <i>path</i>
-</li>
-
-<li value='11'>
-<a href='#jins'>json_insert</a>(<i>json</i>,<i>path</i>,<i>value</i>,...)
-</li>
-
-<li value='12'>
-<a href='#jinsb'>jsonb_insert</a>(<i>json</i>,<i>path</i>,<i>value</i>,...)
-</li>
-
-<li value='13'>
-<a href='#jobj'>json_object</a>(<i>label1</i>,<i>value1</i>,...)
-</li>
-
-<li value='14'>
-<a href='#jobjb'>jsonb_object</a>(<i>label1</i>,<i>value1</i>,...)
-</li>
-
-<li value='15'>
-<a href='#jpatch'>json_patch</a>(<i>json</i>1,json2)
-</li>
-
-<li value='16'>
-<a href='#jpatchb'>jsonb_patch</a>(<i>json</i>1,json2)
-</li>
-
-<li value='17'>
-<a href='#jpretty'>json_pretty</a>(<i>json</i>)
-</li>
-
-<li value='18'>
-<a href='#jrm'>json_remove</a>(<i>json</i>,<i>path</i>,...)
-</li>
-
-<li value='19'>
-<a href='#jrmb'>jsonb_remove</a>(<i>json</i>,<i>path</i>,...)
-</li>
-
-<li value='20'>
-<a href='#jrepl'>json_replace</a>(<i>json</i>,<i>path</i>,<i>value</i>,...)
-</li>
-
-<li value='21'>
-<a href='#jreplb'>jsonb_replace</a>(<i>json</i>,<i>path</i>,<i>value</i>,...)
-</li>
-
-<li value='22'>
-<a href='#jset'>json_set</a>(<i>json</i>,<i>path</i>,<i>value</i>,...)
-</li>
-
-<li value='23'>
-<a href='#jsetb'>jsonb_set</a>(<i>json</i>,<i>path</i>,<i>value</i>,...)
-</li>
-
-<li value='24'>
-<a href='#jtype'>json_type</a>(<i>json</i>)<br><a href='#jtype'>json_type</a>(<i>json</i>,<i>path</i>)
-</li>
-
-<li value='25'>
-<a href='#jvalid'>json_valid</a>(<i>json</i>)<br><a href='#jvalid'>json_valid</a>(<i>json</i>,flags)
-</li>
-
-<li value='26'>
-<a href='#jquote'>json_quote</a>(<i>value</i>)
+<li value="26">
+<font _mstmutation="1" _msttexthash="19398717" _msthash="88"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jquote" _mstmutation="1" _istranslated="1">json_quote</a>（<i _mstmutation="1" _istranslated="1">值</i></font>)
 </li>
 
 
 </ol>
 
-<p>There are four <a href="lang_aggfunc.html">aggregate SQL functions</a>:
-
-</p><ol>
-<li value='27'>
-<a href='#jgrouparray'>json_group_array</a>(<i>value</i>)
+<p _msttexthash="38368967" _msthash="89">有四个<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_aggfunc.html" _istranslated="1">聚合 SQL 函数</a>：</p><ol>
+<li value="27">
+<font _mstmutation="1" _msttexthash="26256295" _msthash="90"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jgrouparray" _mstmutation="1" _istranslated="1">json_group_array</a>（<i _mstmutation="1" _istranslated="1">值</i></font>)
 </li>
 
-<li value='28'>
-<a href='#jgrouparrayb'>jsonb_group_array</a>(<i>value</i>)
+<li value="28">
+<font _mstmutation="1" _msttexthash="27402843" _msthash="91"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jgrouparrayb" _mstmutation="1" _istranslated="1">jsonb_group_array</a>（<i _mstmutation="1" _istranslated="1">值</i></font>)
 </li>
 
-<li value='29'>
-<a href='#jgroupobject'>json_group_object</a>(<i>label</i>,<i>value</i>)
+<li value="29">
+<font _mstmutation="1" _msttexthash="95071899" _msthash="92"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jgroupobject" _mstmutation="1" _istranslated="1">json_group_object</a>（<i _mstmutation="1" _istranslated="1">标签</i>，<i _mstmutation="1" _istranslated="1">值）</i></font>)
 </li>
 
-<li value='30'>
-<a href='#jgroupobjectb'>jsonb_group_object</a>(name,<i>value</i>)
+<li value="30">
+<font _mstmutation="1" _msttexthash="71343389" _msthash="93"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jgroupobjectb" _mstmutation="1" _istranslated="1">jsonb_group_object</a>（名称，<i _mstmutation="1" _istranslated="1">值</i></font>)
 </li>
 
 
 </ol>
 
-<p>The two <a href="https://www.sqlite.org/vtab.html#tabfunc2">table-valued functions</a> are:
-
-</p><ol>
-<li value='31'>
-<a href='#jeach'>json_each</a>(<i>json</i>)<br><a href='#jeach'>json_each</a>(<i>json</i>,<i>path</i>)
+<p _msttexthash="40407965" _msthash="94">这两个<a href="https://www.sqlite.org/vtab.html#tabfunc2" _istranslated="1">表值函数</a>是：</p><ol>
+<li value="31">
+<font _mstmutation="1" _msttexthash="151677123" _msthash="95"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jeach" _mstmutation="1" _istranslated="1">json_each</a>（<i _mstmutation="1" _istranslated="1">json</i>）<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jeach" _mstmutation="1" _istranslated="1">json_each</a>（<i _mstmutation="1" _istranslated="1">json</i>，<i _mstmutation="1" _istranslated="1">路径）</i><br _mstmutation="1" _istranslated="1"></font>)
 </li>
 
-<li value='32'>
-<a href='#jtree'>json_tree</a>(<i>json</i>)<br><a href='#jtree'>json_tree</a>(<i>json</i>,<i>path</i>)
+<li value="32">
+<font _mstmutation="1" _msttexthash="151693152" _msthash="96"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jtree" _mstmutation="1" _istranslated="1">json_tree</a>（<i _mstmutation="1" _istranslated="1">json</i>）<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jtree" _mstmutation="1" _istranslated="1">json_tree</a>（<i _mstmutation="1" _istranslated="1">json</i>，<i _mstmutation="1" _istranslated="1">路径）</i><br _mstmutation="1" _istranslated="1"></font>)
 </li>
 
 
@@ -323,458 +289,292 @@ There are twenty-six scalar functions and operators:
 
 <a name="howtocompile"></a>
 
-<h1 id="compiling_in_json_support"><span>2. </span>Compiling in JSON Support</h1>
+<h1 id="compiling_in_json_support" _msttexthash="32051734" _msthash="97"><span _istranslated="1">2. </span>在 JSON 支持中编译</h1>
 
-<p>
-The JSON functions and operators are built into SQLite by default,
-as of SQLite version 3.38.0 (2022-02-22).  They can be omitted
-by adding the -DSQLITE_OMIT_JSON compile-time option.  Prior to
-version 3.38.0, the JSON functions were an extension that would only
-be included in builds if the -DSQLITE_ENABLE_JSON1 compile-time option
-was included.  In other words, the JSON functions went from being
-opt-in with SQLite version 3.37.2 and earlier to opt-out with
-SQLite version 3.38.0 and later.
+<p _msttexthash="4222754003" _msthash="98">JSON 函数和运算符默认内置于 SQLite 中，
+从 SQLite 版本 3.38.0 （2022-02-22） 开始。可以省略它们
+通过添加 -DSQLITE_OMIT_JSON compile-time 选项。之前
+版本 3.38.0 中，JSON 函数是一个扩展，它只会
+如果 -DSQLITE_ENABLE_JSON1 compile-time 选项
+被包括在内。换句话说，JSON 函数从
+选择加入 SQLite 版本 3.37.2 及更早版本以选择退出
+SQLite 版本 3.38.0 及更高版本。</p><h1 id="interface_overview" _msttexthash="18171439" _msthash="99"><span _istranslated="1">3. </span>界面概述</h1>
 
-</p><h1 id="interface_overview"><span>3. </span>Interface Overview</h1>
+<p _msttexthash="704068274" _msthash="100">SQLite 将 JSON 存储为普通文本。
+向后兼容性约束意味着 SQLite 只能
+存储 NULL、整数、浮点数、文本、
+和 BLOB 的 BLOB 中。无法添加新的 “JSON” 类型。</p><h2 id="json_arguments" _msttexthash="9654749" _msthash="101"><span _istranslated="1">3.1. </span>JSON 参数</h2>
 
-<p>
-SQLite stores JSON as ordinary text.
-Backwards compatibility constraints mean that SQLite is only able to
-store values that are NULL, integers, floating-point numbers, text,
-and BLOBs.  It is not possible to add a new "JSON" type.
+<p _msttexthash="4797225186" _msthash="102">对于接受 JSON 作为其第一个参数的函数，该参数
+可以是 JSON 对象、数组、数字、字符串或 null。SQLite 数字
+值和 NULL 值分别解释为 JSON 数字和 null。
+SQLite 文本值可以理解为 JSON 对象、数组或字符串。
+如果 SQLite 文本值不是格式正确的 JSON 对象、数组或
+string 传入 JSON 函数，该函数通常会抛出
+一个错误。（此规则的例外是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jvalid" _istranslated="1">json_valid（）、</a><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jquote" _istranslated="1">json_quote（）</a> 和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jerr" _istranslated="1">json_error_position（）。</a></p><p><font _mstmutation="1" _msttexthash="2077141703" _msthash="103">这些例程理解所有 <a href="https://www.rfc-editor.org/rfc/rfc8259.txt" _mstmutation="1" _istranslated="1">rfc-8259 JSON 语法</a>以及 <a href="https://spec.json5.org/" _mstmutation="1" _istranslated="1">JSON5 扩展</a>。JSON 文本
+由这些例程生成的始终严格符合<a href="https://json.org/" _mstmutation="1" _istranslated="1">规范的 JSON 定义</a>，并且不包含任何 JSON5
+或其他扩展。添加了读取和理解 JSON5 的功能
+版本 3.42.0 （2023-05-16）。
+以前版本的 SQLite 只会读取规范的 JSON。</font><a name="jsonbx"></a>
 
+</p><h2 id="jsonb" _msttexthash="11013509" _msthash="104"><span _istranslated="1">3.2. </span>JSONB 格式</h2>
 
-</p><h2 id="json_arguments"><span>3.1. </span>JSON arguments</h2>
+<p _msttexthash="3763371573" _msthash="105">从版本 3.45.0 （2024-01-15） 开始，SQLite 允许其
+要存储在磁盘上的 JSON 的内部“解析树”表示，
+作为 BLOB，采用我们称为 “JSONB” 的格式。通过将 SQLite 的内部
+JSON 的二进制表示直接在数据库、应用程序
+可以绕过解析和渲染 JSON 的开销，在读取和
+更新 JSON 值。内部 JSONB 格式也略微使用
+磁盘空间比文本 JSON 少。</p><p _msttexthash="1122329013" _msthash="106">任何接受文本 JSON 作为输入的 SQL 函数参数也将
+接受 JSONB 格式的 BLOB。该函数将对
+在任何一种情况下都是相同的，只是它在
+输入为 JSONB，因为它不需要运行 JSON 解析器。</p><p _msttexthash="1017908463" _msthash="107">大多数返回 JSON 文本的 SQL 函数都有相应的函数
+，这将返回等效的 JSONB。返回 JSON 的函数
+在文本格式中，以 “<tt _istranslated="1">json_</tt>” 开头，函数
+返回以 “<tt _istranslated="1">jsonb_</tt>” 开头的二进制 JSONB 格式。</p><h3 id="the_jsonb_format" _msttexthash="12364066" _msthash="108"><span _istranslated="1">3.2.1. </span>JSONB 格式</h3>
 
-<p>
-For functions that accept JSON as their first argument, that argument
-can be a JSON object, array, number, string, or null.  SQLite numeric
-values and NULL values are interpreted as JSON numbers and nulls, respectively.
-SQLite text values can be understood as JSON objects, arrays, or strings.
-If an SQLite text value that is not a well-formed JSON object, array, or
-string is passed into JSON function, that function will usually throw
-an error.  (Exceptions to this rule are <a href="json1.html#jvalid">json_valid()</a>,
-<a href="json1.html#jquote">json_quote()</a>, and <a href="json1.html#jerr">json_error_position()</a>.)
+<p _msttexthash="626530099" _msthash="109">JSONB 是 SQLite 使用的 JSON 的二进制表示，而
+仅供 SQLite 内部使用。应用
+不应在 SQLite 之外使用 JSONB，也不应尝试对
+JSONB 格式。</p><p _msttexthash="10740179255" _msthash="110">“JSONB” 名称的灵感来自 <a href="https://postgresql.org/" _istranslated="1">PostgreSQL，</a>但
+SQLite 的 JSONB 的磁盘格式与 PostgreSQL 的不同。
+这两种格式具有相同的名称，但不是二进制兼容的。
+PostgreSQL JSONB 格式声称提供 O（1）
+在对象和数组中查找元素。SQLite 的 JSONB 格式没有
+这样的索赔。SQLite 的 JSONB 具有 O（N） 时间复杂度
+SQLite 中的大多数作，就像文本 JSON 一样。JSONB 的优势在于
+SQLite 是它比文本 JSON 更小、更快 - 可能有几个
+快几倍。在
+用于添加增强功能的磁盘 JSONB 格式，SQLite 的未来版本可能会
+include 选项来提供 JSONB 中元素的 O（1） 查找，但没有这样的
+功能当前可用。</p><h3 id="handling_of_malformed_jsonb" _msttexthash="43977895" _msthash="111"><span _istranslated="1">3.2.2. </span>处理格式错误的 JSONB</h3>
 
-</p><p>
-These routines understand all
-<a href="https://www.rfc-editor.org/rfc/rfc8259.txt">rfc-8259 JSON syntax</a>
-and also <a href="https://spec.json5.org/">JSON5 extensions</a>.  JSON text
-generated by these routines always strictly conforms to the
-<a href="https://json.org">canonical JSON definition</a> and does not contain any JSON5
-or other extensions.  The ability to read and understand JSON5 was added in
-version 3.42.0 (2023-05-16).
-Prior versions of SQLite would only read canonical JSON.
+<p _msttexthash="3365080342" _msthash="112">SQLite 生成的 JSONB 将始终是格式正确的。如果你
+遵循建议的做法，并且
+将 JSONB 视为不透明的 BLOB，那么您不会有任何问题。但
+JSONB 只是一个 BLOB，因此淘气的程序员可以设计 BLOB
+类似于 JSONB，但在技术上格式不正确。什么时候
+格式错误的 JSONB 被馈送到 JSON 函数中，以下任何一种
+可能发生：</p><ul>
+<li><p _msttexthash="155679199" _msthash="113">SQL 语句可能会中止，并显示“格式错误的 JSON”错误。</p></li><li><p _msttexthash="47783996" _msthash="114">如果
+JSONB blob 不会影响答案。</p></li><li><p _msttexthash="81096951" _msthash="115">可能会返回一个愚蠢或荒谬的答案。</p></li></ul>
 
-<a name="jsonbx"></a>
+<p _msttexthash="2042677715" _msthash="116">SQLite 处理无效 JSONB 的方式可能会发生变化
+从 SQLite 的一个版本到下一个版本。系统遵循
+垃圾进/垃圾出规则：如果 JSON 函数无效
+JSONB，则您会收到无效的答案。如果您对
+JSONB 的有效性，请使用 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jvalid" _istranslated="1">json_valid（）</a> 函数来验证它。</p><p><font _mstmutation="1" _msttexthash="1377033762" _msthash="117">我们做出以下承诺：
+格式错误的 JSONB 永远不会导致内存
+错误或类似问题，这可能会导致漏洞。
+无效的 JSONB 可能会导致疯狂的答案，
+或者它可能会导致查询中止，但不会导致崩溃。</font><a name="jsonpath"></a>
 
-</p><h2 id="jsonb"><span>3.2. </span>JSONB</h2>
+</p><h2 id="path_arguments" _msttexthash="9652786" _msthash="118"><span _istranslated="1">3.3. </span>PATH 参数</h2>
 
-<p>
-Beginning with version 3.45.0 (2024-01-15), SQLite allows its
-internal "parse tree" representation of JSON to be stored on disk,
-as a BLOB, in a format that we call "JSONB".  By storing SQLite's internal
-binary representation of JSON directly in the database, applications
-can bypass the overhead of parsing and rendering JSON when reading and
-updating JSON values.  The internal JSONB format also uses slightly
-less disk space then text JSON.
-
-</p><p>
-Any SQL function parameter that accepts text JSON as an input will also
-accept a BLOB in the JSONB format.  The function will operate the
-same in either case, except that it will run faster when
-the input is JSONB, since it does not need to run the JSON parser.
-
-</p><p>
-Most SQL functions that return JSON text have a corresponding function
-that returns the equivalent JSONB.  The functions that return JSON
-in the text format begin with "<tt>json_</tt>" and functions that
-return the binary JSONB format begin with "<tt>jsonb_</tt>".
-
-</p><h3 id="the_jsonb_format"><span>3.2.1. </span>The JSONB format</h3>
-
-<p>
-JSONB is a binary representation of JSON used by SQLite and
-is intended for internal use by SQLite only.  Applications
-should not use JSONB outside of SQLite nor try to reverse-engineer the
-JSONB format.
-
-</p><p>
-The "JSONB" name is inspired by <a href="https://postgresql.org">PostgreSQL</a>, but the
-on-disk format for SQLite's JSONB is not the same as PostgreSQL's.
-The two formats have the same name, but are not binary compatible.
-The PostgreSQL JSONB format claims to offer O(1)
-lookup of elements in objects and arrays.  SQLite's JSONB format makes no
-such claim.  SQLite's JSONB has O(N) time complexity for
-most operations in SQLite, just like text JSON.  The advantage of JSONB in
-SQLite is that it is smaller and faster than text JSON - potentially several
-times faster. There is space in the
-on-disk JSONB format to add enhancements and future versions of SQLite might
-include options to provide O(1) lookup of elements in JSONB, but no such
-capability is currently available.
-
-</p><h3 id="handling_of_malformed_jsonb"><span>3.2.2. </span>Handling of malformed JSONB</h3>
-
-<p>
-The JSONB that is generated by SQLite will always be well-formed.  If you
-follow recommended practice and
-treat JSONB as an opaque BLOB, then you will not have any problems.  But
-JSONB is just a BLOB, so a mischievous programmer could devise BLOBs
-that are similar to JSONB but that are technically malformed.  When
-misformatted JSONB is feed into JSON functions, any of the following
-might happen:
-
-</p><ul>
-<li><p>
-The SQL statement might abort with a "malformed JSON" error.
-
-</p></li><li><p>
-The correct answer might be returned, if the malformed parts of
-the JSONB blob do not impact the answer.
-
-</p></li><li><p>
-A goofy or nonsensical answer might be returned.
-</p></li></ul>
-
-<p>
-The way in which SQLite handles invalid JSONB might change
-from one version of SQLite to the next.  The system follows
-the garbage-in/garbage-out rule:  If you feed the JSON functions invalid
-JSONB, you get back an invalid answer.  If you are in doubt about the
-validity of our JSONB, use the <a href="json1.html#jvalid">json_valid()</a> function to verify it.
-
-</p><p>
-We do make this one promise:
-Malformed JSONB will never cause a memory
-error or similar problem that might lead to a vulnerability.
-Invalid JSONB might lead to crazy answers,
-or it might cause queries to abort, but it won't cause a crash.
-
-<a name="jsonpath"></a>
-
-</p><h2 id="path_arguments"><span>3.3. </span>PATH arguments</h2>
-
-<p>
-For functions that accept PATH arguments, that PATH must be well-formed or
-else the function will throw an error.
-A well-formed PATH is a text value that begins with exactly one
-'$' character followed by zero or more instances
-of ".<i>objectlabel</i>" or "&#91;<i>arrayindex</i>&#93;".
-
-</p><p>
-The <i>arrayindex</i> is usually a non-negative integer <i>N</i>.  In
-that case, the array element selected is the <i>N</i>-th element
-of the array, starting with zero on the left.
-The <i>arrayindex</i> can also be of the form "<b>#-</b><i>N</i>"
-in which case the element selected is the <i>N</i>-th from the
-right.  The last element of the array is "<b>#-1</b>".  Think of
-the "#" characters as the "number of elements in the array".  Then
-the expression "#-1" evaluates to the integer that corresponds to 
-the last entry in the array.  It is sometimes useful for the array
-index to be just the <b>#</b> character, for example when appending
-a value to an existing JSON array:
-
-<ul>
-<li><span class='jex'>json_set('[0,1,2]','$[#]','new')</span>
-<span class='jans'>&rarr; '[0,1,2,"new"]'</span></li>
+<p _msttexthash="1177860736" _msthash="119">对于接受 PATH 参数的函数，该 PATH 必须是格式正确的，或者
+否则，该函数将引发错误。
+格式正确的 PATH 是恰好以 1 开头的文本值
+'$' 字符后跟零个或多个实例
+的 “.<i _istranslated="1">objectlabel</i>“ 或 ”[<i _istranslated="1">arrayindex</i>]“ 的 API 中。</p><p _msttexthash="5641782198" _msthash="120"><i _istranslated="1">arrayindex</i> 通常是一个非负整数 <i _istranslated="1">N</i>。在
+在这种情况下，所选数组元素是第 <i _istranslated="1">N</i> 个元素
+数组中，从左侧的零开始。
+<i _istranslated="1">arrayindex</i> 也可以是 “<b _istranslated="1">#-</b><i _istranslated="1">N</i>” 的形式
+在这种情况下，所选元素是<i _istranslated="1"></i>
+右。数组的最后一个元素是 “<b _istranslated="1">#-1</b>”。念
+将 “#” 字符作为 “数组中的元素数”。然后
+表达式 “#-1” 的计算结果为对应于
+数组中的最后一个条目。它有时对数组很有用
+index 设置为仅 <b _istranslated="1">#</b> 字符，例如在附加
+一个值添加到现有 JSON 数组中：</p><ul>
+<li _msttexthash="172139383" _msthash="121"><span class="jex" _istranslated="1">json_set（'[0,1,2]'，'$[#]'，'新'）</span> <span class="jans" _istranslated="1">→ '[0,1,2，“新”]'</span></li>
 
 </ul>
 
 
 <a name="varg"></a>
 
-</p><h2 id="value_arguments"><span>3.4. </span>VALUE arguments</h2>
+<p></p><h2 id="value_arguments" _msttexthash="10284560" _msthash="122"><span _istranslated="1">3.4. </span>VALUE 参数</h2>
 
-<p>
-For functions that accept "<i>value</i>" arguments (also shown as
-"<i>value1</i>" and "<i>value2</i>"),
-those arguments are usually understood
-to be literal strings that are quoted and become JSON string values
-in the result.  Even if the input <i>value</i> strings look like 
-well-formed JSON, they are still interpreted as literal strings in the
-result.
+<p _msttexthash="2037575176" _msthash="123">对于接受 “<i _istranslated="1">value</i>” 参数的函数（也显示为
+“<i _istranslated="1">value1</i>” 和 “<i _istranslated="1">value2</i>”），
+这些论点通常是可以理解的
+为带引号的文字字符串，并成为 JSON 字符串值
+在结果中。即使输入<i _istranslated="1">值</i>字符串看起来像
+格式正确的 JSON 中，它们仍被解释为
+结果。</p><p _msttexthash="1118039598" _msthash="124">但是，如果 <i _istranslated="1">value</i> 参数直接来自另一个
+JSON 函数或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt; 运算符</a>（但不是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt;&gt; 运算符</a>），
+则参数被理解为实际的 JSON，并且
+插入完整的 JSON，而不是带引号的字符串。</p><p _msttexthash="1461684484" _msthash="125">例如，在以下对 json_object（） 的调用中，<i _istranslated="1">value</i> 参数看起来像一个格式正确的 JSON 数组。但是，因为它只是
+普通 SQL 文本，它被解释为文本字符串并添加到
+result 作为带引号的字符串：</p><ul>
+<li _msttexthash="132581345" _msthash="126"><span class="jex" _istranslated="1">json_object（'ex'，'[52,3.14159]'）</span> <span class="jans" _istranslated="1">→ '{“ex”：“[52,3.14159]”}'</span></li>
 
-</p><p>
-However, if a <i>value</i> argument comes directly from the result of another
-JSON function or from <a href="json1.html#jptr">the -> operator</a> (but not <a href="json1.html#jptr">the ->> operator</a>),
-then the argument is understood to be actual JSON and
-the complete JSON is inserted rather than a quoted string.
-
-</p><p>
-For example, in the following call to json_object(), the <i>value</i>
-argument looks like a well-formed JSON array.  However, because it is just
-ordinary SQL text, it is interpreted as a literal string and added to the
-result as a quoted string:
-
-<ul>
-<li><span class='jex'>json_object('ex','[52,3.14159]')</span>
-<span class='jans'>&rarr; '{"ex":"[52,3.14159]"}'</span></li>
-
-<li><span class='jex'>json_object('ex',('[52,3.14159]'->>'$'))</span>
-<span class='jans'>&rarr; '{"ex":"[52,3.14159]"}'</span></li>
+<li _msttexthash="209330875" _msthash="127"><span class="jex" _istranslated="1">json_object（'ex'，（'[52,3.14159]'-&gt;&gt;'$'））</span> <span class="jans" _istranslated="1">→ '{“ex”：“[52,3.14159]”}'</span></li>
 
 </ul>
 
 
-</p><p>
-But if the <i>value</i> argument in the outer json_object() call is the
-result of another JSON function like <a href="json1.html#jmini">json()</a> or <a href="json1.html#jarray">json_array()</a>, then
-the value is understood to be actual JSON and is inserted as such:
+<p></p><p _msttexthash="1446530956" _msthash="128">但是，如果外部 json_object（） 调用中的 <i _istranslated="1">value</i> 参数是
+另一个 JSON 函数（如 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（）</a> 或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarray" _istranslated="1">json_array（）</a>））的结果，则
+该值被理解为实际的 JSON，并按如下方式插入：</p><ul>
+<li _msttexthash="193826555" _msthash="129"><span class="jex" _istranslated="1">json_object（'ex'，json（'[52,3.14159]'））</span> <span class="jans" _istranslated="1">→ '{“ex”：[52,3.14159]}'</span></li>
 
-<ul>
-<li><span class='jex'>json_object('ex',json('[52,3.14159]'))</span>
-<span class='jans'>&rarr; '{"ex":[52,3.14159]}'</span></li>
+<li _msttexthash="204853987" _msthash="130"><span class="jex" _istranslated="1">json_object（'ex'，json_array（52,3.14159））</span> <span class="jans" _istranslated="1">→ '{“ex”：[52,3.14159]}'</span></li>
 
-<li><span class='jex'>json_object('ex',json_array(52,3.14159))</span>
-<span class='jans'>&rarr; '{"ex":[52,3.14159]}'</span></li>
-
-<li><span class='jex'>json_object('ex','[52,3.14159]'->'$')</span>
-<span class='jans'>&rarr; '{"ex":[52,3.14159]}'</span></li>
+<li _msttexthash="131443988" _msthash="131"><span class="jex" _istranslated="1">json_object（'ex'，'[52,3.14159]'-&gt;'$'）</span> <span class="jans" _istranslated="1">→ '{“ex”：[52,3.14159]}'</span></li>
 
 </ul>
 
 
-</p><p>
-To be clear: "<i>json</i>" arguments are always interpreted as JSON
-regardless of where the value for that argument comes from.  But
-"<i>value</i>" arguments are only interpreted as JSON if those arguments
-come directly from another JSON function or <a href="json1.html#jptr">the -> operator</a>.
+<p></p><p _msttexthash="873954445" _msthash="132">需要明确的是：“<i _istranslated="1">json</i>” 参数始终解释为 JSON
+无论该参数的值来自何处。但
+“<i _istranslated="1">value</i>” 参数仅在以下参数时被解释为 JSON
+直接来自另一个 JSON 函数或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt; 运算符</a>。</p><p _msttexthash="1582811321" _msthash="133">在解释为 JSON 字符串的 JSON 值参数中，Unicode 转义
+序列不被视为等同于字符或转义
+由表示的 Unicode 代码点表示的控制字符。
+这样的转义序列没有被翻译或特殊处理;他们
+被 SQLite 的 JSON 函数视为纯文本。</p><h2 id="compatibility" _msttexthash="10827557" _msthash="134"><span _istranslated="1">3.5. </span>兼容性</h2>
 
-</p><p>
-Within JSON value arguments interpreted as JSON strings, Unicode escape
-sequences are not treated as equivalent to the characters or escaped
-control characters represented by the expressed Unicode code point.
-Such escape sequences are not translated or specially treated; they
-are treated as plain text by SQLite's JSON functions.
+<p><font _mstmutation="1" _msttexthash="969803692" _msthash="135">此 JSON 库的当前实现使用递归下降
+解析 器。为了避免使用过多的堆栈空间，任何具有
+超过 1000 个嵌套级别被视为无效。嵌套限制
+depth 允许 JSON 的兼容实现 <a href="https://tools.ietf.org/html/rfc8259#section-9" _mstmutation="1" _istranslated="1">RFC-8259 第 9 节</a>。</font><a name="json5"></a>
 
-</p><h2 id="compatibility"><span>3.5. </span>Compatibility</h2>
+</p><h2 id="json5_extensions" _msttexthash="10547056" _msthash="136"><span _istranslated="1">3.6. </span>JSON5 扩展</h2>
 
-<p>
-The current implementation of this JSON library uses a recursive descent
-parser.  In order to avoid using excess stack space, any JSON input that has
-more than 1000 levels of nesting is considered invalid.   Limits on nesting
-depth are allowed for compatible implementations of JSON by
-<a href="https://tools.ietf.org/html/rfc8259#section-9">RFC-8259 section 9</a>.
+<p _msttexthash="958338615" _msthash="137">从版本 3.42.0 （2023-05-16） 开始，这些例程将
+读取和解释包含 <a href="https://spec.json5.org/" _istranslated="1">JSON5</a> 扩展名的输入 JSON 文本。但是，生成的 JSON 文本
+将始终严格符合 <a href="https://json.org/" _istranslated="1">JSON 的规范定义</a>。</p><p _msttexthash="161858684" _msthash="138">以下是 JSON5 扩展的概要（改编自 <a href="https://spec.json5.org/#introduction" _istranslated="1">JSON5 规范</a>）：</p><ul>
+<li _msttexthash="83163015" _msthash="139">Object key 可以是不带引号的标识符。</li><li _msttexthash="48400625" _msthash="140">对象可以有一个尾随逗号。</li><li _msttexthash="48258678" _msthash="141">数组可以有一个尾随逗号。</li><li _msttexthash="32294132" _msthash="142">字符串可以是单引号。</li><li _msttexthash="103041679" _msthash="143">字符串可以通过转义换行符来跨越多行。</li><li _msttexthash="59609160" _msthash="144">字符串可以包含新的字符转义。</li><li _msttexthash="40356173" _msthash="145">数字可以是十六进制的。</li><li _msttexthash="82067609" _msthash="146">数字可以有前导小数点或尾随小数点。</li><li _msttexthash="51199980" _msthash="147">数字可以是 “Infinity”、“-Infinity” 和 “NaN”。</li><li _msttexthash="49980060" _msthash="148">数字可以以明确的加号开头。</li><li _msttexthash="148413408" _msthash="149">允许使用单行 （//...） 和多行 （/*...*/） 注释。</li><li _msttexthash="42011801" _msthash="150">允许使用其他空格字符。</li></ul>
 
-<a name="json5"></a>
-
-</p><h2 id="json5_extensions"><span>3.6. </span>JSON5 Extensions</h2>
-
-<p>
-Beginning in version 3.42.0 (2023-05-16), these routines will
-read and interpret input JSON text that includes
-<a href="https://spec.json5.org/">JSON5</a> extensions.  However, JSON text generated
-by these routines will always be strictly conforming to the 
-<a href="https://json.org">canonical definition of JSON</a>.
-
-</p><p>
-Here is a synopsis of JSON5 extensions (adapted from the
-<a href="https://spec.json5.org/#introduction">JSON5 specification</a>):
-
-</p><ul>
-<li> Object keys may be unquoted identifiers.
-</li><li> Objects may have a single trailing comma.
-</li><li> Arrays may have a single trailing comma.
-</li><li> Strings may be single quoted.
-</li><li> Strings may span multiple lines by escaping new line characters.
-</li><li> Strings may include new character escapes.
-</li><li> Numbers may be hexadecimal.
-</li><li> Numbers may have a leading or trailing decimal point.
-</li><li> Numbers may be "Infinity", "-Infinity", and "NaN".
-</li><li> Numbers may begin with an explicit plus sign.
-</li><li> Single (//...) and multi-line (/*...*/) comments are allowed.
-</li><li> Additional white space characters are allowed.
-</li></ul>
-
-<p>
-To convert string X from JSON5 into canonical JSON, invoke
-"<a href="json1.html#jmini">json(X)</a>".  The output of the "<a href="json1.html#jmini">json()</a>" function will be canonical
-JSON regardless of any JSON5 extensions that are present in the input.
-For backwards compatibility, the <a href="json1.html#jvalid">json_valid(X)</a> function without a
-"flags" argument continues
-to report false for inputs that are not canonical JSON, even if the
-input is JSON5 that the function is able to understand.  To determine
-whether or not an input string is valid JSON5, include the 0x02 bit
-in the "flags" argument to json_valid:  "<tt>json_valid(X,2)</tt>".
-
-</p><p>
-These routines understand all of JSON5, plus a little more.
-SQLite extends the JSON5 syntax in these two ways:
-
-</p><ol>
-<li><p>
-Strict JSON5 requires that
-unquoted object keys must be ECMAScript 5.1 IdentifierNames.  But large
-unicode tables and lots of code is required in order to determine whether or
-not a key is an ECMAScript 5.1 IdentifierName.  For this reason,
-SQLite allows object keys to include any unicode characters
-greater than U+007f that are not whitespace characters.  This relaxed
-definition of "identifier" greatly simplifies the implementation and allows
-the JSON parser to be smaller and run faster.
-
-</p></li><li><p>
-JSON5 allows floating-point infinities to be expressed as
-"<tt>Infinity</tt>", "<tt>-Infinity</tt>", or "<tt>+Infinity</tt>"
-in exactly that case - the initial "I" is capitalized and all other
-characters are lower case.  SQLite also allows the abbreviation "<tt>Inf</tt>"
-to be used in place of "<tt>Infinity</tt>" and it allows both keywords
-to appear in any combination of upper and lower case letters.
-Similarly,
-JSON5 allows "NaN" for not-a-number.  SQLite extends this to also allow
-"QNaN" and "SNaN" in any combination of upper and lower case letters.
-Note that SQLite interprets NaN, QNaN, and SNaN as just an alternative
-spellings for "null".
-This extension has been added because (we are told) there exists a lot
-of JSON in the wild that includes these non-standard representations
-for infinity and not-a-number.
-</p></li></ol>
+<p _msttexthash="4690183836" _msthash="151">要将字符串 X 从 JSON5 转换为规范 JSON，请调用
+“<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（X）</a>” 的“<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（）</a>” 函数的输出将是规范的
+JSON，而不考虑输入中存在的任何 JSON5 扩展名。
+为了向后兼容<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jvalid" _istranslated="1">json_valid</a>，没有
+“flags” 参数继续
+为非规范 JSON 的输入报告 false，即使
+input 是函数能够理解的 JSON5。要确定
+无论输入字符串是否为 JSON5，请包括 0x02 位
+在 “flags” 参数中json_valid：“<tt _istranslated="1">json_valid（X，2）</tt>”。</p><p _msttexthash="383559410" _msthash="152">这些例程可以理解 JSON5 的所有内容，以及更多内容。
+SQLite 通过以下两种方式扩展 JSON5 语法：</p><ol>
+<li><p _msttexthash="3774206956" _msthash="153">严格的 JSON5 要求
+未加引号的对象键必须是 ECMAScript 5.1 IdentifierNames。但大
+需要 Unicode 表和大量代码来确定
+不是键是 ECMAScript 5.1 IdentifierName。因此，
+SQLite 允许对象键包含任何 Unicode 字符
+大于 U+007f，则不是空格字符。这种轻松的
+“identifier” 的定义大大简化了实现，并允许
+JSON 解析器更小且运行更快。</p></li><li><p _msttexthash="9638855070" _msthash="154">JSON5 允许将浮点无穷大表示为
+“<tt _istranslated="1">Infinity</tt>”、“<tt _istranslated="1">-Infinity</tt>”或“<tt _istranslated="1">+Infinity</tt>”
+正是在那种情况下 - 首字母 “I” 大写，所有其他
+字符为小写。SQLite 还允许缩写“<tt _istranslated="1">Inf</tt>”
+来代替 “<tt _istranslated="1">Infinity</tt>” ，它允许同时使用这两个关键字
+以大写字母和小写字母的任意组合显示。
+同样地
+JSON5 允许 “NaN” 表示非数字。SQLite 扩展了这一点，也允许
+“QNaN” 和 “SNaN” 的任意大小写字母组合。
+请注意，SQLite 将 NaN、QNaN 和 SNaN 解释为仅是一种替代方案
+“null” 的拼写。
+添加此扩展是因为（我们被告知）存在很多
+包含这些非标准表示的 JSON
+表示 infinity 和 not-a-number。</p></li></ol>
 
 
-<h2 id="performance_considerations"><span>3.7. </span>Performance Considerations</h2>
+<h2 id="performance_considerations" _msttexthash="29966664" _msthash="155"><span _istranslated="1">3.7. </span>性能注意事项</h2>
 
-<p>
-Most JSON functions do their internal processing using JSONB.  So if the
-input is text, they first most translate the input text into JSONB.
-If the input is already in the JSONB format, no translation is needed,
-that step can be skipped, and performance is faster.
-
-</p><p>
-For that reason,
-when an argument to one JSON function is supplied by another
-JSON function, it is usually more efficient to use the "<tt>jsonb_</tt>"
-variant for the function used as the argument.  
-
-</p><ul>
+<p _msttexthash="1514983808" _msthash="156">大多数 JSON 函数使用 JSONB 进行内部处理。因此，如果
+input 是文本，则它们首先将 input 文本转换为 JSONB。
+如果输入已经是 JSONB 格式，则不需要转换。
+可以跳过该步骤，并且性能会更快。</p><p _msttexthash="457040792" _msthash="157">因此，
+当一个 JSON 函数的参数由另一个 JSON 函数提供时
+JSON 函数，通常使用 “<tt _istranslated="1">jsonb_</tt>”
+variant 作为用作参数的函数。</p><ul>
 <li>
-  <tt>... json_insert(A,'$.b',json(C)) ...</tt>
-  &nbsp; &larr; Less efficient.
-</li><li>
-  <tt>... json_insert(A,'$.b',jsonb(C)) ...</tt>
-  &nbsp; &larr; More efficient.
-</li></ul>
+  <font _mstmutation="1" _msttexthash="228923617" _msthash="158"><tt _mstmutation="1" _istranslated="1">...json_insert（A，'$.b'，json（C）） ...</tt>← 效率较低。</font></li><li>
+  <font _mstmutation="1" _msttexthash="220622025" _msthash="159"><tt _mstmutation="1" _istranslated="1">...json_insert（A，'$.b'，jsonb（C）） ...</tt>← 更高效。</font></li></ul>
 
 
-<p>
-The <a href="json1.html#jgroupobjectb">aggregate JSON SQL functions</a> are an exception to this rule.  Those
-functions all do their processing using text instead of JSONB.  So for the
-aggregate JSON SQL functions, it is more efficient for the arguments
-to be supplied using "<tt>json_</tt>" functions than "<tt>jsonb_</tt>"
-functions.
-
-</p><ul>
+<p _msttexthash="1000125581" _msthash="160"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jgroupobjectb" _istranslated="1">聚合 JSON SQL 函数</a>是此规则的一个例外。那些
+函数都使用 text 而不是 JSONB 进行处理。因此，对于
+聚合 JSON SQL 函数，则对参数
+使用“<tt _istranslated="1">json_</tt>”而不是“<tt _istranslated="1">jsonb_</tt>”功能提供
+功能。</p><ul>
 <li>
-  <tt>... json_group_array(json(A))) ...</tt>
-  &nbsp; &larr; More efficient.
-</li><li>
-  <tt>... json_group_array(jsonb(A))) ...</tt>
-  &nbsp; &larr; Less efficient.
-</li></ul>
+  <font _mstmutation="1" _msttexthash="195833638" _msthash="161"><tt _mstmutation="1" _istranslated="1">...json_group_array（json（A））） ...</tt>← 更高效。</font></li><li>
+  <font _mstmutation="1" _msttexthash="212829513" _msthash="162"><tt _mstmutation="1" _istranslated="1">...json_group_array（jsonb（A））） ...</tt>← 效率较低。</font></li></ul>
 
 <a name="jblobbug"></a>
 
-<h2 id="the_json_blob_input_bug"><span>3.8. </span>The JSON BLOB Input Bug</h2>
+<h2 id="the_json_blob_input_bug" _msttexthash="35296235" _msthash="163"><span _istranslated="1">3.8. </span>JSON BLOB 输入错误</h2>
 
-<p>If a JSON input is a BLOB that is not JSONB and that looks like
-text JSON when cast to text, then it is accepted as text JSON.
-This is actually a long-standing bug in the original implementation
-that the SQLite developers were unaware of.  The documentation stated
-that a BLOB input to a JSON function should raise an error.  But in the
-actual implementation, the input would be accepted as long
-as the BLOB content was a valid JSON string in the text encoding of
-the database.
+<p _msttexthash="3078291398" _msthash="164">如果 JSON 输入是不是 JSONB 的 BLOB，并且看起来像
+text JSON 转换为文本时，则它被接受为文本 JSON。
+这实际上是原始实现中一个长期存在的错误
+SQLite 开发人员不知道。文件指出
+JSON 函数的 BLOB 输入应引发错误。但是在
+实际实现，只要
+因为 BLOB 内容是文本编码中的有效 JSON 字符串
+数据库。</p><p _msttexthash="3949605712" _msthash="165">此 JSON BLOB 输入错误在 JSON 例程
+在 3.45.0 版 （2024-01-15） 中重新实施。
+这导致依赖旧
+行为。（为了捍卫这些应用程序：他们经常被引诱
+通过 <a href="https://www.sqlite.org/cli.html#fileio" _istranslated="1">readfile（）</a> SQL 函数将 BLOB 用作 JSON
+在 <a href="https://www.sqlite.org/cli.html" _istranslated="1">CLI</a> 中可用。Readfile（） 用于从磁盘文件中读取 JSON，
+但 readfile（） 返回一个 BLOB。这对他们有用，那么为什么不直接
+做吗？</p><p _msttexthash="1124199310" _msthash="166">为了向后兼容，
+将 BLOB 解释为文本 JSON 的（以前不正确的）遗留行为
+如果没有其他解释有效
+特此记录下来，并得到官方支持
+版本 3.45.1 （2024-01-30） 和所有后续版本。</p><h1 id="function_details" _msttexthash="15762903" _msthash="167"><span _istranslated="1">4. </span>功能详情</h1>
 
-</p><p>This JSON BLOB input bug was accidentally fixed when the JSON routines
-were reimplemented for the 3.45.0 release (2024-01-15).
-That caused breakage in applications that had come to depend on the old
-behavior.  (In defense of those applications:  they were often lured into
-using BLOBs as JSON by the <a href="https://www.sqlite.org/cli.html#fileio">readfile()</a> SQL function
-available in the <a href="https://www.sqlite.org/cli.html">CLI</a>.  Readfile() was used to read JSON from disk files,
-but readfile() returns a BLOB.  And that worked for them, so why not just
-do it?)
+<p><font _mstmutation="1" _msttexthash="119543294" _msthash="168">以下部分提供了有关
+各种 JSON 函数和运算符：</font><a name="jmini"></a>
 
-</p><p>For backwards compatibility,
-the (formerly incorrect) legacy behavior of interpreting BLOBs as text JSON
-if no other interpretation works
-is hereby documented and is be officially supported in 
-version 3.45.1 (2024-01-30) and all subsequent releases.
+</p><h2 id="the_json_function" _msttexthash="37119459" _msthash="169"><span _istranslated="1">4.1. </span>json（） 函数</h2>
 
-</p><h1 id="function_details"><span>4. </span>Function Details</h1>
-
-<p>The following sections provide additional detail on the operation of
-the various JSON functions and operators:
-
-<a name="jmini"></a>
-
-</p><h2 id="the_json_function"><span>4.1. </span>The json() function</h2>
-
-<p>The json(X) function verifies that its argument X is a valid
-JSON string or JSONB blob and returns a minified version of that JSON string
-with all unnecessary whitespace removed.  If X is not a well-formed
-JSON string or JSONB blob, then this routine throws an error.
-
-</p><p>If the input is JSON5 text, then it is converted into canonical
-RFC-8259 text prior to being returned.
-
-</p><p>If the argument X to json(X) contains JSON objects with duplicate
-labels, then it is undefined whether or not the duplicates are
-preserved.  The current implementation preserves duplicates.
-However, future enhancements
-to this routine may choose to silently remove duplicates.
-
-</p><p>
-Example:
-
-<ul>
-<li><span class='jex'>json(' { "this" : "is", "a": [ "test" ] } ')</span>
-<span class='jans'>&rarr; '{"this":"is","a":["test"]}'</span></li>
+<p _msttexthash="1648282584" _msthash="170">json（X） 函数验证其参数 X 是否有效
+JSON 字符串或 JSONB blob 的 JSON 字符串，并返回该 JSON 字符串的缩小版本
+删除了所有不必要的空格。如果 X 不是格式正确的
+JSON 字符串或 JSONB blob，则此例程会引发错误。</p><p _msttexthash="162934863" _msthash="171">如果输入是 JSON5 文本，则将其转换为规范文本
+RFC-8259 文本。</p><p _msttexthash="1277053193" _msthash="172">如果参数 X 到 json（X） 包含具有重复的 JSON 对象
+labels 的 label 中，则 undefined 是否重复
+保存。当前实现保留重复项。
+但是，未来的增强功能
+可以选择静默删除重复项。</p><p _msttexthash="8644857" _msthash="173">例：</p><ul>
+<li _msttexthash="319961317" _msthash="174"><span class="jex" _istranslated="1">json（' { “this” ： “is”， “a”： [ “test” ] } '）</span> <span class="jans" _istranslated="1">→ '{“this”：“is”，“a”：[“test”]}'</span></li>
 
 </ul>
 
 
 <a name="jminib"></a>
 
-</p><h2 id="the_jsonb_function"><span>4.2. </span>The jsonb() function</h2>
+<p></p><h2 id="the_jsonb_function" _msttexthash="39446628" _msthash="175"><span _istranslated="1">4.2. </span>jsonb（） 函数</h2>
 
-<p>The jsonb(X) function returns the binary JSONB representation
-of the JSON provided as argument X.  An error is raised if X is
-TEXT that does not have valid JSON syntax.
+<p _msttexthash="372187374" _msthash="176">jsonb（X） 函数返回二进制 JSONB 表示
+作为参数 X 提供的 JSON。如果 X 为
+TEXT 中没有有效的 JSON 语法。</p><p><font _mstmutation="1" _msttexthash="775245848" _msthash="177">如果 X 是 BLOB 并且显示为 JSONB，则
+那么这个例程只返回 X 的副本。
+但是，仅检查 JSONB 输入的最外层元素。
+JSONB 的深层结构未经过验证。</font><a name="jarray"></a>
 
-</p><p>If X is a BLOB and appears to be JSONB,
-then this routine simply returns a copy of X.
-Only the outer-most element of the JSONB input is examined, however.
-The deep structure of the JSONB is not validated.
+</p><h2 id="the_json_array_function" _msttexthash="51113335" _msthash="178"><span _istranslated="1">4.3. </span>json_array（） 函数</h2>
 
-<a name="jarray"></a>
+<p _msttexthash="972854831" _msthash="179">json_array（） SQL 函数接受零个或多个参数，
+返回由这些参数组成的格式正确的 JSON 数组。
+如果 json_array（） 的任何参数是 BLOB，则会引发错误。</p><p _msttexthash="2073354517" _msthash="180">SQL 类型为 TEXT 的参数通常转换为带引号的
+JSON 字符串。但是，如果参数是另一个 json1 的输出
+函数，则它将被存储为 JSON。这允许调用 json_array（）
+和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jobj" _istranslated="1">json_object（）</a> 进行嵌套。<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（）</a> 函数也可以
+用于强制将字符串识别为 JSON。</p><p _msttexthash="11924939" _msthash="181">例子：</p><ul>
+<li _msttexthash="148807893" _msthash="182"><span class="jex" _istranslated="1">json_array（1,2，'3'，4） →</span> <span class="jans" _istranslated="1">'[1,2，“3”，4]'</span></li>
 
-</p><h2 id="the_json_array_function"><span>4.3. </span>The json_array() function</h2>
+<li _msttexthash="45909370" _msthash="183"><span class="jex" _istranslated="1">json_array（'[1,2]'）</span> <span class="jans" _istranslated="1">→ '[“[1,2]”]'</span></li>
 
-<p>The json_array() SQL function accepts zero or more arguments and
-returns a well-formed JSON array that is composed from those arguments.
-If any argument to json_array() is a BLOB then an error is thrown.
+<li _msttexthash="97993636" _msthash="184"><span class="jex" _istranslated="1">json_array（json_array（1,2））</span> <span class="jans" _istranslated="1">→ '[[1,2]]'</span></li>
 
-</p><p>An argument with SQL type TEXT is normally converted into a quoted 
-JSON string.  However, if the argument is the output from another json1
-function, then it is stored as JSON.  This allows calls to json_array()
-and <a href="json1.html#jobj">json_object()</a> to be nested.  The <a href="json1.html#jmini">json()</a> function can also
-be used to force strings to be recognized as JSON.
+<li _msttexthash="546698347" _msthash="185"><span class="jex" _istranslated="1">json_array（1，null，'3'，'[4,5]'，'{“six”：7.7}'）</span> <span class="jans" _istranslated="1">→ '[1，null，“3”，“[4,5]”，“{\”six\“：7.7}”]'</span></li>
 
-</p><p>Examples:
-
-<ul>
-<li><span class='jex'>json_array(1,2,'3',4)</span>
-<span class='jans'>&rarr; '[1,2,"3",4]'</span></li>
-
-<li><span class='jex'>json_array('[1,2]')</span>
-<span class='jans'>&rarr; '["[1,2]"]'</span></li>
-
-<li><span class='jex'>json_array(json_array(1,2))</span>
-<span class='jans'>&rarr; '[[1,2]]'</span></li>
-
-<li><span class='jex'>json_array(1,null,'3','[4,5]','{"six":7.7}')</span>
-<span class='jans'>&rarr; '[1,null,"3","[4,5]","{\"six\":7.7}"]'</span></li>
-
-<li><span class='jex'>json_array(1,null,'3',json('[4,5]'),json('{"six":7.7}'))</span>
-<span class='jans'>&rarr; '[1,null,"3",[4,5],{"six":7.7}]'</span></li>
+<li _msttexthash="747630286" _msthash="186"><span class="jex" _istranslated="1">json_array（1，null，'3'，json（'[4,5]'），json（'{“six”：7.7}'））</span> <span class="jans" _istranslated="1">→ '[1，null，“3”，[4,5]，{“six”：7.7}]'</span></li>
 
 </ul>
 
@@ -782,45 +582,32 @@ be used to force strings to be recognized as JSON.
 
 <a name="jarrayb"></a>
 
-</p><h2 id="the_jsonb_array_function"><span>4.4. </span>The jsonb_array() function</h2>
+<p></p><h2 id="the_jsonb_array_function" _msttexthash="53448798" _msthash="187"><span _istranslated="1">4.4. </span>jsonb_array（） 函数</h2>
 
-<p>The jsonb_array() SQL function works just like the <a href="json1.html#jarray">json_array()</a>
-function except that it returns the constructed JSON array in the
-SQLite's private JSONB format rather than in the standard
-RFC 8259 text format.
+<p><font _mstmutation="1" _msttexthash="881078809" _msthash="188">jsonb_array（） SQL 函数的工作方式与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarray" _mstmutation="1" _istranslated="1">json_array（）</a> 函数类似，不同之处在于它返回
+SQLite 的私有 JSONB 格式，而不是标准的
+RFC 8259 文本格式。</font><a name="jarraylen"></a>
 
-<a name="jarraylen"></a>
+</p><h2 id="the_json_array_length_function" _msttexthash="67499692" _msthash="189"><span _istranslated="1">4.5. </span>json_array_length（） 函数</h2>
 
-</p><h2 id="the_json_array_length_function"><span>4.5. </span>The json_array_length() function</h2>
+<p _msttexthash="5758101869" _msthash="190">json_array_length（X） 函数返回元素的数量
+在 JSON 数组 X 中，如果 X 是某种 JSON 值 other
+比数组。json_array_length（X，P） 将数组定位在路径 P 处
+在 X 范围内返回该数组的长度，如果路径 P 位于该数组内，则返回 0
+X 中的元素不是 JSON 数组，如果路径 P 不是 JSON 数组，则为 NULL
+找到 X 的任何元素。如果 X 不是，则引发错误
+格式正确的 JSON，或者如果 P 不是格式正确的路径。</p><p _msttexthash="11924939" _msthash="191">例子：</p><ul>
+<li _msttexthash="55671096" _msthash="192"><span class="jex" _istranslated="1">json_array_length（'[1,2,3,4]'）</span> <span class="jans" _istranslated="1">→ 4</span></li>
 
-<p>The json_array_length(X) function returns the number of elements
-in the JSON array X, or 0 if X is some kind of JSON value other
-than an array.  The json_array_length(X,P) locates the array at path P
-within X and returns the length of that array, or 0 if path P locates
-an element in X that is not a JSON array, and NULL if path P does not
-locate any element of X.  Errors are thrown if either X is not 
-well-formed JSON or if P is not a well-formed path.
+<li _msttexthash="90128688" _msthash="193"><span class="jex" _istranslated="1">json_array_length（'[1,2,3,4]'， '$'）</span> <span class="jans" _istranslated="1">→ 4</span></li>
 
-</p><p>Examples:
+<li _msttexthash="93133040" _msthash="194"><span class="jex" _istranslated="1">json_array_length（'[1,2,3,4]'， '$[2]'）</span> <span class="jans" _istranslated="1">→ 0</span></li>
 
-<ul>
-<li><span class='jex'>json_array_length('[1,2,3,4]')</span>
-<span class='jans'>&rarr; 4</span></li>
+<li _msttexthash="95027569" _msthash="195"><span class="jex" _istranslated="1">json_array_length（'{“one”：[1,2,3]}'）</span> <span class="jans" _istranslated="1">→ 0</span></li>
 
-<li><span class='jex'>json_array_length('[1,2,3,4]', '$')</span>
-<span class='jans'>&rarr; 4</span></li>
+<li _msttexthash="138658611" _msthash="196"><span class="jex" _istranslated="1">json_array_length（'{“one”：[1,2,3]}'， '$.one'）</span> <span class="jans" _istranslated="1">→ 3</span></li>
 
-<li><span class='jex'>json_array_length('[1,2,3,4]', '$[2]')</span>
-<span class='jans'>&rarr; 0</span></li>
-
-<li><span class='jex'>json_array_length('{"one":[1,2,3]}')</span>
-<span class='jans'>&rarr; 0</span></li>
-
-<li><span class='jex'>json_array_length('{"one":[1,2,3]}', '$.one')</span>
-<span class='jans'>&rarr; 3</span></li>
-
-<li><span class='jex'>json_array_length('{"one":[1,2,3]}', '$.two')</span>
-<span class='jans'>&rarr; NULL</span></li>
+<li _msttexthash="138857849" _msthash="197"><span class="jex" _istranslated="1">json_array_length（'{“one”：[1,2,3]}'， '$.two'）</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
 </ul>
 
@@ -828,195 +615,136 @@ well-formed JSON or if P is not a well-formed path.
 
 <a name="jerr"></a>
 
-</p><h2 id="the_json_error_position_function"><span>4.6. </span>The json_error_position() function</h2>
+<p></p><h2 id="the_json_error_position_function" _msttexthash="72206732" _msthash="198"><span _istranslated="1">4.6. </span>json_error_position（） 函数</h2>
 
-<p>The json_error_position(X) function returns 0 if the input X is a
-well-formed JSON or JSON5 string.  If the input X contains one or more
-syntax errors, then this function returns the character position of the
-first syntax error.  The left-most character is position 1.
+<p _msttexthash="1150034444" _msthash="199">如果输入 X 为json_error_position
+格式正确的 JSON 或 JSON5 字符串。如果输入 X 包含一个或多个
+语法错误，则此函数返回
+第一个语法错误。最左侧的字符是位置 1。</p><p _msttexthash="576265586" _msthash="200">如果输入 X 是 BLOB，则此例程返回 0（如果 X 为
+格式正确的 JSONB blob。如果返回值为正，则
+表示<i _istranslated="1"></i>
+首次检测到错误。</p><p><font _mstmutation="1" _msttexthash="221600977" _msthash="201">json_error_position（） 函数是使用
+SQLite 版本 3.42.0 （2023-05-16）。</font><a name="jex"></a>
 
-</p><p>If the input X is a BLOB, then this routine returns 0 if X is
-a well-formed JSONB blob.  If the return value is positive, then it
-represents the <i>approximate</i> 1-based position in the BLOB of the
-first detected error.
+</p><h2 id="the_json_extract_function" _msttexthash="55790475" _msthash="202"><span _istranslated="1">4.7. </span>json_extract（） 函数</h2>
 
-</p><p>
-The json_error_position() function was added with
-SQLite version 3.42.0 (2023-05-16).
+<p _msttexthash="6896946043" _msthash="203">json_extract（X，P1，P2,...） 提取并返回一个或多个
+值
+X 处格式正确的 JSON。如果仅提供单个路径 P1，则
+对于 JSON null、INTEGER 或 REAL，结果的 SQL 数据类型为 NULL
+对于 JSON 数值，对于 JSON false 值，INTEGER 零，
+一个 INTEGER 1 表示 JSON true 值，一个
+JSON 字符串值，以及 JSON 对象和数组值的文本表示形式。
+如果有多个路径参数（P1、P2 等），则此
+routine 返回 SQLite 文本，它是一个格式正确的 JSON 数组，其中包含
+各种值。</p><p _msttexthash="11924939" _msthash="204">例子：</p><ul>
+<li _msttexthash="578921993" _msthash="205"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5，{“f”：7}]}'， '$'）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：[4,5，{“f”：7}]}'</span></li>
 
+<li _msttexthash="383520085" _msthash="206"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5，{“f”：7}]}'， '$.c'）</span> <span class="jans" _istranslated="1">→ '[4,5，{“f”：7}]'</span></li>
 
-<a name="jex"></a>
+<li _msttexthash="333239764" _msthash="207"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5，{“f”：7}]}'， '$.c[2]'）</span> <span class="jans" _istranslated="1">→ '{“f”：7}'</span></li>
 
-</p><h2 id="the_json_extract_function"><span>4.7. </span>The json_extract() function</h2>
+<li _msttexthash="268398962" _msthash="208"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5，{“f”：7}]}'， '$.c[2].f'）</span> <span class="jans" _istranslated="1">→ 7</span></li>
 
-<p>The json_extract(X,P1,P2,...) extracts and returns one or more 
-values from the
-well-formed JSON at X.  If only a single path P1 is provided, then the
-SQL datatype of the result is NULL for a JSON null, INTEGER or REAL
-for a JSON numeric value, an INTEGER zero for a JSON false value,
-an INTEGER one for a JSON true value, the dequoted text for a 
-JSON string value, and a text representation for JSON object and array values.
-If there are multiple path arguments (P1, P2, and so forth) then this
-routine returns SQLite text which is a well-formed JSON array holding
-the various values.
+<li _msttexthash="366150915" _msthash="209"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5]，“f”：7}'，'$.c'，'$.a'）</span> <span class="jans" _istranslated="1">→ '[[4,5]，2]'</span></li>
 
-</p><p>Examples:
+<li _msttexthash="265419986" _msthash="210"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5]，“f”：7}'，'$.c[#-1]'）</span> <span class="jans" _istranslated="1">→ 5</span></li>
 
-<ul>
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5,{"f":7}]}', '$')</span>
-<span class='jans'>&rarr; '{"a":2,"c":[4,5,{"f":7}]}'</span></li>
+<li _msttexthash="263527927" _msthash="211"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5，{“f”：7}]}'， '$.x'）</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5,{"f":7}]}', '$.c')</span>
-<span class='jans'>&rarr; '[4,5,{"f":7}]'</span></li>
+<li _msttexthash="371741682" _msthash="212"><span class="jex" _istranslated="1">json_extract（'{“a”：2，“c”：[4,5，{“f”：7}]}'， '$.x'， '$.a'）</span> <span class="jans" _istranslated="1">→ '[null，2]'</span></li>
 
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5,{"f":7}]}', '$.c[2]')</span>
-<span class='jans'>&rarr; '{"f":7}'</span></li>
+<li _msttexthash="114681827" _msthash="213"><span class="jex" _istranslated="1">json_extract（'{“a”：“xyz”}'， '$.a'）</span> <span class="jans" _istranslated="1">→ 'xyz'</span></li>
 
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5,{"f":7}]}', '$.c[2].f')</span>
-<span class='jans'>&rarr; 7</span></li>
-
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5],"f":7}','$.c','$.a')</span>
-<span class='jans'>&rarr; '[[4,5],2]'</span></li>
-
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5],"f":7}','$.c[#-1]')</span>
-<span class='jans'>&rarr; 5</span></li>
-
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5,{"f":7}]}', '$.x')</span>
-<span class='jans'>&rarr; NULL</span></li>
-
-<li><span class='jex'>json_extract('{"a":2,"c":[4,5,{"f":7}]}', '$.x', '$.a')</span>
-<span class='jans'>&rarr; '[null,2]'</span></li>
-
-<li><span class='jex'>json_extract('{"a":"xyz"}', '$.a')</span>
-<span class='jans'>&rarr; 'xyz'</span></li>
-
-<li><span class='jex'>json_extract('{"a":null}', '$.a')</span>
-<span class='jans'>&rarr; NULL</span></li>
+<li _msttexthash="106831946" _msthash="214"><span class="jex" _istranslated="1">json_extract（'{“a”：null}'， '$.a'）</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
 </ul>
 
 
-</p><p>There is a subtle incompatibility between the json_extract() function
-in SQLite and the json_extract() function in MySQL.  The MySQL version
-of json_extract() always returns JSON.  The SQLite version of
-json_extract() only returns JSON if there are two or more PATH arguments
-(because the result is then a JSON array) or if the single PATH argument
-references an array or object.  In SQLite, if json_extract() has only
-a single PATH argument and that PATH references a JSON null or a string
-or a numeric value, then json_extract() returns the corresponding SQL
-NULL, TEXT, INTEGER, or REAL value.
-
-</p><p>The difference between MySQL json_extract() and SQLite json_extract()
-really only stands out when accessing individual values within the JSON
-that are strings or NULLs.  The following table demonstrates the difference:
-
-</p><center>
+<p></p><p _msttexthash="6483088638" _msthash="215">json_extract（） 函数之间存在细微的不兼容
+在 SQLite 和 json_extract（） 函数。MySQL 版本
+of json_extract（） 始终返回 JSON。的 SQLite 版本
+json_extract（） 仅在有两个或多个 PATH 参数时返回 JSON
+（因为结果是一个 JSON 数组），或者如果单个 PATH 参数
+引用数组或对象。在 SQLite 中，如果 json_extract（） 只有
+单个 PATH 参数，并且该 PATH 引用 JSON null 或字符串
+或数值，则 json_extract（） 返回相应的 SQL
+NULL、TEXT、INTEGER 或 REAL value。</p><p _msttexthash="1145732835" _msthash="216">MySQL json_extract（） 和 SQLite json_extract（） 之间的区别
+实际上，只有在访问 JSON 中的单个值时才会脱颖而出
+是字符串或 NULL。下表演示了差异：</p><center>
 <table border="1" cellpadding="3" cellspacing="0">
-<tr><th>Operation</th><th>SQLite Result</th><th>MySQL Result
-</th></tr><tr><td>json_extract('{"a":null,"b":"xyz"}','$.a')</td><td>NULL</td><td>'null'
-</td></tr><tr><td>json_extract('{"a":null,"b":"xyz"}','$.b')</td><td>'xyz'</td><td>'"xyz"'
-</td></tr></table></center>
+<tbody><tr><th _msttexthash="4461119" _msthash="217">操作</th><th _msttexthash="10385154" _msthash="218">SQLite 结果</th><th _msttexthash="9598108" _msthash="219">MySQL 结果</th></tr><tr><td _msttexthash="188627348" _msthash="220">json_extract（'{“a”：null，“b”：“xyz”}'，'$.a'）</td><td _msttexthash="3516786" _msthash="221">零</td><td _msttexthash="64246" _msthash="222">'null'</td></tr><tr><td _msttexthash="188627946" _msthash="223">json_extract（'{“a”：null，“b”：“xyz”}'，'$.b'）</td><td _msttexthash="51623" _msthash="224">'xyz'</td><td _msttexthash="2194712" _msthash="225">'“xyz”'</td></tr></tbody></table></center>
 
 <a name="jexb"></a>
 
-<h2 id="the_jsonb_extract_function"><span>4.8. </span>The jsonb_extract() function</h2>
+<h2 id="the_jsonb_extract_function" _msttexthash="58128798" _msthash="226"><span _istranslated="1">4.8. </span>jsonb_extract（） 函数</h2>
 
-<p>
-The jsonb_extract() function works the same as the <a href="json1.html#jex">json_extract()</a> function,
-except in cases where json_extract() would normally return a text
-JSON array object, this routine returns the array or object in the
-JSONB format.  For the common case where a text, numeric, null, or
-boolean JSON element is returned, this routine works exactly the same
-as json_extract().
+<p><font _mstmutation="1" _msttexthash="2328406535" _msthash="227">jsonb_extract（） 函数的工作原理与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jex" _mstmutation="1" _istranslated="1">json_extract（）</a> 函数相同。
+除非 json_extract（） 通常会返回文本
+JSON 数组对象，则此例程返回
+JSONB 格式。对于文本、数字、null 或
+boolean JSON 元素，则此例程的工作方式完全相同
+作为 json_extract（）。</font><a name="jptr"></a>
 
+</p><h2 id="the_and_operators" _msttexthash="27056068" _msthash="228"><span _istranslated="1">4.9. </span>-&gt; 和 -&gt;&gt; 运算符</h2>
 
-<a name="jptr"></a>
+<p _msttexthash="6781555001" _msthash="229">从 SQLite 版本 3.38.0 （2022-02-22） 开始，-&gt;
+和 -&gt;&gt; 运算符可用于提取 JSON 的子组件。
+-&gt; 和 -&gt;&gt; 的 SQLite 实现努力成为
+与 MySQL 和 PostgreSQL 兼容。
+-&gt; 和 -&gt;&gt; 运算符采用 JSON 字符串或 JSONB blob
+作为其左作数和 PATH 表达式或对象字段
+label 或 array 索引作为它们的右作数。-&gt; 运算符
+返回所选子组件的文本 JSON 表示形式，或者
+如果该子组件不存在，则为 NULL。-&gt;&gt; 运算符返回
+表示所选
+sub组件，如果子组件不存在，则为 NULL。</p><p _msttexthash="4283071637" _msthash="230">-&gt; 和 -&gt;&gt; 运算符都选择相同的子组件
+的 JSON 中。区别在于 -&gt; 始终返回
+该子组件的 JSON 表示形式和 -&gt;&gt; 运算符始终
+返回该子组件的 SQL 表示形式。因此，这些运算符
+与两个参数的 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jex" _istranslated="1">json_extract（）</a> 函数调用略有不同。
+对带有两个参数的 json_extract（） 的调用将返回 JSON 表示
+当且仅当子组件是 JSON 数组或
+对象，并且如果
+subcomponent 是 JSON null、字符串或数值。</p><p _msttexthash="644472920" _msthash="231">当 -&gt; 运算符返回 JSON 时，它始终返回
+该 JSON 的 RFC 8565 文本表示形式，而不是 JSONB。如果需要 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jexb" _istranslated="1">jsonb_extract（）</a> 中的 subcomponent
+JSONB 格式。</p><p _msttexthash="3084219619" _msthash="232">-&gt; 和 -&gt;&gt; 运算符的右侧作数可以
+是格式正确的 JSON 路径表达式。这是 MySQL 使用的形式。
+为了与 PostgreSQL 兼容，
+-&gt; 和 -&gt;&gt; 运算符也接受文本对象标签或
+整数数组索引作为其右侧作数。
+如果正确的作数是文本
+标签 X，则将其解释为 JSON 路径 '$.X'.如果右
+作数是整数值 N，则将其解释为 JSON 路径 '$[N]'。</p><p _msttexthash="11924939" _msthash="233">例子：</p><ul>
+<li _msttexthash="350511083" _msthash="234"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; '$'</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：[4,5，{“f”：7}]}'</span></li>
 
-</p><h2 id="the_and_operators"><span>4.9. </span>The -> and ->> operators</h2>
+<li _msttexthash="192137361" _msthash="235"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; '$.c'</span> <span class="jans" _istranslated="1">→ '[4,5，{“f”：7}]'</span></li>
 
-<p>Beginning with SQLite version 3.38.0 (2022-02-22), the ->
-and ->> operators are available for extracting subcomponents of JSON.
-The SQLite implementation of -> and ->> strives to be
-compatible with both MySQL and PostgreSQL.
-The -> and ->> operators take a JSON string or JSONB blob
-as their left operand and a PATH expression or object field
-label or array index as their right operand.  The -> operator
-returns a text JSON representation of the selected subcomponent or
-NULL if that subcomponent does not exist.  The ->> operator returns
-an SQL TEXT, INTEGER, REAL, or NULL value that represents the selected
-subcomponent, or NULL if the subcomponent does not exist.
+<li _msttexthash="188026059" _msthash="236"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; 'c'</span> <span class="jans" _istranslated="1">→ '[4,5，{“f”：7}]'</span></li>
 
-</p><p>Both the -> and ->> operators select the same subcomponent
-of the JSON to their left.  The difference is that -> always returns a
-JSON representation of that subcomponent and the ->> operator always
-returns an SQL representation of that subcomponent.  Thus, these operators
-are subtly different from a two-argument <a href="json1.html#jex">json_extract()</a> function call.
-A call to json_extract() with two arguments will return a JSON representation
-of the subcomponent if and only if the subcomponent is a JSON array or
-object, and will return an SQL representation of the subcomponent if the
-subcomponent is a JSON null, string, or numeric value.
+<li _msttexthash="150364890" _msthash="237"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; '$.c[2]'</span> <span class="jans" _istranslated="1">→ '{“f”：7}'</span></li>
 
-</p><p>When the -> operator returns JSON, it always returns the
-RFC 8565 text representation of that JSON, not JSONB.  Use the
-<a href="json1.html#jexb">jsonb_extract()</a> function if you need a subcomponent in the
-JSONB format.
+<li _msttexthash="97740448" _msthash="238"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; '$.c[2].f'</span> <span class="jans" _istranslated="1">→ '7'</span></li>
 
-</p><p>The right-hand operand to the -> and ->> operators can
-be a well-formed JSON path expression.  This is the form used by MySQL.
-For compatibility with PostgreSQL,
-the -> and ->> operators also accept a text object label or
-integer array index as their right-hand operand.
-If the right operand is a text
-label X, then it is interpreted as the JSON path '$.X'.  If the right
-operand is an integer value N, then it is interpreted as the JSON path '$[N]'.
+<li _msttexthash="97840847" _msthash="239"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt;&gt; '$.c[2].f'</span> <span class="jans" _istranslated="1">→ 7</span></li>
 
-</p><p>Examples:
+<li _msttexthash="97945003" _msthash="240"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; 'c' -&gt; 2 -&gt;&gt; 'f'</span> <span class="jans" _istranslated="1">→ 7</span></li>
 
-<ul>
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> '$'</span>
-<span class='jans'>&rarr; '{"a":2,"c":[4,5,{"f":7}]}'</span></li>
+<li _msttexthash="98204756" _msthash="241"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5]，“f”：7}' -&gt; '$.c[#-1]'</span> <span class="jans" _istranslated="1">→ '5'</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> '$.c'</span>
-<span class='jans'>&rarr; '[4,5,{"f":7}]'</span></li>
+<li _msttexthash="97076187" _msthash="242"><span class="jex" _istranslated="1">'{“a”：2，“c”：[4,5，{“f”：7}]}' -&gt; '$.x'</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> 'c'</span>
-<span class='jans'>&rarr; '[4,5,{"f":7}]'</span></li>
+<li _msttexthash="3051217" _msthash="243"><span class="jex" _istranslated="1">'[11,22,33,44]' -&gt; 3</span> <span class="jans" _istranslated="1">→ '44'</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> '$.c[2]'</span>
-<span class='jans'>&rarr; '{"f":7}'</span></li>
+<li _msttexthash="3155061" _msthash="244"><span class="jex" _istranslated="1">'[11,22,33,44]' -&gt;&gt; 3</span> <span class="jans" _istranslated="1">→ 44</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> '$.c[2].f'</span>
-<span class='jans'>&rarr; '7'</span></li>
+<li _msttexthash="25599340" _msthash="245"><span class="jex" _istranslated="1">'{“a”：“xyz”}' -&gt; '$.a'</span> <span class="jans" _istranslated="1">→ '“xyz”'</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' ->> '$.c[2].f'</span>
-<span class='jans'>&rarr; 7</span></li>
+<li _msttexthash="19106386" _msthash="246"><span class="jex" _istranslated="1">'{“a”：“xyz”}' -&gt;&gt; '$.a'</span> <span class="jans" _istranslated="1">→ 'xyz'</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> 'c' -> 2 ->> 'f'</span>
-<span class='jans'>&rarr; 7</span></li>
+<li _msttexthash="15683538" _msthash="247"><span class="jex" _istranslated="1">'{“a”：null}' -&gt; '$.a'</span> <span class="jans" _istranslated="1">→ 'null'</span></li>
 
-<li><span class='jex'>'{"a":2,"c":[4,5],"f":7}' -> '$.c[#-1]'</span>
-<span class='jans'>&rarr; '5'</span></li>
-
-<li><span class='jex'>'{"a":2,"c":[4,5,{"f":7}]}' -> '$.x'</span>
-<span class='jans'>&rarr; NULL</span></li>
-
-<li><span class='jex'>'[11,22,33,44]' -> 3</span>
-<span class='jans'>&rarr; '44'</span></li>
-
-<li><span class='jex'>'[11,22,33,44]' ->> 3</span>
-<span class='jans'>&rarr; 44</span></li>
-
-<li><span class='jex'>'{"a":"xyz"}' -> '$.a'</span>
-<span class='jans'>&rarr; '"xyz"'</span></li>
-
-<li><span class='jex'>'{"a":"xyz"}' ->> '$.a'</span>
-<span class='jans'>&rarr; 'xyz'</span></li>
-
-<li><span class='jex'>'{"a":null}' -> '$.a'</span>
-<span class='jans'>&rarr; 'null'</span></li>
-
-<li><span class='jex'>'{"a":null}' ->> '$.a'</span>
-<span class='jans'>&rarr; NULL</span></li>
+<li _msttexthash="15736526" _msthash="248"><span class="jex" _istranslated="1">'{“a”：null}' -&gt;&gt; '$.a'</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
 </ul>
 
@@ -1027,92 +755,62 @@ operand is an integer value N, then it is interpreted as the JSON path '$[N]'.
 
 <a name="jset"></a>
 
-</p><h2 id="the_json_insert_json_replace_and_json_set_functions"><span>4.10. </span>The json_insert(), json_replace, and json_set() functions</h2>
+<p></p><h2 id="the_json_insert_json_replace_and_json_set_functions" _msttexthash="166749206" _msthash="249"><span _istranslated="1">4.10. </span>json_insert（）、json_replace 和 json_set（） 函数</h2>
 
-<p>The json_insert(), json_replace, and json_set() functions all take
-a single JSON value as their first argument followed by zero or more
-pairs of path and value arguments, and return a new JSON string formed
-by updating the input JSON by the path/value pairs.  The functions
-differ only in how they deal with creating new values and overwriting
-preexisting values.
-
-</p><center>
+<p _msttexthash="2723304818" _msthash="250">json_insert（）、json_replace 和 json_set（） 函数都采用
+单个 JSON 值作为其第一个参数，后跟零个或多个
+对 path 和 value 参数，并返回形成的新 JSON 字符串
+通过路径/值对更新输入 JSON。功能
+它们的区别仅在于它们如何处理创建新值和覆盖
+预先存在的值。</p><center>
 <table border="1" cellpadding="3" cellspacing="0">
-<tr>
-<th>Function</th><th>Overwrite if already exists?</th><th>Create if does not exist?
-</th></tr><tr>
-<td>json_insert()</td><td align="center">No</td><td align="center">Yes
-</td></tr><tr>
-<td>json_replace()</td><td align="center">Yes</td><td align="center">No
-</td></tr><tr>
-<td>json_set()</td><td align="center">Yes</td><td align="center">Yes
-</td></tr></table></center>
+<tbody><tr>
+<th _msttexthash="5358925" _msthash="251">功能</th><th _msttexthash="53549951" _msthash="252">如果已存在，则覆盖？</th><th _msttexthash="49300784" _msthash="253">如果不存在，则创建 ？</th></tr><tr>
+<td _msttexthash="31591196" _msthash="254">json_insert（）</td><td align="center" _msttexthash="1818271" _msthash="255">不</td><td align="center" _msttexthash="5535829" _msthash="256">是的</td></tr><tr>
+<td _msttexthash="33305740" _msthash="257">json_replace（）</td><td align="center" _msttexthash="5535829" _msthash="258">是的</td><td align="center" _msttexthash="1818271" _msthash="259">不</td></tr><tr>
+<td _msttexthash="26429871" _msthash="260">json_set（）</td><td align="center" _msttexthash="5535829" _msthash="261">是的</td><td align="center" _msttexthash="5535829" _msthash="262">是的</td></tr></tbody></table></center>
 
-<p>The json_insert(), json_replace(), and json_set() functions always
-take an odd number of arguments.  The first argument is always the original
-JSON to be edited.  Subsequent arguments occur in pairs with the first
-element of each pair being a path and the second element being the value
-to insert or replace or set on that path.
+<p _msttexthash="2050760569" _msthash="263">json_insert（）、json_replace（） 和 json_set（） 函数始终
+取奇数个参数。第一个参数始终是原始参数
+要编辑的 JSON。后续参数与第一个参数成对出现
+元素是路径，第二个元素是值
+以插入、替换或设置该路径。</p><p _msttexthash="254053033" _msthash="264">编辑从左到右依次进行。由
+先前的编辑可能会影响后续编辑的路径搜索。</p><p _msttexthash="6411043002" _msthash="265">如果路径/值对的值是 SQLite TEXT 值，则它
+通常作为带引号的 JSON 字符串插入，即使字符串看起来
+就像有效的 JSON 一样。但是，如果该值是另一个
+JSON 函数（例如 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（）</a> 或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarray" _istranslated="1">json_array（）</a> 或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jobj" _istranslated="1">json_object（）</a>）
+或者，如果它是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt; 运算符</a>的结果，
+然后，它被解释为 JSON 并作为 JSON 插入，保留所有
+的子结构。作为 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt;&gt; 运算符</a>结果的值始终解释为 TEXT，甚至作为 JSON 字符串插入
+如果它们看起来像有效的 JSON。</p><p _msttexthash="369660967" _msthash="266">如果第一个 JSON 参数不是
+格式正确，或者任何 PATH 参数格式不正确，或者如果有
+argument 是一个 BLOB。</p><p _msttexthash="300073085" _msthash="267">要将元素附加到数组的末尾，请使用 json_insert（）
+数组索引为 “#”。例子：</p><ul>
+<li _msttexthash="111730554" _msthash="268"><span class="jex" _istranslated="1">json_insert（'[1,2,3,4]'，'$[#]'，99） →</span> <span class="jans" _istranslated="1">'[1,2,3,4,99]'</span></li>
 
-</p><p>Edits occur sequentially from left to right.  Changes caused by
-prior edits can affect the path search for subsequent edits.
-
-</p><p>If the value of a path/value pair is an SQLite TEXT value, then it
-is normally inserted as a quoted JSON string, even if the string looks
-like valid JSON.  However, if the value is the result of another
-json function (such as <a href="json1.html#jmini">json()</a> or <a href="json1.html#jarray">json_array()</a> or <a href="json1.html#jobj">json_object()</a>)
-or if it is the result of <a href="json1.html#jptr">the -> operator</a>,
-then it is interpreted as JSON and is inserted as JSON retaining all
-of its substructure.  Values that are the result of <a href="json1.html#jptr">the ->> operator</a>
-are always interpreted as TEXT and are inserted as a JSON string even
-if they look like valid JSON.
-
-</p><p>These routines throw an error if the first JSON argument is not
-well-formed or if any PATH argument is not well-formed or if any
-argument is a BLOB.
-
-</p><p>To append an element onto the end of an array, using json_insert()
-with an array index of "#".  Examples:
-
-<ul>
-<li><span class='jex'>json_insert('[1,2,3,4]','$[#]',99)</span>
-<span class='jans'>&rarr; '[1,2,3,4,99]'</span></li>
-
-<li><span class='jex'>json_insert('[1,[2,3],4]','$[1][#]',99)</span>
-<span class='jans'>&rarr; '[1,[2,3,99],4]'</span></li>
+<li _msttexthash="257733970" _msthash="269"><span class="jex" _istranslated="1">json_insert（'[1，[2,3]，4]'，'$[1][#]'，99）</span> <span class="jans" _istranslated="1">→ '[1，[2,3,99]，4]'</span></li>
 
 </ul>
 
 
-</p><p>Other examples:
+<p></p><p _msttexthash="19613568" _msthash="270">其他示例：</p><ul>
+<li _msttexthash="355037553" _msthash="271"><span class="jex" _istranslated="1">json_insert（'{“a”：2，“c”：4}'， '$.a'， 99）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：4}'</span></li>
 
-<ul>
-<li><span class='jex'>json_insert('{"a":2,"c":4}', '$.a', 99)</span>
-<span class='jans'>&rarr; '{"a":2,"c":4}'</span></li>
+<li _msttexthash="469918137" _msthash="272"><span class="jex" _istranslated="1">json_insert（'{“a”：2，“c”：4}'， '$.e'， 99）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：4，“e”：99}'</span></li>
 
-<li><span class='jex'>json_insert('{"a":2,"c":4}', '$.e', 99)</span>
-<span class='jans'>&rarr; '{"a":2,"c":4,"e":99}'</span></li>
+<li _msttexthash="366490501" _msthash="273"><span class="jex" _istranslated="1">json_replace（'{“a”：2，“c”：4}'， '$.a'， 99）</span> <span class="jans" _istranslated="1">→ '{“a”：99，“c”：4}'</span></li>
 
-<li><span class='jex'>json_replace('{"a":2,"c":4}', '$.a', 99)</span>
-<span class='jans'>&rarr; '{"a":99,"c":4}'</span></li>
+<li _msttexthash="364532922" _msthash="274"><span class="jex" _istranslated="1">json_replace（'{“a”：2，“c”：4}'， '$.e'， 99）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：4}'</span></li>
 
-<li><span class='jex'>json_replace('{"a":2,"c":4}', '$.e', 99)</span>
-<span class='jans'>&rarr; '{"a":2,"c":4}'</span></li>
+<li _msttexthash="328496116" _msthash="275"><span class="jex" _istranslated="1">json_set（'{“a”：2，“c”：4}'， '$.a'， 99）</span> <span class="jans" _istranslated="1">→ '{“a”：99，“c”：4}'</span></li>
 
-<li><span class='jex'>json_set('{"a":2,"c":4}', '$.a', 99)</span>
-<span class='jans'>&rarr; '{"a":99,"c":4}'</span></li>
+<li _msttexthash="435677359" _msthash="276"><span class="jex" _istranslated="1">json_set（'{“a”：2，“c”：4}'， '$.e'， 99）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：4，“e”：99}'</span></li>
 
-<li><span class='jex'>json_set('{"a":2,"c":4}', '$.e', 99)</span>
-<span class='jans'>&rarr; '{"a":2,"c":4,"e":99}'</span></li>
+<li _msttexthash="368621851" _msthash="277"><span class="jex" _istranslated="1">json_set（'{“a”：2，“c”：4}'， '$.c'， '[97,96]'）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：“[97,96]”}'</span></li>
 
-<li><span class='jex'>json_set('{"a":2,"c":4}', '$.c', '[97,96]')</span>
-<span class='jans'>&rarr; '{"a":2,"c":"[97,96]"}'</span></li>
+<li _msttexthash="458451019" _msthash="278"><span class="jex" _istranslated="1">json_set（'{“a”：2，“c”：4}'， '$.c'， json（'[97,96]'））</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：[97,96]}'</span></li>
 
-<li><span class='jex'>json_set('{"a":2,"c":4}', '$.c', json('[97,96]'))</span>
-<span class='jans'>&rarr; '{"a":2,"c":[97,96]}'</span></li>
-
-<li><span class='jex'>json_set('{"a":2,"c":4}', '$.c', json_array(97,96))</span>
-<span class='jans'>&rarr; '{"a":2,"c":[97,96]}'</span></li>
+<li _msttexthash="473360641" _msthash="279"><span class="jex" _istranslated="1">json_set（'{“a”：2，“c”：4}'， '$.c'， json_array（97,96））</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：[97,96]}'</span></li>
 
 </ul>
 
@@ -1123,92 +821,64 @@ with an array index of "#".  Examples:
 
 <a name="jsetb"></a>
 
-</p><h2 id="the_jsonb_insert_jsonb_replace_and_jsonb_set_functions"><span>4.11. </span>The jsonb_insert(), jsonb_replace, and jsonb_set() functions</h2>
+<p></p><h2 id="the_jsonb_insert_jsonb_replace_and_jsonb_set_functions" _msttexthash="176275593" _msthash="280"><span _istranslated="1">4.11. </span>jsonb_insert（）、jsonb_replace 和 jsonb_set（） 函数</h2>
 
-<p>The jsonb_insert(), jsonb_replace(), and jsonb_set() functions work the
-same as <a href="json1.html#jins">json_insert()</a>, <a href="json1.html#jrepl">json_replace()</a>, and <a href="json1.html#jset">json_set()</a>, respectively,
-except that "<tt>jsonb_</tt>" versions return their result in the binary
-JSONB format.
+<p><font _mstmutation="1" _msttexthash="1528504185" _msthash="281">jsonb_insert（）、jsonb_replace（） 和 jsonb_set（） 函数在
+分别与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jins" _mstmutation="1" _istranslated="1">json_insert（）、</a><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jrepl" _mstmutation="1" _istranslated="1">json_replace（）</a> 和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jset" _mstmutation="1" _istranslated="1">json_set（）</a> 相同，
+除了 “<tt _mstmutation="1" _istranslated="1">jsonb_</tt>” 版本在二进制中返回其结果
+JSONB 格式。</font><a name="jobj"></a>
 
-<a name="jobj"></a>
+</p><h2 id="the_json_object_function" _msttexthash="55775707" _msthash="282"><span _istranslated="1">4.12. </span>json_object（） 函数</h2>
 
-</p><h2 id="the_json_object_function"><span>4.12. </span>The json_object() function</h2>
+<p _msttexthash="1716972517" _msthash="283">json_object（） SQL 函数接受零对或多对参数
+并返回由这些参数组成的格式正确的 JSON 对象。
+每对的第一个参数是 label，第二个参数是
+每对都是值。
+如果 json_object（） 的任何参数是 BLOB，则会引发错误。</p><p _msttexthash="401680942" _msthash="284">json_object（） 函数当前允许没有
+投诉，尽管这可能会在未来的增强功能中发生变化。</p><p _msttexthash="4617123875" _msthash="285">SQL 类型为 TEXT 的参数通常会转换为带引号的
+JSON 字符串，即使输入文本是格式正确的 JSON。
+但是，如果参数是另一个 JSON 的直接结果
+function 或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt; 运算符</a>（但不是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jptr" _istranslated="1">-&gt;&gt; 运算符</a>），
+然后，它被视为 JSON 及其所有 JSON 类型信息
+并保留下部结构。这允许调用 json_object（）
+和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jarray" _istranslated="1">json_array（）</a> 进行嵌套。<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（）</a> 函数也可以
+用于强制将字符串识别为 JSON。</p><p _msttexthash="11924939" _msthash="286">例子：</p><ul>
+<li _msttexthash="224917641" _msthash="287"><span class="jex" _istranslated="1">json_object（'a'，2，'c'，4）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：4}'</span></li>
 
-<p>The json_object() SQL function accepts zero or more pairs of arguments
-and returns a well-formed JSON object that is composed from those arguments.
-The first argument of each pair is the label and the second argument of
-each pair is the value.
-If any argument to json_object() is a BLOB then an error is thrown.
+<li _msttexthash="332500415" _msthash="288"><span class="jex" _istranslated="1">json_object（'a'，2，'c'，'{e：5}'）</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：“{e：5}”}'</span></li>
 
-</p><p>The json_object() function currently allows duplicate labels without
-complaint, though this might change in a future enhancement.
-
-</p><p>An argument with SQL type TEXT it is normally converted into a quoted 
-JSON string even if the input text is well-formed JSON.  
-However, if the argument is the direct result from another JSON
-function or <a href="json1.html#jptr">the -> operator</a> (but not <a href="json1.html#jptr">the ->> operator</a>), 
-then it is treated as JSON and all of its JSON type information
-and substructure is preserved.  This allows calls to json_object()
-and <a href="json1.html#jarray">json_array()</a> to be nested.  The <a href="json1.html#jmini">json()</a> function can also
-be used to force strings to be recognized as JSON.
-
-</p><p>Examples:
-
-<ul>
-<li><span class='jex'>json_object('a',2,'c',4)</span>
-<span class='jans'>&rarr; '{"a":2,"c":4}'</span></li>
-
-<li><span class='jex'>json_object('a',2,'c','{e:5}')</span>
-<span class='jans'>&rarr; '{"a":2,"c":"{e:5}"}'</span></li>
-
-<li><span class='jex'>json_object('a',2,'c',json_object('e',5))</span>
-<span class='jans'>&rarr; '{"a":2,"c":{"e":5}}'</span></li>
+<li _msttexthash="471864679" _msthash="289"><span class="jex" _istranslated="1">json_object（'a'，2，'c'，json_object（'e'，5））</span> <span class="jans" _istranslated="1">→ '{“a”：2，“c”：{“e”：5}}'</span></li>
 
 </ul>
 
 
 <a name="jobjb"></a>
 
-</p><h2 id="the_jsonb_object_function"><span>4.13. </span>The jsonb_object() function</h2>
+<p></p><h2 id="the_jsonb_object_function" _msttexthash="58113601" _msthash="290"><span _istranslated="1">4.13. </span>jsonb_object（） 函数</h2>
 
-<p>
-The jsonb_object() function works just like the <a href="json1.html#jobj">json_object()</a> function
-except that the generated object is returned in the binary JSONB format.
+<p><font _mstmutation="1" _msttexthash="584274080" _msthash="291">jsonb_object（） 函数的工作方式与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jobj" _mstmutation="1" _istranslated="1">json_object（）</a> 函数类似
+不同之处在于生成的对象以二进制 JSONB 格式返回。</font><a name="jpatch"></a>
 
-<a name="jpatch"></a>
+</p><h2 id="the_json_patch_function" _msttexthash="53438151" _msthash="292"><span _istranslated="1">4.14. </span>json_patch（） 函数</h2>
 
-</p><h2 id="the_json_patch_function"><span>4.14. </span>The json_patch() function</h2>
+<p _msttexthash="451900436" _msthash="293">json_patch（T，P） SQL 函数运行 <a href="https://tools.ietf.org/html/rfc7396" _istranslated="1">RFC-7396</a> MergePatch 算法
+将补丁 P 应用于输入 T。返回 T 的修补副本。</p><p _msttexthash="6149626717" _msthash="294">MergePatch 可以添加、修改或删除 JSON 对象的元素，
+因此，对于 JSON 对象，json_patch（） 例程是一个通用的
+替换 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jset" _istranslated="1">json_set（）</a> 和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jrm" _istranslated="1">json_remove（）。</a>但是，MergePatch
+将 JSON Array 对象视为原子对象。MergePatch 无法附加到
+Array 也不修改 Array 的单个元素。它只能插入
+将整个 Array 作为一个单元替换或删除。因此，json_patch（）
+在处理包含 Array 的 JSON 时没有那么有用，
+尤其是具有许多子结构的数组。</p><p _msttexthash="11924939" _msthash="295">例子：</p><ul>
+<li _msttexthash="727480949" _msthash="296"><span class="jex" _istranslated="1">json_patch（'{“a”：1，“b”：2}'，'{“c”：3，“d”：4}'）</span> <span class="jans" _istranslated="1">→ '{“a”：1，“b”：2，“c”：3，“d”：4}'</span></li>
 
-<p>The json_patch(T,P) SQL function runs the
-<a href="https://tools.ietf.org/html/rfc7396">RFC-7396</a> MergePatch algorithm
-to apply patch P against input T.  The patched copy of T is returned.
+<li _msttexthash="388647597" _msthash="297"><span class="jex" _istranslated="1">json_patch（'{“a”：[1,2]，“b”：2}'，'{“a”：9}'）</span> <span class="jans" _istranslated="1">→ '{“a”：9，“b”：2}'</span></li>
 
-</p><p>MergePatch can add, modify, or delete elements of a JSON Object,
-and so for JSON Objects, the json_patch() routine is a generalized
-replacement for <a href="json1.html#jset">json_set()</a> and <a href="json1.html#jrm">json_remove()</a>.  However, MergePatch
-treats JSON Array objects as atomic.  MergePatch cannot append to an
-Array nor modify individual elements of an Array.  It can only insert,
-replace, or delete the whole Array as a single unit.  Hence, json_patch()
-is not as useful when dealing with JSON that includes Arrays,
-especially Arrays with lots of substructure.
+<li _msttexthash="283972936" _msthash="298"><span class="jex" _istranslated="1">json_patch（'{“a”：[1,2]，“b”：2}'，'{“a”：null}'）</span> <span class="jans" _istranslated="1">→ '{“b”：2}'</span></li>
 
-</p><p>Examples:
+<li _msttexthash="598658138" _msthash="299"><span class="jex" _istranslated="1">json_patch（'{“a”：1，“b”：2}'，'{“a”：9，“b”：null，“c”：8}'）</span> <span class="jans" _istranslated="1">→ '{“a”：9，“c”：8}'</span></li>
 
-<ul>
-<li><span class='jex'>json_patch('{"a":1,"b":2}','{"c":3,"d":4}')</span>
-<span class='jans'>&rarr; '{"a":1,"b":2,"c":3,"d":4}'</span></li>
-
-<li><span class='jex'>json_patch('{"a":[1,2],"b":2}','{"a":9}')</span>
-<span class='jans'>&rarr; '{"a":9,"b":2}'</span></li>
-
-<li><span class='jex'>json_patch('{"a":[1,2],"b":2}','{"a":null}')</span>
-<span class='jans'>&rarr; '{"b":2}'</span></li>
-
-<li><span class='jex'>json_patch('{"a":1,"b":2}','{"a":9,"b":null,"c":8}')</span>
-<span class='jans'>&rarr; '{"a":9,"c":8}'</span></li>
-
-<li><span class='jex'>json_patch('{"a":{"x":1,"y":2},"b":3}','{"a":{"y":9},"c":8}')</span>
-<span class='jans'>&rarr; '{"a":{"x":1,"y":9},"b":3,"c":8}'</span></li>
+<li _msttexthash="1214345392" _msthash="300"><span class="jex" _istranslated="1">json_patch（'{“a”：{“x”：1，“y”：2}，“b”：3}'，'{“a”：{“y”：9}，“c”：8}'）</span> <span class="jans" _istranslated="1">→ '{“a”：{“x”：1，“y”：9}，“b”：3，“c”：8}'</span></li>
 
 </ul>
 
@@ -1216,243 +886,160 @@ especially Arrays with lots of substructure.
 
 <a name="jpatchb"></a>
 
-</p><h2 id="the_jsonb_patch_function"><span>4.15. </span>The jsonb_patch() function</h2>
+<p></p><h2 id="the_jsonb_patch_function" _msttexthash="55774706" _msthash="301"><span _istranslated="1">4.15. </span>jsonb_patch（） 函数</h2>
 
-<p>
-The jsonb_patch() function works just like the <a href="json1.html#jpatch">json_patch()</a> function
-except that the patched JSON is returned in the binary JSONB format.
+<p><font _mstmutation="1" _msttexthash="543860837" _msthash="302">jsonb_patch（） 函数的工作方式与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jpatch" _mstmutation="1" _istranslated="1">json_patch（）</a> 函数类似
+不同之处在于修补后的 JSON 以二进制 JSONB 格式返回。</font><a name="jpretty"></a>
 
-<a name="jpretty"></a>
+</p><h2 id="the_json_pretty_function" _msttexthash="55788928" _msthash="303"><span _istranslated="1">4.16. </span>json_pretty（） 函数</h2>
+<p _msttexthash="2484422694" _msthash="304">json_pretty（） 函数的工作方式与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jmini" _istranslated="1">json（）</a> 类似，只是它添加了
+额外的空格，使 JSON 结果更易于人类阅读。
+第一个参数是要漂亮打印的 JSON 或 JSONB。
+可选的第二个参数是用于缩进的文本字符串。
+如果省略第二个参数或 NULL，则缩进为 4
+每级间距。</p><p><font _mstmutation="1" _msttexthash="132393573" _msthash="305">json_pretty（） 函数是在 SQLite 版本 3.46.0 中添加的
+(2024-05-23).</font><a name="jrm"></a>
 
-</p><h2 id="the_json_pretty_function"><span>4.16. </span>The json_pretty() function</h2>
-<p>
-The json_pretty() function works like <a href="json1.html#jmini">json()</a> except that it adds
-extra whitespace to make the JSON result easier for humans to read.
-The first argument is the JSON or JSONB that is to be pretty-printed.
-The optional second argument is a text string that is used for indentation.
-If the second argument is omitted or is NULL, then indentation is four
-spaces per level.
-</p><p>
-The json_pretty() function was added with SQLite version 3.46.0 
-(2024-05-23).
+</p><h2 id="the_json_remove_function" _msttexthash="55781960" _msthash="306"><span _istranslated="1">4.17. </span>json_remove（） 函数</h2>
 
-<a name="jrm"></a>
+<p _msttexthash="1901137550" _msthash="307">json_remove（X，P,...） 函数将单个 JSON 值作为其
+第一个参数后跟零个或多个 path 参数。
+json_remove（X，P,...） 函数返回
+包含所有元素的 X 参数的副本
+由 path arguments removed 标识。选择元素的路径
+not found 在 X 中被静默忽略。</p><p _msttexthash="244907546" _msthash="308">删除按从左到右的顺序进行。由
+先前的删除可能会影响后续参数的 path 搜索。</p><p _msttexthash="591606223" _msthash="309">如果调用 json_remove（X） 函数时没有 path 参数，则
+然后返回重新格式化的输入 X，其中有多余的空格
+删除。</p><p _msttexthash="444114853" _msthash="310">json_remove如果第一个参数
+不是格式正确的 JSON，或者后面的任何参数不是格式正确的 JSON
+路径。</p><p _msttexthash="11924939" _msthash="311">例子：</p><ul>
+<li _msttexthash="80935881" _msthash="312"><span class="jex" _istranslated="1">json_remove（'[0,1,2,3,4]'，'$[2]'）</span> <span class="jans" _istranslated="1">→ '[0,1,3,4]'</span></li>
 
-</p><h2 id="the_json_remove_function"><span>4.17. </span>The json_remove() function</h2>
+<li _msttexthash="120938285" _msthash="313"><span class="jex" _istranslated="1">json_remove（'[0,1,2,3,4]'，'$[2]'，'$[0]'）</span> <span class="jans" _istranslated="1">→ '[1,3,4]'</span></li>
 
-<p>The json_remove(X,P,...) function takes a single JSON value as its
-first argument followed by zero or more path arguments.
-The json_remove(X,P,...) function returns
-a copy of the X parameter with all the elements 
-identified by path arguments removed.  Paths that select elements
-not found in X are silently ignored.
+<li _msttexthash="120937791" _msthash="314"><span class="jex" _istranslated="1">json_remove（'[0,1,2,3,4]'，'$[0]'，'$[2]'）</span> <span class="jans" _istranslated="1">→ '[1,2,4]'</span></li>
 
-</p><p>Removals occurs sequentially from left to right.  Changes caused by
-prior removals can affect the path search for subsequent arguments.
+<li _msttexthash="124619716" _msthash="315"><span class="jex" _istranslated="1">json_remove（'[0,1,2,3,4]'，'$[#-1]'，'$[0]'）</span> <span class="jans" _istranslated="1">→ '[1,2,3]'</span></li>
 
-</p><p>If the json_remove(X) function is called with no path arguments,
-then it returns the input X reformatted, with excess whitespace
-removed.
+<li _msttexthash="268419827" _msthash="316"><span class="jex" _istranslated="1">json_remove（'{“x”：25，“y”：42}'）</span> <span class="jans" _istranslated="1">→ '{“x”：25，“y”：42}'</span></li>
 
-</p><p>The json_remove() function throws an error if the first argument
-is not well-formed JSON or if any later argument is not a well-formed
-path.
+<li _msttexthash="322788973" _msthash="317"><span class="jex" _istranslated="1">json_remove（'{“x”：25，“y”：42}'，'$.z'）</span> <span class="jans" _istranslated="1">→ '{“x”：25，“y”：42}'</span></li>
 
-</p><p>Examples:
+<li _msttexthash="219390600" _msthash="318"><span class="jex" _istranslated="1">json_remove（'{“x”：25，“y”：42}'，'$.y'）</span> <span class="jans" _istranslated="1">→ '{“x”：25}'</span></li>
 
-<ul>
-<li><span class='jex'>json_remove('[0,1,2,3,4]','$[2]')</span>
-<span class='jans'>&rarr; '[0,1,3,4]'</span></li>
-
-<li><span class='jex'>json_remove('[0,1,2,3,4]','$[2]','$[0]')</span>
-<span class='jans'>&rarr; '[1,3,4]'</span></li>
-
-<li><span class='jex'>json_remove('[0,1,2,3,4]','$[0]','$[2]')</span>
-<span class='jans'>&rarr; '[1,2,4]'</span></li>
-
-<li><span class='jex'>json_remove('[0,1,2,3,4]','$[#-1]','$[0]')</span>
-<span class='jans'>&rarr; '[1,2,3]'</span></li>
-
-<li><span class='jex'>json_remove('{"x":25,"y":42}')</span>
-<span class='jans'>&rarr; '{"x":25,"y":42}'</span></li>
-
-<li><span class='jex'>json_remove('{"x":25,"y":42}','$.z')</span>
-<span class='jans'>&rarr; '{"x":25,"y":42}'</span></li>
-
-<li><span class='jex'>json_remove('{"x":25,"y":42}','$.y')</span>
-<span class='jans'>&rarr; '{"x":25}'</span></li>
-
-<li><span class='jex'>json_remove('{"x":25,"y":42}','$')</span>
-<span class='jans'>&rarr; NULL</span></li>
+<li _msttexthash="165568442" _msthash="319"><span class="jex" _istranslated="1">json_remove（'{“x”：25，“y”：42}'，'$'）</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
 </ul>
 
 
 <a name="jrmb"></a>
 
-</p><h2 id="the_jsonb_remove_function"><span>4.18. </span>The jsonb_remove() function</h2>
-<p>
-The jsonb_remove() function works just like the <a href="json1.html#jrm">json_remove()</a> function
-except that the edited JSON result is returned in the binary JSONB format.
+<p></p><h2 id="the_jsonb_remove_function" _msttexthash="58120153" _msthash="320"><span _istranslated="1">4.18. </span>jsonb_remove（） 函数</h2>
+<p><font _mstmutation="1" _msttexthash="676851006" _msthash="321">jsonb_remove（） 函数的工作方式与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jrm" _mstmutation="1" _istranslated="1">json_remove（）</a> 函数类似
+不同之处在于，编辑后的 JSON 结果以二进制 JSONB 格式返回。</font><a name="jtype"></a>
 
-<a name="jtype"></a>
+</p><h2 id="the_json_type_function" _msttexthash="51108499" _msthash="322"><span _istranslated="1">4.19. </span>json_type（） 函数</h2>
 
-</p><h2 id="the_json_type_function"><span>4.19. </span>The json_type() function</h2>
+<p _msttexthash="3506588293" _msthash="323">json_type（X） 函数返回最外层元素的 “type”
+的 X。json_type（X，P） 函数返回元素的 “type”
+在路径 P 选择的 X 中。json_type（） 返回的 “type” 为
+以下 SQL 文本值之一：
+'null'、'true'、'false'、'integer'、'real'、'text'、'array' 或 'object'。
+如果 json_type（X，P） 中的路径 P 选择不存在的元素
+在 X 中，则此函数返回 NULL。</p><p _msttexthash="593707244" _msthash="324">如果 json_type（） 函数的第一个参数为
+不是格式正确的 JSON 或 JSONB，或者它的第二个参数不是格式正确的
+JSON 路径。</p><p _msttexthash="11924939" _msthash="325">例子：</p><ul>
+<li _msttexthash="224018912" _msthash="326"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'）</span> <span class="jans" _istranslated="1">→ 'object'</span></li>
 
-<p>The json_type(X) function returns the "type" of the outermost element
-of X.  The json_type(X,P) function returns the "type" of the element
-in X that is selected by path P.  The "type" returned by json_type() is
-one of the following SQL text values:
-'null', 'true', 'false', 'integer', 'real', 'text', 'array', or 'object'.
-If the path P in json_type(X,P) selects an element that does not exist
-in X, then this function returns NULL.
+<li _msttexthash="317698329" _msthash="327"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$'）</span> <span class="jans" _istranslated="1">→ '对象'</span></li>
 
-</p><p>The json_type() function throws an error if its first argument is
-not well-formed JSON or JSONB or if its second argument is not a well-formed
-JSON path.
+<li _msttexthash="274082601" _msthash="328"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a'）</span> <span class="jans" _istranslated="1">→ 'array'</span></li>
 
-</p><p>Examples:
+<li _msttexthash="277352647" _msthash="329"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[0]'）</span> <span class="jans" _istranslated="1">→ 'integer'</span></li>
 
-<ul>
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}')</span>
-<span class='jans'>&rarr; 'object'</span></li>
+<li _msttexthash="277056169" _msthash="330"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[1]'）</span> <span class="jans" _istranslated="1">→ 'real'</span></li>
 
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$')</span>
-<span class='jans'>&rarr; 'object'</span></li>
+<li _msttexthash="277080635" _msthash="331"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[2]'）</span> <span class="jans" _istranslated="1">→ 'true'</span></li>
 
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a')</span>
-<span class='jans'>&rarr; 'array'</span></li>
+<li _msttexthash="277149639" _msthash="332"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[3]'）</span> <span class="jans" _istranslated="1">→ 'false'</span></li>
 
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[0]')</span>
-<span class='jans'>&rarr; 'integer'</span></li>
+<li _msttexthash="277078061" _msthash="333"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[4]'）</span> <span class="jans" _istranslated="1">→ 'null'</span></li>
 
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[1]')</span>
-<span class='jans'>&rarr; 'real'</span></li>
+<li _msttexthash="277087551" _msthash="334"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[5]'）</span> <span class="jans" _istranslated="1">→ 'text'</span></li>
 
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[2]')</span>
-<span class='jans'>&rarr; 'true'</span></li>
-
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[3]')</span>
-<span class='jans'>&rarr; 'false'</span></li>
-
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[4]')</span>
-<span class='jans'>&rarr; 'null'</span></li>
-
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[5]')</span>
-<span class='jans'>&rarr; 'text'</span></li>
-
-<li><span class='jex'>json_type('{"a":[2,3.5,true,false,null,"x"]}','$.a[6]')</span>
-<span class='jans'>&rarr; NULL</span></li>
+<li _msttexthash="276900065" _msthash="335"><span class="jex" _istranslated="1">json_type（'{“a”：[2,3.5，true，false，null，“x”]}'，'$.a[6]'）</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
 </ul>
 
 
 <a name="jvalid"></a>
 
-</p><h2 id="the_json_valid_function"><span>4.20. </span>The json_valid() function</h2>
+<p></p><h2 id="the_json_valid_function" _msttexthash="53437566" _msthash="336"><span _istranslated="1">4.20. </span>json_valid（） 函数</h2>
 
-<p>The json_valid(X,Y) function return 1 if the argument X is well-formed
-JSON, or returns 0 if X is not well-formed.  The Y parameter is an integer
-bitmask that defines what is meant by "well-formed".  The following bits
-of Y are currently defined:
+<p _msttexthash="1077568063" _msthash="337">如果参数 X 格式正确，则 json_valid（X，Y） 函数返回 1
+JSON，如果 X 格式不正确，则返回 0。Y 参数是一个整数
+定义 “well-formed” 含义的位掩码。以下位
+的 Y 当前定义：</p><ul>
+<li> <font _mstmutation="1" _msttexthash="201932926" _msthash="338"><b _mstmutation="1" _istranslated="1">0x01</b> →
+输入是严格符合规范 RFC-8259 JSON 的文本，
+没有任何扩展。</font></li><li> <font _mstmutation="1" _msttexthash="117973453" _msthash="339"><b _mstmutation="1" _istranslated="1">0x02</b> →
+输入是文本，即具有上述 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#json5" _mstmutation="1" _istranslated="1">JSON5</a> 扩展名的 JSON。</font></li><li> <font _mstmutation="1" _msttexthash="97001632" _msthash="340"><b _mstmutation="1" _istranslated="1">0x04</b> →
+输入是一个 BLOB，表面上似乎是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a>。</font></li><li> <font _mstmutation="1" _msttexthash="85630870" _msthash="341"><b _mstmutation="1" _istranslated="1">0x08</b> →
+输入是严格符合内部 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a> 格式的 BLOB。</font></li></ul>
 
-</p><ul>
-<li> <b>0x01</b> &rarr;
-The input is text that strictly complies with canonical RFC-8259 JSON,
-without any extensions.
-</li><li> <b>0x02</b> &rarr;
-The input is text that is JSON with <a href="json1.html#json5">JSON5</a> extensions described above.
-</li><li> <b>0x04</b> &rarr;
-The input is a BLOB that superficially appears to be <a href="json1.html#jsonbx">JSONB</a>.
-</li><li> <b>0x08</b> &rarr;
-The input is a BLOB that strictly conforms to the internal <a href="json1.html#jsonbx">JSONB</a> format.
+<p _msttexthash="102909040" _msthash="342">通过组合位，可以得出 Y 的以下有用值：</p><ul>
+<li> <font _mstmutation="1" _msttexthash="20493317" _msthash="343"><b _mstmutation="1" _istranslated="1">1</b> → X 是 RFC-8259 JSON 文本</font></li><li> <font _mstmutation="1" _msttexthash="15613884" _msthash="344"><b _mstmutation="1" _istranslated="1">2</b> → X 是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#json5" _mstmutation="1" _istranslated="1">JSON5</a> 文本</font></li><li> <font _mstmutation="1" _msttexthash="12578748" _msthash="345"><b _mstmutation="1" _istranslated="1">4</b> → X 可能是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a></font>
+</li><li> <font _mstmutation="1" _msttexthash="28792478" _msthash="346"><b _mstmutation="1" _istranslated="1">5</b> → X 是 RFC-8259 JSON 文本或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a></font>
+</li><li> <font _mstmutation="1" _msttexthash="117576290" _msthash="347"><b _mstmutation="1" _istranslated="1">6</b> → X 是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#json5" _mstmutation="1" _istranslated="1">JSON5</a> 文本或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a> ←<i _mstmutation="1" _istranslated="1">这可能是你想要的值</i></font>
+</li><li> <font _mstmutation="1" _msttexthash="15957981" _msthash="348"><b _mstmutation="1" _istranslated="1">8</b> → X 严格符合 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a></font>
+</li><li> <font _mstmutation="1" _msttexthash="38663352" _msthash="349"><b _mstmutation="1" _istranslated="1">9</b> → X 是 RFC-8259 或严格符合 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a></font>
+</li><li> <font _mstmutation="1" _msttexthash="35842560" _msthash="350"><b _mstmutation="1" _istranslated="1">10</b> → X 是 JSON5 或严格符合 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a></font>
 </li></ul>
 
-<p>By combining bits, the following useful values of Y can be derived:
+<p _msttexthash="1506862539" _msthash="351">Y 参数是可选的。如果省略，则默认为 1，这意味着
+默认行为是仅在输入 X 为
+严格符合 RFC-8259 JSON 文本，没有任何扩展名。这
+使 json_valid（） 的单参数版本与旧版
+版本，在添加对 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#json5" _istranslated="1">JSON5</a> 和 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _istranslated="1">JSONB</a> 的支持之前。</p><p _msttexthash="3667494168" _msthash="352">Y 参数中 0x04 位和 0x08 位的区别在于
+0x04 只检查 BLOB 的外部包装器，看看它是否从表面上看
+看起来像 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _istranslated="1">JSONB</a>。这对于必须的目的来说已经足够了，而且速度非常快。
+0x08 位对 BLOB 的所有内部细节进行全面检查。
+0x08 位花费的时间与 X 输入的大小呈线性关系，并且很多
+慢。对于大多数用途，建议使用 0x04 位。</p><p _msttexthash="259396592" _msthash="353">如果您只想知道某个值是否是
+对于其他 JSON 函数，Y 值 6 可能是您想要使用的。</p><p _msttexthash="1548603355" _msthash="354">任何小于 1 或大于 15 的 Y 值都会引发错误，因为
+最新版本的 json_valid（） 。但是，json_valid（） 的未来版本
+可能会增强为接受超出此范围的标志值，因此具有新的
+我们还没有想到的含义。</p><p _msttexthash="172183180" _msthash="355">如果 json_valid（） 的 X 或 Y 输入为 NULL，则函数
+返回 NULL。</p><p _msttexthash="11924939" _msthash="356">例子：</p><ul>
+<li _msttexthash="65787345" _msthash="357"><span class="jex" _istranslated="1">json_valid（'{“x”：35}'）</span> <span class="jans" _istranslated="1">→ 1</span></li>
 
-</p><ul>
-<li> <b>1</b> &rarr; X is RFC-8259 JSON text
-</li><li> <b>2</b> &rarr; X is <a href="json1.html#json5">JSON5</a> text
-</li><li> <b>4</b> &rarr; X is probably <a href="json1.html#jsonbx">JSONB</a>
-</li><li> <b>5</b> &rarr; X is RFC-8259 JSON text or <a href="json1.html#jsonbx">JSONB</a>
-</li><li> <b>6</b> &rarr; X is <a href="json1.html#json5">JSON5</a> text or <a href="json1.html#jsonbx">JSONB</a>
-     &larr; <i>This is probably the value you want</i>
-</li><li> <b>8</b> &rarr; X is strictly conforming <a href="json1.html#jsonbx">JSONB</a>
-</li><li> <b>9</b> &rarr; X is RFC-8259 or strictly conforming <a href="json1.html#jsonbx">JSONB</a>
-</li><li> <b>10</b> &rarr; X is JSON5 or strictly conforming <a href="json1.html#jsonbx">JSONB</a>
-</li></ul>
+<li _msttexthash="57669859" _msthash="358"><span class="jex" _istranslated="1">json_valid（'{x：35}'）</span> <span class="jans" _istranslated="1">→ 0</span></li>
 
-<p>The Y parameter is optional. If omitted, it defaults to 1, which means
-that the default behavior is to return true only if the input X is
-strictly conforming RFC-8259 JSON text without any extensions.  This
-makes the one-argument version of json_valid() compatible with older
-versions of SQLite, prior to the addition of support for
-<a href="json1.html#json5">JSON5</a> and <a href="json1.html#jsonbx">JSONB</a>.
+<li _msttexthash="81680105" _msthash="359"><span class="jex" _istranslated="1">json_valid（'{x：35}'，6）</span> <span class="jans" _istranslated="1">→ 1</span></li>
 
-</p><p>The difference between 0x04 and 0x08 bits in the Y parameter is that
-0x04 only examines the outer wrapper of the BLOB to see if it superficially
-looks like <a href="json1.html#jsonbx">JSONB</a>.  This is sufficient for must purposes and is very fast.
-The 0x08 bit does a thorough examination of all internal details of the BLOB.
-The 0x08 bit takes time that is linear in the size of the X input and is much
-slower.  The 0x04 bit is recommended for most purposes.
+<li _msttexthash="64783095" _msthash="360"><span class="jex" _istranslated="1">json_valid（'{“x”：35'）</span> <span class="jans" _istranslated="1">→ 0</span></li>
 
-</p><p>If you just want to know if a value is a plausible input to one of
-the other JSON functions, a Y value of 6 is probably what you want to use.
-
-</p><p>Any Y value less than 1 or greater than 15 raises an error, for the
-latest version of json_valid().  However, future versions of json_valid()
-might be enhanced to accept flag values outside of this range, having new
-meanings that we have not yet thought of.
-
-</p><p>If either X or Y inputs to json_valid() are NULL, then the function
-returns NULL.
-
-</p><p>Examples:
-
-<ul>
-<li><span class='jex'>json_valid('{"x":35}')</span>
-<span class='jans'>&rarr; 1</span></li>
-
-<li><span class='jex'>json_valid('{x:35}')</span>
-<span class='jans'>&rarr; 0</span></li>
-
-<li><span class='jex'>json_valid('{x:35}',6)</span>
-<span class='jans'>&rarr; 1</span></li>
-
-<li><span class='jex'>json_valid('{"x":35')</span>
-<span class='jans'>&rarr; 0</span></li>
-
-<li><span class='jex'>json_valid(NULL)</span>
-<span class='jans'>&rarr; NULL</span></li>
+<li _msttexthash="36013198" _msthash="361"><span class="jex" _istranslated="1">json_valid（NULL）</span> <span class="jans" _istranslated="1">→ NULL</span></li>
 
 </ul>
 
 
 <a name="jquote"></a>
 
-</p><h2 id="the_json_quote_function"><span>4.21. </span>The json_quote() function</h2>
+<p></p><h2 id="the_json_quote_function" _msttexthash="53445145" _msthash="362"><span _istranslated="1">4.21. </span>json_quote（） 函数</h2>
 
-<p>The json_quote(X) function converts the SQL value X (a number or a
-string) into its corresponding JSON representation.  If X is a JSON value
-returned by another JSON function, then this function is a no-op.
+<p _msttexthash="834047591" _msthash="363">json_quote（X） 函数将 SQL 值 X（数字或
+string） 转换为其相应的 JSON 表示形式。如果 X 是 JSON 值
+由另一个 JSON 函数返回，则此函数为空作。</p><p _msttexthash="11924939" _msthash="364">例子：</p><ul>
+<li _msttexthash="38953577" _msthash="365"><span class="jex" _istranslated="1">json_quote （3.14159） →</span> <span class="jans" _istranslated="1">3.14159</span></li>
 
-</p><p>Examples:
+<li _msttexthash="48511008" _msthash="366"><span class="jex" _istranslated="1">json_quote（'verdant'）</span> <span class="jans" _istranslated="1">→ '“verdant”'</span></li>
 
-<ul>
-<li><span class='jex'>json_quote(3.14159)</span>
-<span class='jans'>&rarr; 3.14159</span></li>
+<li _msttexthash="42973762" _msthash="367"><span class="jex" _istranslated="1">json_quote（'[1]'）</span> <span class="jans" _istranslated="1">→ '“[1]”'</span></li>
 
-<li><span class='jex'>json_quote('verdant')</span>
-<span class='jans'>&rarr; '"verdant"'</span></li>
+<li _msttexthash="85342179" _msthash="368"><span class="jex" _istranslated="1">json_quote（json（'[1]'））</span> <span class="jans" _istranslated="1">→ '[1]'</span></li>
 
-<li><span class='jex'>json_quote('[1]')</span>
-<span class='jans'>&rarr; '"[1]"'</span></li>
-
-<li><span class='jex'>json_quote(json('[1]'))</span>
-<span class='jans'>&rarr; '[1]'</span></li>
-
-<li><span class='jex'>json_quote('[1,')</span>
-<span class='jans'>&rarr; '"[1,"'</span></li>
+<li _msttexthash="85353112" _msthash="369"><span class="jex" _istranslated="1">json_quote（'[1，'）</span> <span class="jans" _istranslated="1">→ '“[1，”'</span></li>
 
 </ul>
 
@@ -1462,44 +1049,34 @@ returned by another JSON function, then this function is a no-op.
 <a name="jgrouparrayb"></a>
 <a name="jgroupobjectb"></a>
 
-</p><h2 id="array_and_object_aggregate_functions"><span>4.22. </span>Array and object aggregate functions</h2>
+<p></p><h2 id="array_and_object_aggregate_functions" _msttexthash="49800608" _msthash="370"><span _istranslated="1">4.22. </span>数组和对象聚合函数</h2>
 
-<p>The json_group_array(X) function is an
-<a href="lang_aggfunc.html">aggregate SQL function</a> that returns a JSON array
-comprised of all X values in the aggregation.
-Similarly, the json_group_object(NAME,VALUE) function returns a JSON object
-comprised of all NAME/VALUE pairs in the aggregation.
-The "<tt>jsonb_</tt>" variants are the same except that they return their
-result in the binary <a href="json1.html#jsonbx">JSONB</a> format.
-
-<a name="jeach"></a>
+<p><font _mstmutation="1" _msttexthash="2639588900" _msthash="371">json_group_array（X） 函数是一个<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/lang_aggfunc.html" _mstmutation="1" _istranslated="1">聚合 SQL 函数</a>，它返回一个 JSON 数组
+由聚合中的所有 X 值组成。
+同样，json_group_object（NAME，VALUE） 函数返回一个 JSON 对象
+由聚合中的所有 NAME/VALUE 对组成。
+“<tt _mstmutation="1" _istranslated="1">jsonb_</tt>” 变体是相同的，只是它们返回其
+结果为二进制 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/Core/json1.html#jsonbx" _mstmutation="1" _istranslated="1">JSONB</a> 格式。</font><a name="jeach"></a>
 
 <a name="jtree"></a>
 
-</p><h2 id="the_json_each_and_json_tree_table_valued_functions"><span>4.23. </span>The json_each() and json_tree() table-valued functions</h2>
+</p><h2 id="the_json_each_and_json_tree_table_valued_functions" _msttexthash="148833880" _msthash="372"><span _istranslated="1">4.23. </span>json_each（） 和 json_tree（） 表值函数</h2>
 
-<p>The json_each(X) and json_tree(X) <a href="https://www.sqlite.org/vtab.html#tabfunc2">table-valued functions</a> walk the
-JSON value provided as their first argument and return one row for each
-element.  The json_each(X) function only walks the immediate children
-of the top-level array or object,
-or just the top-level element itself if the top-level
-element is a primitive value.
-The json_tree(X) function recursively walks through the
-JSON substructure starting with the top-level element.  
-
-</p><p>The json_each(X,P) and json_tree(X,P) functions work just like
-their one-argument counterparts except that they treat the element
-identified by path P as the top-level element.
-
-</p><p>The schema for the table returned by json_each() and json_tree() is
-as follows:
-
-</p><blockquote><pre>
-CREATE TABLE json_tree(
+<p _msttexthash="2640432990" _msthash="373">json_each（X） 和 json_tree（X） <a href="https://www.sqlite.org/vtab.html#tabfunc2" _istranslated="1">表值函数</a>遍历
+JSON 值作为其第一个参数提供，并为每个值返回一行
+元素。json_each（X） 函数仅遍历直接的子对象
+顶级数组或对象，
+或者如果 toplevel
+元素是原始值。
+json_tree（X） 函数递归遍历
+JSON 子结构 从 top-level 元素开始。</p><p _msttexthash="815693944" _msthash="374">json_each（X，P） 和 json_tree（X，P） 函数的工作方式与
+它们的单参数对应项，只是它们将元素
+由路径 P 标识为顶级元素。</p><p _msttexthash="235731119" _msthash="375">json_each（） 和 json_tree（） 返回的表的架构为
+如下：</p><blockquote><pre>CREATE TABLE json_tree(
     key ANY,             -- key for current element relative to its parent
     value ANY,           -- value for the current element
     type TEXT,           -- 'object','array','string','integer', etc.
-    atom ANY,            -- value for primitive types, null for array & object
+    atom ANY,            -- value for primitive types, null for array &amp; object
     id INTEGER,          -- integer ID for this element
     parent INTEGER,      -- integer ID for the parent of this element
     fullkey TEXT,        -- full path describing the current element
@@ -1509,69 +1086,42 @@ CREATE TABLE json_tree(
 );
 </pre></blockquote>
 
-<p>
-The "key" column is the integer array index for elements of a JSON array 
-and the text label for elements of a JSON object.  The key column is
-NULL in all other cases.
+<p _msttexthash="424581859" _msthash="376">“key” 列是 JSON 数组元素的整数数组索引
+以及 JSON 对象元素的文本标签。key 列为
+NULL 在所有其他情况下。</p><p _msttexthash="714853152" _msthash="377">“atom” 列是对应于原始元素的 SQL 值 -
+元素。“atom” 列为 NULL
+对于 JSON 数组或对象。“value” 列与
+“atom” 列，但采用文本 JSON 值
+for 数组和对象。</p><p _msttexthash="496121522" _msthash="378">“type” 列是从 （'null'， 'true'， 'false'，
+'integer'， 'real'， 'text'， 'array'， 'object'）
+当前 JSON 元素。</p><p _msttexthash="1289162498" _msthash="379">“id” 列是标识特定 JSON 元素的整数
+在完整的 JSON 字符串中。“id” 整数是内部内务管理
+number，其计算方式在未来版本中可能会发生变化。这
+唯一可以保证的是每行的 “id” 列都不同。</p><p _msttexthash="1290916367" _msthash="380">对于 json_each（），“parent” 列始终为 NULL。
+对于 json_tree（），
+“parent” 列是当前
+元素，或者 NULL 表示顶级 JSON 元素或标识的元素
+通过第二个参数中的根路径。</p><p _msttexthash="422252506" _msthash="381">“fullkey” 列是唯一标识当前
+row 元素。完整的 key
+true 顶级元素，即使替代起点
+由 “root” 参数提供。</p><p _msttexthash="751053290" _msthash="382">“path” 列是包含的数组或对象容器的路径
+当前行，或者当前行的路径（如果
+iteration 从原始类型开始，因此只提供单个
+行的输出。</p><h3 id="examples_using_json_each_and_json_tree_" _msttexthash="167154598" _msthash="383"><span _istranslated="1">4.23.1. </span>使用 json_each（） 和 json_tree（） 的示例</h3>
 
-</p><p>
-The "atom" column is the SQL value corresponding to primitive elements - 
-elements other than JSON arrays and objects.  The "atom" column is NULL
-for a JSON array or object.  The "value" column is the same as the
-"atom" column for primitive JSON elements but takes on the text JSON value
-for arrays and objects.
-
-</p><p>
-The "type" column is an SQL text value taken from ('null', 'true', 'false',
-'integer', 'real', 'text', 'array', 'object') according to the type of
-the current JSON element.
-
-</p><p>
-The "id" column is an integer that identifies a specific JSON element
-within the complete JSON string.  The "id" integer is an internal housekeeping
-number, the computation of which might change in future releases.  The
-only guarantee is that the "id" column will be different for every row.
-
-</p><p>
-The "parent" column is always NULL for json_each().
-For json_tree(),
-the "parent" column is the "id" integer for the parent of the current
-element, or NULL for the top-level JSON element or the element identified
-by the root path in the second argument.
-
-</p><p>
-The "fullkey" column is a text path that uniquely identifies the current
-row element within the original JSON string.  The complete key to the
-true top-level element is returned even if an alternative starting point
-is provided by the "root" argument.
-
-</p><p>
-The "path" column is the path to the array or object container that holds 
-the current row, or the path to the current row in the case where the 
-iteration starts on a primitive type and thus only provides a single
-row of output.
-
-</p><h3 id="examples_using_json_each_and_json_tree_"><span>4.23.1. </span>Examples using json_each() and json_tree()</h3>
-
-<p>Suppose the table "CREATE TABLE user(name,phone)" stores zero or
-more phone numbers as a JSON array object in the user.phone field.
-To find all users who have any phone number with a 704 area code:
-
-</p><blockquote><pre>
-SELECT DISTINCT user.name
+<p _msttexthash="1168734450" _msthash="384">假设表 “CREATE TABLE user（name，phone）” 存储零或
+more phone numbers 作为 user.phone 字段中的 JSON 数组对象。
+要查找拥有任何带 704 区号的电话号码的所有用户：</p><blockquote><pre>SELECT DISTINCT user.name
   FROM user, json_each(user.phone)
  WHERE json_each.value LIKE '704-%';
 </pre></blockquote>
 
-<p>Now suppose the user.phone field contains plain text if the user
-has only a single phone number and a JSON array if the user has multiple
-phone numbers.  The same question is posed: "Which users have a phone number
-in the 704 area code?"  But now the json_each() function can only be called
-for those users that have two or more phone numbers since json_each()
-requires well-formed JSON as its first argument:
-
-</p><blockquote><pre>
-SELECT name FROM user WHERE phone LIKE '704-%'
+<p _msttexthash="3736376189" _msthash="385">现在假设 user.phone 字段包含纯文本，如果用户
+只有一个电话号码和一个 JSON 数组（如果用户有多个
+电话号码。提出了同样的问题：“哪些用户有电话号码
+在 704 区号里？但现在 json_each（） 函数只能被调用
+对于自 json_each（） 以来拥有两个或多个电话号码的用户
+需要格式正确的 JSON 作为其第一个参数：</p><blockquote><pre>SELECT name FROM user WHERE phone LIKE '704-%'
 UNION
 SELECT user.name
   FROM user, json_each(user.phone)
@@ -1579,37 +1129,29 @@ SELECT user.name
    AND json_each.value LIKE '704-%';
 </pre></blockquote>
 
-<p>Consider a different database with "CREATE TABLE big(json JSON)".
-To see a complete line-by-line decomposition of the data:
-
-</p><blockquote><pre>
-SELECT big.rowid, fullkey, value
+<p _msttexthash="616719948" _msthash="386">考虑使用“CREATE TABLE big（json、JSON）”的不同数据库。
+要查看数据的完整逐行分解，请执行以下作：</p><blockquote><pre>SELECT big.rowid, fullkey, value
   FROM big, json_tree(big.json)
  WHERE json_tree.type NOT IN ('object','array');
 </pre></blockquote>
 
-<p>In the previous, the "type NOT IN ('object','array')" term of the
-WHERE clause suppresses containers and only lets through leaf elements.
-The same effect could be achieved this way:
-
-</p><blockquote><pre>
-SELECT big.rowid, fullkey, atom
+<p _msttexthash="403309296" _msthash="387">在前面的
+WHERE 子句禁止容器，只允许通过叶元素。
+可以通过这种方式实现相同的效果：</p><blockquote><pre>SELECT big.rowid, fullkey, atom
   FROM big, json_tree(big.json)
  WHERE atom IS NOT NULL;
 </pre></blockquote>
 
-<p>Suppose each entry in the BIG table is a JSON object 
-with a '$.id' field that is a unique identifier
-and a '$.partlist' field that can be a deeply nested object.
-You want to find the id of every entry that contains one
-or more references to uuid '6fa5181e-5721-11e5-a04e-57f3d7b32808' anywhere
-in its '$.partlist'.
-
-</p><blockquote><pre>
-SELECT DISTINCT json_extract(big.json,'$.id')
+<p _msttexthash="1485943368" _msthash="388">假设 BIG 表中的每个条目都是一个 JSON 对象
+具有唯一标识符的 '$.id' 字段
+以及一个 '$.partlist' 字段，它可以是一个深度嵌套的对象。
+您希望查找包含 1 的每个条目的 ID
+或对 uuid '6fa5181e-5721-11e5-a04e-57f3d7b32808' 的更多引用
+在其 '$.partlist' 中。</p><blockquote><pre>SELECT DISTINCT json_extract(big.json,'$.id')
   FROM big, json_tree(big.json, '$.partlist')
  WHERE json_tree.key='uuid'
    AND json_tree.value='6fa5181e-5721-11e5-a04e-57f3d7b32808';
 </pre></blockquote>
-<p align="center"><small><i>This page last modified on  <a href="https://sqlite.org/docsrc/honeypot" id="mtimelink"  data-href="https://sqlite.org/docsrc/finfo/pages/json1.in?m=d0ca839304">2024-07-25 15:06:57</a> UTC </small></i></p>
+<p align="center"><small><i _msttexthash="77568959" _msthash="389">此页面最后修改于 <a href="https://sqlite.org/docsrc/honeypot" id="mtimelink" data-href="https://sqlite.org/docsrc/finfo/pages/json1.in?m=d0ca839304" _istranslated="1">2024-07-25 15：06：57</a> UTC</i></small></p>
 
+</div></body></html>
