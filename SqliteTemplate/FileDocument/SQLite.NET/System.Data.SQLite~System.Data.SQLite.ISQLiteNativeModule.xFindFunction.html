@@ -1,31 +1,32 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0185)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xFindFunction.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xFindFunction Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xFindFunction_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="17">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xFindFunction Method</h1>
+        <h1 class="dtH1" _msttexthash="29383783" _msthash="18">ISQLiteNativeModule.xFindFunction 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xFindFunction)(
+        </p><pre class="code">int (*xFindFunction)(
   sqlite3_vtab *pVtab,
   int nArg,
   const char *zName,
@@ -33,58 +34,58 @@
   void **ppArg
 );
 </pre>
-      </p>
-      <p> This method is called during sqlite3_prepare() to give the virtual table implementation an opportunity to overload functions. This method may be set to NULL in which case no overloading occurs. </p>
-      <p> When a function uses a column from a virtual table as its first argument, this method is called to see if the virtual table would like to overload the function. The first three parameters are inputs: the virtual table, the number of arguments to the function, and the name of the function. If no overloading is desired, this method returns 0. To overload the function, this method writes the new function implementation into *pxFunc and writes user data into *ppArg and returns either 1 or a number between SQLITE_INDEX_CONSTRAINT_FUNCTION and 255. </p>
-      <p> Historically, the return value from xFindFunction() was either zero or one. Zero means that the function is not overloaded and one means that it is overload. The ability to return values of SQLITE_INDEX_CONSTRAINT_FUNCTION or greater was added in version 3.25.0 (2018-09-15). If xFindFunction returns SQLITE_INDEX_CONSTRAINT_FUNCTION or greater, than means that the function takes two arguments and the function can be used as a boolean in the WHERE clause of a query and that the virtual table is able to exploit that function to speed up the query result. When xFindFunction returns SQLITE_INDEX_CONSTRAINT_FUNCTION or larger, the value returned becomes the sqlite3_index_info.aConstraint.op value for one of the constraints passed into xBestIndex(). The first argument to the function is the column identified by aConstraint[].iColumn field of the constraint and the second argument to the function is the value that will be passed into xFilter() (if the aConstraintUsage[].argvIndex value is set) or the value returned from sqlite3_vtab_rhs_value(). </p>
-      <p> The Geopoly module is an example of a virtual table that makes use of SQLITE_INDEX_CONSTRAINT_FUNCTION to improve performance. The xFindFunction() method for Geopoly returns SQLITE_INDEX_CONSTRAINT_FUNCTION for the geopoly_overlap() SQL function and it returns SQLITE_INDEX_CONSTRAINT_FUNCTION+1 for the geopoly_within() SQL function. This permits search optimizations for queries such as: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="965161821" _msthash="13">在 sqlite3_prepare（） 期间调用此方法，以便为虚拟表实现提供重载函数的机会。此方法可以设置为 NULL ，在这种情况下，不会发生重载。</font></p>
+      <p _msttexthash="3085629170" _msthash="14">当函数使用虚拟表中的列作为其第一个参数时，将调用此方法以查看虚拟表是否要重载该函数。前三个参数是输入：虚拟表、函数的参数数和函数的名称。如果不需要重载，此方法返回 0。为了重载函数，此方法将新的函数实现写入 *pxFunc，并将用户数据写入 *ppArg 并返回 1 或 SQLITE_INDEX_CONSTRAINT_FUNCTION 到 255 之间的数字。</p>
+      <p _msttexthash="18490699643" _msthash="15">从历史上看，xFindFunction（） 的返回值要么是 0，要么是 1。0 表示函数未重载，1 表示函数重载。版本 3.25.0 （2018-09-15） 中添加了返回 SQLITE_INDEX_CONSTRAINT_FUNCTION 或更高版本的值的功能。如果 xFindFunction 返回 SQLITE_INDEX_CONSTRAINT_FUNCTION 或更大，则表示该函数采用两个参数，并且该函数可以用作查询的 WHERE 子句中的布尔值，并且虚拟表能够利用该函数来加速查询结果。当 xFindFunction 返回 SQLITE_INDEX_CONSTRAINT_FUNCTION 或更大时，返回的值将成为传递到 xBestIndex（） 的约束之一的 sqlite3_index_info.aConstraint.op 值。该函数的第一个参数是由约束的 aConstraint[].iColumn 字段标识的列，该函数的第二个参数是将传递到 xFilter（） 的值（如果设置了 aConstraintUsage[].argvIndex 值）或从 sqlite3_vtab_rhs_value（） 返回的值。</p>
+      <p><font _mstmutation="1" _msttexthash="3055176293" _msthash="16">Geopoly 模块是利用 SQLITE_INDEX_CONSTRAINT_FUNCTION 提高性能的虚拟表的一个示例。Geopoly 的 xFindFunction（） 方法返回 geopoly_overlap（） SQL 函数的 SQLITE_INDEX_CONSTRAINT_FUNCTION，geopoly_within（） SQL 函数返回 SQLITE_INDEX_CONSTRAINT_FUNCTION+1。这允许对查询进行搜索优化，例如：</font> </p>
       <p>
-        <pre class="code">SELECT * FROM geopolytab WHERE geopoly_overlap(_shape, $query_polygon);
+        </p><pre class="code">SELECT * FROM geopolytab WHERE geopoly_overlap(_shape, $query_polygon);
 SELECT * FROM geopolytab WHERE geopoly_within(_shape, $query_polygon);
 </pre>
-      </p>
-      <p> Note that infix functions (LIKE, GLOB, REGEXP, and MATCH) reverse the order of their arguments. So "like(A,B)" would normally work the same as "B like A". However, xFindFunction() always looks a the left-most argument, not the first logical argument. Hence, for the form "B like A", SQLite looks at the left operand "B" and if that operand is a virtual table column it invokes the xFindFunction() method on that virtual table. But if the form "like(A,B)" is used instead, then SQLite checks the A term to see if it is column of a virtual table and if so it invokes the xFindFunction() method for the virtual table of column A. </p>
-      <p> The function pointer returned by this routine must be valid for the lifetime of the sqlite3_vtab object given in the first parameter. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="9744777445" _msthash="11">请注意，中缀函数（LIKE、GLOB、REGEXP 和 MATCH）会反转其参数的顺序。所以 “like（A，B）” 通常与 “B like A” 的工作方式相同。但是，xFindFunction（） 始终看起来是最左边的参数，而不是第一个逻辑参数。因此，对于形式“B like A”，SQLite 会查看左作数“B”，如果该作数是虚拟表列，则它会在该虚拟表上调用 xFindFunction（） 方法。但是，如果使用形式“ like（A，B）”，则SQLite会检查A项以查看它是否是虚拟表的列，如果是，则为列A的虚拟表调用xFindFunction（）方法。</font></p>
+      <p><font _mstmutation="1" _msttexthash="282817730" _msthash="12">此例程返回的函数指针必须在第一个参数中给定的 sqlite3_vtab 对象的生存期内有效。</font> </p>
       <div class="syntax">
-        <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> xFindFunction(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>nArg</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>zName</i>,<br />   ref <a href="System.Data.SQLite~System.Data.SQLite.SQLiteCallback.html">SQLiteCallback</a> <i>callback</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pClientData</i><br />);</div>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;xFindFunction(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>nArg</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>zName</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteCallback.html">SQLiteCallback</a>&nbsp;<i>callback</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pClientData</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pVtab</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="95380129" _msthash="10">指向 sqlite3_vtab 派生结构的本机指针。</font> </dd>
         <dt>
           <i>nArg</i>
         </dt>
-        <dd> The number of arguments to the function being sought. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="41212691" _msthash="9">所查找的函数的参数数。</font> </dd>
         <dt>
           <i>zName</i>
         </dt>
-        <dd> The name of the function being sought. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="42140007" _msthash="8">正在查找的函数的名称。</font> </dd>
         <dt>
           <i>callback</i>
         </dt>
-        <dd> Upon success, this parameter must be modified to contain the delegate responsible for implementing the specified function. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="169495911" _msthash="7">成功后，必须修改此参数以包含负责实现指定函数的委托。</font> </dd>
         <dt>
           <i>pClientData</i>
         </dt>
-        <dd> Upon success, this parameter must be modified to contain the native user-data pointer associated with <i>callback</i>. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="216779628" _msthash="0">成功后，必须修改此参数以包含与 <i _mstmutation="1" _istranslated="1">callback</i> 关联的本机用户数据指针。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> Non-zero if the specified function was found; zero otherwise. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="1">返回值</h4>
+      <p _msttexthash="97233240" _msthash="2">如果找到指定的函数，则为非零;否则为 0。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="3">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="4"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xFindFunction Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xFindFunction%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="5">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="6">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

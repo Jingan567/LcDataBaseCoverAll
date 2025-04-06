@@ -1,60 +1,61 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0180)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xDestroy.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xDestroy Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xDestroy_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="10">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xDestroy Method</h1>
+        <h1 class="dtH1" _msttexthash="25646465" _msthash="11">ISQLiteNativeModule.xDestroy 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xDestroy)(sqlite3_vtab *pVTab);
+        </p><pre class="code">int (*xDestroy)(sqlite3_vtab *pVTab);
 </pre>
-      </p>
-      <p> This method releases a connection to a virtual table, just like the xDisconnect method, and it also destroys the underlying table implementation. This method undoes the work of xCreate. </p>
-      <p> The xDisconnect method is called whenever a database connection that uses a virtual table is closed. The xDestroy method is only called when a DROP TABLE statement is executed against the virtual table. </p>
-      <p> The xDestroy method is required for every virtual table implementation, though it is acceptable for the xDisconnect and xDestroy methods to be the same function if that makes sense for the particular virtual table. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="486475730" _msthash="0">此方法释放与虚拟表的连接，就像 xDisconnect 方法一样，它还会销毁底层表实现。此方法撤消 xCreate 的工作。</font></p>
+      <p _msttexthash="590845359" _msthash="1">每当使用虚拟表的数据库连接关闭时，都会调用 xDisconnect 方法。仅当对虚拟表执行 DROP TABLE 语句时，才会调用 xDestroy 方法。</p>
+      <p><font _mstmutation="1" _msttexthash="466572691" _msthash="2">每个虚拟表实现都需要 xDestroy 方法，但如果对特定虚拟表有意义，则 xDisconnect 和 xDestroy 方法是可以接受的。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xDestroy(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xDestroy(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pVtab</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="95380129" _msthash="3">指向 sqlite3_vtab 派生结构的本机指针。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="4">返回值</h4>
+      <p _msttexthash="31178875" _msthash="5">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="6">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="7"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xDestroy Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xDestroy%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="8">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="9">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

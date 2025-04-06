@@ -1,79 +1,80 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0179)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xFilter.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xFilter Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xFilter_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="5">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xFilter Method</h1>
+        <h1 class="dtH1" _msttexthash="24887642" _msthash="6">ISQLiteNativeModule.xFilter 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xFilter)(sqlite3_vtab_cursor*, int idxNum, const char *idxStr,
+        </p><pre class="code">int (*xFilter)(sqlite3_vtab_cursor*, int idxNum, const char *idxStr,
               int argc, sqlite3_value **argv);
 </pre>
-      </p>
-      <p> This method begins a search of a virtual table. The first argument is a cursor opened by xOpen. The next two arguments define a particular search index previously chosen by xBestIndex. The specific meanings of idxNum and idxStr are unimportant as long as xFilter and xBestIndex agree on what that meaning is. </p>
-      <p> The xBestIndex function may have requested the values of certain expressions using the aConstraintUsage[].argvIndex values of the sqlite3_index_info structure. Those values are passed to xFilter using the argc and argv parameters. </p>
-      <p> If the virtual table contains one or more rows that match the search criteria, then the cursor must be left point at the first row. Subsequent calls to xEof must return false (zero). If there are no rows match, then the cursor must be left in a state that will cause the xEof to return true (non-zero). The SQLite engine will use the xColumn and xRowid methods to access that row content. The xNext method will be used to advance to the next row. </p>
-      <p> This method must return SQLITE_OK if successful, or an sqlite error code if an error occurs. </p>
-      <p> The xFilter method is required for every virtual table implementation. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="1259308713" _msthash="0">此方法开始搜索虚拟表。第一个参数是由 xOpen 打开的游标。接下来的两个参数定义 xBestIndex 之前选择的特定搜索索引。idxNum 和 idxStr 的特定含义并不重要，只要 xFilter 和 xBestIndex 的含义一致即可。</font></p>
+      <p _msttexthash="759013879" _msthash="1">xBestIndex 函数可能已使用 sqlite3_index_info 结构的 aConstraintUsage[].argvIndex 值请求某些表达式的值。这些值使用 argc 和 argv 参数传递给 xFilter。</p>
+      <p _msttexthash="2799355520" _msthash="2">如果虚拟表包含与搜索条件匹配的一行或多行，则光标必须左指向第一行。对 xEof 的后续调用必须返回 false（零）。如果没有匹配的行，则游标必须处于将导致 xEof 返回 true（非零）的状态。SQLite 引擎将使用 xColumn 和 xRowid 方法来访问该行内容。xNext 方法将用于前进到下一行。</p>
+      <p _msttexthash="344038851" _msthash="3">如果成功，此方法必须返回 SQLITE_OK，如果发生错误，则必须返回 sqlite 错误代码。</p>
+      <p><font _mstmutation="1" _msttexthash="68704779" _msthash="4">每个虚拟表实现都需要 xFilter 方法。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xFilter(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pCursor</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>idxNum</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>idxStr</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xFilter(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pCursor</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>idxNum</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>idxStr</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>argc</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>argv</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pCursor</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab_cursor derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="120713905" _msthash="17">指向 sqlite3_vtab_cursor 派生结构的本机指针。</font> </dd>
         <dt>
           <i>idxNum</i>
         </dt>
-        <dd> Number used to help identify the selected index. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="64876630" _msthash="16">用于帮助标识所选索引的编号。</font> </dd>
         <dt>
           <i>idxStr</i>
         </dt>
-        <dd> The native pointer to the UTF-8 encoded string containing the string used to help identify the selected index. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="341321240" _msthash="15">指向 UTF-8 编码字符串的本机指针，该字符串包含用于帮助标识所选索引的字符串。</font> </dd>
         <dt>
           <i>argc</i>
         </dt>
-        <dd> The number of native pointers to sqlite3_value structures specified in <i>argv</i>. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="130750880" _msthash="14">指向 <i _mstmutation="1" _istranslated="1">argv</i> 中指定的sqlite3_value结构的本机指针数。</font> </dd>
         <dt>
           <i>argv</i>
         </dt>
-        <dd> An array of native pointers to sqlite3_value structures containing filtering criteria for the selected index. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="300913431" _msthash="7">指向 sqlite3_value 结构的本机指针数组，其中包含所选索引的筛选条件。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="8">返回值</h4>
+      <p _msttexthash="31178875" _msthash="9">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="10">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="11"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xFilter Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xFilter%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="12">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="13">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

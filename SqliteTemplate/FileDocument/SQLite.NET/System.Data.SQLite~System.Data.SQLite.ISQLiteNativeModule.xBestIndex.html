@@ -1,37 +1,38 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0182)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xBestIndex.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xBestIndex Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xBestIndex_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xBestIndex Method</h1>
+        <h1 class="dtH1" _msttexthash="27122537" _msthash="1">ISQLiteNativeModule.xBestIndex 方法</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> SQLite uses the xBestIndex method of a virtual table module to determine the best way to access the virtual table. The xBestIndex method has a prototype like this: </p>
+      <p><font _mstmutation="1" _msttexthash="565820138" _msthash="2">SQLite 使用虚拟表模块的 xBestIndex 方法来确定访问虚拟表的最佳方式。xBestIndex 方法有一个如下所示的原型：</font> </p>
       <p>
-        <pre class="code">int (*xBestIndex)(sqlite3_vtab *pVTab, sqlite3_index_info*);
+        </p><pre class="code">int (*xBestIndex)(sqlite3_vtab *pVTab, sqlite3_index_info*);
 </pre>
-      </p>
-      <p> The SQLite core communicates with the xBestIndex method by filling in certain fields of the sqlite3_index_info structure and passing a pointer to that structure into xBestIndex as the second parameter. The xBestIndex method fills out other fields of this structure which forms the reply. The sqlite3_index_info structure looks like this: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="1919270717" _msthash="3">SQLite 核心通过填写 sqlite3_index_info 结构的某些字段并将指向该结构的指针作为第二个参数传递给 xBestIndex 来与 xBestIndex 方法进行通信。xBestIndex 方法填充此结构的其他字段，以形成回复。sqlite3_index_info结构如下所示：</font> </p>
       <p>
-        <pre class="code">struct sqlite3_index_info {
+        </p><pre class="code">struct sqlite3_index_info {
   /* Inputs */
   const int nConstraint;     /* Number of entries in aConstraint */
   const struct sqlite3_index_constraint {
@@ -63,11 +64,11 @@
   sqlite3_uint64 colUsed;    /* Input: Mask of columns used by statement */
 };
 </pre>
-      </p>
-      <p> Note the warnings on the "estimatedRows", "idxFlags", and colUsed fields. These fields were added with SQLite versions 3.8.2, 3.9.0, and 3.10.0, respectively. Any extension that reads or writes these fields must first check that the version of the SQLite library in use is greater than or equal to appropriate version - perhaps comparing the value returned from sqlite3_libversion_number() against constants 3008002, 3009000, and/or 3010000. The result of attempting to access these fields in an sqlite3_index_info structure created by an older version of SQLite are undefined. </p>
-      <p> In addition, there are some defined constants: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="5876597558" _msthash="4">请注意 “estimatedRows”、“idxFlags” 和 colUsed 字段上的警告。这些字段分别随 SQLite 版本 3.8.2、3.9.0 和 3.10.0 一起添加。读取或写入这些字段的任何扩展都必须首先检查正在使用的 SQLite 库的版本是否大于或等于适当的版本 - 可能将从 sqlite3_libversion_number（） 返回的值与常量 3008002、3009000 和/或 3010000 进行比较。尝试在旧版本的 SQLite 创建的 sqlite3_index_info 结构中访问这些字段的结果是未定义的。</font></p>
+      <p><font _mstmutation="1" _msttexthash="72269821" _msthash="5">此外，还有一些定义的常量：</font> </p>
       <p>
-        <pre class="code">#define SQLITE_INDEX_CONSTRAINT_EQ         2
+        </p><pre class="code">#define SQLITE_INDEX_CONSTRAINT_EQ         2
 #define SQLITE_INDEX_CONSTRAINT_GT         4
 #define SQLITE_INDEX_CONSTRAINT_LE         8
 #define SQLITE_INDEX_CONSTRAINT_LT        16
@@ -86,81 +87,80 @@
 #define SQLITE_INDEX_CONSTRAINT_FUNCTION 150  /* 3.25.0 and later */
 #define SQLITE_INDEX_SCAN_UNIQUE           1  /* Scan visits at most 1 row */
 </pre>
-      </p>
-      <p> Use the sqlite3_vtab_collation() interface to find the name of the collating sequence that should be used when evaluating the i-th constraint: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="440287731" _msthash="6">使用 sqlite3_vtab_collation（） 接口查找评估第 i 个约束时应使用的整理序列的名称：</font> </p>
       <p>
-        <pre class="code">const char *sqlite3_vtab_collation(sqlite3_index_info*, int i);
+        </p><pre class="code">const char *sqlite3_vtab_collation(sqlite3_index_info*, int i);
 </pre>
-      </p>
-      <p> The SQLite core calls the xBestIndex method when it is compiling a query that involves a virtual table. In other words, SQLite calls this method when it is running sqlite3_prepare() or the equivalent. By calling this method, the SQLite core is saying to the virtual table that it needs to access some subset of the rows in the virtual table and it wants to know the most efficient way to do that access. The xBestIndex method replies with information that the SQLite core can then use to conduct an efficient search of the virtual table. </p>
-      <p> While compiling a single SQL query, the SQLite core might call xBestIndex multiple times with different settings in sqlite3_index_info. The SQLite core will then select the combination that appears to give the best performance. </p>
-      <p> Before calling this method, the SQLite core initializes an instance of the sqlite3_index_info structure with information about the query that it is currently trying to process. This information derives mainly from the WHERE clause and ORDER BY or GROUP BY clauses of the query, but also from any ON or USING clauses if the query is a join. The information that the SQLite core provides to the xBestIndex method is held in the part of the structure that is marked as "Inputs". The "Outputs" section is initialized to zero. </p>
-      <p> The information in the sqlite3_index_info structure is ephemeral and may be overwritten or deallocated as soon as the xBestIndex method returns. If the xBestIndex method needs to remember any part of the sqlite3_index_info structure, it should make a copy. Care must be take to store the copy in a place where it will be deallocated, such as in the idxStr field with needToFreeIdxStr set to 1. </p>
-      <p> Note that xBestIndex will always be called before xFilter, since the idxNum and idxStr outputs from xBestIndex are required inputs to xFilter. However, there is no guarantee that xFilter will be called following a successful xBestIndex. </p>
-      <p> The xBestIndex method is required for every virtual table implementation. </p>
-      <p> The main thing that the SQLite core is trying to communicate to the virtual table is the constraints that are available to limit the number of rows that need to be searched. The aConstraint[] array contains one entry for each constraint. There will be exactly nConstraint entries in that array. </p>
-      <p> Each constraint will usually correspond to a term in the WHERE clause or in a USING or ON clause that is of the form </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="4602805220" _msthash="7">SQLite 核心在编译涉及虚拟表的查询时调用 xBestIndex 方法。换句话说，SQLite 在运行 sqlite3_prepare（） 或等效方法时调用此方法。通过调用此方法，SQLite 核心向虚拟表表示它需要访问虚拟表中行的某些子集，并且它想知道执行该访问的最有效方法。xBestIndex 方法回复 SQLite 核心随后可以用来对虚拟表进行有效搜索的信息。</font></p>
+      <p _msttexthash="953087746" _msthash="8">在编译单个 SQL 查询时，SQLite 核心可能会多次调用 xBestIndex，并在 sqlite3_index_info 中设置不同。然后，SQLite 核心将选择似乎可提供最佳性能的组合。</p>
+      <p _msttexthash="3400674303" _msthash="9">在调用此方法之前，SQLite 核心会使用有关当前尝试处理的查询的信息初始化 sqlite3_index_info 结构的实例。此信息主要来自查询的 WHERE 子句和 ORDER BY 或 GROUP BY 子句，如果查询是联接，则还来自任何 ON 或 USING 子句。SQLite 核心提供给 xBestIndex 方法的信息保存在标记为“Inputs”的结构部分中。“Outputs” 部分初始化为零。</p>
+      <p _msttexthash="2927688959" _msthash="10">sqlite3_index_info结构中的信息是短暂的，一旦 xBestIndex 方法返回，就可以被覆盖或解除分配。如果 xBestIndex 方法需要记住 sqlite3_index_info 结构的任何部分，则应创建一个副本。必须注意将副本存储在将要解除分配的位置，例如在 needToFreeIdxStr 设置为 1 的 idxStr 字段中。</p>
+      <p _msttexthash="963649401" _msthash="11">请注意，xBestIndex 将始终在 xFilter 之前调用，因为 xBestIndex 的 idxNum 和 idxStr 输出是 xFilter 的必需输入。但是，不能保证在成功执行 xBestIndex 后将调用 xFilter。</p>
+      <p _msttexthash="71381544" _msthash="12">每个虚拟表实现都需要 xBestIndex 方法。</p>
+      <p _msttexthash="863216107" _msthash="13">SQLite 核心尝试与虚拟表通信的主要内容是可用于限制需要搜索的行数的约束。aConstraint[] 数组包含每个约束的一个条目。该数组中将有 nConstraint 条目。</p>
+      <p><font _mstmutation="1" _msttexthash="239414864" _msthash="14">每个约束通常对应于 WHERE 子句或 USING 或 ON 子句中的一个术语，其格式为</font> </p>
       <p>
-        <pre class="code">     column  OP  EXPR
+        </p><pre class="code">     column  OP  EXPR
 </pre>
-      </p>
-      <p> Where "column" is a column in the virtual table, OP is an operator like "=" or "&lt;", and EXPR is an arbitrary expression. So, for example, if the WHERE clause contained a term like this: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="831016589" _msthash="15">其中 “column” 是虚拟表中的列，OP 是类似于 “=” 或 “&lt;” 的运算符，而 EXPR 是任意表达式。因此，例如，如果 WHERE 子句包含如下术语：</font> </p>
       <p>
-        <pre class="code">a = 5
+        </p><pre class="code">a = 5
 </pre>
-      </p>
-      <p> Then one of the constraints would be on the "a" column with operator "=" and an expression of "5". Constraints need not have a literal representation of the WHERE clause. The query optimizer might make transformations to the WHERE clause in order to extract as many constraints as it can. So, for example, if the WHERE clause contained something like this: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="1990429987" _msthash="16">然后，其中一个约束将位于运算符为 “=” 且表达式为 “5” 的 “a” 列上。约束不需要具有 WHERE 子句的文字表示形式。查询优化器可能会对 WHERE 子句进行转换，以便提取尽可能多的约束。因此，例如，如果 WHERE 子句包含如下内容：</font> </p>
       <p>
-        <pre class="code">x BETWEEN 10 AND 100 AND 999&gt;y
+        </p><pre class="code">x BETWEEN 10 AND 100 AND 999&gt;y
 </pre>
-      </p>
-      <p> The query optimizer might translate this into three separate constraints: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="132430090" _msthash="17">查询优化器可能会将其转换为三个单独的约束：</font> </p>
       <p>
-        <pre class="code">x &gt;= 10
+        </p><pre class="code">x &gt;= 10
 x &lt;= 100
 y &lt; 999
 </pre>
-      </p>
-      <p> For each such constraint, the aConstraint[].iColumn field indicates which column appears on the left-hand side of the constraint. The first column of the virtual table is column 0. The rowid of the virtual table is column -1. The aConstraint[].op field indicates which operator is used. The SQLITE_INDEX_CONSTRAINT_* constants map integer constants into operator values. Columns occur in the order they were defined by the call to sqlite3_declare_vtab() in the xCreate or xConnect method. Hidden columns are counted when determining the column index. </p>
-      <p> If the xFindFunction() method for the virtual table is defined, and if xFindFunction() sometimes returns SQLITE_INDEX_CONSTRAINT_FUNCTION or larger, then the constraints might also be of the form: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="4720549717" _msthash="18">对于每个此类约束，aConstraint[].iColumn 字段指示在约束的左侧显示哪一列。虚拟表的第一列是第 0 列。虚拟表的 rowid 为列 -1。aConstraint[].op 字段指示使用哪个运算符。SQLITE_INDEX_CONSTRAINT_* 常量将整数常量映射到运算符值。列按照在 xCreate 或 xConnect 方法中调用 sqlite3_declare_vtab（） 定义的顺序出现。在确定列索引时，将对隐藏的列进行计数。</font></p>
+      <p><font _mstmutation="1" _msttexthash="902468424" _msthash="19">如果定义了虚拟表的 xFindFunction（） 方法，并且 xFindFunction（） 有时返回 SQLITE_INDEX_CONSTRAINT_FUNCTION 或更大，则约束也可能是以下形式：</font> </p>
       <p>
-        <pre class="code">     FUNCTION( column, EXPR)
+        </p><pre class="code">     FUNCTION( column, EXPR)
 </pre>
-      </p>
-      <p> In this case the aConstraint[].op value is the same as the value returned by xFindFunction() for FUNCTION. </p>
-      <p> The aConstraint[] array contains information about all constraints that apply to the virtual table. But some of the constraints might not be usable because of the way tables are ordered in a join. The xBestIndex method must therefore only consider constraints that have an aConstraint[].usable flag which is true. </p>
-      <p> In addition to WHERE clause constraints, the SQLite core also tells the xBestIndex method about the ORDER BY clause. (In an aggregate query, the SQLite core might put in GROUP BY clause information in place of the ORDER BY clause information, but this fact should not make any difference to the xBestIndex method.) If all terms of the ORDER BY clause are columns in the virtual table, then nOrderBy will be the number of terms in the ORDER BY clause and the aOrderBy[] array will identify the column for each term in the order by clause and whether or not that column is ASC or DESC. </p>
-      <p> In SQLite version 3.10.0 (2016-01-06) and later, the colUsed field is available to indicate which fields of the virtual table are actually used by the statement being prepared. If the lowest bit of colUsed is set, that means that the first column is used. The second lowest bit corresponds to the second column. And so forth. If the most significant bit of colUsed is set, that means that one or more columns other than the first 63 columns are used. If column usage information is needed by the xFilter method, then the required bits must be encoded into either the output idxNum field or idxStr content. </p>
-      <p> For the LIKE, GLOB, REGEXP, and MATCH operators, the aConstraint[].iColumn value is the virtual table column that is the left operand of the operator. However, if these operators are expressed as function calls instead of operators, then the aConstraint[].iColumn value references the virtual table column that is the second argument to that function: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="269570067" _msthash="20">在这种情况下，aConstraint[].op 值与 xFindFunction（） 为 FUNCTION 返回的值相同。</font></p>
+      <p _msttexthash="1582181289" _msthash="21">aConstraint[] 数组包含有关应用于虚拟表的所有约束的信息。但是，由于表中在联接中的排序方式，某些约束可能不可用。因此，xBestIndex 方法必须只考虑具有 aConstraint[].usable 标志（为 true）的约束。</p>
+      <p _msttexthash="5191815837" _msthash="22">除了 WHERE 子句约束之外，SQLite 核心还告诉 xBestIndex 方法有关 ORDER BY 子句的信息。（在聚合查询中，SQLite 核心可能会放入 GROUP BY 子句信息来代替 ORDER BY 子句信息，但这一事实不应对 xBestIndex 方法产生任何影响。如果 ORDER BY 子句的所有术语都是虚拟表中的列，则 nOrderBy 将是 ORDER BY 子句中的术语数，aOrderBy[] 数组将标识 order by 子句中每个术语的列，以及该列是 ASC 还是 DESC。</p>
+      <p _msttexthash="5273952203" _msthash="23">在 SQLite 版本 3.10.0 （2016-01-06） 及更高版本中，colUsed 字段可用于指示正在准备的语句实际使用虚拟表的哪些字段。如果设置了 colUsed 的最低位，则表示使用第一列。第二个最低位对应于第二列。等等。如果设置了 colUsed 的最高有效位，则意味着使用前 63 列以外的一个或多个列。如果 xFilter 方法需要列使用信息，则必须将所需的位编码到输出 idxNum 字段或 idxStr 内容中。</p>
+      <p><font _mstmutation="1" _msttexthash="2266006223" _msthash="24">对于 LIKE、GLOB、REGEXP 和 MATCH 运算符，aConstraint[].iColumn 值是作为运算符左作数的虚拟表列。但是，如果这些运算符表示为函数调用而不是运算符，则 aConstraint[].iColumn 值将引用作为该函数的第二个参数的虚拟表列：</font> </p>
       <p>
-        <pre class="code">LIKE(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
+        </p><pre class="code">LIKE(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
 GLOB(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
 REGEXP(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br>
 MATCH(<i xmlns="urn:ndoc-schema">EXPR</i>, <i xmlns="urn:ndoc-schema">column</i>)<br></pre>
-      </p>
-      <p> Hence, as far as the xBestIndex() method is concerned, the following two forms are equivalent: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="255044881" _msthash="25">因此，就 xBestIndex（） 方法而言，以下两种形式是等效的：</font> </p>
       <p>
-        <pre class="code">
-          <i xmlns="urn:ndoc-schema">column</i> LIKE <i xmlns="urn:ndoc-schema">EXPR</i><br>
+        </p><pre class="code">          <i xmlns="urn:ndoc-schema">column</i> LIKE <i xmlns="urn:ndoc-schema">EXPR</i><br>
       LIKE(<i xmlns="urn:ndoc-schema">EXPR</i>,<i xmlns="urn:ndoc-schema">column</i>)
       </pre>
-      </p>
-      <p> This special behavior of looking at the second argument of a function only occurs for the LIKE, GLOB, REGEXP, and MATCH functions. For all other functions, the aConstraint[].iColumn value references the first argument of the function. </p>
-      <p> This special feature of LIKE, GLOB, REGEXP, and MATCH does not apply to the xFindFunction() method, however. The xFindFunction() method always keys off of the left operand of an LIKE, GLOB, REGEXP, or MATCH operator but off of the first argument to function-call equivalents of those operators. </p>
-      <p> When aConstraint[].op is one of SQLITE_INDEX_CONSTRAINT_LIMIT or SQLITE_INDEX_CONSTRAINT_OFFSET, that indicates that there is a LIMIT or OFFSET clause on the SQL query statement that is using the virtual table. The LIMIT and OFFSET operators have no left operand, and so when aConstraint[].op is one of SQLITE_INDEX_CONSTRAINT_LIMIT or SQLITE_INDEX_CONSTRAINT_OFFSET then the aConstraint[].iColumn value is meaningless and should not be used. </p>
-      <p> The sqlite3_vtab_rhs_value() interface can be used to try to access the right-hand operand of a constraint. However, the value of a right-hand operator might not be known at the time that the xBestIndex method is run, so the sqlite3_vtab_rhs_value() call might not be successful. Usually the right operand of a constraint is only available to xBestIndex if it is coded as a literal value in the input SQL. If the right operand is coded as an expression or a host parameter, it probably will not be accessible to xBestIndex. Some operators, such as SQLITE_INDEX_CONSTRAINT_ISNULL and SQLITE_INDEX_CONSTRAINT_ISNOTNULL have no right-hand operand. The sqlite3_vtab_rhs_value() interface always returns SQLITE_NOTFOUND for such operators. </p>
-      <p> Given all of the information above, the job of the xBestIndex method it to figure out the best way to search the virtual table. </p>
-      <p> The xBestIndex method conveys an indexing strategy to the xFilter method through the idxNum and idxStr fields. The idxNum value and idxStr string content are arbitrary as far as the SQLite core is concerned and can have any meaning as long as xBestIndex and xFilter agree on what that meaning is. The SQLite core just copies the information from xBestIndex through to the xFilter method, assuming only that the char sequence referenced via idxStr is NUL terminated. </p>
-      <p> The idxStr value may be a string obtained from an SQLite memory allocation function such as sqlite3_mprintf(). If this is the case, then the needToFreeIdxStr flag must be set to true so that the SQLite core will know to call sqlite3_free() on that string when it has finished with it, and thus avoid a memory leak. The idxStr value may also be a static constant string, in which case the needToFreeIdxStr boolean should remain false. </p>
-      <p> The estimatedCost field should be set to the estimated number of disk access operations required to execute this query against the virtual table. The SQLite core will often call xBestIndex multiple times with different constraints, obtain multiple cost estimates, then choose the query plan that gives the lowest estimate. The SQLite core initializes estimatedCost to a very large value prior to invoking xBestIndex, so if xBestIndex determines that the current combination of parameters is undesirable, it can leave the estimatedCost field unchanged to discourage its use. </p>
-      <p> If the current version of SQLite is 3.8.2 or greater, the estimatedRows field may be set to an estimate of the number of rows returned by the proposed query plan. If this value is not explicitly set, the default estimate of 25 rows is used. </p>
-      <p> If the current version of SQLite is 3.9.0 or greater, the idxFlags field may be set to SQLITE_INDEX_SCAN_UNIQUE to indicate that the virtual table will return only zero or one rows given the input constraints. Additional bits of the idxFlags field might be understood in later versions of SQLite. </p>
-      <p> The aConstraintUsage[] array contains one element for each of the nConstraint constraints in the inputs section of the sqlite3_index_info structure. The aConstraintUsage[] array is used by xBestIndex to tell the core how it is using the constraints. </p>
-      <p> The xBestIndex method may set aConstraintUsage[].argvIndex entries to values greater than zero. Exactly one entry should be set to 1, another to 2, another to 3, and so forth up to as many or as few as the xBestIndex method wants. The EXPR of the corresponding constraints will then be passed in as the argv[] parameters to xFilter. </p>
-      <p> For example, if the aConstraint[3].argvIndex is set to 1, then when xFilter is called, the argv[0] passed to xFilter will have the EXPR value of the aConstraint[3] constraint. </p>
-      <p> By default, the SQLite generates bytecode that will double checks all constraints on each row of the virtual table to verify that they are satisfied. If the virtual table can guarantee that a constraint will always be satisfied, it can try to suppress that double-check by setting aConstraintUsage[].omit. However, with some exceptions, this is only a hint and there is no guarantee that the redundant check of the constraint will be suppressed. Key points: </p><ul><li> The omit flag is only honored if the argvIndex value for the constraint is greater than 0 and less than or equal to 16. Constraint checking is never suppressed for constraints that do not pass their right operand into the xFilter method. The current implementation is only able to suppress redundant constraint checking for the first 16 values passed to xFilter, though that limitation might be increased in future releases. </li><li> The omit flag is always honored for SQLITE_INDEX_CONSTRAINT_OFFSET constraints as long as argvIndex is greater than 0. Setting the omit flag on an SQLITE_INDEX_CONSTRAINT_OFFSET constraint indicates to SQLite that the virtual table will itself suppress the first N rows of output, where N is the right operand of the OFFSET operator. If the virtual table implementation sets omit on an SQLITE_INDEX_CONSTRAINT_OFFSET constraint but then fails to suppress the first N rows of output, an incorrect answer will result from the overall query. </li></ul><p> If the virtual table will output rows in the order specified by the ORDER BY clause, then the orderByConsumed flag may be set to true. If the output is not automatically in the correct order then orderByConsumed must be left in its default false setting. This will indicate to the SQLite core that it will need to do a separate sorting pass over the data after it comes out of the virtual table. Setting orderByConsumed is an optimization. A query will always get the correct answer if orderByConsumed is left at its default value (0). Unnecessary sort operations might be avoided resulting in a faster query if orderByConsumed is set, but setting orderByConsumed incorrectly can result in an incorrect answer. It is suggested that new virtual table implementations leave the orderByConsumed value unset initially, and then after everything else is known to be working correctly, go back and attempt to optimize by setting orderByConsumed where appropriate. </p><p> Sometimes the orderByConsumed flag can be safely set even if the outputs from the virtual table are not strictly in the order specified by nOrderBy and aOrderBy. If the sqlite3_vtab_distinct() interface returns 1 or 2, that indicates that the ordering can be relaxed. See the documentation on sqlite3_vtab_distinct() for further information. </p><p> The xBestIndex method should return SQLITE_OK on success. If any kind of fatal error occurs, an appropriate error code (ex: SQLITE_NOMEM) should be returned instead. </p><p> If xBestIndex returns SQLITE_CONSTRAINT, that does not indicate an error. Rather, SQLITE_CONSTRAINT indicates that the particular combination of input parameters specified is insufficient for the virtual table to do its job. This is logically the same as setting the estimatedCost to infinity. If every call to xBestIndex for a particular query plan returns SQLITE_CONSTRAINT, that means there is no way for the virtual table to be safely used, and the sqlite3_prepare() call will fail with a "no query solution" error. </p><p> The SQLITE_CONSTRAINT return from xBestIndex is useful for table-valued functions that have required parameters. If the aConstraint[].usable field is false for one of the required parameter, then the xBestIndex method should return SQLITE_CONSTRAINT. If a required field does not appear in the aConstraint[] array at all, that means that the corresponding parameter is omitted from the input SQL. In that case, xBestIndex should set an error message in pVTab-&gt;zErrMsg and return SQLITE_ERROR. To summarize: </p><ol><li> The aConstraint[].usable value for a required parameter is false <big xmlns="urn:ndoc-schema">→</big> return SQLITE_CONSTRAINT. </li><li> A required parameter does not appears anywhere in the aConstraint[] array <big xmlns="urn:ndoc-schema">→</big> Set an error message in pVTab-&gt;zErrMsg and return SQLITE_ERROR </li></ol><p> The following example will better illustrate the use of SQLITE_CONSTRAINT as a return value from xBestIndex: </p><p><pre class="code">SELECT * FROM realtab, tablevaluedfunc(realtab.x);
-</pre></p><p> Assuming that the first hidden column of "tablevaluedfunc" is "param1", the query above is semantically equivalent to this: </p><p><pre class="code">SELECT * FROM realtab, tablevaluedfunc
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="717530671" _msthash="26">这种查看函数的第二个参数的特殊行为仅发生在 LIKE、GLOB、REGEXP 和 MATCH 函数中。对于所有其他函数，aConstraint[].iColumn 值引用函数的第一个参数。</font></p>
+      <p _msttexthash="2145469508" _msthash="27">但是，LIKE、GLOB、REGEXP 和 MATCH 的这一特殊功能不适用于 xFindFunction（） 方法。xFindFunction（） 方法始终从 LIKE、GLOB、REGEXP 或 MATCH 运算符的左作数上键，但从第一个参数上键到这些运算符的函数调用等效项。</p>
+      <p _msttexthash="3084696056" _msthash="28">当 aConstraint[].op 是 SQLITE_INDEX_CONSTRAINT_LIMIT 或 SQLITE_INDEX_CONSTRAINT_OFFSET 之一时，这表示使用虚拟表的 SQL 查询语句上存在 LIMIT 或 OFFSET 子句。LIMIT 和 OFFSET 运算符没有左作数，因此当 aConstraint[].op 是 SQLITE_INDEX_CONSTRAINT_LIMIT 或 SQLITE_INDEX_CONSTRAINT_OFFSET 之一时，aConstraint[].iColumn 值没有意义，不应使用。</p>
+      <p _msttexthash="8118377046" _msthash="29">sqlite3_vtab_rhs_value（） 接口可用于尝试访问 constraint 的右侧作数。但是，在运行 xBestIndex 方法时，右侧运算符的值可能未知，因此 sqlite3_vtab_rhs_value（） 调用可能不会成功。通常，约束的右作数仅在 xBestIndex 中编码为 Literal 值时才可用于 xBestIndex。如果将正确的作数编码为表达式或主机参数，则 xBestIndex 可能无法访问它。某些运算符（如 SQLITE_INDEX_CONSTRAINT_ISNULL 和 SQLITE_INDEX_CONSTRAINT_ISNOTNULL）没有右作数。sqlite3_vtab_rhs_value（） 接口始终返回此类运算符的 SQLITE_NOTFOUND。</p>
+      <p _msttexthash="266122441" _msthash="30">鉴于上述所有信息，xBestIndex 方法的工作是找出搜索虚拟表的最佳方法。</p>
+      <p _msttexthash="3282697756" _msthash="31">xBestIndex 方法通过 idxNum 和 idxStr 字段将索引策略传达给 xFilter 方法。就 SQLite 核心而言，idxNum 值和 idxStr 字符串内容是任意的，只要 xBestIndex 和 xFilter 就该含义达成一致，就可以具有任何含义。SQLite 核心只是将信息从 xBestIndex 复制到 xFilter 方法，仅假设通过 idxStr 引用的 char 序列是 NUL 终止的。</p>
+      <p _msttexthash="4184761581" _msthash="32">idxStr 值可以是从 SQLite 内存分配函数（如 sqlite3_mprintf（） ）获取的字符串。如果是这种情况，则必须将 needToFreeIdxStr 标志设置为 true，以便 SQLite 核心在完成该字符串后知道在该字符串上调用 sqlite3_free（），从而避免内存泄漏。idxStr 值也可以是静态常量字符串，在这种情况下，needToFreeIdxStr 布尔值应保持为 false。</p>
+      <p _msttexthash="4849422266" _msthash="33">estimatedCost 字段应设置为对虚拟表执行此查询所需的估计磁盘访问作数。SQLite 核心通常会使用不同的约束多次调用 xBestIndex，获得多个成本估算，然后选择给出最低估算的查询计划。SQLite 核心在调用 xBestIndex 之前将 estimatedCost 初始化为非常大的值，因此，如果 xBestIndex 确定当前参数组合是不需要的，它可以保持 estimatedCost 字段不变，以阻止其使用。</p>
+      <p _msttexthash="1242056673" _msthash="34">如果 SQLite 的当前版本是 3.8.2 或更高版本，则可以将 estimatedRows 字段设置为建议的查询计划返回的行数的估计值。如果未显式设置此值，则使用默认估计值 25 行。</p>
+      <p _msttexthash="1783996812" _msthash="35">如果 SQLite 的当前版本是 3.9.0 或更高版本，则 idxFlags 字段可以设置为 SQLITE_INDEX_SCAN_UNIQUE，以指示给定输入约束的虚拟表将仅返回零行或一行。idxFlags 字段的其他位可能会在更高版本的 SQLite 中被理解。</p>
+      <p _msttexthash="1051067719" _msthash="36">aConstraintUsage[] 数组包含 sqlite3_index_info 结构的 inputs 部分中的每个 nConstraint 约束的一个元素。xBestIndex 使用 aConstraintUsage[] 数组来告诉核心它如何使用约束。</p>
+      <p _msttexthash="2665748007" _msthash="37">xBestIndex 方法可以将 aConstraintUsage[].argvIndex 条目设置为大于零的值。只有一个条目应设置为 1，另一个条目设置为 2，另一个条目设置为 3，依此类推，直到 xBestIndex 方法所需的数量或数量。然后，相应约束的 EXPR 将作为 argv[] 参数传递给 xFilter。</p>
+      <p _msttexthash="524548167" _msthash="38">例如，如果 aConstraint[3].argvIndex 设置为 1，则在调用 xFilter 时，传递给 xFilter 的 argv[0] 将具有 aConstraint[3] 约束的 EXPR 值。</p>
+      <p _msttexthash="3612333946" _msthash="39">默认情况下，SQLite 会生成字节码，该字节码将仔细检查虚拟表每一行上的所有约束，以验证它们是否得到满足。如果虚拟表可以保证始终满足约束，则它可以尝试通过设置 aConstraintUsage[].omit 来禁止该双重检查。但是，除了一些例外情况，这只是一个提示，不能保证会抑制 constraint 的冗余检查。要点：</p><ul><li _msttexthash="2324095501" _msthash="40">仅当约束的 argvIndex 值大于 0 且小于或等于 16 时，才遵循 omit 标志。对于未将其右作数传递到 xFilter 方法中的约束，永远不会禁止约束检查。当前实现只能抑制传递给 xFilter 的前 16 个值的冗余约束检查，尽管该限制在未来版本中可能会增加。</li><li _msttexthash="5076129058" _msthash="41">只要 argvIndex 大于 0，SQLITE_INDEX_CONSTRAINT_OFFSET约束始终遵循 omit 标志。在SQLITE_INDEX_CONSTRAINT_OFFSET约束上设置 omit 标志向 SQLite 表明虚拟表本身将抑制输出的前 N 行，其中 N 是 OFFSET 运算符的正确作数。如果虚拟表实现在 SQLITE_INDEX_CONSTRAINT_OFFSET 约束上设置了 omit，但随后无法抑制输出的前 N 行，则整个查询将导致不正确的答案。</li></ul><p _msttexthash="16514930588" _msthash="42">如果虚拟表将按照 ORDER BY 子句指定的顺序输出行，则 orderByConsumed 标志可以设置为 true。如果输出未自动按正确的顺序排列，则必须将 orderByConsumed 保留为其默认的 false 设置。这将向 SQLite 核心表明，在数据从虚拟表中出来后，它需要对数据进行单独的排序传递。设置 orderByConsumed 是一种优化。如果 orderByConsumed 保留为默认值 （0），则查询将始终获得正确答案。如果设置了 orderByConsumed ，则可以避免不必要的排序作，从而加快查询速度，但错误地设置 orderByConsumed 可能会导致答案错误。建议新的虚拟表实现最初不设置 orderByConsumed 值，然后在已知其他所有内容都正常工作后，返回并尝试通过在适当的情况下设置 orderByConsumed 进行优化。</p><p _msttexthash="2197867204" _msthash="43">有时，即使虚拟表的输出不严格按照 nOrderBy 和 aOrderBy 指定的顺序，也可以安全地设置 orderByConsumed 标志。如果 sqlite3_vtab_distinct（） 接口返回 1 或 2，则表示可以放宽排序。有关更多信息，请参阅有关 sqlite3_vtab_distinct（） 的文档。</p><p _msttexthash="752483758" _msthash="44">xBestIndex 方法应在成功时返回 SQLITE_OK。如果发生任何类型的致命错误，则应返回相应的错误代码（例如：SQLITE_NOMEM）。</p><p _msttexthash="5491290142" _msthash="45">如果 xBestIndex 返回 SQLITE_CONSTRAINT，则不表示存在错误。相反，SQLITE_CONSTRAINT 表示指定的 Importing 参数的特定组合不足以使虚拟 table 完成其工作。这在逻辑上与将 estimatedCost 设置为无穷大相同。如果对特定查询计划的 xBestIndex 的每次调用都返回 SQLITE_CONSTRAINT，则意味着无法安全地使用虚拟表，并且 sqlite3_prepare（） 调用将失败，并显示“no query solution”错误。</p><p _msttexthash="4760227303" _msthash="46">从 xBestIndex 返回的 SQLITE_CONSTRAINT 对于具有所需参数的表值函数非常有用。如果其中一个必需参数的 aConstraint[].usable 字段为 false，则 xBestIndex 方法应返回 SQLITE_CONSTRAINT。如果 required 字段根本没有出现在 aConstraint[] 数组中，则意味着输入 SQL 中省略了相应的参数。在这种情况下，xBestIndex 应在 pVTab-&gt;zErrMsg 中设置错误消息并返回 SQLITE_ERROR。总结一下：</p><ol><li _msttexthash="80069509" _msthash="47">必需参数的 aConstraint[].usable 值为 false <big xmlns="urn:ndoc-schema" _istranslated="1">→</big>返回 SQLITE_CONSTRAINT。</li><li _msttexthash="346365630" _msthash="48">必需参数未出现在 aConstraint[] 数组中的任何位置<big xmlns="urn:ndoc-schema" _istranslated="1">→</big>在 pVTab-&gt;zErrMsg 中设置错误消息并返回SQLITE_ERROR</li></ol><p><font _mstmutation="1" _msttexthash="201116110" _msthash="49">以下示例将更好地说明如何使用 SQLITE_CONSTRAINT 作为 xBestIndex 的返回值：</font> </p><p></p><pre class="code">SELECT * FROM realtab, tablevaluedfunc(realtab.x);
+</pre><p></p><p> <font _mstmutation="1" _msttexthash="424965580" _msthash="50">假设 “tablevaluedfunc” 的第一个隐藏列是 “param1”，则上面的查询在语义上等同于此：</font> </p><p></p><pre class="code">SELECT * FROM realtab, tablevaluedfunc
  WHERE tablevaluedfunc.param1 = realtab.x;
-</pre></p><p> The query planner must decide between many possible implementations of this query, but two plans in particular are of note: </p><ol><li>Scan all rows of realtab and for each row, find rows in tablevaluedfunc where param1 is equal to realtab.x </li><li>Scan all rows of tablevalued func and for each row find rows in realtab where x is equal to tablevaluedfunc.param1. </li></ol><p> The xBestIndex method will be invoked once for each of the potential plans above. For plan 1, the aConstraint[].usable flag for the SQLITE_CONSTRAINT_EQ constraint on the param1 column will be true because the right-hand side value for the "param1 = ?" constraint will be known, since it is determined by the outer realtab loop. But for plan 2, the aConstraint[].usable flag for "param1 = ?" will be false because the right-hand side value is determined by an inner loop and is thus an unknown quantity. Because param1 is a required input to the table-valued functions, the xBestIndex method should return SQLITE_CONSTRAINT when presented with plan 2, indicating that a required input is missing. This forces the query planner to select plan 1. </p><div class="syntax"><a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xBestIndex(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pIndex</i><br />);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>pVtab</i></dt><dd> The native pointer to the sqlite3_vtab derived structure. </dd><dt><i>pIndex</i></dt><dd> The native pointer to the sqlite3_index_info structure. </dd></dl><h4 class="dtH4">Return Value</h4><p> A standard SQLite return code. </p><h4 class="dtH4">See Also</h4><p><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p><hr /><div id="footer"><p><a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xBestIndex Method ">Send comments on this topic.</a></p><p></p><p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p></div></div>
-  </body>
-</html>
+</pre><p></p><p> <font _mstmutation="1" _msttexthash="375581765" _msthash="51">查询计划程序必须在此查询的许多可能实现之间做出决定，但特别需要注意两个计划：</font></p><ol><li _msttexthash="248581476" _msthash="52">扫描 realtab 的所有行，对于每一行，在 tablevaluedfunc 中查找 param1 等于 realtab.x 的行</li><li _msttexthash="262771912" _msthash="53">扫描 tablevalued func 的所有行，并在 realtab 中查找 x 等于 tablevaluedfunc.param1 的每一行。</li></ol><p _msttexthash="9432576855" _msthash="54">对于上述每个潜在计划，将调用一次 xBestIndex 方法。对于计划 1，param1 列上 SQLITE_CONSTRAINT_EQ 约束的 aConstraint[].usable 标志将为 true，因为 “param1 = ？” 约束的右侧值是已知的，因为它是由外部 realtab 循环确定的。但对于计划 2，“param1 = ？”的 aConstraint[].usable 标志将为 false，因为右侧值由内部循环确定，因此是一个未知量。由于 param1 是表值函数的必需输入，因此 xBestIndex 方法在显示计划 2 时应返回 SQLITE_CONSTRAINT，指示缺少必需的输入。这会强制查询计划程序选择计划 1。</p><div class="syntax"><font _mstmutation="1" _msttexthash="27783522" _msthash="55"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html" _mstmutation="1" _istranslated="1">SQLiteErrorCode</a> xBestIndex（</font><br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pIndex</i><br>);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>pVtab</i></dt><dd> <font _mstmutation="1" _msttexthash="95380129" _msthash="56">指向 sqlite3_vtab 派生结构的本机指针。</font></dd><dt><i _msttexthash="76817" _msthash="57">pIndex</i></dt><dd> <font _mstmutation="1" _msttexthash="90689950" _msthash="58">指向 sqlite3_index_info 结构的本机指针。</font></dd></dl><h4 class="dtH4" _msttexthash="8066552" _msthash="59">返回值</h4><p> <font _mstmutation="1" _msttexthash="31178875" _msthash="60">标准 SQLite 返回代码。</font></p><h4 class="dtH4" _msttexthash="13182286" _msthash="61">另请参阅</h4><p _msttexthash="88983440" _msthash="62"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _istranslated="1">System.Data.SQLite 命名空间</a></p><hr><div id="footer"><p><a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xBestIndex%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="63">就此主题发送评论。</a></p><p></p><p _msttexthash="58771310" _msthash="64">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p></div></div>
+  
+</body></html>

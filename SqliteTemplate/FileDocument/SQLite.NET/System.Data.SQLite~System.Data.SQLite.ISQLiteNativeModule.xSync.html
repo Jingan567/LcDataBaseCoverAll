@@ -1,59 +1,60 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0177)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xSync.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xSync Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xSync_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="9">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xSync Method</h1>
+        <h1 class="dtH1" _msttexthash="23399961" _msthash="10">ISQLiteNativeModule.xSync 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xSync)(sqlite3_vtab *pVTab);
+        </p><pre class="code">int (*xSync)(sqlite3_vtab *pVTab);
 </pre>
-      </p>
-      <p> This method signals the start of a two-phase commit on a virtual table. This is method is optional. The xSync pointer of sqlite3_module may be NULL. </p>
-      <p> This method is only invoked after call to the xBegin method and prior to an xCommit or xRollback. In order to implement two-phase commit, the xSync method on all virtual tables is invoked prior to invoking the xCommit method on any virtual table. If any of the xSync methods fail, the entire transaction is rolled back. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="298981176" _msthash="0">此方法表示虚拟表上两阶段提交的开始。此方法是可选的。sqlite3_module 的 xSync 指针可能为 NULL。</font></p>
+      <p><font _mstmutation="1" _msttexthash="1720827615" _msthash="1">此方法仅在调用 xBegin 方法之后以及 xCommit 或 xRollback 之前调用。为了实现两阶段提交，在对任何虚拟表调用 xCommit 方法之前，将调用所有虚拟表上的 xSync 方法。如果任何 xSync 方法失败，则回滚整个事务。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xSync(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xSync(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pVtab</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="95380129" _msthash="2">指向 sqlite3_vtab 派生结构的本机指针。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="3">返回值</h4>
+      <p _msttexthash="31178875" _msthash="4">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="5">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="6"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xSync Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xSync%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="7">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="8">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

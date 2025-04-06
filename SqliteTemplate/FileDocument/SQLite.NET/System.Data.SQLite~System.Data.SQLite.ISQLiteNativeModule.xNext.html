@@ -1,60 +1,61 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0177)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xNext.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xNext Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xNext_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="10">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xNext Method</h1>
+        <h1 class="dtH1" _msttexthash="23401352" _msthash="11">ISQLiteNativeModule.xNext 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xNext)(sqlite3_vtab_cursor*);
+        </p><pre class="code">int (*xNext)(sqlite3_vtab_cursor*);
 </pre>
-      </p>
-      <p> The xNext method advances a virtual table cursor to the next row of a result set initiated by xFilter. If the cursor is already pointing at the last row when this routine is called, then the cursor no longer points to valid data and a subsequent call to the xEof method must return true (non-zero). If the cursor is successfully advanced to another row of content, then subsequent calls to xEof must return false (zero). </p>
-      <p> This method must return SQLITE_OK if successful, or an sqlite error code if an error occurs. </p>
-      <p> The xNext method is required for every virtual table implementation. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="2925790751" _msthash="0">xNext 方法将虚拟表游标前进到 xFilter 启动的结果集的下一行。如果在调用此例程时光标已指向最后一行，则光标不再指向有效数据，并且对 xEof 方法的后续调用必须返回 true（非零）。如果游标成功前进到另一行内容，则对 xEof 的后续调用必须返回 false（零）。</font></p>
+      <p _msttexthash="344038851" _msthash="1">如果成功，此方法必须返回 SQLITE_OK，如果发生错误，则必须返回 sqlite 错误代码。</p>
+      <p><font _mstmutation="1" _msttexthash="66924819" _msthash="2">每个虚拟表实现都需要 xNext 方法。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xNext(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pCursor</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xNext(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pCursor</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pCursor</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab_cursor derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="120713905" _msthash="3">指向 sqlite3_vtab_cursor 派生结构的本机指针。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="4">返回值</h4>
+      <p _msttexthash="31178875" _msthash="5">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="6">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="7"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xNext Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xNext%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="8">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="9">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

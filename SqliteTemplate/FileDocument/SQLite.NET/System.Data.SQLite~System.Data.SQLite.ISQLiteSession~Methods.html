@@ -1,60 +1,61 @@
-﻿<html dir="LTR">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0174)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods.html -->
+<html dir="LTR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteSession Methods</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteSession Methods</h1>
+        <h1 class="dtH1" _msttexthash="15326974" _msthash="1">ISQLiteSession 方法</h1>
       </div>
     </div>
     <div id="nstext">
-      <p>The methods of the <b>ISQLiteSession</b> interface are listed below. For a complete list of <b>ISQLiteSession</b> interface members, see the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Members.html">ISQLiteSession Members</a> topic.</p>
-      <h4 class="dtH4" xmlns:ndoc="urn:ndoc-schema">Public Instance Methods</h4>
+      <p _msttexthash="484409705" _msthash="2">下面列出了 <b _istranslated="1">ISQLiteSession</b> 接口的方法。有关 <b _istranslated="1">ISQLiteSession</b> 接口成员的完整列表，请参阅 <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Members.html" _istranslated="1">ISQLiteSession 成员</a>主题。</p>
+      <h4 class="dtH4" xmlns:ndoc="urn:ndoc-schema" _msttexthash="17526587" _msthash="3">公共实例方法</h4>
       <div class="tablediv" xmlns:ndoc="urn:ndoc-schema">
         <table class="dtTABLE" cellspacing="0">
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.AttachTable.html">AttachTable</a></td><td width="50%"> Upon success, causes changes to the specified table(s) to start being tracked. Any tables impacted by calls to this method will not cause the <a href="System.Data.SQLite~System.Data.SQLite.SessionTableFilterCallback.html">SessionTableFilterCallback</a> callback to be invoked. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.CreateChangeSet~Overloads.html">CreateChangeSet</a></td><td width="50%">Overloaded.  Attempts to create and return, via <i>rawData</i>, the combined set of changes represented by this session instance. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.CreatePatchSet~Overloads.html">CreatePatchSet</a></td><td width="50%">Overloaded.  Attempts to create and return, via <i>rawData</i>, the combined set of changes represented by this session instance as a patch set. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.GetMemoryBytesInUse.html">GetMemoryBytesInUse</a></td><td width="50%"> This method attempts to determine the amount of memory used by the session. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.IsEmpty.html">IsEmpty</a></td><td width="50%"> Determines if there are any tracked changes currently within the data for this session. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.IsEnabled.html">IsEnabled</a></td><td width="50%"> Determines if this session is currently tracking changes to its associated database. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.IsIndirect.html">IsIndirect</a></td><td width="50%"> Determines if this session is currently set to mark changes as indirect (i.e. as though they were made via a trigger or foreign key action). </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.LoadDifferencesFromTable.html">LoadDifferencesFromTable</a></td><td width="50%"> This method loads the differences between two tables [with the same name, set of columns, and primary key definition] into this session instance. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetTableFilter.html">SetTableFilter</a></td><td width="50%"> This method is used to set the table filter for this instance. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToDirect.html">SetToDirect</a></td><td width="50%"> Clears the indirect flag for this session. Subsequent changes will be marked as direct until this flag is changed again. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToDisabled.html">SetToDisabled</a></td><td width="50%"> Disables tracking of changes to the associated database. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToEnabled.html">SetToEnabled</a></td><td width="50%"> Enables tracking of changes to the associated database. </td></tr>
-<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToIndirect.html">SetToIndirect</a></td><td width="50%"> Sets the indirect flag for this session. Subsequent changes will be marked as indirect until this flag is changed again. </td></tr></table>
+<tbody><tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.AttachTable.html">AttachTable</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="383165770" _msthash="8">成功后，将开始跟踪对指定表的更改。任何受此方法调用影响的表都不会导致调用 <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SessionTableFilterCallback.html" _mstmutation="1" _istranslated="1">SessionTableFilterCallback</a> 回调。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.CreateChangeSet~Overloads.html">CreateChangeSet</a></td><td width="50%"><font _mstmutation="1" _msttexthash="227532903" _msthash="9">重载。尝试通过 <i _mstmutation="1" _istranslated="1">rawData</i> 创建并返回此 session 实例表示的组合更改集。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.CreatePatchSet~Overloads.html">CreatePatchSet</a></td><td width="50%"><font _mstmutation="1" _msttexthash="288974777" _msthash="10">重载。尝试通过 <i _mstmutation="1" _istranslated="1">rawData</i> 创建并返回此会话实例表示为补丁集的组合更改集。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.GetMemoryBytesInUse.html">GetMemoryBytesInUse</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="78994773" _msthash="11">此方法尝试确定会话使用的内存量。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.IsEmpty.html">IsEmpty</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="94495778" _msthash="12">确定此会话的数据中当前是否有任何修订。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.IsEnabled.html">IsEnabled</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="147643795" _msthash="13">确定此会话当前是否正在跟踪对其关联数据库的更改。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.IsIndirect.html">IsIndirect</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="529394671" _msthash="14">确定此会话当前是否设置为将更改标记为间接更改 （即，就像更改是通过触发器或外键作进行的） 一样。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.LoadDifferencesFromTable.html">LoadDifferencesFromTable</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="315148301" _msthash="15">此方法将两个 table 之间的差异 [具有相同的名称、列集和主键定义] 加载到此 session 实例中。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetTableFilter.html" _msttexthash="249431" _msthash="16">SetTableFilter</a></td><td width="50%"><font _mstmutation="1" _msttexthash="91366808" _msthash="17">该方法用于设置该实例的表筛选条件。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToDirect.html">SetToDirect</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="266461104" _msthash="18">清除此会话的间接标志。后续更改将被标记为 direct，直到再次更改此标志。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToDisabled.html">SetToDisabled</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="66680575" _msthash="19">禁用对关联数据库的更改跟踪。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToEnabled.html">SetToEnabled</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="65811161" _msthash="20">启用对关联数据库的更改跟踪。</font> </td></tr>
+<tr valign="top"><td width="50%"><img src="./System.Data.SQLite~System.Data.SQLite.ISQLiteSession~Methods_files/pubmethod.gif"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetToIndirect.html">SetToIndirect</a></td><td width="50%"> <font _mstmutation="1" _msttexthash="273026078" _msthash="21">设置此会话的间接标志。后续更改将被标记为 间接 ，直到再次更改此标志。</font> </td></tr></tbody></table>
       </div>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="4">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.html">ISQLiteSession Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="78325988" _msthash="5"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.html" _mstmutation="1" _istranslated="1">ISQLiteSession 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteSession Methods">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteSession%C2%A0Methods" _msttexthash="36201139" _msthash="6">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="7">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

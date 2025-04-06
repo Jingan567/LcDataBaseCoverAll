@@ -1,63 +1,64 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0178)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xRowId.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xRowId Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xRowId_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="10">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xRowId Method</h1>
+        <h1 class="dtH1" _msttexthash="24131185" _msthash="11">ISQLiteNativeModule.xRowId 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xRowid)(sqlite3_vtab_cursor *pCur, sqlite_int64 *pRowid);
+        </p><pre class="code">int (*xRowid)(sqlite3_vtab_cursor *pCur, sqlite_int64 *pRowid);
 </pre>
-      </p>
-      <p> A successful invocation of this method will cause *pRowid to be filled with the rowid of row that the virtual table cursor pCur is currently pointing at. This method returns SQLITE_OK on success. It returns an appropriate error code on failure. </p>
-      <p> The xRowid method is required for every virtual table implementation. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="838448975" _msthash="8">成功调用此方法将导致 *pRowid 填充虚拟表游标 pCur 当前指向的行的 rowid。此方法在成功时返回 SQLITE_OK。失败时，它会返回相应的错误代码。</font></p>
+      <p><font _mstmutation="1" _msttexthash="67814058" _msthash="9">每个虚拟表实现都需要 xRowid 方法。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xRowId(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pCursor</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a> <i>rowId</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xRowId(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pCursor</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a>&nbsp;<i>rowId</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pCursor</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab_cursor derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="120713905" _msthash="7">指向 sqlite3_vtab_cursor 派生结构的本机指针。</font> </dd>
         <dt>
           <i>rowId</i>
         </dt>
-        <dd> Upon success, this parameter must be modified to contain the unique integer row identifier for the current row for the specified cursor. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="248429831" _msthash="0">成功后，必须修改此参数以包含指定游标的当前行的唯一整数行标识符。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="1">返回值</h4>
+      <p _msttexthash="31178875" _msthash="2">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="3">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="4"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xRowId Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xRowId%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="5">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="6">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

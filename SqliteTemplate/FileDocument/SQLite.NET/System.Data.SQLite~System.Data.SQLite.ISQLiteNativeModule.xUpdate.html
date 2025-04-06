@@ -1,110 +1,109 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0179)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xUpdate.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xUpdate Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xUpdate_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xUpdate Method</h1>
+        <h1 class="dtH1" _msttexthash="24885627" _msthash="1">ISQLiteNativeModule.xUpdate 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xUpdate)(
+        </p><pre class="code">int (*xUpdate)(
   sqlite3_vtab *pVTab,
   int argc,
   sqlite3_value **argv,
   sqlite_int64 *pRowid
 );
 </pre>
-      </p>
-      <p> All changes to a virtual table are made using the xUpdate method. This one method can be used to insert, delete, or update. </p>
-      <p> The argc parameter specifies the number of entries in the argv array. The value of argc will be 1 for a pure delete operation or N+2 for an insert or replace or update where N is the number of columns in the table. In the previous sentence, N includes any hidden columns. </p>
-      <p> Every argv entry will have a non-NULL value in C but may contain the SQL value NULL. In other words, it is always true that <tt>argv[i]!=0</tt> for <b>i</b> between 0 and <tt>argc-1</tt>. However, it might be the case that <tt>sqlite3_value_type(argv[i])==SQLITE_NULL</tt>. </p>
-      <p> The argv[0] parameter is the rowid of a row in the virtual table to be deleted. If argv[0] is an SQL NULL, then no deletion occurs. </p>
-      <p> The argv[1] parameter is the rowid of a new row to be inserted into the virtual table. If argv[1] is an SQL NULL, then the implementation must choose a rowid for the newly inserted row. Subsequent argv[] entries contain values of the columns of the virtual table, in the order that the columns were declared. The number of columns will match the table declaration that the xConnect or xCreate method made using the sqlite3_declare_vtab() call. All hidden columns are included. </p>
-      <p> When doing an insert without a rowid (argc&gt;1, argv[1] is an SQL NULL), on a virtual table that uses ROWID (but not on a WITHOUT ROWID virtual table), the implementation must set *pRowid to the rowid of the newly inserted row; this will become the value returned by the sqlite3_last_insert_rowid() function. Setting this value in all the other cases is a harmless no-op; the SQLite engine ignores the *pRowid return value if argc==1 or argv[1] is not an SQL NULL. </p>
-      <p> Each call to xUpdate will fall into one of cases shown below. Not that references to <b>argv[i]</b> mean the SQL value held within the argv[i] object, not the argv[i] object itself. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="312390234" _msthash="2">对虚拟表的所有更改都是使用 xUpdate 方法进行的。此方法可用于插入、删除或更新。</font></p>
+      <p _msttexthash="1109629469" _msthash="3">argc 参数指定 argv 数组中的条目数。argc 的值将为 1 （对于纯删除作）或 N+2 （插入、替换或更新），其中 N 是表中的列数。在上一句中， N 包括任何隐藏的列。</p>
+      <p _msttexthash="1341013986" _msthash="4">每个 argv 条目在 C 中都有一个非 NULL 值，但可能包含 SQL 值 NULL。换句话说，<tt _istranslated="1">argv[i]！=0</tt> 对于 <b _istranslated="1">i</b> 介于 0 和 <tt _istranslated="1">argc-1</tt> 之间，这始终是正确的。但是，可能会出现 <tt _istranslated="1">sqlite3_value_type（argv[i]）==SQLITE_NULL</tt> 的情况。</p>
+      <p _msttexthash="344737055" _msthash="5">argv[0] 参数是虚拟表中需要删除的一行的 rowid。如果 argv[0] 是 SQL NULL，则不会发生删除。</p>
+      <p _msttexthash="3021880784" _msthash="6">argv[1] 参数是要插入到虚拟表中的新行的 rowid。如果 argv[1] 是 SQL NULL，则实现必须为新插入的行选择 rowid。后续的 argv[] 条目包含虚拟表的列的值，按列的声明顺序排列。列数将与 xConnect 或 xCreate 方法使用 sqlite3_declare_vtab（） 调用进行的表声明匹配。包括所有隐藏的列。</p>
+      <p _msttexthash="3908014162" _msthash="7">当在没有rowid（argc&gt;1，argv[1]是SQL NULL）的情况下进行插入时，在使用ROWID的虚拟表上（但不在WITHOUT ROWID虚拟表上），实现必须将*pRowid设置为新插入行的rowid;这将成为 sqlite3_last_insert_rowid（） 函数返回的值。在所有其他情况下设置此值是无害的 no-op;如果argc==1或argv[1]不是SQL NULL，则SQLite引擎将忽略*pRowid返回值。</p>
+      <p><font _mstmutation="1" _msttexthash="636873224" _msthash="8">每次调用 xUpdate 都属于如下所示的情况之一。并不是说对 <b _mstmutation="1" _istranslated="1">argv[i]</b> 的引用是指 argv[i] 对象中保存的 SQL 值，而不是 argv[i] 对象本身。</font> </p>
       <p>
-        <pre class="code"><dl><dt><b>argc = 1 <br> argv[0] ≠ NULL</b></dt><dd>
-            DELETE: The single row with rowid or PRIMARY KEY equal to argv[0] is deleted. 
-            No insert occurs.
+        </p><pre class="code"><dl><dt><b>argc = 1 <br> argv[0] ≠ NULL</b></dt><dd>
+           <font _mstmutation="1" _msttexthash="186151654" _msthash="9">DELETE：删除 rowid 或 PRIMARY KEY 等于 argv[0] 的单行。
+ 不发生插入。</font>
             </dd><dt><b>argc &gt; 1 <br> argv[0] = NULL</b></dt><dd>
-            INSERT: A new row is inserted with column values taken from
-            argv[2] and following.  In a rowid virtual table, if argv[1] is an SQL NULL,
-            then a new unique rowid is generated automatically.  The argv[1] will be NULL
-            for a WITHOUT ROWID virtual table, in which case the implementation should
-            take the PRIMARY KEY value from the appropriate column in argv[2] and following.
+          <font _mstmutation="1" _msttexthash="2162173442" _msthash="10">INSERT：插入一个新行，列值取自
+ argv[2] 及以下版本。在 rowid 虚拟表中，如果 argv[1] 为 SQL NULL，则
+ 然后，将自动生成一个新的唯一 rowid。argv[1] 将为 NULL
+ 对于 WITHOUT ROWID 虚拟表，在这种情况下，实现应
+ 从 argv[2] 及以下的相应列中获取 PRIMARY KEY 值。</font>
             </dd><dt><b>argc &gt; 1 <br> argv[0] ≠ NULL <br> argv[0] = argv[1]</b></dt><dd>
-            UPDATE:
-            The row with rowid or PRIMARY KEY argv[0] is updated with new values 
-            in argv[2] and following parameters.
+            <font _mstmutation="1" _msttexthash="240501573" _msthash="11">更新：
+ 具有 rowid 或 PRIMARY KEY argv[0] 的行将更新为新值
+ 在 argv[2] 和以下参数中。</font>
             </dd><dt><b>argc &gt; 1 <br> argv[0] ≠ NULL <br> argv[0] ≠ argv[1]</b></dt><dd>
-            UPDATE with rowid or PRIMARY KEY change:
-            The row with rowid or PRIMARY KEY argv[0] is updated with 
-            the rowid or PRIMARY KEY in argv[1] 
-            and new values in argv[2] and following parameters. This will occur 
-            when an SQL statement updates a rowid, as in the statement:
-            <p><pre class="code">
-               UPDATE table SET rowid=rowid+1 WHERE ...; 
-            </pre></p></dd></dl></pre>
-      </p>
-      <p> The xUpdate method must return SQLITE_OK if and only if it is successful. If a failure occurs, the xUpdate must return an appropriate error code. On a failure, the pVTab-&gt;zErrMsg element may optionally be replaced with error message text stored in memory allocated from SQLite using functions such as sqlite3_mprintf() or sqlite3_malloc(). </p>
-      <p> If the xUpdate method violates some constraint of the virtual table (including, but not limited to, attempting to store a value of the wrong datatype, attempting to store a value that is too large or too small, or attempting to change a read-only value) then the xUpdate must fail with an appropriate error code. </p>
-      <p> If the xUpdate method is performing an UPDATE, then sqlite3_value_nochange(X) can be used to discover which columns of the virtual table were actually modified by the UPDATE statement. The sqlite3_value_nochange(X) interface returns true for columns that do not change. On every UPDATE, SQLite will first invoke xColumn separately for each unchanging column in the table to obtain the value for that column. The xColumn method can check to see if the column is unchanged at the SQL level by invoking sqlite3_vtab_nochange(). If xColumn sees that the column is not being modified, it should return without setting a result using one of the sqlite3_result_xxxxx() interfaces. Only in that case sqlite3_value_nochange() will be true within the xUpdate method. If xColumn does invoke one or more sqlite3_result_xxxxx() interfaces, then SQLite understands that as a change in the value of the column and the sqlite3_value_nochange() call for that column within xUpdate will return false. </p>
-      <p> There might be one or more sqlite3_vtab_cursor objects open and in use on the virtual table instance and perhaps even on the row of the virtual table when the xUpdate method is invoked. The implementation of xUpdate must be prepared for attempts to delete or modify rows of the table out from other existing cursors. If the virtual table cannot accommodate such changes, the xUpdate method must return an error code. </p>
-      <p> The xUpdate method is optional. If the xUpdate pointer in the sqlite3_module for a virtual table is a NULL pointer, then the virtual table is read-only. </p>
+            <font _mstmutation="1" _msttexthash="1558660168" _msthash="12">UPDATE 与 rowid 或 PRIMARY KEY 更改：
+ 具有 rowid 或 PRIMARY KEY argv[0] 的行将更新为
+ argv[1] 中的 rowid 或 PRIMARY KEY
+ 以及 argv[2] 和以下参数中的新值。这将发生
+ 当 SQL 语句更新 rowid 时，如以下语句所示：</font><p></p><pre class="code">               UPDATE table SET rowid=rowid+1 WHERE ...; 
+            </pre><p></p></dd></dl></pre>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="2604389983" _msthash="13">当且仅当 xUpdate 方法成功时，xUpdate 方法必须返回 SQLITE_OK。如果发生故障，xUpdate 必须返回相应的错误代码。失败时，可以选择使用 sqlite3_mprintf（） 或 sqlite3_malloc（） 等函数将 pVTab-&gt;zErrMsg 元素替换为存储在从 SQLite 分配的内存中的错误消息文本。</font></p>
+      <p _msttexthash="1452720997" _msthash="14">如果 xUpdate 方法违反了虚拟表的某些约束（包括但不限于尝试存储错误数据类型的值、尝试存储太大或太小的值，或者尝试更改只读值），则 xUpdate 必须失败并显示相应的错误代码。</p>
+      <p _msttexthash="16335320586" _msthash="15">如果 xUpdate 方法正在执行 UPDATE，则可以使用 sqlite3_value_nochange（X） 来发现 UPDATE 语句实际修改了虚拟表的哪些列。sqlite3_value_nochange（X） 接口为不更改的列返回 true。在每次 UPDATE 时，SQLite 将首先为表中的每个不变列分别调用 xColumn 以获取该列的值。xColumn 方法可以通过调用 sqlite3_vtab_nochange（） 来检查列在 SQL 级别是否保持不变。如果 xColumn 看到该列没有被修改，它应该返回而不使用 sqlite3_result_xxxxx（） 接口之一设置结果。只有在这种情况下，sqlite3_value_nochange（） 才会在 xUpdate 方法中为 true。如果 xColumn 确实调用了一个或多个 sqlite3_result_xxxxx（） 接口，则 SQLite 理解为列值的更改以及 xUpdate 中对该列的 sqlite3_value_nochange（） 调用将返回 false。</p>
+      <p _msttexthash="2437442436" _msthash="16">调用 xUpdate 方法时，虚拟表实例上甚至虚拟表的行上可能打开并正在使用一个或多个 sqlite3_vtab_cursor 对象。xUpdate 的实现必须准备好尝试从其他现有游标中删除或修改表的行。如果虚拟表无法容纳此类更改，则 xUpdate 方法必须返回错误代码。</p>
+      <p><font _mstmutation="1" _msttexthash="479450985" _msthash="17">xUpdate 方法是可选的。如果虚拟表的sqlite3_module中的 xUpdate 指针是 NULL 指针，则虚拟表是只读的。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xUpdate(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a> <i>rowId</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xUpdate(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>argc</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>argv</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int64(VS.90).aspx">long</a>&nbsp;<i>rowId</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pVtab</i>
         </dt>
-        <dd> The native pointer to the sqlite3_vtab derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="95380129" _msthash="18">指向 sqlite3_vtab 派生结构的本机指针。</font> </dd>
         <dt>
           <i>argc</i>
         </dt>
-        <dd> The number of new or modified column values contained in <i>argv</i>. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="102313224" _msthash="19"><i _mstmutation="1" _istranslated="1">argv</i> 中包含的新列值或修改的列值的数量。</font> </dd>
         <dt>
           <i>argv</i>
         </dt>
-        <dd> The array of native pointers to sqlite3_value structures containing the new or modified column values, if any. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="318314529" _msthash="20">指向包含新列值或修改的列值的 sqlite3_value 结构的本机指针数组（如果有）。</font> </dd>
         <dt>
           <i>rowId</i>
         </dt>
-        <dd> Upon success, this parameter must be modified to contain the unique integer row identifier for the row that was inserted, if any. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="296392018" _msthash="21">成功后，必须修改此参数以包含插入的行的唯一整数行标识符（如果有）。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="22">返回值</h4>
+      <p _msttexthash="31178875" _msthash="23">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="24">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="25"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xUpdate Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xUpdate%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="26">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="27">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

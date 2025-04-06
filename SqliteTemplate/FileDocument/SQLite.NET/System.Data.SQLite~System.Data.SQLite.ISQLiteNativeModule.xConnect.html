@@ -1,87 +1,88 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0180)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xConnect.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xConnect Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xConnect_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="19">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xConnect Method</h1>
+        <h1 class="dtH1" _msttexthash="25632737" _msthash="20">ISQLiteNativeModule.xConnect 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xConnect)(sqlite3*, void *pAux,
+        </p><pre class="code">int (*xConnect)(sqlite3*, void *pAux,
              int argc, char *const*argv,
              sqlite3_vtab **ppVTab,
              char **pzErr);
 </pre>
-      </p>
-      <p> The xConnect method is very similar to xCreate. It has the same parameters and constructs a new sqlite3_vtab structure just like xCreate. And it must also call sqlite3_declare_vtab() like xCreate. It should also make all of the same sqlite3_vtab_config() calls as xCreate. </p>
-      <p> The difference is that xConnect is called to establish a new connection to an existing virtual table whereas xCreate is called to create a new virtual table from scratch. </p>
-      <p> The xCreate and xConnect methods are only different when the virtual table has some kind of backing store that must be initialized the first time the virtual table is created. The xCreate method creates and initializes the backing store. The xConnect method just connects to an existing backing store. When xCreate and xConnect are the same, the table is an eponymous virtual table. </p>
-      <p> As an example, consider a virtual table implementation that provides read-only access to existing comma-separated-value (CSV) files on disk. There is no backing store that needs to be created or initialized for such a virtual table (since the CSV files already exist on disk) so the xCreate and xConnect methods will be identical for that module. </p>
-      <p> Another example is a virtual table that implements a full-text index. The xCreate method must create and initialize data structures to hold the dictionary and posting lists for that index. The xConnect method, on the other hand, only has to locate and use an existing dictionary and posting lists that were created by a prior xCreate call. </p>
-      <p> The xConnect method must return SQLITE_OK if it is successful in creating the new virtual table, or SQLITE_ERROR if it is not successful. If not successful, the sqlite3_vtab structure must not be allocated. An error message may optionally be returned in *pzErr if unsuccessful. Space to hold the error message string must be allocated using an SQLite memory allocation function like sqlite3_malloc() or sqlite3_mprintf() as the SQLite core will attempt to free the space using sqlite3_free() after the error has been reported up to the application. </p>
-      <p> The xConnect method is required for every virtual table implementation, though the xCreate and xConnect pointers of the sqlite3_module object may point to the same function if the virtual table does not need to initialize backing store. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="1801248215" _msthash="0">xConnect 方法与 xCreate 非常相似。它具有相同的参数，并像 xCreate 一样构建一个新的 sqlite3_vtab 结构。它还必须像 xCreate 一样调用 sqlite3_declare_vtab（）。它还应该进行与 xCreate 相同的所有 sqlite3_vtab_config（） 调用。</font></p>
+      <p _msttexthash="531147500" _msthash="1">区别在于，调用 xConnect 是为了建立与现有虚拟表的新连接，而调用 xCreate 是为了从头开始创建新的虚拟表。</p>
+      <p _msttexthash="1777882704" _msthash="2">仅当虚拟表具有某种必须在首次创建虚拟表时初始化的后备存储时，xCreate 和 xConnect 方法才不同。xCreate 方法创建并初始化后备存储。xConnect 方法只连接到现有的后备存储。当 xCreate 和 xConnect 相同时，该表是同名的虚拟表。</p>
+      <p _msttexthash="1669193877" _msthash="3">例如，考虑一个虚拟表实现，它提供对磁盘上现有逗号分隔值 （CSV） 文件的只读访问权限。不需要为此类虚拟表创建或初始化后备存储（因为 CSV 文件已存在于磁盘上），因此该模块的 xCreate 和 xConnect 方法将相同。</p>
+      <p _msttexthash="1502981896" _msthash="4">另一个示例是实现全文索引的虚拟表。xCreate 方法必须创建并初始化数据结构，以保存该索引的字典和发布列表。另一方面，xConnect 方法只需查找和使用由先前 xCreate 调用创建的现有字典和发布列表。</p>
+      <p _msttexthash="6308142971" _msthash="5">如果 xConnect 方法成功创建新的虚拟表，则必须返回 SQLITE_OK，如果未成功，则必须返回 SQLITE_ERROR。如果不成功，则不得分配 sqlite3_vtab 结构。如果不成功，可以选择在 *pzErr 中返回错误消息。必须使用 SQLite 内存分配函数（如 sqlite3_malloc（） 或 sqlite3_mprintf（） ）分配保存错误消息字符串的空间，因为在向应用程序报告错误后，SQLite 核心将尝试使用 sqlite3_free（） 释放空间。</p>
+      <p><font _mstmutation="1" _msttexthash="707825781" _msthash="6">每个虚拟表实现都需要 xConnect 方法，但如果虚拟表不需要初始化后备存储，则 sqlite3_module 对象的 xCreate 和 xConnect 指针可能指向同一函数。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xConnect(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pDb</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pAux</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pError</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xConnect(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pDb</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pAux</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>argc</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>argv</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pError</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pDb</i>
         </dt>
-        <dd> The native database connection handle. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="36662860" _msthash="7">本机数据库连接句柄。</font> </dd>
         <dt>
           <i>pAux</i>
         </dt>
-        <dd> The original native pointer value that was provided to the sqlite3_create_module(), sqlite3_create_module_v2() or sqlite3_create_disposable_module() functions. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="701463347" _msthash="8">提供给 sqlite3_create_module（）、sqlite3_create_module_v2（） 或 sqlite3_create_disposable_module（） 函数的原始本机指针值。</font> </dd>
         <dt>
           <i>argc</i>
         </dt>
-        <dd> The number of arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="71028958" _msthash="9">CREATE VIRTUAL TABLE 语句中的参数数。</font> </dd>
         <dt>
           <i>argv</i>
         </dt>
-        <dd> The array of string arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="121744974" _msthash="10">来自 CREATE VIRTUAL TABLE 语句的字符串参数数组。</font> </dd>
         <dt>
           <i>pVtab</i>
         </dt>
-        <dd> Upon success, this parameter must be modified to point to the newly created native sqlite3_vtab derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="181280879" _msthash="11">成功后，必须修改此参数以指向新创建的原生 sqlite3_vtab 派生结构。</font> </dd>
         <dt>
           <i>pError</i>
         </dt>
-        <dd> Upon failure, this parameter must be modified to point to the error message, with the underlying memory having been obtained from the sqlite3_malloc() function. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="329401995" _msthash="12">失败时，必须修改此参数以指向错误消息，底层内存已从 sqlite3_malloc（） 函数获取。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="13">返回值</h4>
+      <p _msttexthash="31178875" _msthash="14">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="15">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="16"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xConnect Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xConnect%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="17">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="18">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

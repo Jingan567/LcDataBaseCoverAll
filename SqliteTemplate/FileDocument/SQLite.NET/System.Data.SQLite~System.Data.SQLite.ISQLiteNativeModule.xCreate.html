@@ -1,134 +1,135 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0179)file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xCreate.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>ISQLiteNativeModule.xCreate Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.xCreate_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">ISQLiteNativeModule.xCreate Method</h1>
+        <h1 class="dtH1" _msttexthash="24880219" _msthash="1">ISQLiteNativeModule.xCreate 方法</h1>
       </div>
     </div>
     <div id="nstext">
       <p>
-        <pre class="code">int (*xCreate)(sqlite3 *db, void *pAux,
+        </p><pre class="code">int (*xCreate)(sqlite3 *db, void *pAux,
              int argc, char *const*argv,
              sqlite3_vtab **ppVTab,
              char **pzErr);
 </pre>
-      </p>
-      <p> The xCreate method is called to create a new instance of a virtual table in response to a CREATE VIRTUAL TABLE statement. If the xCreate method is the same pointer as the xConnect method, then the virtual table is an eponymous virtual table. If the xCreate method is omitted (if it is a NULL pointer) then the virtual table is an eponymous-only virtual table. </p>
-      <p> The db parameter is a pointer to the SQLite database connection that is executing the CREATE VIRTUAL TABLE statement. The pAux argument is the copy of the client data pointer that was the fourth argument to the sqlite3_create_module() or sqlite3_create_module_v2() call that registered the virtual table module. The argv parameter is an array of argc pointers to null terminated strings. The first string, argv[0], is the name of the module being invoked. The module name is the name provided as the second argument to sqlite3_create_module() and as the argument to the USING clause of the CREATE VIRTUAL TABLE statement that is running. The second, argv[1], is the name of the database in which the new virtual table is being created. The database name is "main" for the primary database, or "temp" for TEMP database, or the name given at the end of the ATTACH statement for attached databases. The third element of the array, argv[2], is the name of the new virtual table, as specified following the TABLE keyword in the CREATE VIRTUAL TABLE statement. If present, the fourth and subsequent strings in the argv[] array report the arguments to the module name in the CREATE VIRTUAL TABLE statement. </p>
-      <p> The job of this method is to construct the new virtual table object (an sqlite3_vtab object) and return a pointer to it in *ppVTab. </p>
-      <p> As part of the task of creating a new sqlite3_vtab structure, this method <u xmlns="urn:ndoc-schema">must</u> invoke sqlite3_declare_vtab() to tell the SQLite core about the columns and datatypes in the virtual table. The sqlite3_declare_vtab() API has the following prototype: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="2013534042" _msthash="2">调用 xCreate 方法以创建虚拟表的新实例，以响应 CREATE VIRTUAL TABLE 语句。如果 xCreate 方法与 xConnect 方法相同，则虚拟表是同名虚拟表。如果省略 xCreate 方法（如果它是 NULL 指针），则虚拟表是仅同名的虚拟表。</font></p>
+      <p _msttexthash="25700774827" _msthash="3">db 参数是指向正在执行 CREATE VIRTUAL TABLE 语句的 SQLite 数据库连接的指针。pAux 参数是 Client 端数据指针的副本，该指针是注册虚拟 table 模块的 sqlite3_create_module（） 或 sqlite3_create_module_v2（） 调用的第四个参数。argv 参数是指向以 null 结尾的字符串的 argc 指针数组。第一个字符串 argv[0] 是正在调用的模块的名称。模块名称是作为 sqlite3_create_module（） 的第二个参数和正在运行的 CREATE VIRTUAL TABLE 语句的 USING 子句的参数提供的名称。第二个 argv[1] 是正在其中创建新虚拟表的数据库的名称。对于主数据库，数据库名称为 “main”，对于 TEMP 数据库，数据库名称为 “temp”，对于附加的数据库，则为 ATTACH 语句末尾给出的名称。数组的第三个元素 argv[2] 是新虚拟表的名称，在 CREATE VIRTUAL TABLE 语句中的 TABLE 关键字后面指定。如果存在，则 argv[] 数组中的第四个和后续字符串将参数报告给 CREATE VIRTUAL TABLE 语句中的模块名称。</p>
+      <p _msttexthash="366545465" _msthash="4">此方法的工作是构造新的虚拟表对象 （sqlite3_vtab对象） 并在 *ppVTab 中返回指向它的指针。</p>
+      <p><font _mstmutation="1" _msttexthash="1377795549" _msthash="5">作为创建新sqlite3_vtab结构任务的一部分，此方法<u xmlns="urn:ndoc-schema" _mstmutation="1" _istranslated="1">必须</u>调用 sqlite3_declare_vtab（） 来告诉 SQLite 核心有关虚拟表中的列和数据类型的信息。sqlite3_declare_vtab（） API 具有以下原型：</font> </p>
       <p>
-        <pre class="code">int sqlite3_declare_vtab(sqlite3 *db, const char *zCreateTable)
+        </p><pre class="code">int sqlite3_declare_vtab(sqlite3 *db, const char *zCreateTable)
 </pre>
-      </p>
-      <p> The first argument to sqlite3_declare_vtab() must be the same database connection pointer as the first parameter to this method. The second argument to sqlite3_declare_vtab() must a zero-terminated UTF-8 string that contains a well-formed CREATE TABLE statement that defines the columns in the virtual table and their data types. The name of the table in this CREATE TABLE statement is ignored, as are all constraints. Only the column names and datatypes matter. The CREATE TABLE statement string need not to be held in persistent memory. The string can be deallocated and/or reused as soon as the sqlite3_declare_vtab() routine returns. </p>
-      <p> The xConnect method can also optionally request special features for the virtual table by making one or more calls to the sqlite3_vtab_config() interface: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="8455442333" _msthash="6">sqlite3_declare_vtab（） 的第一个参数必须与此方法的第一个参数是相同的数据库连接指针。sqlite3_declare_vtab（） 的第二个参数必须是一个以零结尾的 UTF-8 字符串，该字符串包含格式正确的 CREATE TABLE 语句，该语句定义虚拟表中的列及其数据类型。此 CREATE TABLE 语句中的表名称将被忽略，所有约束也是如此。只有列名和数据类型才重要。CREATE TABLE 语句字符串不需要保存在持久内存中。一旦 sqlite3_declare_vtab（） 例程返回，就可以释放和/或重用该字符串。</font></p>
+      <p><font _mstmutation="1" _msttexthash="675158913" _msthash="7">xConnect 方法还可以选择通过对 sqlite3_vtab_config（） 接口进行一次或多次调用来请求虚拟表的特殊功能：</font> </p>
       <p>
-        <pre class="code">int sqlite3_vtab_config(sqlite3 *db, int op, ...);
+        </p><pre class="code">int sqlite3_vtab_config(sqlite3 *db, int op, ...);
 </pre>
-      </p>
-      <p> Calls to sqlite3_vtab_config() are optional. But for maximum security, it is recommended that virtual table implementations invoke "sqlite3_vtab_config(db, SQLITE_VTAB_DIRECTONLY)" if the virtual table will not be used from inside of triggers or views. </p>
-      <p> The xCreate method need not initialize the pModule, nRef, and zErrMsg fields of the sqlite3_vtab object. The SQLite core will take care of that chore. </p>
-      <p> The xCreate should return SQLITE_OK if it is successful in creating the new virtual table, or SQLITE_ERROR if it is not successful. If not successful, the sqlite3_vtab structure must not be allocated. An error message may optionally be returned in *pzErr if unsuccessful. Space to hold the error message string must be allocated using an SQLite memory allocation function like sqlite3_malloc() or sqlite3_mprintf() as the SQLite core will attempt to free the space using sqlite3_free() after the error has been reported up to the application. </p>
-      <p> If the xCreate method is omitted (left as a NULL pointer) then the virtual table is an eponymous-only virtual table. New instances of the virtual table cannot be created using CREATE VIRTUAL TABLE and the virtual table can only be used via its module name. Note that SQLite versions prior to 3.9.0 (2015-10-14) do not understand eponymous-only virtual tables and will segfault if an attempt is made to CREATE VIRTUAL TABLE on an eponymous-only virtual table because the xCreate method was not checked for null. </p>
-      <p> If the xCreate method is the exact same pointer as the xConnect method, that indicates that the virtual table does not need to initialize backing store. Such a virtual table can be used as an eponymous virtual table or as a named virtual table using CREATE VIRTUAL TABLE or both. </p>
-      <p> If a column datatype contains the special keyword "HIDDEN" (in any combination of upper and lower case letters) then that keyword it is omitted from the column datatype name and the column is marked as a hidden column internally. A hidden column differs from a normal column in three respects: </p>
-      <p><ul><li> Hidden columns are not listed in the dataset returned by "PRAGMA table_info", </li><li> Hidden columns are not included in the expansion of a "*" expression in the result set of a SELECT, and </li><li> Hidden columns are not included in the implicit column-list used by an INSERT statement that lacks an explicit column-list. </li></ul></p>
-      <p> For example, if the following SQL is passed to sqlite3_declare_vtab(): </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="1315423239" _msthash="8">对 sqlite3_vtab_config（） 的调用是可选的。但为了获得最大的安全性，如果虚拟表不会从触发器或视图内部使用，建议虚拟表实现调用 “sqlite3_vtab_config（db， SQLITE_VTAB_DIRECTONLY）”。</font></p>
+      <p _msttexthash="384385807" _msthash="9">xCreate 方法不需要初始化 sqlite3_vtab 对象的 pModule、nRef 和 zErrMsg 字段。SQLite 核心将处理这些琐事。</p>
+      <p _msttexthash="5903738841" _msthash="10">如果 xCreate 成功创建新的虚拟表，则应返回 SQLITE_OK，如果未成功，则应返回 SQLITE_ERROR。如果不成功，则不得分配 sqlite3_vtab 结构。如果不成功，可以选择在 *pzErr 中返回错误消息。必须使用 SQLite 内存分配函数（如 sqlite3_malloc（） 或 sqlite3_mprintf（） ）分配保存错误消息字符串的空间，因为 SQLite 核心将在错误报告给应用程序后尝试使用 sqlite3_free（） 释放空间。</p>
+      <p _msttexthash="4156571939" _msthash="11">如果省略 xCreate 方法（保留为 NULL 指针），则虚拟表是仅同名的虚拟表。无法使用 CREATE VIRTUAL TABLE 创建虚拟表的新实例，并且只能通过其模块名称使用虚拟表。请注意，3.9.0 （2015-10-14） 之前的 SQLite 版本无法理解仅同名虚拟表，如果尝试对仅同名虚拟表执行 CREATE VIRTUAL TABLE，则会出现段错误，因为 xCreate 方法未检查 null。</p>
+      <p _msttexthash="1447883151" _msthash="12">如果 xCreate 方法与 xConnect 方法的指针完全相同，则表示虚拟表不需要初始化后备存储。这样的虚拟表可以用作同名虚拟表，也可以使用 CREATE VIRTUAL TABLE 作为命名虚拟表，也可以用作两者。</p>
+      <p _msttexthash="1318542745" _msthash="13">如果列数据类型包含特殊关键字 “HIDDEN” （大小写字母的任意组合），则该关键字将从列数据类型名称中省略，并且该列在内部标记为隐藏列。隐藏列与普通列有三个不同：</p>
+      <p></p><ul><li _msttexthash="168458706" _msthash="14">隐藏的列未在 “PRAGMA table_info” 返回的数据集中列出，</li><li _msttexthash="199132505" _msthash="15">隐藏列不包括在 SELECT 结果集中的 “*” 表达式的扩展中，并且</li><li _msttexthash="205235680" _msthash="16">隐藏列不包括在缺少显式列列表的 INSERT 语句使用的隐式列列表中。</li></ul><p></p>
+      <p><font _mstmutation="1" _msttexthash="159478059" _msthash="17">例如，如果将以下 SQL 传递给 sqlite3_declare_vtab（）：</font> </p>
       <p>
-        <pre class="code">CREATE TABLE x(a HIDDEN VARCHAR(12), b INTEGER, c INTEGER Hidden);
+        </p><pre class="code">CREATE TABLE x(a HIDDEN VARCHAR(12), b INTEGER, c INTEGER Hidden);
 </pre>
-      </p>
-      <p> Then the virtual table would be created with two hidden columns, and with datatypes of "VARCHAR(12)" and "INTEGER". </p>
-      <p> An example use of hidden columns can be seen in the FTS3 virtual table implementation, where every FTS virtual table contains an FTS hidden column that is used to pass information from the virtual table into FTS auxiliary functions and to the FTS MATCH operator. </p>
-      <p> A virtual table that contains hidden columns can be used like a table-valued function in the FROM clause of a SELECT statement. The arguments to the table-valued function become constraints on the HIDDEN columns of the virtual table. </p>
-      <p> For example, the "generate_series" extension (located in the ext/misc/series.c file in the source tree) implements an eponymous virtual table with the following schema: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="265933018" _msthash="18">然后，将创建具有两个隐藏列的虚拟表，数据类型为 “VARCHAR（12）” 和 “INTEGER”。</font></p>
+      <p _msttexthash="889202327" _msthash="19">在FTS3虚拟表实施中可以看到隐藏列的一个示例，其中每个FTS虚拟表都包含一个FTS隐藏列，用于将信息从虚拟表传递到FTS辅助功能和FTS MATCH运算符。</p>
+      <p _msttexthash="590586412" _msthash="20">包含隐藏列的虚拟表可以像 SELECT 语句的 FROM 子句中的表值函数一样使用。表值函数的参数将成为虚拟表的 HIDDEN 列的约束。</p>
+      <p><font _mstmutation="1" _msttexthash="571079457" _msthash="21">例如，“generate_series”扩展（位于源代码树的 ext/misc/series.c 文件中）使用以下架构实现同名虚拟表：</font> </p>
       <p>
-        <pre class="code">CREATE TABLE generate_series(
+        </p><pre class="code">CREATE TABLE generate_series(
   value,
   start HIDDEN,
   stop HIDDEN,
   step HIDDEN
 );
 </pre>
-      </p>
-      <p> The sqlite3_module.xBestIndex method in the implementation of this table checks for equality constraints against the HIDDEN columns, and uses those as input parameters to determine the range of integer "value" outputs to generate. Reasonable defaults are used for any unconstrained columns. For example, to list all integers between 5 and 50: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="2227642326" _msthash="22">此表的实现中的 sqlite3_module.xBestIndex 方法检查针对 HIDDEN 列的相等约束，并将这些约束用作输入参数来确定要生成的整数 “值” 输出的范围。合理的默认值用于任何不受约束的列。例如，要列出 5 到 50 之间的所有整数：</font> </p>
       <p>
-        <pre class="code">SELECT value FROM generate_series(5,50);
+        </p><pre class="code">SELECT value FROM generate_series(5,50);
 </pre>
-      </p>
-      <p> The previous query is equivalent to the following: </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="65372515" _msthash="23">前面的查询等效于以下内容：</font> </p>
       <p>
-        <pre class="code">SELECT value FROM generate_series WHERE start=5 AND stop=50;
+        </p><pre class="code">SELECT value FROM generate_series WHERE start=5 AND stop=50;
 </pre>
-      </p>
-      <p> Arguments on the virtual table name are matched to hidden columns in order. The number of arguments can be less than the number of hidden columns, in which case the latter hidden columns are unconstrained. However, an error results if there are more arguments than there are hidden columns in the virtual table. </p>
-      <p> Beginning with SQLite version 3.14.0 (2016-08-08), the CREATE TABLE statement that is passed into sqlite3_declare_vtab() may contain a WITHOUT ROWID clause. This is useful for cases where the virtual table rows cannot easily be mapped into unique integers. A CREATE TABLE statement that includes WITHOUT ROWID must define one or more columns as the PRIMARY KEY. Every column of the PRIMARY KEY must individually be NOT NULL and all columns for each row must be collectively unique. </p>
-      <p> Note that SQLite does not enforce the PRIMARY KEY for a WITHOUT ROWID virtual table. Enforcement is the responsibility of the underlying virtual table implementation. But SQLite does assume that the PRIMARY KEY constraint is valid - that the identified columns really are UNIQUE and NOT NULL - and it uses that assumption to optimize queries against the virtual table. </p>
-      <p> The rowid column is not accessible on a WITHOUT ROWID virtual table (of course). </p>
-      <p> The xUpdate method was originally designed around having a ROWID as a single value. The xUpdate method has been expanded to accommodate an arbitrary PRIMARY KEY in place of the ROWID, but the PRIMARY KEY must still be only one column. For this reason, SQLite will reject any WITHOUT ROWID virtual table that has more than one PRIMARY KEY column and a non-NULL xUpdate method. </p>
+      <p></p>
+      <p> <font _mstmutation="1" _msttexthash="1440841246" _msthash="24">虚拟表名称上的参数将按顺序与隐藏列匹配。参数的数量可以小于隐藏列的数量，在这种情况下，后面的隐藏列不受约束。但是，如果参数数多于虚拟表中的隐藏列数，则会导致错误。</font></p>
+      <p _msttexthash="4257081998" _msthash="25">从 SQLite 版本 3.14.0 （2016-08-08） 开始，传递到 sqlite3_declare_vtab（） 的 CREATE TABLE 语句可能包含 WITHOUT ROWID 子句。这对于虚拟表行无法轻松映射为唯一整数的情况非常有用。包含 WITHOUT ROWID 的 CREATE TABLE 语句必须将一个或多个列定义为 PRIMARY KEY。PRIMARY KEY 的每一列都必须单独为 NOT NULL，并且每行的所有列都必须是唯一的。</p>
+      <p _msttexthash="1969864676" _msthash="26">请注意，SQLite 不会对 WITHOUT ROWID 虚拟表强制执行 PRIMARY KEY。执行是底层虚拟表实现的责任。但是SQLite确实假设PRIMARY KEY约束是有效的 - 标识的列确实是UNIQUE而不是NULL - 并且它使用该假设来优化针对虚拟表的查询。</p>
+      <p _msttexthash="191852388" _msthash="27">rowid 列在 WITHOUT ROWID 虚拟表上无法访问（当然）。</p>
+      <p><font _mstmutation="1" _msttexthash="1544430992" _msthash="28">xUpdate 方法最初是围绕将 ROWID 作为单个值而设计的。xUpdate 方法已扩展为容纳任意 PRIMARY KEY 代替 ROWID，但 PRIMARY KEY 仍必须只有一列。因此，SQLite 将拒绝任何具有多个 PRIMARY KEY 列和非 NULL xUpdate 方法的 WITHOUT ROWID 虚拟表。</font> </p>
       <div class="syntax">
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a> xCreate(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pDb</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pAux</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>argc</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>argv</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pVtab</i>,<br />   ref <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> <i>pError</i><br />);</div>
+        <a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">SQLiteErrorCode</a>&nbsp;xCreate(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pDb</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pAux</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>argc</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>argv</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pVtab</i>,<br>&nbsp;&nbsp;&nbsp;ref&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a>&nbsp;<i>pError</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>pDb</i>
         </dt>
-        <dd> The native database connection handle. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="36662860" _msthash="29">本机数据库连接句柄。</font> </dd>
         <dt>
           <i>pAux</i>
         </dt>
-        <dd> The original native pointer value that was provided to the sqlite3_create_module(), sqlite3_create_module_v2() or sqlite3_create_disposable_module() functions. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="701463347" _msthash="30">提供给 sqlite3_create_module（）、sqlite3_create_module_v2（） 或 sqlite3_create_disposable_module（） 函数的原始本机指针值。</font> </dd>
         <dt>
           <i>argc</i>
         </dt>
-        <dd> The number of arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="71028958" _msthash="31">CREATE VIRTUAL TABLE 语句中的参数数。</font> </dd>
         <dt>
           <i>argv</i>
         </dt>
-        <dd> The array of string arguments from the CREATE VIRTUAL TABLE statement. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="121744974" _msthash="32">来自 CREATE VIRTUAL TABLE 语句的字符串参数数组。</font> </dd>
         <dt>
           <i>pVtab</i>
         </dt>
-        <dd> Upon success, this parameter must be modified to point to the newly created native sqlite3_vtab derived structure. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="181280879" _msthash="33">成功后，必须修改此参数以指向新创建的原生 sqlite3_vtab 派生结构。</font> </dd>
         <dt>
           <i>pError</i>
         </dt>
-        <dd> Upon failure, this parameter must be modified to point to the error message, with the underlying memory having been obtained from the sqlite3_malloc() function. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="329401995" _msthash="34">失败时，必须修改此参数以指向错误消息，底层内存已从 sqlite3_malloc（） 函数获取。</font> </dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A standard SQLite return code. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="35">返回值</h4>
+      <p _msttexthash="31178875" _msthash="36">标准 SQLite 返回代码。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="37">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html">ISQLiteNativeModule Interface</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="88983440" _msthash="38"><a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteNativeModule.html" _mstmutation="1" _istranslated="1">ISQLiteNativeModule 接口</a> |<a href="file:///D:/LiuChen_Person/Code/Git_Resop/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xCreate Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20ISQLiteNativeModule.xCreate%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="39">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="40">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>
