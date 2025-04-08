@@ -1,72 +1,71 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0159)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SessionConflictCallback.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SessionConflictCallback Delegate</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SessionConflictCallback_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SessionConflictCallback Delegate</h1>
+        <h1 class="dtH1" _msttexthash="19660134" _msthash="1">SessionConflictCallback 委托</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> This callback is invoked when there is a conflict while apply changes to a database. </p>
+      <p><font _mstmutation="1" _msttexthash="152232834" _msthash="2">当对数据库应用更改时发生冲突时，将调用此回调。</font> </p>
       <div class="syntax">
-        <div>public delegate <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">SQLiteChangeSetConflictResult</a> SessionConflictCallback(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a> <i>clientData</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">SQLiteChangeSetConflictType</a> <i>type</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html">ISQLiteChangeSetMetadataItem</a> <i>item</i><br />);</div>
+        <div>public&nbsp;delegate&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">SQLiteChangeSetConflictResult</a>&nbsp;SessionConflictCallback(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a>&nbsp;<i>clientData</i>,<br>&nbsp;&nbsp;&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">SQLiteChangeSetConflictType</a>&nbsp;<i>type</i>,<br>&nbsp;&nbsp;&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html">ISQLiteChangeSetMetadataItem</a>&nbsp;<i>item</i><br>);</div>
       </div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>clientData</i>
         </dt>
-        <dd> The optional application-defined context data that was originally passed to the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> method. This value may be null. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="230566336" _msthash="3">最初传递给 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html" _mstmutation="1" _istranslated="1">Apply</a> 方法的可选应用程序定义的上下文数据。此值可能为 null。</font> </dd>
         <dt>
           <i>type</i>
         </dt>
-        <dd> The type of this conflict. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="22420372" _msthash="4">此冲突的类型。</font> </dd>
         <dt>
           <i>item</i>
         </dt>
-        <dd> The <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html">ISQLiteChangeSetMetadataItem</a> object associated with this conflict. This value may not be null; however, only properties that are applicable to the conflict type will be available. Further information on this is available within the descriptions of the available <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">SQLiteChangeSetConflictType</a> values. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="1272311261" _msthash="5">与此冲突关联的 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html" _mstmutation="1" _istranslated="1">ISQLiteChangeSetMetadataItem</a> 对象。此值不能为 null;但是，只有适用于 Conflict 类型的属性才可用。有关此内容的更多信息，请参阅可用 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html" _mstmutation="1" _istranslated="1">SQLiteChangeSetConflictType</a> 值的描述。</font> </dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> A <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">SQLiteChangeSetConflictResult</a> value that indicates the action to be taken in order to resolve the conflict. Throwing an exception from this callback will result in undefined behavior. </p>
-      <h4 class="dtH4">Requirements</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="6">返回值</h4>
+      <p _msttexthash="687371620" _msthash="7">一个 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html" _istranslated="1">SQLiteChangeSetConflictResult</a> 值，该值指示为解决冲突而要采取的作。从此回调引发异常将导致未定义的行为。</p>
+      <h4 class="dtH4" _msttexthash="6085547" _msthash="8">要求</h4>
       <p>
-        <b>Namespace: </b>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+        <font _mstmutation="1" _msttexthash="22646676" _msthash="9"><b _mstmutation="1" _istranslated="1">命名空间： </b> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite</a></font>
       </p>
       <p>
-        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
-          </p>
-      <h4 class="dtH4">See Also</h4>
+        <font _mstmutation="1" _msttexthash="81753282" _msthash="10"><b _mstmutation="1" _istranslated="1">集会： </b>System.Data.SQLite（System.Data.SQLite.dll）</font></p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="11">另请参阅</h4>
       <p>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+        <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _msttexthash="39614705" _msthash="12">System.Data.SQLite 命名空间</a>
       </p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SessionConflictCallback%20Delegate">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SessionConflictCallback%20Delegate" _msttexthash="36201139" _msthash="13">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="14">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

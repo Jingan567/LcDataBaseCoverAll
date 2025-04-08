@@ -17,7 +17,7 @@
 
         [Test]
         public void Test1()
-        {
+        { 
             // 测试代码
             Assert.Pass();
         }

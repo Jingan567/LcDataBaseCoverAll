@@ -1,68 +1,67 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0162)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SessionTableFilterCallback.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SessionTableFilterCallback Delegate</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SessionTableFilterCallback_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="11">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SessionTableFilterCallback Delegate</h1>
+        <h1 class="dtH1" _msttexthash="21656531" _msthash="12">SessionTableFilterCallback 委托</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> This callback is invoked when a determination must be made about whether changes to a specific table should be tracked -OR- applied. It will not be called for tables that are already attached to a <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.html">ISQLiteSession</a>. </p>
+      <p><font _mstmutation="1" _msttexthash="537285047" _msthash="13">当必须确定是否应跟踪对特定表的更改 - OR- 应用时，将调用此回调。对于已附加到 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.html" _mstmutation="1" _istranslated="1">ISQLiteSession</a> 的表，不会调用它。</font> </p>
       <div class="syntax">
-        <div>public delegate <a href="http://msdn.microsoft.com/en-us/library/System.Boolean(VS.90).aspx">bool</a> SessionTableFilterCallback(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a> <i>clientData</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>name</i><br />);</div>
+        <div>public&nbsp;delegate&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Boolean(VS.90).aspx">bool</a>&nbsp;SessionTableFilterCallback(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">object</a>&nbsp;<i>clientData</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a>&nbsp;<i>name</i><br>);</div>
       </div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>clientData</i>
         </dt>
-        <dd> The optional application-defined context data that was originally passed to the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetTableFilter.html">SetTableFilter</a> or <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> methods. This value may be null. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="354749057" _msthash="10">最初传递给 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteSession.SetTableFilter.html" _mstmutation="1" _istranslated="1">SetTableFilter</a> 或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html" _mstmutation="1" _istranslated="1">Apply</a> 方法的可选应用程序定义的上下文数据。此值可能为 null。</font> </dd>
         <dt>
           <i>name</i>
         </dt>
-        <dd> The name of the table. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="14666119" _msthash="0">表的名称。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> Non-zero if changes to the table should be considered; otherwise, zero. Throwing an exception from this callback will result in undefined behavior. </p>
-      <h4 class="dtH4">Requirements</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="1">返回值</h4>
+      <p _msttexthash="340749162" _msthash="2">如果应考虑对表进行更改，则为非零;否则为 0。从此回调引发异常将导致未定义的行为。</p>
+      <h4 class="dtH4" _msttexthash="6085547" _msthash="3">要求</h4>
       <p>
-        <b>Namespace: </b>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+        <font _mstmutation="1" _msttexthash="22646676" _msthash="4"><b _mstmutation="1" _istranslated="1">命名空间： </b> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite</a></font>
       </p>
       <p>
-        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
-          </p>
-      <h4 class="dtH4">See Also</h4>
+        <font _mstmutation="1" _msttexthash="81753282" _msthash="5"><b _mstmutation="1" _istranslated="1">集会： </b>System.Data.SQLite（System.Data.SQLite.dll）</font></p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="6">另请参阅</h4>
       <p>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+        <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _msttexthash="39614705" _msthash="7">System.Data.SQLite 命名空间</a>
       </p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SessionTableFilterCallback%20Delegate">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SessionTableFilterCallback%20Delegate" _msttexthash="36201139" _msthash="8">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="9">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>
