@@ -1,66 +1,65 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0165)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SQLiteChangeSetConflictResult Enumeration</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SQLiteChangeSetConflictResult Enumeration</h1>
+        <h1 class="dtH1" _msttexthash="22858641" _msthash="1">SQLiteChangeSetConflictResult 枚举</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> This enumerated type represents the result of a user-defined conflict resolution callback. </p>
+      <p><font _mstmutation="1" _msttexthash="133798912" _msthash="2">此枚举类型表示用户定义的冲突解决回调的结果。</font> </p>
       <div class="syntax">
-        <div>public enum SQLiteChangeSetConflictResult</div>
+        <div>public&nbsp;enum&nbsp;SQLiteChangeSetConflictResult</div>
       </div>
-      <h4 class="dtH4">Members</h4>
+      <h4 class="dtH4" _msttexthash="4530032" _msthash="3">成员</h4>
       <div class="tablediv">
         <table class="dtTABLE" cellspacing="0">
-          <tr valign="top">
-            <th width="50%">Member Name</th>
-            <th width="50%">Description</th>
+          <tbody><tr valign="top">
+            <th width="50%" _msttexthash="10663887" _msthash="4">会员名称</th>
+            <th width="50%" _msttexthash="6157333" _msthash="5">描述</th>
           </tr>
-<tr valign="top"><td><b>Omit</b></td><td> If a conflict callback returns this value no special action is taken. The change that caused the conflict is not applied. The application of changes continues with the next change. </td></tr>
-<tr valign="top"><td><b>Replace</b></td><td> This value may only be returned from a conflict callback if the type of conflict was <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">Data</a> or <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html">Conflict</a>. If this is not the case, any changes applied so far are rolled back and the call to <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> will raise a <a href="System.Data.SQLite~System.Data.SQLite.SQLiteException.html">SQLiteException</a> with an error code of <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">Misuse</a>. If this value is returned for a <b>Data</b> conflict, then the conflicting row is either updated or deleted, depending on the type of change. If this value is returned for a <b>Conflict</b> conflict, then the conflicting row is removed from the database and a second attempt to apply the change is made. If this second attempt fails, the original row is restored to the database before continuing. </td></tr>
-<tr valign="top"><td><b>Abort</b></td><td> If this value is returned, any changes applied so far are rolled back and the call to <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html">Apply</a> will raise a <a href="System.Data.SQLite~System.Data.SQLite.SQLiteException.html">SQLiteException</a> with an error code of <a href="System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html">Abort</a>. </td></tr></table>
+<tr valign="top"><td><b>Omit</b></td><td> <font _mstmutation="1" _msttexthash="531587303" _msthash="6">如果冲突回调返回此值，则不会执行任何特殊作。不会应用导致冲突的更改。更改的应用将继续进行下一次更改。</font> </td></tr>
+<tr valign="top"><td><b>Replace</b></td><td> <font _mstmutation="1" _msttexthash="7454864170" _msthash="7">仅当冲突类型为 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html" _mstmutation="1" _istranslated="1">Data</a> 或 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html" _mstmutation="1" _istranslated="1">Conflict</a> 时，才能从冲突回调返回此值。如果不是这种情况，则到目前为止应用的任何更改都将回滚，并且对 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html" _mstmutation="1" _istranslated="1">Apply</a> 的调用将引发错误代码<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html" _mstmutation="1" _istranslated="1">为 Misuse</a> 的 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteException.html" _mstmutation="1" _istranslated="1">SQLiteException</a>。如果为 Data conflict （<b _mstmutation="1" _istranslated="1">数据</b>冲突） 返回此值，则会更新或删除冲突的行，具体取决于更改的类型。如果为 <b _mstmutation="1" _istranslated="1">Conflict</b> 冲突返回此值，则会从数据库中删除冲突的行，并再次尝试应用更改。如果第二次尝试失败，则在继续之前将原始行恢复到数据库中。</font> </td></tr>
+<tr valign="top"><td><b>Abort</b></td><td> <font _mstmutation="1" _msttexthash="426132135" _msthash="8">如果返回此值，则到目前为止应用的任何更改都将回滚，并且对 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSet.Apply2.html" _mstmutation="1" _istranslated="1">Apply</a> 的调用将引发错误代码<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteErrorCode.html" _mstmutation="1" _istranslated="1">为 Abort</a> 的 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteException.html" _mstmutation="1" _istranslated="1">SQLiteException</a>。</font></td></tr></tbody></table>
       </div>
-      <h4 class="dtH4">Requirements</h4>
+      <h4 class="dtH4" _msttexthash="6085547" _msthash="9">要求</h4>
       <p>
-        <b>Namespace: </b>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+        <font _mstmutation="1" _msttexthash="22646676" _msthash="10"><b _mstmutation="1" _istranslated="1">命名空间： </b> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite</a></font>
       </p>
       <p>
-        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
-          </p>
-      <h4 class="dtH4">See Also</h4>
+        <font _mstmutation="1" _msttexthash="81753282" _msthash="11"><b _mstmutation="1" _istranslated="1">集会： </b>System.Data.SQLite（System.Data.SQLite.dll）</font></p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="12">另请参阅</h4>
       <p>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+        <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _msttexthash="39614705" _msthash="13">System.Data.SQLite 命名空间</a>
       </p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteChangeSetConflictResult%20Enumeration">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteChangeSetConflictResult%20Enumeration" _msttexthash="36201139" _msthash="14">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="15">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

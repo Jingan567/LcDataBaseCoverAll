@@ -1,68 +1,67 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0163)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SQLiteChangeSetConflictType Enumeration</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictType_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="0">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SQLiteChangeSetConflictType Enumeration</h1>
+        <h1 class="dtH1" _msttexthash="21548501" _msthash="1">SQLiteChangeSetConflictType 枚举</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> This enumerated type represents a type of conflict seen when apply changes from a change set or patch set. </p>
+      <p><font _mstmutation="1" _msttexthash="236959827" _msthash="2">此枚举类型表示在应用更改集或补丁集的更改时看到的一种冲突类型。</font> </p>
       <div class="syntax">
-        <div>public enum SQLiteChangeSetConflictType</div>
+        <div>public&nbsp;enum&nbsp;SQLiteChangeSetConflictType</div>
       </div>
-      <h4 class="dtH4">Members</h4>
+      <h4 class="dtH4" _msttexthash="4530032" _msthash="3">成员</h4>
       <div class="tablediv">
         <table class="dtTABLE" cellspacing="0">
-          <tr valign="top">
-            <th width="50%">Member Name</th>
-            <th width="50%">Description</th>
+          <tbody><tr valign="top">
+            <th width="50%" _msttexthash="10663887" _msthash="4">会员名称</th>
+            <th width="50%" _msttexthash="6157333" _msthash="5">描述</th>
           </tr>
-<tr valign="top"><td><b>Data</b></td><td> This value is seen when processing a DELETE or UPDATE change if a row with the required PRIMARY KEY fields is present in the database, but one or more other (non primary-key) fields modified by the update do not contain the expected "before" values. </td></tr>
-<tr valign="top"><td><b>NotFound</b></td><td> This value is seen when processing a DELETE or UPDATE change if a row with the required PRIMARY KEY fields is not present in the database. There is no conflicting row in this case. The results of invoking the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.GetConflictValue.html">GetConflictValue</a> method are undefined. </td></tr>
-<tr valign="top"><td><b>Conflict</b></td><td> This value is seen when processing an INSERT change if the operation would result in duplicate primary key values. The conflicting row in this case is the database row with the matching primary key. </td></tr>
-<tr valign="top"><td><b>Constraint</b></td><td> If a non-foreign key constraint violation occurs while applying a change (i.e. a UNIQUE, CHECK or NOT NULL constraint), the conflict callback will see this value. There is no conflicting row in this case. The results of invoking the <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.GetConflictValue.html">GetConflictValue</a> method are undefined. </td></tr>
-<tr valign="top"><td><b>ForeignKey</b></td><td> If foreign key handling is enabled, and applying a changes leaves the database in a state containing foreign key violations, this value will be seen exactly once before the changes are committed. If the conflict handler <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">Omit</a>, the changes, including those that caused the foreign key constraint violation, are committed. Or, if it returns <a href="System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html">Abort</a>, the changes are rolled back. No current or conflicting row information is provided. The only method it is possible to call on the supplied <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html">ISQLiteChangeSetMetadataItem</a> object is <a href="System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.NumberOfForeignKeyConflicts.html">NumberOfForeignKeyConflicts</a>. </td></tr></table>
+<tr valign="top"><td><b>Data</b></td><td> <font _mstmutation="1" _msttexthash="1030822637" _msthash="6">如果数据库中存在具有所需 PRIMARY KEY 字段的行，但更新修改的一个或多个其他（非主键）字段不包含预期的“before”值，则在处理 DELETE 或 UPDATE 更改时会看到此值。</font> </td></tr>
+<tr valign="top"><td><b>NotFound</b></td><td> <font _mstmutation="1" _msttexthash="1130139361" _msthash="7">如果数据库中不存在具有所需 PRIMARY KEY 字段的行，则在处理 DELETE 或 UPDATE 更改时会看到此值。在这种情况下，没有冲突的行。调用 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.GetConflictValue.html" _mstmutation="1" _istranslated="1">GetConflictValue</a> 方法的结果是不确定的。</font> </td></tr>
+<tr valign="top"><td><b>Conflict</b></td><td> <font _mstmutation="1" _msttexthash="631934797" _msthash="8">如果作会导致重复的主键值，则在处理 INSERT 更改时会看到此值。在这种情况下，冲突的行是具有匹配主键的数据库行。</font> </td></tr>
+<tr valign="top"><td><b>Constraint</b></td><td> <font _mstmutation="1" _msttexthash="1230838648" _msthash="9">如果在应用更改时发生非外键约束冲突（即 UNIQUE、CHECK 或 NOT NULL 约束），则冲突回调将看到此值。在这种情况下，没有冲突的行。调用 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.GetConflictValue.html" _mstmutation="1" _istranslated="1">GetConflictValue</a> 方法的结果是不确定的。</font> </td></tr>
+<tr valign="top"><td><b>ForeignKey</b></td><td> <font _mstmutation="1" _msttexthash="3283547800" _msthash="10">如果启用了外键处理，并且应用更改会使数据库处于包含外键冲突的状态，则在提交更改之前，此值将只看到一次。如果冲突处理程序 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html" _mstmutation="1" _istranslated="1">Omit</a>，则提交更改，包括导致外键约束冲突的更改。或者，如果它返回 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteChangeSetConflictResult.html" _mstmutation="1" _istranslated="1">Abort</a>，则回滚更改。不提供当前或冲突的行信息。唯一可以对提供的 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.html" _mstmutation="1" _istranslated="1">ISQLiteChangeSetMetadataItem</a> 对象调用的方法是 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.ISQLiteChangeSetMetadataItem.NumberOfForeignKeyConflicts.html" _mstmutation="1" _istranslated="1">NumberOfForeignKeyConflicts</a>。</font> </td></tr></tbody></table>
       </div>
-      <h4 class="dtH4">Requirements</h4>
+      <h4 class="dtH4" _msttexthash="6085547" _msthash="11">要求</h4>
       <p>
-        <b>Namespace: </b>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+        <font _mstmutation="1" _msttexthash="22646676" _msthash="12"><b _mstmutation="1" _istranslated="1">命名空间： </b> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite</a></font>
       </p>
       <p>
-        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
-          </p>
-      <h4 class="dtH4">See Also</h4>
+        <font _mstmutation="1" _msttexthash="81753282" _msthash="13"><b _mstmutation="1" _istranslated="1">集会： </b>System.Data.SQLite（System.Data.SQLite.dll）</font></p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="14">另请参阅</h4>
       <p>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+        <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _msttexthash="39614705" _msthash="15">System.Data.SQLite 命名空间</a>
       </p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteChangeSetConflictType%20Enumeration">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteChangeSetConflictType%20Enumeration" _msttexthash="36201139" _msthash="16">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="17">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

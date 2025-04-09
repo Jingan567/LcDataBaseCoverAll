@@ -1,61 +1,62 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0154)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBlob.Create1.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SQLiteBlob.Create(SQLiteDataReader, Int32, Boolean) Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SQLiteBlob.Create1_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="9">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SQLiteBlob.Create(SQLiteDataReader, Int32, Boolean) Method</h1>
+        <h1 class="dtH1" _msttexthash="183011504" _msthash="10">SQLiteBlob.Create（SQLiteDataReader， Int32， Boolean） 方法</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> Creates a <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html">SQLiteBlob</a> object. This will not work for tables that were created WITHOUT ROWID -OR- if the query does not include the "rowid" column or one of its aliases -OR- if the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a> was not created with the <a href="http://msdn.microsoft.com/en-us/library/System.Data.CommandBehavior.KeyInfo(VS.90).aspx">KeyInfo</a> flag. </p>
-      <div class="syntax">public static <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html">SQLiteBlob</a> Create(<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a> <i>dataReader</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>i</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Boolean(VS.90).aspx">bool</a> <i>readOnly</i><br />);</div>
+      <p><font _mstmutation="1" _msttexthash="889278663" _msthash="11">创建 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html" _mstmutation="1" _istranslated="1">SQLiteBlob</a> 对象。这不适用于在没有 rowid 的情况下创建的表-或者-如果查询不包括 “rowid” 列或其别名之一-或者-如果 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html" _mstmutation="1" _istranslated="1">SQLiteDataReader</a> 不是使用 <a href="http://msdn.microsoft.com/en-us/library/System.Data.CommandBehavior.KeyInfo(VS.90).aspx" _mstmutation="1" _istranslated="1">KeyInfo</a> 标志创建的。</font> </p>
+      <div class="syntax">public&nbsp;static&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html">SQLiteBlob</a>&nbsp;Create(<br>&nbsp;&nbsp;&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a>&nbsp;<i>dataReader</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>i</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Boolean(VS.90).aspx">bool</a>&nbsp;<i>readOnly</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>dataReader</i>
         </dt>
-        <dd> The <a href="System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html">SQLiteDataReader</a> instance with a result set containing the desired blob column. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="152202739" _msthash="0"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteDataReader.html" _mstmutation="1" _istranslated="1">SQLiteDataReader</a> 实例，其结果集包含所需的 blob 列。</font> </dd>
         <dt>
           <i>i</i>
         </dt>
-        <dd> The index of the blob column. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="20024420" _msthash="1">blob 列的索引。</font> </dd>
         <dt>
           <i>readOnly</i>
         </dt>
-        <dd> Non-zero to open the blob object for read-only access. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="81130855" _msthash="2">非零 打开 blob 对象进行只读访问。</font></dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p> The newly created <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html">SQLiteBlob</a> instance -OR- null if an error occurs. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="3">返回值</h4>
+      <p _msttexthash="82701125" _msthash="4">如果发生错误，则新创建的 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html" _istranslated="1">SQLiteBlob</a> 实例 -OR- null 。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="5">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html">SQLiteBlob Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a> | <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBlob.Create~Overloads.html">SQLiteBlob.Create Overload List</a></p>
+        <font _mstmutation="1" _msttexthash="167894597" _msthash="6"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBlob.html" _mstmutation="1" _istranslated="1">SQLiteBlob 类</a> |<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a> |<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBlob.Create~Overloads.html" _mstmutation="1" _istranslated="1">SQLiteBlob.Create 重载列表</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteBlob.Create Method (SQLiteDataReader,%20Int32,%20Boolean)">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteBlob.Create%C2%A0Method%C2%A0(SQLiteDataReader,%20Int32,%20Boolean)" _msttexthash="36201139" _msthash="7">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="8">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>
