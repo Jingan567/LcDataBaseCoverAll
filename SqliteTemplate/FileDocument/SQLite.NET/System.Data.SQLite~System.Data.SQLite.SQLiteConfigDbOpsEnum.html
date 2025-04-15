@@ -1,84 +1,83 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0157)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConfigDbOpsEnum.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SQLiteConfigDbOpsEnum Enumeration</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SQLiteConfigDbOpsEnum_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="7">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SQLiteConfigDbOpsEnum Enumeration</h1>
+        <h1 class="dtH1" _msttexthash="17663022" _msthash="8">SQLiteConfigDbOpsEnum 枚举</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> These are the supported configuration verbs for use with the native SQLite library. They are used with the <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.SetConfigurationOption.html">SetConfigurationOption</a> method. </p>
+      <p><font _mstmutation="1" _msttexthash="249612155" _msthash="9">这些是支持用于本机 SQLite 库的配置动词。它们与 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.SetConfigurationOption.html" _mstmutation="1" _istranslated="1">SetConfigurationOption</a> 方法一起使用。</font> </p>
       <div class="syntax">
-        <div>public enum SQLiteConfigDbOpsEnum</div>
+        <div>public&nbsp;enum&nbsp;SQLiteConfigDbOpsEnum</div>
       </div>
       <h4 class="dtH4">Members</h4>
       <div class="tablediv">
         <table class="dtTABLE" cellspacing="0">
-          <tr valign="top">
+          <tbody><tr valign="top">
             <th width="50%">Member Name</th>
             <th width="50%">Description</th>
           </tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_NONE</b></td><td> This value represents an unknown (or invalid) option, do not use it. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_MAINDBNAME</b></td><td> This option is used to change the name of the "main" database schema. The sole argument is a pointer to a constant UTF8 string which will become the new schema name in place of "main". </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_LOOKASIDE</b></td><td> This option is used to configure the lookaside memory allocator. The value must be an array with three elements. The second element must be an <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">Int32</a> containing the size of each buffer slot. The third element must be an <b>Int32</b> containing the number of slots. The first element must be an <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx">IntPtr</a> that points to a native memory buffer of bytes equal to or greater than the product of the second and third element values. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_FKEY</b></td><td> This option is used to enable or disable the enforcement of foreign key constraints. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_TRIGGER</b></td><td> This option is used to enable or disable triggers. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER</b></td><td> This option is used to enable or disable the two-argument version of the fts3_tokenizer() function which is part of the FTS3 full-text search engine extension. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION</b></td><td> This option is used to enable or disable the loading of extensions. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE</b></td><td> This option is used to enable or disable the automatic checkpointing when a WAL database is closed. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_QPSG</b></td><td> This option is used to enable or disable the query planner stability guarantee (QPSG). </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_TRIGGER_EQP</b></td><td> This option is used to enable or disable the extra EXPLAIN QUERY PLAN output for trigger programs. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_RESET_DATABASE</b></td><td> This option is used as part of the process to reset a database back to an empty state. Because resetting a database is destructive and irreversible, the process requires the use of this obscure flag and multiple steps to help ensure that it does not happen by accident. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_DEFENSIVE</b></td><td> This option activates or deactivates the "defensive" flag for a database connection. When the defensive flag is enabled, language features that allow ordinary SQL to deliberately corrupt the database file are disabled. The disabled features include but are not limited to the following: &lt;ul&gt;&lt;li&gt; The PRAGMA writable_schema=ON statement. &lt;/li&gt;&lt;li&gt; The PRAGMA journal_mode=OFF statement. &lt;/li&gt;&lt;li&gt; Writes to the sqlite_dbpage virtual table. &lt;/li&gt;&lt;li&gt; Direct writes to shadow tables. &lt;/li&gt;&lt;/ul&gt;</td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_WRITABLE_SCHEMA</b></td><td> This option activates or deactivates the "writable_schema" flag. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_LEGACY_ALTER_TABLE</b></td><td> This option activates or deactivates the legacy behavior of the ALTER TABLE RENAME command such it behaves as it did prior to version 3.24.0 (2018-06-04). </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_DQS_DML</b></td><td> This option activates or deactivates the legacy double-quoted string literal misfeature for DML statement only, that is DELETE, INSERT, SELECT, and UPDATE statements. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_DQS_DDL</b></td><td> This option activates or deactivates the legacy double-quoted string literal misfeature for DDL statements, such as CREATE TABLE and CREATE INDEX. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_VIEW</b></td><td> This option is used to enable or disable CREATE VIEW. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_LEGACY_FILE_FORMAT</b></td><td> This option activates or deactivates the legacy file format flag. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_TRUSTED_SCHEMA</b></td><td> This option tells SQLite to assume that database schemas (i.e. the contents of the sqlite_master tables) are untainted by malicious content. When the trusted schema option is disabled, SQLite takes additional defensive steps to protect the application from harm including: &lt;ul&gt;&lt;li&gt; Prohibit the use of SQL functions inside triggers, views, CHECK constraints, DEFAULT clauses, expression indexes, partial indexes, or generated columns unless those functions are tagged with SQLITE_INNOCUOUS. &lt;/li&gt;&lt;li&gt; Prohibit the use of virtual tables inside of triggers or views unless those virtual tables are tagged with SQLITE_VTAB_INNOCUOUS. &lt;/ul&gt; This setting defaults to "on" for legacy compatibility, however all applications are advised to turn it off if possible. This setting can also be controlled using the PRAGMA trusted_schema statement. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_STMT_SCANSTATUS</b></td><td> This option is only useful in SQLITE_ENABLE_STMT_SCANSTATUS builds. In this case, it sets or clears a flag that enables collection of the sqlite3_stmt_scanstatus_v2() statistics. For statistics to be collected, the flag must be set on the database handle both when the SQL statement is prepared and when it is stepped. The flag is set (collection of statistics is enabled) by default. </td></tr>
-<tr valign="top"><td><b>SQLITE_DBCONFIG_REVERSE_SCANORDER</b></td><td> The SQLITE_DBCONFIG_REVERSE_SCANORDER option change the default order in which tables and indexes are scanned so that the scans start at the end and work toward the beginning rather than starting at the beginning and working toward the end. Setting SQLITE_DBCONFIG_REVERSE_SCANORDER is the same as setting [PRAGMA reverse_unordered_selects]. This configuration option is useful for application testing. </td></tr></table>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_NONE</b></td><td> <font _mstmutation="1" _msttexthash="140148021" _msthash="10">此值表示未知（或无效）选项，请勿使用它。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_MAINDBNAME</b></td><td> <font _mstmutation="1" _msttexthash="747954870" _msthash="11">此选项用于更改 “main” 数据库架构的名称。唯一的参数是指向常量 UTF8 字符串的指针，该字符串将成为新的架构名称，而不是 “main”。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_LOOKASIDE</b></td><td> <font _mstmutation="1" _msttexthash="2269462520" _msthash="12">此选项用于配置后备内存分配器。该值必须是包含三个元素的数组。第二个元素必须是包含每个缓冲区槽大小的 <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx" _mstmutation="1" _istranslated="1">Int32</a>。第三个元素必须是包含槽数的 <b _mstmutation="1" _istranslated="1">Int32</b>。第一个元素必须是指向字节等于或大于第二个和第三个元素值的乘积的字节的本机内存缓冲区的 <a href="http://msdn.microsoft.com/en-us/library/System.IntPtr(VS.90).aspx" _mstmutation="1" _istranslated="1">IntPtr</a>。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_FKEY</b></td><td> <font _mstmutation="1" _msttexthash="98460349" _msthash="13">此选项用于启用或禁用外键约束的实施。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_TRIGGER</b></td><td> <font _mstmutation="1" _msttexthash="64464270" _msthash="14">此选项用于启用或禁用触发器。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER</b></td><td> <font _mstmutation="1" _msttexthash="524613466" _msthash="15">此选项用于启用或禁用fts3_tokenizer（）函数的双参数版本，该函数是FTS3全文搜索引擎扩展的一部分。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION</b></td><td> <font _mstmutation="1" _msttexthash="80617810" _msthash="16">此选项用于启用或禁用扩展的加载。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE</b></td><td> <font _mstmutation="1" _msttexthash="157311791" _msthash="17">此选项用于在关闭 WAL 数据库时启用或禁用自动检查点。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_QPSG</b></td><td> <font _mstmutation="1" _msttexthash="188452927" _msthash="18">此选项用于启用或禁用查询计划程序稳定性保证 （QPSG）。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_TRIGGER_EQP</b></td><td> <font _mstmutation="1" _msttexthash="141915267" _msthash="19">此选项用于启用或禁用触发器程序的额外 EXPLAIN QUERY PLAN 输出。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_RESET_DATABASE</b></td><td> <font _mstmutation="1" _msttexthash="1065239656" _msthash="20">此选项用作将数据库重置回空状态的过程的一部分。由于重置数据库具有破坏性且不可逆，因此该过程需要使用此模糊标志和多个步骤来帮助确保它不会意外发生。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_DEFENSIVE</b></td><td> <font _mstmutation="1" _msttexthash="1195688403" _msthash="21">此选项可激活或停用数据库连接的 “defensive” 标志。启用 defensive 标志后，将禁用允许普通 SQL 故意破坏数据库文件的语言功能。禁用的功能包括但不限于以下内容：</font> &lt;ul&gt;&lt;li&gt; The PRAGMA writable_schema=ON statement. &lt;/li&gt;&lt;li&gt; The PRAGMA journal_mode=OFF statement. &lt;/li&gt;&lt;li&gt; Writes to the sqlite_dbpage virtual table. &lt;/li&gt;&lt;li&gt; Direct writes to shadow tables. &lt;/li&gt;&lt;/ul&gt;</td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_WRITABLE_SCHEMA</b></td><td> <font _mstmutation="1" _msttexthash="69466267" _msthash="22">此选项可激活或停用 “writable_schema” 标志。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_LEGACY_ALTER_TABLE</b></td><td> <font _mstmutation="1" _msttexthash="496559310" _msthash="23">此选项可激活或停用 ALTER TABLE RENAME 命令的旧行为，使其行为与版本 3.24.0 （2018-06-04） 之前的行为相同。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_DQS_DML</b></td><td> <font _mstmutation="1" _msttexthash="507510315" _msthash="24">此选项仅激活或停用 DML 语句（即 DELETE、INSERT、SELECT 和 UPDATE 语句）的旧版双引号字符串文字错误功能。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_DQS_DDL</b></td><td> <font _mstmutation="1" _msttexthash="419876535" _msthash="25">此选项可激活或停用 DDL 语句（如 CREATE TABLE 和 CREATE INDEX）的旧版双引号字符串文字错误功能。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_ENABLE_VIEW</b></td><td> <font _mstmutation="1" _msttexthash="47507265" _msthash="26">此选项用于启用或禁用 CREATE VIEW。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_LEGACY_FILE_FORMAT</b></td><td> <font _mstmutation="1" _msttexthash="91320671" _msthash="27">此选项可激活或停用旧版文件格式标志。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_TRUSTED_SCHEMA</b></td><td> <font _mstmutation="1" _msttexthash="1422338957" _msthash="28">此选项告诉 SQLite 假设数据库架构（即 sqlite_master 表的内容）不受恶意内容的污染。禁用受信任架构选项后，SQLite 会采取额外的防御措施来保护应用程序免受损害，包括：</font>&lt;ul&gt;&lt;li&gt; Prohibit the use of SQL functions inside triggers, views, CHECK constraints, DEFAULT clauses, expression indexes, partial indexes, or generated columns unless those functions are tagged with SQLITE_INNOCUOUS. &lt;/li&gt;&lt;li&gt; Prohibit the use of virtual tables inside of triggers or views unless those virtual tables are tagged with SQLITE_VTAB_INNOCUOUS. &lt;/ul&gt; This setting defaults to "on" for legacy compatibility, however all applications are advised to turn it off if possible. This setting can also be controlled using the PRAGMA trusted_schema statement. </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_STMT_SCANSTATUS</b></td><td> <font _mstmutation="1" _msttexthash="4261088221" _msthash="29">此选项仅在 SQLITE_ENABLE_STMT_SCANSTATUS 版本中有用。在这种情况下，它会设置或清除一个标志，该标志允许收集 sqlite3_stmt_scanstatus_v2（） 统计信息。对于要收集的统计信息，必须在准备 SQL 语句和步进 SQL 语句时在数据库句柄上设置标志。默认情况下，该标志已设置（启用统计信息收集）。</font> </td></tr>
+<tr valign="top"><td><b>SQLITE_DBCONFIG_REVERSE_SCANORDER</b></td><td> <font _mstmutation="1" _msttexthash="2628695459" _msthash="30">SQLITE_DBCONFIG_REVERSE_SCANORDER 选项更改扫描表和索引的默认顺序，以便扫描从末尾开始并朝着开头工作，而不是从开头开始并朝向结尾工作。设置 SQLITE_DBCONFIG_REVERSE_SCANORDER 与设置 [PRAGMA reverse_unordered_selects] 相同。此配置选项对于应用程序测试非常有用。</font> </td></tr></tbody></table>
       </div>
-      <h4 class="dtH4">Requirements</h4>
+      <h4 class="dtH4" _msttexthash="6085547" _msthash="0">要求</h4>
       <p>
-        <b>Namespace: </b>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite</a>
+        <font _mstmutation="1" _msttexthash="22646676" _msthash="1"><b _mstmutation="1" _istranslated="1">命名空间： </b> <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite</a></font>
       </p>
       <p>
-        <b>Assembly: </b>System.Data.SQLite (in System.Data.SQLite.dll)
-          </p>
-      <h4 class="dtH4">See Also</h4>
+        <font _mstmutation="1" _msttexthash="81753282" _msthash="2"><b _mstmutation="1" _istranslated="1">集会： </b>System.Data.SQLite（System.Data.SQLite.dll）</font></p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="3">另请参阅</h4>
       <p>
-        <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a>
+        <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _msttexthash="39614705" _msthash="4">System.Data.SQLite 命名空间</a>
       </p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConfigDbOpsEnum%20Enumeration">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConfigDbOpsEnum%20Enumeration" _msttexthash="36201139" _msthash="5">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="6">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

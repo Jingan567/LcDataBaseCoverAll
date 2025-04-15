@@ -1,55 +1,56 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0170)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BeginTransaction3.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SQLiteConnection.BeginTransaction(IsolationLevel) Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BeginTransaction3_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="9">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SQLiteConnection.BeginTransaction(IsolationLevel) Method</h1>
+        <h1 class="dtH1" _msttexthash="122133336" _msthash="10">SQLiteConnection.BeginTransaction（IsolationLevel） 方法</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> Creates a new <a href="System.Data.SQLite~System.Data.SQLite.SQLiteTransaction.html">SQLiteTransaction</a> if one isn't already active on the connection. </p>
-      <div class="syntax">new public <a href="System.Data.SQLite~System.Data.SQLite.SQLiteTransaction.html">SQLiteTransaction</a> BeginTransaction(<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Data.IsolationLevel(VS.90).aspx">IsolationLevel</a> <i>isolationLevel</i><br />);</div>
+      <p><font _mstmutation="1" _msttexthash="151749052" _msthash="11">如果连接上尚未激活 <a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteTransaction.html" _mstmutation="1" _istranslated="1">SQLiteTransaction，则创建一个新的 SQLiteTransaction</a>。</font> </p>
+      <div class="syntax">new&nbsp;public&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteTransaction.html">SQLiteTransaction</a>&nbsp;BeginTransaction(<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Data.IsolationLevel(VS.90).aspx">IsolationLevel</a>&nbsp;<i>isolationLevel</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>isolationLevel</i>
         </dt>
-        <dd>Supported isolation levels are Serializable, ReadCommitted and Unspecified.</dd>
+        <dd _msttexthash="62005385" _msthash="0">支持的隔离级别包括 Serializable、ReadCommitted 和 Unspecified。</dd>
       </dl>
-      <h4 class="dtH4">Return Value</h4>
-      <p>Returns a SQLiteTransaction object.</p>
-      <h4 class="dtH4">Remarks</h4>
-      <p> Unspecified will use the default isolation level specified in the connection string. If no isolation level is specified in the connection string, Serializable is used. Serializable transactions are the default. In this mode, the engine gets an immediate lock on the database, and no other threads may begin a transaction. Other threads may read from the database, but not write. With a ReadCommitted isolation level, locks are deferred and elevated as needed. It is possible for multiple threads to start a transaction in ReadCommitted mode, but if a thread attempts to commit a transaction while another thread has a ReadCommitted lock, it may timeout or cause a deadlock on both threads until both threads' CommandTimeout's are reached. </p>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="8066552" _msthash="1">返回值</h4>
+      <p _msttexthash="31097378" _msthash="2">返回 SQLiteTransaction 对象。</p>
+      <h4 class="dtH4" _msttexthash="6934928" _msthash="3">言论</h4>
+      <p _msttexthash="8830783234" _msthash="4">Unspecified 将使用连接字符串中指定的默认隔离级别。如果未在连接字符串中指定隔离级别，则使用 Serializable。可序列化事务是默认值。在此模式下，引擎会立即锁定数据库，并且其他线程无法开始事务。其他线程可以从数据库中读取，但不能写入。使用 ReadCommitted 隔离级别，将根据需要延迟和提升锁。多个线程可以在 ReadCommitted 模式下启动事务，但是如果一个线程尝试在另一个线程具有 ReadCommitted 锁时提交事务，则它可能会超时或导致两个线程死锁，直到达到两个线程的 CommandTimeout。</p>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="5">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a> | <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BeginTransaction~Overloads.html">SQLiteConnection.BeginTransaction Overload List</a></p>
+        <font _mstmutation="1" _msttexthash="218400481" _msthash="6"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html" _mstmutation="1" _istranslated="1">SQLiteConnection 类</a> |<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a> |<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BeginTransaction~Overloads.html" _mstmutation="1" _istranslated="1">SQLiteConnection.BeginTransaction 重载列表</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnection.BeginTransaction Method (IsolationLevel)">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnection.BeginTransaction%C2%A0Method%C2%A0(IsolationLevel)" _msttexthash="36201139" _msthash="7">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="8">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>

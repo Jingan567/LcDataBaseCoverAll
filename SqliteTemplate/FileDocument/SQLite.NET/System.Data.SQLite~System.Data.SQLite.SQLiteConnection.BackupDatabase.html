@@ -1,71 +1,72 @@
-﻿<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta content="history" name="save" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+<!-- saved from url=(0167)file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BackupDatabase.html -->
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="history" name="save">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
     <title>SQLiteConnection.BackupDatabase Method</title>
-    <xml>
+    </head><body id="bodyID" class="dtBODY"><xml>
     </xml>
-    <link rel="stylesheet" type="text/css" href="MSDN.css" />
-  </head>
-  <body id="bodyID" class="dtBODY">
+    <link rel="stylesheet" type="text/css" href="./System.Data.SQLite~System.Data.SQLite.SQLiteConnection.BackupDatabase_files/MSDN.css">
+  
+  
     <div id="nsbanner">
       <div id="bannerrow1">
         <table class="bannerparthead" cellspacing="0">
-          <tr id="hdr">
-            <td class="runninghead">SQLite ADO.NET Provider</td>
+          <tbody><tr id="hdr">
+            <td class="runninghead" _msttexthash="28553707" _msthash="10">SQLite ADO.NET 提供程序</td>
             <td class="product">
             </td>
           </tr>
-        </table>
+        </tbody></table>
       </div>
       <div id="TitleRow">
-        <h1 class="dtH1">SQLiteConnection.BackupDatabase Method</h1>
+        <h1 class="dtH1" _msttexthash="27866735" _msthash="11">SQLiteConnection.BackupDatabase 方法</h1>
       </div>
     </div>
     <div id="nstext">
-      <p> Backs up the database, using the specified database connection as the destination. </p>
-      <div class="syntax">public <a href="http://msdn.microsoft.com/en-us/library/System.Void(VS.90).aspx">void</a> BackupDatabase(<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection</a> <i>destination</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>destinationName</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a> <i>sourceName</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>pages</i>,<br />   <a href="System.Data.SQLite~System.Data.SQLite.SQLiteBackupCallback.html">SQLiteBackupCallback</a> <i>callback</i>,<br />   <a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a> <i>retryMilliseconds</i><br />);</div>
+      <p><font _mstmutation="1" _msttexthash="112853312" _msthash="12">使用指定的数据库连接作为目标来备份数据库。</font> </p>
+      <div class="syntax">public&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Void(VS.90).aspx">void</a>&nbsp;BackupDatabase(<br>&nbsp;&nbsp;&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection</a>&nbsp;<i>destination</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a>&nbsp;<i>destinationName</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.String(VS.90).aspx">string</a>&nbsp;<i>sourceName</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>pages</i>,<br>&nbsp;&nbsp;&nbsp;<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteBackupCallback.html">SQLiteBackupCallback</a>&nbsp;<i>callback</i>,<br>&nbsp;&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/System.Int32(VS.90).aspx">int</a>&nbsp;<i>retryMilliseconds</i><br>);</div>
       <h4 class="dtH4">Parameters</h4>
       <dl>
         <dt>
           <i>destination</i>
         </dt>
-        <dd>The destination database connection.</dd>
+        <dd _msttexthash="27642940" _msthash="9">目标数据库连接。</dd>
         <dt>
           <i>destinationName</i>
         </dt>
-        <dd>The destination database name.</dd>
+        <dd _msttexthash="26218595" _msthash="8">目标数据库名称。</dd>
         <dt>
           <i>sourceName</i>
         </dt>
-        <dd>The source database name.</dd>
+        <dd _msttexthash="21425521" _msthash="7">源数据库名称。</dd>
         <dt>
           <i>pages</i>
         </dt>
-        <dd> The number of pages to copy at a time -OR- a negative value to copy all pages. When a negative value is used, the <i>callback</i> may never be invoked. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="363350351" _msthash="6">一次要复制的页数 - OR- 负值表示复制所有页。当使用负值时，可能永远不会调用<i _mstmutation="1" _istranslated="1">回调</i>。</font> </dd>
         <dt>
           <i>callback</i>
         </dt>
-        <dd> The method to invoke between each step of the backup process. This parameter may be null (i.e. no callbacks will be performed). If the callback returns false -OR- throws an exception, the backup is canceled. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="699948340" _msthash="5">在备份过程的每个步骤之间调用的方法。此参数可能为 null（即不会执行任何回调）。如果回调返回 false -OR- 引发异常，则取消备份。</font> </dd>
         <dt>
           <i>retryMilliseconds</i>
         </dt>
-        <dd> The number of milliseconds to sleep after encountering a locking error during the backup process. A value less than zero means that no sleep should be performed. </dd>
+        <dd> <font _mstmutation="1" _msttexthash="319568626" _msthash="0">在备份过程中遇到锁定错误后进入休眠状态的毫秒数。小于零的值表示不应执行 sleep作。</font></dd>
       </dl>
-      <h4 class="dtH4">See Also</h4>
+      <h4 class="dtH4" _msttexthash="13182286" _msthash="1">另请参阅</h4>
       <p>
-        <a href="System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html">SQLiteConnection Class</a> | <a href="~System.Data.SQLite.html">System.Data.SQLite Namespace</a></p>
+        <font _mstmutation="1" _msttexthash="76299756" _msthash="2"><a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/System.Data.SQLite~System.Data.SQLite.SQLiteConnection.html" _mstmutation="1" _istranslated="1">SQLiteConnection 类</a> |<a href="file:///E:/Code/VsStudio/Jingan567/LcDataBaseCoverAll/SqliteTemplate/FileDocument/SQLite.NET/~System.Data.SQLite.html" _mstmutation="1" _istranslated="1">System.Data.SQLite 命名空间</a></font></p>
       
-      <hr />
+      <hr>
       <div id="footer">
         <p>
-          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnection.BackupDatabase Method ">Send comments on this topic.</a>
+          <a href="mailto:sqlite-users@mailinglists.sqlite.org?subject=SQLite%20ADO.NET%20Provider%20Documentation%20Feedback:%20SQLiteConnection.BackupDatabase%C2%A0Method%C2%A0" _msttexthash="36201139" _msthash="3">就此主题发送评论。</a>
         </p>
         <p>
         </p>
-        <p>Generated from assembly System.Data.SQLite [1.0.119.0] by <a href="http://ndoc3.sourceforget.net">NDoc3</a></p>
+        <p _msttexthash="58771310" _msthash="4">由 <a href="http://ndoc3.sourceforget.net/" _istranslated="1">NDoc3</a> 从程序集 System.Data.SQLite [1.0.119.0] 生成</p>
       </div>
     </div>
-  </body>
-</html>
+  
+</body></html>
