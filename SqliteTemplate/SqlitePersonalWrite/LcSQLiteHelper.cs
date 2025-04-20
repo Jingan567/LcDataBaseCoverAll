@@ -108,7 +108,7 @@ namespace SqliteTemplate.SqlitePersonalWrite
                 }
 
                 SQLiteCommandBuilder builder = new SQLiteCommandBuilder();
-                builder.
+              
 
                 string sql = "INSERT INTO Users (Name, Code, Password) VALUES (@name, @code, @pwd)";
                 command.Parameters.AddWithValue("@name", "管理员");
