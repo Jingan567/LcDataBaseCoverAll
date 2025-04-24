@@ -12,7 +12,7 @@ using SQLServer_EFCore.Dao.DbContexts;
 namespace SQLServer_EFCore.Migrations
 {
     [DbContext(typeof(dbtest1DbContext))]
-    [Migration("20250420173544_init")]
+    [Migration("20250423041703_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -49,6 +49,27 @@ namespace SQLServer_EFCore.Migrations
                     b.ToTable("T_Articles", (string)null);
                 });
 
+            modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Book", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Books", (string)null);
+                });
+
             modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Comment", b =>
                 {
                     b.Property<long>("Id")
@@ -70,6 +91,39 @@ namespace SQLServer_EFCore.Migrations
                     b.HasIndex("ArticleId");
 
                     b.ToTable("T_Comments", (string)null);
+                });
+
+            modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers", (string)null);
+                });
+
+            modelBuilder.Entity("SQLServer_EFCore.Dao.Models.DoubleKeyTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("t2Id")
+                        .HasMaxLength(256)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id", "t2Id");
+
+                    b.ToTable("T_DoubleKeyTable", (string)null);
                 });
 
             modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Leave", b =>
@@ -108,6 +162,56 @@ namespace SQLServer_EFCore.Migrations
                     b.ToTable("T_Leaves", (string)null);
                 });
 
+            modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Student", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Students", (string)null);
+                });
+
+            modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Teacher", b =>
+                {
+                    b.Property<long>("TeacherId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("TeacherId"));
+
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("TeacherId");
+
+                    b.ToTable("T_Teachers", (string)null);
+                });
+
+            modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Test", b =>
+                {
+                    b.Property<string>("test1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Test");
+                });
+
             modelBuilder.Entity("SQLServer_EFCore.Dao.Models.User", b =>
                 {
                     b.Property<long>("Id")
@@ -125,6 +229,21 @@ namespace SQLServer_EFCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("T_Users", (string)null);
+                });
+
+            modelBuilder.Entity("StudentTeacher", b =>
+                {
+                    b.Property<long>("StudentsId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("TeachersTeacherId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("StudentsId", "TeachersTeacherId");
+
+                    b.HasIndex("TeachersTeacherId");
+
+                    b.ToTable("T_Students_Teachers", (string)null);
                 });
 
             modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Comment", b =>
@@ -153,6 +272,21 @@ namespace SQLServer_EFCore.Migrations
                     b.Navigation("Approver");
 
                     b.Navigation("Requester");
+                });
+
+            modelBuilder.Entity("StudentTeacher", b =>
+                {
+                    b.HasOne("SQLServer_EFCore.Dao.Models.Student", null)
+                        .WithMany()
+                        .HasForeignKey("StudentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SQLServer_EFCore.Dao.Models.Teacher", null)
+                        .WithMany()
+                        .HasForeignKey("TeachersTeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SQLServer_EFCore.Dao.Models.Article", b =>

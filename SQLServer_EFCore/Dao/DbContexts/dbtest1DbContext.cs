@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Options;
 using SQLServer_EFCore.Dao.Models;
 using System.Configuration;
 
@@ -35,7 +36,7 @@ namespace SQLServer_EFCore.Dao.DbContexts
                 IntegratedSecurity = true,//是否使用windows登录相同的用户名和密码
                 MultipleActiveResultSets = true,//是否允许一次连接多次查询
                 ApplicationName = "SQLServer_EFCore",//标识应用程序名称，可以自定义，供在SQL跟踪调试时用
-                TrustServerCertificate =true
+                TrustServerCertificate = true
                 //Encrypt = false
             };
 
@@ -46,6 +47,10 @@ namespace SQLServer_EFCore.Dao.DbContexts
             //builder.ConnectionString = "server=(local);user id=ab;" +"password= a!Pass113;initial catalog=AdventureWorks";//这样直接赋值也可以
 
             options.UseSqlServer(builder.ToString());
+
+
+            options.LogTo(Console.WriteLine);//输出数据库脚本日志
+            //options.LogTo(WriteLog);//日志只会在一个地方输出，以后配的为准
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,6 +58,8 @@ namespace SQLServer_EFCore.Dao.DbContexts
             base.OnModelCreating(modelBuilder);
             //从程序集中获取所有实现IEntityTypeConfiguration的配置
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+
+            modelBuilder.Entity<DoubleKeyTable>().HasKey(s => new { s.Id, s.t2Id });//设置双主键
         }
 
 
@@ -72,6 +79,17 @@ namespace SQLServer_EFCore.Dao.DbContexts
         {
         }
 
+
+        private void WriteLog(string sql)
+        {
+            string sqlStrLog = $"[{DateTime.Now}] start: " + Environment.NewLine + sql + Environment.NewLine + " end;" + Environment.NewLine;
+            string sqlPath = Environment.CurrentDirectory + "\\logms";
+            string sqlLogName = DateTime.Now.ToString("yyyyMMdd") + ".log";
+            string fullPath = Path.Combine(sqlPath, sqlLogName);
+            if (!Directory.Exists(sqlPath))Directory.CreateDirectory(sqlPath);
+            if(!File.Exists(fullPath)) File.Create(fullPath).Close();
+            File.AppendAllText(fullPath, sqlStrLog);
+        }
     }
 
 }

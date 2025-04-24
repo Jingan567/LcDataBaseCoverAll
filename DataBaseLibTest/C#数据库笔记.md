@@ -140,19 +140,109 @@ Data Source=.;Initial Catalog = 数据库;Integrated Security=True
    PM> #上面的问题是连接字符串配置的有问题，或者数据库连接需要SSL证书等
    ```
 
-   ## 报错信息
-   
-   ### Unable to create a 'DbContext' of type 'CustomerDbContext'. The exception 'Keyword not supported: 'ConnectTimeout'.' was thrown while attempting to create an instance. For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728
-   
-   这个报错最常见的出现，是因为数据模型有问题。
-   
-   参考链接：[c# - 在干净架构中创建上下文工厂时出现问题 - Stack Overflow](https://stackoverflow.com/questions/79354379/trouble-when-creating-a-context-factory-in-clean-architecture)
-   
-   
-   
-   ### A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - 证书链是由不受信任的颁发机构颁发的。)
-   
-   修改连接字符串就可以了。
-   
-   参考链接：[c# - Error : A connection was successfully established with the server, but then an error occurred during the login process - Stack Overflow](https://stackoverflow.com/questions/76944191/error-a-connection-was-successfully-established-with-the-server-but-then-an-e)
 
+## EF Core操作SqlServer数据库
+
+### 设置主键、外键的方式
+
+1. Fluent Api
+
+   ```csharp
+   modelBuilder.Entity<Order>()
+           .HasOne(o => o.Customer)    // Order 关联到 Customer（一对一导航）
+           .WithMany(c => c.Orders)    // Customer 关联到多个 Order（一对多导航）
+           .HasForeignKey(o => o.CustomerId) // 指定外键属性
+           .OnDelete(DeleteBehavior.Restrict); // 设置级联行为（如禁用级联删除）
+   
+   //多对多
+   modelBuilder.Entity<Student>()
+       .HasMany(s => s.Teachers)
+       .WithMany(t => t.Students)
+       .UsingEntity<StudentTeacher>(j => j.ToTable("StudentTeachers"));
+   
+   //设置主键
+   //1.在DbContext中设置
+   protected override void OnModelCreating(ModelBuilder modelBuilder)
+   {
+       modelBuilder.Entity<Car>()
+           .HasKey(c => c.LicensePlate);  // 指定单个属性为主键
+     
+     	//指定约束名称
+     modelBuilder.Entity<Blog>()
+       .HasKey(b => b.BlogId)
+       .HasName("PrimaryKey_BlogId");  // 自定义主键约束名[1](@ref)
+   }
+   
+   //2.也可以写在EntityTypeConfig中
+    public void Configure(EntityTypeBuilder<Teacher> builder)
+    {
+      //两种方式
+        builder.ToTable("T_Teachers").HasKey(s => s.TeacherId);
+      
+        builder.HasKey(s => s.TeacherId);
+    }
+   //3.复合主键
+   protected override void OnModelCreating(ModelBuilder modelBuilder)
+   {
+     modelBuilder.Entity<Car>()
+       .HasKey(c => new { c.State, c.LicensePlate });  // 联合主键配置[1,3,5](@ref)
+   }
+   ```
+
+2. 数据注解
+
+   1. **复合主键**：EF Core 不支持通过数据注解直接定义复合主键，必须使用 Fluent API
+
+   ```csharp
+   public class Order
+   {
+     	[Key]//设置主键
+       public int Id { get; set; }
+       [ForeignKey("Customer")] // 指定关联到导航属性 Customer 的主键
+       public int ClientId { get; set; } // 自定义外键属性名
+       public Customer Customer { get; set; }
+   }
+   ```
+
+3. 默认约定
+
+   ```csharp
+   //设置主键
+   public int BlogId { get; set; }  // 自动识别为主键并自增
+   ```
+
+
+
+
+### 注意事项
+
+1. 使用EF Core操作数据库，如果手动进数据库修改（比如主键），EF Core 的迁移脚本不能识别出来，后续迁移就会有问题。会导致版本错误，使用EF Core就不要去手动操作数据库
+
+
+
+## 报错信息
+
+**Unable to create a 'DbContext' of type 'CustomerDbContext'. The exception 'Keyword not supported: 'ConnectTimeout'.' was thrown while attempting to create an instance. For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728**
+
+这个报错最常见的出现，是因为数据模型有问题。
+
+参考链接：[c# - 在干净架构中创建上下文工厂时出现问题 - Stack Overflow](https://stackoverflow.com/questions/79354379/trouble-when-creating-a-context-factory-in-clean-architecture)
+
+
+
+**A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - 证书链是由不受信任的颁发机构颁发的。)**
+
+修改连接字符串就可以了。
+
+参考链接：[c# - Error : A connection was successfully established with the server, but then an error occurred during the login process - Stack Overflow](https://stackoverflow.com/questions/76944191/error-a-connection-was-successfully-established-with-the-server-but-then-an-e)
+
+
+
+**修改主键列报错 ：To change the IDENTITY property of a column, the column needs to be dropped and recreated.**
+
+参考链接：[c# - 更改列的 IDENTITY 属性，需要删除并重新创建该列 - Stack Overflow](https://stackoverflow.com/questions/53408175/change-the-identity-property-of-a-column-the-column-needs-to-be-dropped-and-rec)
+
+1. 注释原有的主键列，新主键不能使用
+2. 在已有主键的情况下，不会将默认以id结尾的属性转成主键
+3. 主键更改，引用这个主键的外键用也会更新
+4. 主键只能设置一个，好像也可以设置两个的。有点懵逼。
