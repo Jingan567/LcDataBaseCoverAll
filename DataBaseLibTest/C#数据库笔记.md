@@ -63,12 +63,114 @@ Data Source=.;Initial Catalog = 数据库;Integrated Security=True
 5. User ID 后面跟着的是数据库账号
 6. pwd 后面是数据库密码
 7. 当然 User ID 和 pwd 不是必须的。如果是使用 windows 登录 则可以用 Integrated Security=True 集成安全模式
+8. 连接字符串可以在Visual Studio 添加数据库连接中配置
+
+   ![image-20250426004959374](./C#数据库笔记.assets/image-20250426004959374.png)
 
 #### Tips
 
 1. **连接字符串的顺序是没有要求，SQLServer是这样子的，其他数据库不是特别清楚。**
 2. 连接字符串参考网址：[[连接字符串 - ADO.NET Provider for SQL Server | Microsoft Learn](https://learn.microsoft.com/zh-cn/sql/connect/ado-net/connection-strings?view=sql-server-ver16)](https://learn.microsoft.com/zh-cn/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring?view=net-8.0-pp)
 3. System.Data.SqlClient 包现已弃用,建议使用 Microsoft.Data.SqlClient 
+
+#### 远程数据库连接
+
+[配置SQLServer，远程连接 （超详细）_sqlserver配置远程连接-CSDN博客](https://blog.csdn.net/yanghezheng/article/details/114298590)
+
+正确写法：
+
+```csharp
+ //builder.DataSource = ".";
+ //builder.DataSource = "tcp:1116-SL,1433";//这个字符串可以连上
+ //builder.DataSource = "tcp:(local)";//这个也可以，之前不行可能是未配置防火墙的原因
+ //builder.DataSource = "np:(local)";//OK
+ //builder.DataSource = @"1116-SL";//OK
+ //builder.DataSource = "1116-SL,1433";//OK
+ //builder.DataSource = "tcp:1116-SL";//OK
+ //builder.DataSource = @"tcp:127.0.0.1,1433";//OK
+ //builder.DataSource = "127.0.0.1,1433\\MSSQLSERVER";//OK,那还是相当于我被主机名给误导了
+ //主机名要么是IP地址，要么是主机名
+```
+
+##### 实例名是什么？
+
+在 SQL Server 里，实例名称是用来标识在同一台物理服务器上运行的不同 SQL Server 安装的标识符。一台物理服务器能够同时运行多个 SQL Server 实例，每个实例都拥有独立的配置、数据库和服务。以下为你详细介绍：
+
+###### 实例名称的用途
+
+- **区分不同安装**：借助实例名称，可在同一台服务器上区分不同的 SQL Server 安装。比如，一台服务器上可能同时运行着用于生产环境和开发环境的 SQL Server 实例，它们分别使用不同的实例名称。
+- **独立配置**：每个实例都有自己独立的配置，像内存分配、安全设置、网络协议等。通过实例名称，你可以针对不同的实例进行个性化的配置。
+- **数据库管理**：每个实例可以有自己的一组数据库。你可以依据不同的业务需求，在不同的实例中创建和管理数据库。
+
+###### 实例名称的格式和示例
+
+- **默认实例**：如果在安装 SQL Server 时选择了默认实例，那么实例名称通常是省略的，或者简单地用服务器名称来表示。例如，服务器名为 `SERVER01`，默认实例就可以通过 `SERVER01` 来访问。
+- **命名实例**：若安装时选择了命名实例，就需要为实例指定一个名称。实例名称会跟随在服务器名称后面，用反斜杠 `\` 分隔。例如，服务器名为 `SERVER01`，实例名称为 `SQLDEV`，那么完整的实例标识符就是 `SERVER01\SQLDEV`。
+
+###### 如何查看实例名称
+
+1. 第一种通过服务配置中心查看
+   1. 按下 `Win + R` 组合键，打开 “运行” 对话框，输入 `SQLServerManager<版本号>.msc`（例如 SQL Server 2019 对应的是 `SQLServerManager15.msc` ），回车后打开 SQL Server 配置管理器。
+   2. 在左侧面板中展开 “SQL Server 服务”。
+   3. 你会看到正在运行的 SQL Server 实例，服务名称格式通常为 `SQL Server (<实例名>)`，括号内的就是实例名。若服务名称为 `SQL Server (MSSQLSERVER)`，则表明是默认实例。、
+2. 第二种通过SSMS查看
+   1. 打开 SSMS，在 “连接到服务器” 对话框中，“服务器名称” 下拉框里会显示已发现的 SQL Server 实例，若已连接到某个实例，在对象资源管理器的顶部也能看到当前连接的服务器名称（包含实例名）。
+
+### 主键自增配置
+
+![image-20250425234344868](./C#数据库笔记.assets/image-20250425234344868.png)
+
+### 使用SSMS操作数据库，不可以修改表，报错原因
+
+1. 工具，选项
+
+![image-20250427154317311](./C#数据库笔记.assets/image-20250427154317311.png)
+
+![image-20250427154258171](./C#数据库笔记.assets/image-20250427154258171.png)
+
+
+
+### SqlCommand
+
+#### 常用方法
+
+| 项                                                           | 说明                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [BeginExecuteNonQuery](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.beginexecutenonquery?view=sqlclient-dotnet-standard-5.2) | 启动此 [SqlCommand](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand?view=sqlclient-dotnet-standard-5.2)描述的 Transact-SQL 语句或存储过程的异步执行，通常执行 INSERT、DELETE、UPDATE 和 SET 语句等命令。 对 的每个调用 [BeginExecuteNonQuery](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.beginexecutenonquery?view=sqlclient-dotnet-standard-5.2) 都必须与完成操作的调用配对，该调用 [EndExecuteNonQuery](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.endexecutenonquery?view=sqlclient-dotnet-standard-5.2) 通常在单独的线程上完成操作。 |
+| [BeginExecuteReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.beginexecutereader?view=sqlclient-dotnet-standard-5.2) | 启动由此 [SqlCommand](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand?view=sqlclient-dotnet-standard-5.2) 描述的 Transact-SQL 语句或存储过程的异步执行，并从服务器检索一个或多个结果集。 对 的每个调用 [BeginExecuteReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.beginexecutereader?view=sqlclient-dotnet-standard-5.2) 都必须与完成操作的调用配对，该调用 [EndExecuteReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.endexecutereader?view=sqlclient-dotnet-standard-5.2) 通常在单独的线程上完成操作。 |
+| [BeginExecuteXmlReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.beginexecutexmlreader?view=sqlclient-dotnet-standard-5.2) | 启动此 [SqlCommand](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand?view=sqlclient-dotnet-standard-5.2) 描述的 Transact-SQL 语句或存储过程的异步执行。 对 的每个调用 `BeginExecuteXmlReader` 都必须与对 `EndExecuteXmlReader`的调用配对，该调用通常会在单独的线程上完成操作，并返回 一个 [XmlReader](https://learn.microsoft.com/zh-cn/dotnet/api/system.xml.xmlreader) 对象。 |
+| [ExecuteReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.executereader?view=sqlclient-dotnet-standard-5.2) | 执行返回行的命令。 为了提高性能， [ExecuteReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.executereader?view=sqlclient-dotnet-standard-5.2) 使用 Transact-SQL `sp_executesql` 系统存储过程调用命令。 因此， [ExecuteReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.executereader?view=sqlclient-dotnet-standard-5.2) 如果用于执行 Transact-SQL SET 语句等命令，则可能不会产生所需的效果。 |
+| [ExecuteNonQuery](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.executenonquery?view=sqlclient-dotnet-standard-5.2) | 执行 Transact-SQL INSERT、DELETE、UPDATE 和 SET 语句等命令。 |
+| [ExecuteScalar](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.executescalar?view=sqlclient-dotnet-standard-5.2) | 检索单个值 (例如，从数据库) 聚合值。求和，计数等。           |
+| [ExecuteXmlReader](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.executexmlreader?view=sqlclient-dotnet-standard-5.2) | 将 [CommandText](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.commandtext?view=sqlclient-dotnet-standard-5.2) 发送到 [Connection](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand.connection?view=sqlclient-dotnet-standard-5.2)，并生成一个 [XmlReader](https://learn.microsoft.com/zh-cn/dotnet/api/system.xml.xmlreader) 对象。 |
+
+参考链接：[SqlCommand 类 (Microsoft.Data.SqlClient) | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand?view=sqlclient-dotnet-standard-5.2&devlangs=csharp&f1url=%3FappId%3DDev17IDEF1%26l%3DZH-CN%26k%3Dk(Microsoft.Data.SqlClient.SqlCommand)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(DevLang-csharp)%26rd%3Dtrue)
+
+### 设置超时时间(SqlCommand)
+
+```csharp
+command.CommandTimeout = 10;//默认是30秒
+```
+
+### 判断连接是否已开启（SqlConnection）
+
+```csharp
+if(conn.State!=ConnectionState.Open) conn.Open(); 
+```
+
+### 设置命令参数（SqlCommand）
+
+有时候我们的Sql语句中需要传入参数，并不是固定写死的。
+
+**写死的命令**
+
+```csharp
+command.CommandText = "select 1";
+```
+
+
+
+
 
 # SQL Server 数据库
 

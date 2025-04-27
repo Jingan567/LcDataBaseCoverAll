@@ -1,6 +1,6 @@
 ﻿namespace ADO02
 {
-    partial class Form1
+    partial class SQLServerTestForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,6 +30,8 @@
         {
             btn_Connection = new Button();
             btn_Insert = new Button();
+            bt_SetCommandTimeOut = new Button();
+            bt_SetCommandParas = new Button();
             SuspendLayout();
             // 
             // btn_Connection
@@ -44,7 +46,7 @@
             // 
             // btn_Insert
             // 
-            btn_Insert.Location = new Point(12, 61);
+            btn_Insert.Location = new Point(12, 50);
             btn_Insert.Name = "btn_Insert";
             btn_Insert.Size = new Size(92, 32);
             btn_Insert.TabIndex = 1;
@@ -52,14 +54,36 @@
             btn_Insert.UseVisualStyleBackColor = true;
             btn_Insert.Click += btn_Insert_Click;
             // 
-            // Form1
+            // bt_SetCommandTimeOut
+            // 
+            bt_SetCommandTimeOut.Location = new Point(12, 88);
+            bt_SetCommandTimeOut.Name = "bt_SetCommandTimeOut";
+            bt_SetCommandTimeOut.Size = new Size(92, 52);
+            bt_SetCommandTimeOut.TabIndex = 2;
+            bt_SetCommandTimeOut.Text = "设置命令超时时间";
+            bt_SetCommandTimeOut.UseVisualStyleBackColor = true;
+            bt_SetCommandTimeOut.Click += bt_SetCommandTimeOut_Click;
+            // 
+            // bt_SetCommandParas
+            // 
+            bt_SetCommandParas.Location = new Point(12, 146);
+            bt_SetCommandParas.Name = "bt_SetCommandParas";
+            bt_SetCommandParas.Size = new Size(92, 52);
+            bt_SetCommandParas.TabIndex = 3;
+            bt_SetCommandParas.Text = "设置命令参数";
+            bt_SetCommandParas.UseVisualStyleBackColor = true;
+            bt_SetCommandParas.Click += bt_SetCommandParas_Click;
+            // 
+            // SQLServerTestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bt_SetCommandParas);
+            Controls.Add(bt_SetCommandTimeOut);
             Controls.Add(btn_Insert);
             Controls.Add(btn_Connection);
-            Name = "Form1";
+            Name = "SQLServerTestForm";
             Text = "Form1";
             ResumeLayout(false);
         }
@@ -68,5 +92,8 @@
 
         private Button btn_Connection;
         private Button btn_Insert;
+        private Button bt_SetCommandTimeOut;
+        private Button button1;
+        private Button bt_SetCommandParas;
     }
 }
