@@ -32,6 +32,7 @@
             btn_Insert = new Button();
             bt_SetCommandTimeOut = new Button();
             bt_SetCommandParas = new Button();
+            btn_Update = new Button();
             SuspendLayout();
             // 
             // btn_Connection
@@ -74,11 +75,22 @@
             bt_SetCommandParas.UseVisualStyleBackColor = true;
             bt_SetCommandParas.Click += bt_SetCommandParas_Click;
             // 
+            // btn_Update
+            // 
+            btn_Update.Location = new Point(12, 204);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(92, 32);
+            btn_Update.TabIndex = 4;
+            btn_Update.Text = "更新数据";
+            btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.Click += btn_Update_Click;
+            // 
             // SQLServerTestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_Update);
             Controls.Add(bt_SetCommandParas);
             Controls.Add(bt_SetCommandTimeOut);
             Controls.Add(btn_Insert);
@@ -95,5 +107,6 @@
         private Button bt_SetCommandTimeOut;
         private Button button1;
         private Button bt_SetCommandParas;
+        private Button btn_Update;
     }
 }

@@ -1,7 +1,9 @@
 
 
 using Microsoft.Data.SqlClient;
+using System;
 using System.Data;
+using System.Reflection;
 
 namespace ADO02
 {
@@ -21,9 +23,7 @@ namespace ADO02
             InitialCatalog = "02ADO",
             IntegratedSecurity = true,
             TrustServerCertificate = true,
-            ConnectTimeout = 30,
-
-
+            ConnectTimeout = 30//连接超时
         };
         #endregion
 
@@ -87,17 +87,23 @@ namespace ADO02
         {
             try
             {
-                //即使有捕获异常，这个资源仍然能正常回收
                 using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
                 {
-                    //throw new Exception("sdsd");
+                    if (conn.State != ConnectionState.Open) conn.Open();
+
                     using (SqlCommand command = new SqlCommand())
                     {
-                        command.CommandText = "";
+                        //使用属性注入和构造注入没啥区别
                         command.Connection = conn;
-
+                        command.CommandText = "INSERT INTO [dbo].[Aticle]([Title])VALUES(@title)";
+                        SqlParameter param = new SqlParameter("@title", SqlDbType.NChar, 250);//长度也可以不指定,参数名都以@开头
+                        param.Direction = ParameterDirection.Input;//输入参数，默认是Input
+                        param.Value = "这是新的标题" + DateTime.Now;
+                        command.Parameters.Add(param);
+                        command.CommandTimeout = 10;//默认是30秒
+                        int res = command.ExecuteNonQuery();//非查询，返回受影响的行数。
+                        MessageBox.Show(res.ToString());
                     }
-
                 }
             }
             catch (Exception ex)
@@ -147,10 +153,14 @@ namespace ADO02
                         command.CommandText = "SELECT [Id], [Title], [AddTime] FROM [dbo].[Aticle] WHERE id = @id";
                         SqlParameter param = new SqlParameter("@id", SqlDbType.Int, 16);//长度也可以不指定,参数名都以@id开头
                         param.Direction = ParameterDirection.Input;//输入参数，默认是Input
-                        param.Value = 1;
+                        param.Value = 11;
                         command.Parameters.Add(param);
                         command.CommandTimeout = 10;//默认是30秒
-                        object obj = command.ExecuteScalar();
+                        object res = command.ExecuteScalar();
+                        if (res == DBNull.Value || res == null)
+                            MessageBox.Show("查询结果为空");
+                        else
+                            MessageBox.Show(res.ToString());
                     }
                 }
             }
@@ -158,6 +168,85 @@ namespace ADO02
             {
                 throw;
             }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+                {
+                    if (conn.State != ConnectionState.Open) conn.Open();
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        //使用属性注入和构造注入没啥区别
+                        command.Connection = conn;
+                        command.CommandText = "UPDATE [dbo].[Aticle]SET [Title] = '新标题'\r\n WHERE Title='新标题1'";//换行符不影响Sql正常执行
+                        command.CommandTimeout = 10;//默认是30秒
+                        int res = command.ExecuteNonQuery();//即使更新内容前后相同，也会返回受影响行数为1
+                        MessageBox.Show(res.ToString());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private int UpdateCommand<T>(T instance, string DbName = "") where T : class
+        {
+
+            // 获取泛型类的类型
+            Type type = typeof(T);
+
+            //PropertyInfo idProperty =;
+            //if (idProperty == null)
+            //{
+            //    throw new InvalidOperationException("未找到主键属性 'Id'。类中必须要实现带有Id的主键");
+            //}
+
+            // 获取类的所有属性
+            PropertyInfo[] PIs = type.GetProperties();
+
+            // 假设类名即为表名
+            string tableName = DbName ?? type.Name;
+
+            // 构建 SET 子句
+            string setClause = string.Join(", ", PIs
+               .Where(pi => pi.Name != "Id" || pi.GetValue(instance) != null) // 假设主键名为 Id，不更新主键
+               .Select(pi => $"{pi.Name} = @{pi.Name}"));
+            SqlParameterCollection sqlParameters = 
+            string whereClause = $"Id = @Id";
+
+            // 构建完整的 SQL 语句
+            string sql = $"UPDATE {tableName} SET {setClause} WHERE {whereClause}";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+                {
+                    if (conn.State != ConnectionState.Open) conn.Open();
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        //使用属性注入和构造注入没啥区别
+                        command.Connection = conn;
+                        command.CommandText = sql;
+                        command.CommandTimeout = 10;//默认是30秒
+                        command.Parameters.Add();
+
+                        int resCount = command.ExecuteNonQuery();
+                        MessageBox.Show(resCount.ToString());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
     }
 }

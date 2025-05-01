@@ -146,6 +146,10 @@ Data Source=.;Initial Catalog = 数据库;Integrated Security=True
 
 参考链接：[SqlCommand 类 (Microsoft.Data.SqlClient) | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand?view=sqlclient-dotnet-standard-5.2&devlangs=csharp&f1url=%3FappId%3DDev17IDEF1%26l%3DZH-CN%26k%3Dk(Microsoft.Data.SqlClient.SqlCommand)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(DevLang-csharp)%26rd%3Dtrue)
 
+#### ExecuteNonQuery
+
+int rows = command.ExecuteNonQuery();//返回受影响的行数。适合非查询的操作。
+
 ### 设置超时时间(SqlCommand)
 
 ```csharp
