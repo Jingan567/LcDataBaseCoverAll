@@ -197,7 +197,7 @@ namespace ADO02
 
         private int UpdateCommand<T>(T instance, string DbName = "") where T : class
         {
-
+            return 0;
             // 获取泛型类的类型
             Type type = typeof(T);
 
@@ -217,7 +217,7 @@ namespace ADO02
             string setClause = string.Join(", ", PIs
                .Where(pi => pi.Name != "Id" || pi.GetValue(instance) != null) // 假设主键名为 Id，不更新主键
                .Select(pi => $"{pi.Name} = @{pi.Name}"));
-            SqlParameterCollection sqlParameters = 
+
             string whereClause = $"Id = @Id";
 
             // 构建完整的 SQL 语句
@@ -235,7 +235,7 @@ namespace ADO02
                         command.Connection = conn;
                         command.CommandText = sql;
                         command.CommandTimeout = 10;//默认是30秒
-                        command.Parameters.Add();
+                        //PIs.Select(pi => command.Parameters.Add($"@{pi.Name}",)) ;
 
                         int resCount = command.ExecuteNonQuery();
                         MessageBox.Show(resCount.ToString());
