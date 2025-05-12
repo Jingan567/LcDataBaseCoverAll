@@ -177,13 +177,25 @@ namespace ADO02
                 using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
                 {
                     if (conn.State != ConnectionState.Open) conn.Open();
-
                     using (SqlCommand command = new SqlCommand())
                     {
                         //使用属性注入和构造注入没啥区别
                         command.Connection = conn;
-                        command.CommandText = "UPDATE [dbo].[Aticle]SET [Title] = '新标题'\r\n WHERE Title='新标题1'";//换行符不影响Sql正常执行
+                        command.CommandText = "UPDATE [dbo].[Aticle] SET [Title] = @title\r\n WHERE id=@id";
+                        //换行符不影响Sql正常执行,正常字符串需要分号，但是变量@Title不需要。
                         command.CommandTimeout = 10;//默认是30秒
+
+                        SqlParameter param = new SqlParameter("@Title", SqlDbType.NChar, 250);//@title变量名不严格区分大小写
+                        param.Direction = ParameterDirection.Input;
+                        param.Value = "这是新‘；''的标题" + DateTime.Now.ToString();//这样拼接Sql不需要转义
+                        command.Parameters.Add(param);
+
+                        //command.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt).Value = 4);//这个北盟网校也太low逼了
+                        SqlParameter param1 = new SqlParameter("@Id", SqlDbType.BigInt, 250);
+                        param.Direction = ParameterDirection.Input;
+                        param1.Value = 4;
+                        command.Parameters.Add(param1);
+
                         int res = command.ExecuteNonQuery();//即使更新内容前后相同，也会返回受影响行数为1
                         MessageBox.Show(res.ToString());
                     }
@@ -193,6 +205,160 @@ namespace ADO02
             {
                 throw;
             }
+        }
+
+        private void bt_Transaction_Click(object sender, EventArgs e)
+        {
+            string result = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+                {
+                    if (conn.State != ConnectionState.Open) conn.Open();
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        using (SqlTransaction st = conn.BeginTransaction())
+                        {
+
+                            SqlParameter param = new SqlParameter("@Title", SqlDbType.NChar, 250);//同一个命令中变量不能多次声明
+                            param.Direction = ParameterDirection.Input;
+                            command.Parameters.Add(param);
+                            command.Transaction = st;//将事务对象赋值过去。
+                            try
+                            {
+                                for (int i = 0; i < 10; i++)
+                                {
+                                    string temp = string.Empty;
+                                    //if (i == 5)
+                                    //{
+                                    //    temp = "shgfdsyhgfhjsd";//制造报错
+                                    //}
+                                    command.Connection = conn;
+                                    command.CommandText = temp + "INSERT INTO [dbo].[Aticle]([Title])VALUES(@title)";
+                                    param.Value = i + "这是新‘；''的标题" + DateTime.Now.ToString();
+
+                                    int res = command.ExecuteNonQuery();
+                                    result += $"第{i}次受影响行数：{res}\r\n";
+                                }
+                                st.Commit();
+                                MessageBox.Show(result);
+                            }
+                            catch (Exception ex)
+                            {
+                                st.Rollback();
+                                string msg = $"事务插入失败，数据库已经回滚！！！异常类型{ex.GetType().FullName}，异常信息:{ex.Message}";
+                                MessageBox.Show(msg);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void bt_SqlDataReader_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+            {
+                if (conn.State != ConnectionState.Open) conn.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.CommandText = "SELECT * FROM [02ADO].[dbo].[Aticle]";
+                    command.Connection = conn;
+                    SqlParameter param = new SqlParameter("@Title", SqlDbType.NChar, 250);//同一个命令中变量不能多次声明
+                    param.Direction = ParameterDirection.Input;
+                    param.Value = "这是新‘；''的标题" + DateTime.Now.ToString();
+                    //command.Parameters.Add(param);
+                    var res = command.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (res.Read())//将记录前进到下一个结果。
+                                      //res.NextResult()当读取批处理 Transact-SQL 语句的结果时，使数据读取器前进到下一个结果。
+                    {
+                        MessageBox.Show(string.Format("{0},{1},{2}", res[0], res[1], res[2]));
+                    }
+                    res.Close();
+                }
+            }
+        }
+
+        private void bt_SqlDataAdapter_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+            {
+                if (conn.State != ConnectionState.Open) conn.Open();
+                DataSet ds = new DataSet();
+                SqlDataAdapter sd = new SqlDataAdapter("select * FROM [02ADO].[dbo].[Aticle]", conn);
+                sd.Fill(ds, "newtable");//newtable是DataTable的表名。
+                //this.dataGridView1.DataSource = ds.Tables[0];//可以
+                DataTable? dataTable = ds.Tables["newtable"];
+                if (dataTable != null)
+                {
+                    this.dataGridView1.DataSource = dataTable;
+                }
+            }
+        }
+
+        private void bt_存储过程_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+            {
+                if (conn.State != ConnectionState.Open) conn.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.CommandText = "myProc";//myProc是存储过程的名字
+                    command.Connection = conn;
+                    command.CommandType = CommandType.StoredProcedure;//存储过程需要配置这个
+                    SqlParameter param = new SqlParameter("@id", SqlDbType.Int, 8);
+                    param.Direction = ParameterDirection.Input;
+                    param.Value = 4;
+                    command.Parameters.Add(param);
+
+                    var res = command.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (res.Read())
+                    {
+                        MessageBox.Show(string.Format("{0},{1},{2}", res[0], res[1], res[2]));
+                    }
+                    res.Close();
+                }
+            }
+        }
+
+        private void bt_存储过程_DataSet_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+            {
+                if (conn.State != ConnectionState.Open) conn.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.CommandText = "myProc";//myProc是存储过程的名字
+                    command.Connection = conn;
+                    command.CommandType = CommandType.StoredProcedure;//存储过程需要配置这个
+                    SqlParameter param = new SqlParameter("@id", SqlDbType.Int, 8);
+                    param.Direction = ParameterDirection.Input;
+                    param.Value = 4;
+                    command.Parameters.Add(param);
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter sd = new SqlDataAdapter();
+                    sd.SelectCommand = command;
+
+                    sd.Fill(ds, "newtable");//newtable是DataTable的表名。
+                                            //this.dataGridView1.DataSource = ds.Tables[0];//可以
+                    DataTable? dataTable = ds.Tables["newtable"];
+                    if (dataTable != null)
+                    {
+                        this.dataGridView1.DataSource = dataTable;
+                    }
+                }
+            }
+        }
+
+        private void bt_存储过程_影响行数_Click(object sender, EventArgs e)
+        {
+
         }
 
         private int UpdateCommand<T>(T instance, string DbName = "") where T : class

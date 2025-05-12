@@ -33,6 +33,14 @@
             bt_SetCommandTimeOut = new Button();
             bt_SetCommandParas = new Button();
             btn_Update = new Button();
+            bt_Transaction = new Button();
+            bt_SqlDataReader = new Button();
+            bt_SqlDataAdapter = new Button();
+            dataGridView1 = new DataGridView();
+            bt_存储过程 = new Button();
+            bt_存储过程_DataSet = new Button();
+            bt_存储过程_影响行数 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btn_Connection
@@ -85,11 +93,86 @@
             btn_Update.UseVisualStyleBackColor = true;
             btn_Update.Click += btn_Update_Click;
             // 
+            // bt_Transaction
+            // 
+            bt_Transaction.Location = new Point(12, 242);
+            bt_Transaction.Name = "bt_Transaction";
+            bt_Transaction.Size = new Size(92, 32);
+            bt_Transaction.TabIndex = 5;
+            bt_Transaction.Text = "事务";
+            bt_Transaction.UseVisualStyleBackColor = true;
+            bt_Transaction.Click += bt_Transaction_Click;
+            // 
+            // bt_SqlDataReader
+            // 
+            bt_SqlDataReader.Location = new Point(12, 280);
+            bt_SqlDataReader.Name = "bt_SqlDataReader";
+            bt_SqlDataReader.Size = new Size(92, 46);
+            bt_SqlDataReader.TabIndex = 6;
+            bt_SqlDataReader.Text = "SqlDataReader";
+            bt_SqlDataReader.UseVisualStyleBackColor = true;
+            bt_SqlDataReader.Click += bt_SqlDataReader_Click;
+            // 
+            // bt_SqlDataAdapter
+            // 
+            bt_SqlDataAdapter.Location = new Point(12, 332);
+            bt_SqlDataAdapter.Name = "bt_SqlDataAdapter";
+            bt_SqlDataAdapter.Size = new Size(92, 46);
+            bt_SqlDataAdapter.TabIndex = 7;
+            bt_SqlDataAdapter.Text = "SqlDataAdapter";
+            bt_SqlDataAdapter.UseVisualStyleBackColor = true;
+            bt_SqlDataAdapter.Click += bt_SqlDataAdapter_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(130, 12);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(658, 366);
+            dataGridView1.TabIndex = 8;
+            // 
+            // bt_存储过程
+            // 
+            bt_存储过程.Location = new Point(12, 384);
+            bt_存储过程.Name = "bt_存储过程";
+            bt_存储过程.Size = new Size(92, 46);
+            bt_存储过程.TabIndex = 9;
+            bt_存储过程.Text = "执行存储过程";
+            bt_存储过程.UseVisualStyleBackColor = true;
+            bt_存储过程.Click += bt_存储过程_Click;
+            // 
+            // bt_存储过程_DataSet
+            // 
+            bt_存储过程_DataSet.Location = new Point(130, 384);
+            bt_存储过程_DataSet.Name = "bt_存储过程_DataSet";
+            bt_存储过程_DataSet.Size = new Size(117, 46);
+            bt_存储过程_DataSet.TabIndex = 10;
+            bt_存储过程_DataSet.Text = "执行存储过程，返回DataSet";
+            bt_存储过程_DataSet.UseVisualStyleBackColor = true;
+            bt_存储过程_DataSet.Click += bt_存储过程_DataSet_Click;
+            // 
+            // bt_存储过程_影响行数
+            // 
+            bt_存储过程_影响行数.Location = new Point(266, 384);
+            bt_存储过程_影响行数.Name = "bt_存储过程_影响行数";
+            bt_存储过程_影响行数.Size = new Size(117, 46);
+            bt_存储过程_影响行数.TabIndex = 11;
+            bt_存储过程_影响行数.Text = "执行存储过程，返回影响行数";
+            bt_存储过程_影响行数.UseVisualStyleBackColor = true;
+            bt_存储过程_影响行数.Click += bt_存储过程_影响行数_Click;
+            // 
             // SQLServerTestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bt_存储过程_影响行数);
+            Controls.Add(bt_存储过程_DataSet);
+            Controls.Add(bt_存储过程);
+            Controls.Add(dataGridView1);
+            Controls.Add(bt_SqlDataAdapter);
+            Controls.Add(bt_SqlDataReader);
+            Controls.Add(bt_Transaction);
             Controls.Add(btn_Update);
             Controls.Add(bt_SetCommandParas);
             Controls.Add(bt_SetCommandTimeOut);
@@ -97,6 +180,7 @@
             Controls.Add(btn_Connection);
             Name = "SQLServerTestForm";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -108,5 +192,12 @@
         private Button button1;
         private Button bt_SetCommandParas;
         private Button btn_Update;
+        private Button bt_Transaction;
+        private Button bt_SqlDataReader;
+        private Button bt_SqlDataAdapter;
+        private DataGridView dataGridView1;
+        private Button bt_存储过程;
+        private Button bt_存储过程_DataSet;
+        private Button bt_存储过程_影响行数;
     }
 }

@@ -172,6 +172,163 @@ if(conn.State!=ConnectionState.Open) conn.Open();
 command.CommandText = "select 1";
 ```
 
+## 10节-执行多条SQL语句，实现数据库事务。
+
+利用 SqlCommand 里面的 Transaction 可以实现事务回滚效果，事务就是将一系列操作作为一个单元执行，要么成功，要么失败，回滚到最初状态。在事务处理术语中，事务要么提交，要么中止。若要提交事务，所有参与者都必须保证对数据的任何更改是永久的。不论系统崩溃或是发生其他无法预料的事件，更改都必须是持久的。只要有一个参与者无法做出此保证，整个事务就会失败。事务范围内的所有数据更改将回滚到特定设置点
+
+```c#
+SqlTransaction tx = conn.BeginTransaction ();
+cmd.Transaction = tx;
+//遍历多条 sql 语句
+int count = 0; //记录
+cmd.CommandText = strsql;
+count += cmd.ExecuteNonQuery ();
+tx.Commit ();//没出现问题则调用
+tx.Rollback ();//报异常了
+```
+
+## 11节-SqlDataReader的使用，读取多条数据
+
+SqlDataReader 对象提供只读单向数据的快速传递
+
+1. 单向：您只能依次读取下一条数据；
+2. 只读：SqlDataReader 中的数据是只读的，无法修改；
+
+```csharp
+SqlConnection connection = new SqlConnection (connectionString);
+SqlCommand cmd = new SqlCommand (strSQL, connection);
+connection.Open ();
+SqlDataReader myReader = cmd.ExecuteReader (CommandBehavior.CloseConnection);
+// 判断数据是否读到尾.
+while (reader.Read ())
+{
+Console.WriteLine (String.Format ("{0}, {1}",
+reader [0], reader [1]));
+}
+// 一定要关闭 reader 对象.
+reader.Close ();
+```
+
+## 12节-SqlDataAdapter和DataSet 的使用，返回数据表
+
+DataSet 类似我们的数据表集，它里面是可以有多张表的，我们这一次就不需要 SqlCommand 了，而是使用 sqlDataadapter。
+```c#
+SqlConnection connection = new SqlConnection (connectionString)
+DataSet ds = new DataSet ();
+connection.Open ();
+SqlDataAdapter command = new SqlDataAdapter (SQLString, connection);
+command.Fill (ds, "ds");
+//将 SqlDataAdapter 里面的内容填充到 DataSet 中
+//也可以设置时间
+command.SelectCommand.CommandTimeout
+```
+
+## 13节-执行存储过程，返回SqlDataReader
+
+和前面差不多，执行存储过程需要指定一下 SqlCommand 的 CommandType
+```csharp
+SqlCommand command = new SqlCommand (storedProcName, connection);
+command.CommandType = CommandType.StoredProcedure;
+//如果带参数 可以指定参数
+SqlParameter parameter
+command.Parameters.Add (parameter);
+SqlDataReader reader = command.ExecuteReader (CommandBehavior.CloseConnection);
+```
+
+创建一个存储过程，在数据库中操作。
+
+```sql
+create proc myProc
+	@id int
+as
+	select * FROM [02ADO].[dbo].[Aticle] where id > @id
+go
+```
+
+完成截图
+
+![image-20250512003300999](./C#数据库笔记.assets/image-20250512003300999.png)
+
+存储过程位置，在对应数据库下面。创建完之后，刷新需要选择对应的数据库。不需要重启对应的数据库服务。
+
+![image-20250512003950839](./C#数据库笔记.assets/image-20250512003950839.png)
+
+
+
+数据库中执行存储过程
+
+```sql
+exec [dbo].[myProc] @id =1
+```
+
+csharp代码
+
+```csharp
+private void bt_存储过程_Click(object sender, EventArgs e)
+{
+    using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+    {
+        if (conn.State != ConnectionState.Open) conn.Open();
+        using (SqlCommand command = new SqlCommand())
+        {
+            command.CommandText = "myProc";//myProc是存储过程的名字
+            command.Connection = conn;
+            command.CommandType = CommandType.StoredProcedure;//存储过程需要配置这个
+            SqlParameter param = new SqlParameter("@id", SqlDbType.Int, 8);
+            param.Direction = ParameterDirection.Input;
+            param.Value = 4;
+            command.Parameters.Add(param);
+
+            var res = command.ExecuteReader(CommandBehavior.CloseConnection);
+            while (res.Read())
+            {
+                MessageBox.Show(string.Format("{0},{1},{2}", res[0], res[1], res[2]));
+            }
+            res.Close();
+        }
+    }
+}
+```
+
+## 14 节 - 执行存储过程，返回 DataSet
+
+和前面 13 节一样，不过我们需要返回 dataset，所以使用 SqlDataAdapter
+```csharp
+SqlConnection connection = new SqlConnection (connectionString)
+DataSet dataSet = new DataSet ();
+connection.Open ();
+SqlDataAdapter sqlDA = new SqlDataAdapter ();
+SqlCommand command = new SqlCommand (storedProcName, connection);
+command.CommandType = CommandType.StoredProcedure;
+SqlParameter parameter
+command.Parameters.Add (parameter);
+sqlDA.SelectCommand = command;
+sqlDA.Fill (dataSet, tableName);
+//其中 tableName 表示 DataSet 结果中的表名
+```
+
+## 15 节 - 执行存储过程，返回受影响的行数
+
+```csharp
+SqlConnection connection = new SqlConnection (connectionString)
+connection.Open ();
+SqlCommand command = new SqlCommand (storedProcName, connection);
+command.CommandType = CommandType.StoredProcedure;
+command.Parameters.Add (parameter);// 这里添加一些参数
+command.Parameters.Add (new SqlParameter ("ReturnValue",
+SqlDbType.Int, 4, ParameterDirection.ReturnValue,
+false, 0, 0, string.Empty, DataRowVersion.Default, null));
+//ReturnValue 参数表示诸如存储过程、内置函数或用户定义函数之类的操作的返回值。
+int rowsAffected = command.ExecuteNonQuery (); //这个可以返回受影响的记录数
+int result = (int) command.Parameters ["ReturnValue"].Value; //这个可以得到函数或者存储过程里面的值
+```
+
+
+
+
+
+
+
 
 
 
