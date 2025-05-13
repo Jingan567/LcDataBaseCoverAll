@@ -12,7 +12,6 @@ namespace ADO02
         public SQLServerTestForm()
         {
             InitializeComponent();
-
         }
 
         #region 属性
@@ -358,7 +357,42 @@ namespace ADO02
 
         private void bt_存储过程_影响行数_Click(object sender, EventArgs e)
         {
+            using (SqlConnection conn = new SqlConnection(ConnectStr.ConnectionString))
+            {
+                if (conn.State != ConnectionState.Open) conn.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.CommandText = "myNewProc";//自定义存储过程的名字
+                    command.Connection = conn;
+                    command.CommandType = CommandType.StoredProcedure;//存储过程需要配置这个
+                    SqlParameter param = new SqlParameter("@id", SqlDbType.Int, 8);
+                    param.Direction = ParameterDirection.Input;
+                    param.Value = 4;
+                    command.Parameters.Add(param);
 
+                    SqlParameter param1 = new SqlParameter("ReturnValue", SqlDbType.Int, 4);
+                    param1.Direction = ParameterDirection.ReturnValue;//该参数表示从某操作（如存储过程、内置函数或用户定义的函数）返回的值。
+                    param1.IsNullable = false;//获取或设置一个值，该值指示参数是否接受 null 值。true如果接受 null 值;否则默认值为false.
+                                              //IsNullable 不用于验证参数的值，并且不会阻止在执行命令时发送或接收 null 值。
+                    param1.Precision = 0;//用于表示 Value 属性的最大位数。默认值为 0。这表示数据提供程序为 Value 设置精度。
+                    param1.Scale = 0;//将 Value 解析到的小数位数。默认值为 0。
+                    param1.SourceColumn = string.Empty;//映射到 DataSet 的源列的名称。默认值为空字符串。
+                    param1.SourceVersion = DataRowVersion.Default;//DataRowVersion 值之一。默认值为 Current。
+                    param1.Value = null;
+                    command.Parameters.Add(param1);
+
+                    int rowsAffected = command.ExecuteNonQuery(); //这个可以返回受影响的记录数
+                    int result = (int)command.Parameters["ReturnValue"].Value; //这个可以得到函数或者存储过程里面的值
+
+                    MessageBox.Show(result.ToString());
+
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+                DbHelperSQL
         }
 
         private int UpdateCommand<T>(T instance, string DbName = "") where T : class

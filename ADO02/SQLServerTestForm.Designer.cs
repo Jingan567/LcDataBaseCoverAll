@@ -40,6 +40,7 @@
             bt_存储过程 = new Button();
             bt_存储过程_DataSet = new Button();
             bt_存储过程_影响行数 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -161,11 +162,22 @@
             bt_存储过程_影响行数.UseVisualStyleBackColor = true;
             bt_存储过程_影响行数.Click += bt_存储过程_影响行数_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(401, 384);
+            button2.Name = "button2";
+            button2.Size = new Size(117, 46);
+            button2.TabIndex = 12;
+            button2.Text = "Test";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // SQLServerTestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(bt_存储过程_影响行数);
             Controls.Add(bt_存储过程_DataSet);
             Controls.Add(bt_存储过程);
@@ -199,5 +211,6 @@
         private Button bt_存储过程;
         private Button bt_存储过程_DataSet;
         private Button bt_存储过程_影响行数;
+        private Button button2;
     }
 }

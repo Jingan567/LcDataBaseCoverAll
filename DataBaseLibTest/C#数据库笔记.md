@@ -245,6 +245,21 @@ as
 go
 ```
 
+创建存储过程
+
+```sql
+create procedure myNewProc(@id int)
+as
+begin
+	declare @count int
+	update Aticle set title='111' where id = @id
+	select @count =COUNT(1) from Aticle where id > @id
+	return @count
+end
+```
+
+
+
 完成截图
 
 ![image-20250512003300999](./C#数据库笔记.assets/image-20250512003300999.png)
@@ -321,6 +336,39 @@ false, 0, 0, string.Empty, DataRowVersion.Default, null));
 //ReturnValue 参数表示诸如存储过程、内置函数或用户定义函数之类的操作的返回值。
 int rowsAffected = command.ExecuteNonQuery (); //这个可以返回受影响的记录数
 int result = (int) command.Parameters ["ReturnValue"].Value; //这个可以得到函数或者存储过程里面的值
+```
+
+执行存储过程的sql
+
+```sql
+USE [02ADO]
+GO
+
+DECLARE	@return_value int
+
+EXEC	@return_value = [dbo].[myNewProc]
+		@id = 1
+
+SELECT	'Return Value' = @return_value
+
+GO
+
+```
+
+
+
+定义函数sql，函数中好像不支持update这类影响数据库的操作，未求证。
+
+```sql
+create function myFun(@id int)
+returns  int
+as
+begin
+	declare @count int
+	
+	select @count =COUNT(1) from Aticle where id > @id
+	return @count
+end
 ```
 
 
