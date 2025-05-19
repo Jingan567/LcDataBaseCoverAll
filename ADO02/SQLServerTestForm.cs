@@ -392,7 +392,7 @@ namespace ADO02
 
         private void button2_Click(object sender, EventArgs e)
         {
-                DbHelperSQL
+           // dataGridView1.DataSource
         }
 
         private int UpdateCommand<T>(T instance, string DbName = "") where T : class

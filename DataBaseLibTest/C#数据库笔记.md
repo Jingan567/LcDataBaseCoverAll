@@ -557,3 +557,457 @@ end
 2. 在已有主键的情况下，不会将默认以id结尾的属性转成主键
 3. 主键更改，引用这个主键的外键用也会更新
 4. 主键只能设置一个，好像也可以设置两个的。有点懵逼。
+
+
+
+# DataGridView的使用
+
+## 参考链接
+
+链接1：[C# DataGridView（干货版） - 一杯清酒邀明月 - 博客园](https://www.cnblogs.com/ybqjymy/p/12487214.html)
+
+## C#DataGridView(干货版)
+
+### 一、添加行列并获取信息
+
+界面如下：
+
+![在这里插入图片描述](./C#数据库笔记.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTgzNTkxNg==,size_16,color_FFFFFF,t_70.png)
+
+代码如下：
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DataGridView
+{
+  public partial class Form1 : Form
+  {
+    int count = 0;
+    public Form1()
+    {
+      InitializeComponent();
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+      //根据Header和所有单元格的内容自动调整行的高度
+      dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;  
+      //添加三列
+      for (int i = 0; i < 3; i++)
+      {
+        dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
+        dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;  //设置所有列自适应宽度
+      }
+      //三列的标题
+      dataGridView1.Columns[0].HeaderText = "序号";
+      dataGridView1.Columns[1].HeaderText = "日期";
+      dataGridView1.Columns[2].HeaderText = "说明";
+      //设置对齐方式和字体
+      dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+      dataGridView1.Font = new Font("宋体", 11);
+    }
+    //添加行
+    private void button1_Click(object sender, EventArgs e)
+    {
+      int index = this.dataGridView1.Rows.Add();
+      this.dataGridView1.Rows[index].Cells[0].Value = count++;
+      this.dataGridView1.Rows[index].Cells[1].Value = "2";
+      this.dataGridView1.Rows[index].Cells[2].Value = "监听";
+    }
+    //获取信息
+    private void button2_Click(object sender, EventArgs e)
+    {
+      //获取当前活动单元格内容
+      Console.WriteLine("当前活动单元格内容：" + dataGridView1.CurrentCell.Value);  
+      //取得当前单元格的列Index
+      Console.WriteLine("当前单元格的列Index：" + dataGridView1.CurrentCell.ColumnIndex); 
+      //取得当前单元格的行Index
+      Console.WriteLine("取得当前单元格的行Index：" + dataGridView1.CurrentCell.RowIndex);   
+      // 设定 (1, 1) 为当前单元格 
+      dataGridView1.CurrentCell = dataGridView1[1, 1];   
+    }
+  }
+}
+```
+
+测试：
+
+点击添加：
+
+![在这里插入图片描述](./C#数据库笔记.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTgzNTkxNg==,size_16,color_FFFFFF,t_70-1747667194927-20.png)
+
+选中（2,1）处的单元格，点击获取，命令行输出：
+
+```
+ 当前活动单元格内容：2
+ 当前单元格的列Index：1
+ 取得当前单元格的行Index：2
+```
+
+活动单元格变为（1,1）处的单元格：
+
+![在这里插入图片描述](./C#数据库笔记.assets/2018112110464638.png)
+
+------
+
+### 二、设置单元格只读属性
+
+代码如下：
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DataGridView
+{
+  public partial class Form1 : Form
+  {
+    int count = 0;
+    public Form1()
+    {
+      InitializeComponent();
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+      //根据Header和所有单元格的内容自动调整行的高度
+      dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;  
+      //添加三列
+      for (int i = 0; i < 3; i++)
+      {
+        dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
+        dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;  //设置所有列自适应宽度
+      }
+      //三列的标题
+      dataGridView1.Columns[0].HeaderText = "序号";
+      dataGridView1.Columns[1].HeaderText = "日期";
+      dataGridView1.Columns[2].HeaderText = "说明";
+      //设置对齐方式和字体
+      dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+      dataGridView1.Font = new Font("宋体", 11);
+
+      /******************************新增加的代码************************************/
+      dataGridView1.ReadOnly = true;    //设置所有单元格都不可编辑
+      // 设置 DataGridView1 的第2列整列单元格为只读
+      dataGridView1.Columns[1].ReadOnly = true;   
+      // 设置 DataGridView1 的第3行整行单元格为只读
+      dataGridView1.Rows[2].ReadOnly = true;     
+      // 设置 DataGridView1 的[0，0]单元格为只读
+      dataGridView1[0, 0].ReadOnly = true;        
+      /**********************************************************************************/
+    } 
+    //添加行
+    private void button1_Click(object sender, EventArgs e)
+    {
+      int index = this.dataGridView1.Rows.Add();
+      this.dataGridView1.Rows[index].Cells[0].Value = count++;
+      this.dataGridView1.Rows[index].Cells[1].Value = "2";
+      this.dataGridView1.Rows[index].Cells[2].Value = "监听";
+    }
+    //获取
+    private void button2_Click(object sender, EventArgs e)
+    {
+      //获取当前活动单元格内容
+      Console.WriteLine("当前活动单元格内容：" + dataGridView1.CurrentCell.Value); 
+      //取得当前单元格的列Index
+      Console.WriteLine("当前单元格的列Index：" + dataGridView1.CurrentCell.ColumnIndex); 
+      //取得当前单元格的行Index
+      Console.WriteLine("取得当前单元格的行Index：" + dataGridView1.CurrentCell.RowIndex);   
+      // 设定 (1, 1) 为当前单元格 
+      dataGridView1.CurrentCell = dataGridView1[1, 1];   
+    }
+  }
+}
+```
+
+[![复制代码](./C#数据库笔记.assets/copycode.gif)](javascript:void(0);)
+
+测试：
+
+双击单元格，单元格不可编辑：
+
+![在这里插入图片描述](./C#数据库笔记.assets/20181121105754702.png)
+
+------
+
+### 三、最新一行不显示
+
+通常 DataGridView 的最下面一行是用户新追加的行（行头显示 * ）
+
+![在这里插入图片描述](./C#数据库笔记.assets/20181121105754702.png)
+
+即不想显示该新行，可以将 DataGridView 对象的 AllowUserToAddRows 属性设置为 False。
+
+代码如下：
+
+[![复制代码](./C#数据库笔记.assets/copycode.gif)](javascript:void(0);)
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DataGridView
+{
+  public partial class Form1 : Form
+  {
+    int count = 0;
+    public Form1()
+    {
+      InitializeComponent();
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+      //根据Header和所有单元格的内容自动调整行的高度
+      dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; 
+      //添加三列
+      for (int i = 0; i < 3; i++)
+      {
+        dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
+        //设置所有列自适应宽度
+        dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;  
+      }
+      //三列的标题
+      dataGridView1.Columns[0].HeaderText = "序号";
+      dataGridView1.Columns[1].HeaderText = "日期";
+      dataGridView1.Columns[2].HeaderText = "说明";
+      //设置对齐方式和字体
+      dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+      dataGridView1.Font = new Font("宋体", 11);
+
+      //设置所有单元格都不可编辑
+      dataGridView1.ReadOnly = true;    
+      // 设置 DataGridView1 的第2列整列单元格为只读
+      dataGridView1.Columns[1].ReadOnly = true; 
+      // 设置 DataGridView1 的第3行整行单元格为只读  
+      dataGridView1.Rows[2].ReadOnly = true;      
+      // 设置 DataGridView1 的[0，0]单元格为只读 
+      dataGridView1[0, 0].ReadOnly = true;               
+    }
+    //添加行
+    private void button1_Click(object sender, EventArgs e)
+    {
+      int index = this.dataGridView1.Rows.Add();
+      this.dataGridView1.Rows[index].Cells[0].Value = count++;
+      this.dataGridView1.Rows[index].Cells[1].Value = "2";
+      this.dataGridView1.Rows[index].Cells[2].Value = "监听";
+      /*****************新增加的代码********************/
+      dataGridView1.AllowUserToAddRows = false;
+      /*************************************************/
+    }
+    //获取
+    private void button2_Click(object sender, EventArgs e)
+    {
+      //获取当前活动单元格内容
+      Console.WriteLine("当前活动单元格内容：" + dataGridView1.CurrentCell.Value);  
+      //取得当前单元格的列Index
+      Console.WriteLine("当前单元格的列Index：" + dataGridView1.CurrentCell.ColumnIndex);  
+      //取得当前单元格的行Index
+      Console.WriteLine("取得当前单元格的行Index：" + dataGridView1.CurrentCell.RowIndex);  
+      // 设定 (1, 1) 为当前单元格 
+      dataGridView1.CurrentCell = dataGridView1[1, 1];   
+    }
+  }
+}
+```
+
+测试：
+![在这里插入图片描述](./C#数据库笔记.assets/20181121110518722.png)
+
+------
+
+### 四、行列的隐藏和删除
+
+（1） 行、列的隐藏
+
+```csharp
+1 DataGridView1.Columns[0].Visible = false;    // DataGridView1的第一列隐藏 
+2 DataGridView1.Rows[0].Visible = false;       // DataGridView1的第一行隐藏 
+```
+
+  (2） 行头、列头的隐藏
+
+```csharp
+1 DataGridView1.ColumnHeadersVisible = false; // 列头隐藏 
+2 DataGridView1.RowHeadersVisible = false; // 行头隐藏 
+```
+
+（3） 行和列的删除
+
+```csharp
+ //删除名为"Column1"的列 
+ DataGridView1.Columns.Remove("Column1");
+ //删除第一列
+ DataGridView1.Columns.RemoveAt(0);
+ //删除第一行 
+ DataGridView1.Rows.RemoveAt(0);
+```
+
+（4） 删除选中行
+
+```csharp
+ foreach (DataGridViewRow r in DataGridView1.SelectedRows)
+ {
+     if (!r.IsNewRow)
+     {
+         DataGridView1.Rows.Remove(r);
+     }
+ }    
+```
+
+### 五、禁止列或者行的Resize
+
+（1） 禁止所有的列或者行的Resize
+
+```csharp
+1 // 禁止用户改变DataGridView1的所有列的列宽 
+2 DataGridView1.AllowUserToResizeColumns = false;
+3 //禁止用户改变DataGridView1の所有行的行高 
+4 DataGridView1.AllowUserToResizeRows = false;
+```
+
+但是可以通过 DataGridViewColumn.Width 或者 DataGridViewRow.Height 属性设定列宽和行高。
+
+（2） 禁止指定行或者列的Resize
+
+```csharp
+ // 禁止用户改变DataGridView1的第一列的列宽 
+ DataGridView1.Columns[0].Resizable = DataGridViewTriState.False;
+ // 禁止用户改变DataGridView1的第一列的行宽 
+ DataGridView1.Rows[0].Resizable = DataGridViewTriState.False;
+```
+
+（3） 列宽和行高的最小值的设定
+
+```csharp
+ // 第一列的最小列宽设定为 100
+ DataGridView1.Columns[0].MinimumWidth = 100;
+ // 第一行的最小行高设定为 50
+ DataGridView1.Rows[0].MinimumHeight = 50;
+```
+
+（4） 禁止用户改变行头的宽度以及列头的高度
+
+```csharp
+ // 禁止用户改变列头的高度 
+ DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+ // 设置用户改变行头的宽度 
+ DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
+```
+
+### 六、列宽和行高自动调整的设定
+
+（1） 设定所有单元格行高和列宽自动调整
+
+```csharp
+ // 设定包括Header和所有单元格的列宽自动调整 
+ DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+ // 设定包括Header和所有单元格的行高自动调整 
+ DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+```
+
+（2） 设定指定单元格行高和列宽自动调整
+
+```csharp
+ // 第一列自动调整 
+ DataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+ // 设定列头的宽度可以自由调整 
+ DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+ // 设定行头的宽度可以自由调整 
+ DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+```
+
+### 七、行头列头的单元格
+
+```csharp
+// 改变DataGridView1的第一列列头内容
+DataGridView1.Columns[0].HeaderCell.Value = "第一列";
+// 改变DataGridView1的第一行行头内容
+DataGridView1.Rows[0].HeaderCell.Value = "第一行";
+// 改变DataGridView1的左上头部单元内容
+DataGridView1.TopLeftHeaderCell.Value = "左上";
+```
+
+### 八、单元格的边框、网格线样式的设定
+
+（1）DataGridView 的边框线样式的设定
+
+DataGridView 的边框线的样式是通过 DataGridView.BorderStyle 属性来设定的。
+
+BorderStyle 属性设定值是一个BorderStyle 枚举： FixedSingle（单线，默认）、Fixed3D、None。
+
+（2）单元格的边框线样式的设定
+
+单元格的边框线的样式是通过 DataGridView.CellBorderStyle 属性来设定的。
+
+CellBorderStyle 属性设定值是DataGridViewCellBorderStyle 枚举。
+
+（4） 单元格的边框颜色的设定 单元格的边框线的颜色可以通过 DataGridView.GridColor 属性来设定的。
+
+默认是 ControlDarkDark 。但是只有在 CellBorderStyle 被设定为 Single、SingleHorizontal、SingleVertical 的条件下才能改变其边框线的颜色。
+
+同样，ColumnHeadersBorderStyle 以及 RowHeadersBorderStyle 只有在被设定为 Single 时，才能改变颜色
+
+### 九、实现示例
+
+#### 隔行不同色单元格
+
+- 使用默认属性设置
+
+  ```csharp
+  dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Yellow;//获取或设置应用于 DataGridView 的奇数行的默认单元格样式。这里设置背景色，好像没有按照上下去更新，要么奇数行优先级更高
+  dataGridView1.RowsDefaultCellStyle.BackColor = Color.LightSkyBlue;//获取或设置 DataGridView 单元格的背景色
+  ```
+
+- 使用判断实现
+
+  参考链接：【C#.Winform基础教程-动态设置DataGridview奇数偶数行不同的背景颜色】 https://www.bilibili.com/video/BV1tGRGYRELz/?share_source=copy_web&vd_source=1faf6f8be863497a8aa161f8493e14d2
+
+  ```csharp
+   //设置每一行的数据
+   //遍历表格中的每一行
+   foreach (DataGridViewRow row in dataGridView1.Rows)//DataGridViewRow不是DataRow
+   {
+       //需要获取当当前遍历的所在行
+       int index = row.Index;
+       //判断这个索引的奇偶性
+       if (index % 2 == 1)
+       {
+           //正常来算，对2取余数等于1，是奇数
+           //索引从0开始，行和列都是从0开始
+           //所以这是偶数行
+           row.DefaultCellStyle.BackColor = Color.Azure;
+       }
+       else
+       {
+           //计数行
+           row.DefaultCellStyle.BackColor = Color.LightSkyBlue;
+       }
+   }
+  ```
+
+  
+

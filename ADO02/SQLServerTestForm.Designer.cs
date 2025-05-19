@@ -191,7 +191,7 @@
             Controls.Add(btn_Insert);
             Controls.Add(btn_Connection);
             Name = "SQLServerTestForm";
-            Text = "Form1";
+            Text = "SQLServerTestForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
