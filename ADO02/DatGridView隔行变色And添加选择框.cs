@@ -128,5 +128,114 @@ namespace ADO02
                 }
             }
         }
+
+        /// <summary>
+        /// 给DataGridView一列选择框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            dataGridViewCheckBoxColumn.HeaderText = "选择列";
+            dataGridViewCheckBoxColumn.Name = "SelectColoumn";
+
+
+            //if (this.dataGridView1.Columns.Contains(dataGridViewCheckBoxColumn))
+            //{
+            //    return;//这个写法有问题
+            //}
+
+            if (this.dataGridView1.Columns.Contains("SelectColoumn"))
+            {
+                return;
+            }
+
+            dataGridView1.Columns.Insert(0, dataGridViewCheckBoxColumn);//插入到第一列,这样添加的一列，即使DataDource改变仍然在。
+        }
+
+        /// <summary>
+        /// 设置行和列只读
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //dataGridView1.ReadOnly = true;//设置所有的单元格只读
+
+            #region 设置所有单元格只读，删除可以，但新增不可以操作了。
+            //foreach (DataGridViewBand band in dataGridView1.Columns)//[DataGridViewBand]是 和 [DataGridViewColumn] 类的[DataGridViewRow]基类。
+            //{
+            //    band.ReadOnly = true;
+            //}
+            #endregion
+
+            #region 设置某行或某列自读
+            #region 失败1
+            // 设置 DataGridView1 的第2列整列单元格为只读
+            //dataGridView1.Columns[1].ReadOnly = true;
+            // 设置 DataGridView1 的第3行整行单元格为只读
+            //dataGridView1.Rows[2].ReadOnly = true;//这样设置没有效果，因为行的只读属性优先级更高
+            #endregion
+
+            #region 成功1      
+            Init();
+
+            void Init()
+            {
+                // 设置第2列（索引1）为只读
+                dataGridView1.Columns[1].ReadOnly = true;
+
+                // 设置第3行（索引2）为只读
+                SetRowReadOnly(2, true);
+
+                // 注册事件确保动态更新只读状态
+                dataGridView1.RowsAdded += DataGridView1_RowsAdded;
+                dataGridView1.DataSourceChanged += DataGridView1_DataSourceChanged;
+            }
+
+            void SetRowReadOnly(int rowIndex, bool readOnly)
+            {
+                if (rowIndex >= 0 && rowIndex < dataGridView1.Rows.Count)
+                {
+                    foreach (DataGridViewCell cell in dataGridView1.Rows[rowIndex].Cells)
+                    {
+                        cell.ReadOnly = readOnly;//这里的遍历是核心
+                    }
+                }
+            }
+
+            void DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+            {
+                // 确保新添加的行也保持只读设置
+                if (e.RowIndex == 2) // 如果添加的是第3行
+                {
+                    SetRowReadOnly(2, true);
+                }
+            }
+
+            void DataGridView1_DataSourceChanged(object sender, EventArgs e)
+            {
+                // 数据源变更时重新设置只读状态
+                SetRowReadOnly(2, true);
+            }
+            #endregion
+            #endregion
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.AllowUserToAddRows = false;//不想显示该新行，可以将 DataGridView 对象的 AllowUserToAddRows 属性设置为 False。
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //dataGridView1.Rows[0].HeaderCell.Value = "第一行";//设置行头，需改数据源自动消失\
+            dataGridView1.RowHeadersVisible = false;// 隐藏行头
+            dataGridView1.ColumnHeadersVisible = false; // 列头隐藏 
+            dataGridView1.Columns[0].Visible = false;    // DataGridView1的第一列隐藏 
+            dataGridView1.Rows[0].Visible = false;       // DataGridView1的第一行隐藏 
+        }
     }
 }

@@ -661,6 +661,8 @@ namespace DataGridView
 
 ### 二、设置单元格只读属性
 
+[DataGridViewBand](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.datagridviewband?view=netframework-4.8.1)是 和 [DataGridViewColumn](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.datagridviewcolumn?view=netframework-4.8.1) 类的[DataGridViewRow](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.datagridviewrow?view=netframework-4.8.1)基类。
+
 代码如下：
 
 ```csharp
@@ -736,7 +738,14 @@ namespace DataGridView
 }
 ```
 
-[![复制代码](./C#数据库笔记.assets/copycode.gif)](javascript:void(0);)
+#### 列与行的只读设置差异
+
+1. **列级只读**：
+   - 当你设置`dataGridView1.Columns[1].ReadOnly = true`时，这一列的所有单元格都会继承这个只读属性。
+   - 这是因为列属性是单元格属性的默认值来源，所以这种设置方式是有效的。
+2. **行级只读**：
+   - 要是只设置`dataGridView1.Rows[2].ReadOnly = true`，这仅仅是把整行的默认只读状态修改了。
+   - 可单元格自身的`ReadOnly`属性优先级比行更高，要是单元格的`ReadOnly`没有被明确设置，它就会沿用行的属性；但要是单元格的`ReadOnly`被单独设置过，就会覆盖行的设置。
 
 测试：
 
@@ -755,8 +764,6 @@ namespace DataGridView
 即不想显示该新行，可以将 DataGridView 对象的 AllowUserToAddRows 属性设置为 False。
 
 代码如下：
-
-[![复制代码](./C#数据库笔记.assets/copycode.gif)](javascript:void(0);)
 
 ```csharp
 using System;
@@ -844,15 +851,15 @@ namespace DataGridView
 （1） 行、列的隐藏
 
 ```csharp
-1 DataGridView1.Columns[0].Visible = false;    // DataGridView1的第一列隐藏 
-2 DataGridView1.Rows[0].Visible = false;       // DataGridView1的第一行隐藏 
+ DataGridView1.Columns[0].Visible = false;    // DataGridView1的第一列隐藏 
+ DataGridView1.Rows[0].Visible = false;       // DataGridView1的第一行隐藏 
 ```
 
   (2） 行头、列头的隐藏
 
 ```csharp
-1 DataGridView1.ColumnHeadersVisible = false; // 列头隐藏 
-2 DataGridView1.RowHeadersVisible = false; // 行头隐藏 
+ DataGridView1.ColumnHeadersVisible = false; // 列头隐藏 
+ DataGridView1.RowHeadersVisible = false; // 行头隐藏 
 ```
 
 （3） 行和列的删除
